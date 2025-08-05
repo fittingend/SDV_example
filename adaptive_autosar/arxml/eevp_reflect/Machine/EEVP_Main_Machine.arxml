@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="55146b6a-73fe-463c-b62a-235c1bad2978">
+      <SHORT-NAME>Machine</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE UUID="a2f9686f-e3d2-426e-bd78-b5631f0daadb">
+          <SHORT-NAME>EEVP_Main_Machine</SHORT-NAME>
+          <DEFAULT-APPLICATION-TIMEOUT/>
+          <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_MAIN</MACHINE-DESIGN-REF>
+          <MODULE-INSTANTIATIONS>
+            <LOG-AND-TRACE-INSTANTIATION UUID="95eac8d7-4a16-4ef7-b200-ee89f6f37082">
+              <SHORT-NAME>LOG</SHORT-NAME>
+              <ADMIN-DATA>
+                <SDGS>
+                  <SDG GID="PARA-DLT-CONF">
+                    <SDG GID="GENERAL-CONFIGURATION">
+                      <SD GID="VERBOSE">ON</SD>
+                      <SD GID="DAEMONIZE">ON</SD>
+                      <SD GID="SEND-SERIAL-HEADER">ON</SD>
+                      <SD GID="SEND-CONTEXT-REGISTRATION">ON</SD>
+                      <SD GID="SEND-MESSAGE-TIME">0</SD>
+                      <SD GID="SHAED-MEMORY-SIZE">100000</SD>
+                      <SD GID="PERSISTENCE-STORAGE-PATH">/tmp</SD>
+                      <SD GID="LOGGING-MODE">LOG-TO-STDOUT</SD>
+                      <SD GID="LOGGING-LEVEL">LOG-INFO</SD>
+                      <SD GID="LOGGING-FILE-NAME">/tmp/dlt.log</SD>
+                      <SD GID="TIME-OUT-ON-SEND">4</SD>
+                      <SD GID="RING-BUFFER-MIN-SIZE">500000</SD>
+                      <SD GID="RING-BUFFER-MAX-SIZE">10000000</SD>
+                      <SD GID="RING-BUFFER-STEP-SIZE">500000</SD>
+                      <SD GID="DAEMON-FIFO-SIZE">65536</SD>
+                      <SD GID="CONTEXT-LOG-LEVEL">DLT-LOG-INFO</SD>
+                      <SD GID="CONTEXT-TRACE-STATUS">DLT-TRACE-STATUS-OFF</SD>
+                      <SD GID="FORCE-CONTEXT-LOG-LEVEL-AND-TRACE-STATUS">OFF</SD>
+                      <SD GID="INJECTION-MODE">ON</SD>
+                    </SDG>
+                    <SDG GID="GATEWAY-CONFIGURATION">
+                      <SD GID="GATEWAY-MODE">OFF</SD>
+                      <SD GID="GATEWAY-CONFIG-FILE">/etc/dlt_gateway.conf</SD>
+                    </SDG>
+                    <SDG GID="PERMISSION-CONFIGURATION">
+                      <SD GID="DAEMON-FIFO-GROUP">/tmp/dlt</SD>
+                    </SDG>
+                    <SDG GID="CONTROL-APPLICATION">
+                      <SD GID="CONTROL-SOCKET-PATH">/tmp/dlt-ctrl.sock</SD>
+                    </SDG>
+                    <SDG GID="OFFLINE-TRACE-MEMORY">
+                      <SD GID="OFFLINE-TRACE-DIRECTORY">/tmp</SD>
+                      <SD GID="OFFLINE-TRACE-FILE-SIZE">1000000</SD>
+                      <SD GID="OFFLINE-TRACE-MAX-SIZE">4000000</SD>
+                      <SD GID="OFFLINE-TRACE-FILE-NAME-TIMESTAMP-BASED">TIMESTAMP-BASED</SD>
+                    </SDG>
+                    <SDG GID="LOCAL-CONSOLE-OUTPUT-CONFIGURATION">
+                      <SD GID="PRINT-ASCII">DISABLE</SD>
+                      <SD GID="PRINT-HEX">DISABLE</SD>
+                      <SD GID="PRINT-HEADERS-ONLY">DISABLE</SD>
+                    </SDG>
+                    <SDG GID="CLIENT-SERIAL-PORT-CONFIGURATION">
+                      <SD GID="RS232-DEVICE-NAME">/dev/ttyS0</SD>
+                      <SD GID="RS232-BAUDRATE">115200</SD>
+                      <SD GID="RS232-SYNC-SERIAL-HEADER">DISABLE</SD>
+                    </SDG>
+                    <SDG GID="TCP-SERIAL-PORT-CONFIGURATION">
+                      <SD GID="TCP-SYNC-SERIAL-HEADER">DISABLE</SD>
+                    </SDG>
+                    <SDG GID="ECU-SOFTWARE-VERSION-INFO">
+                      <SD GID="SEND-ECU-SOFTWARE-VERSION">DISABLE</SD>
+                      <SD GID="PATH-TO-ECU-SOFTWARE-VERSION"/>
+                    </SDG>
+                    <SDG GID="TIMEZONE-INFO">
+                      <SD GID="SEND-TIMEZONE">DISABLE</SD>
+                    </SDG>
+                    <SDG GID="OFFLINE-LOGSTORAGE">
+                      <SD GID="OFFLINE-LOGSTORAGE-MAX-DEVICES">0</SD>
+                      <SD GID="OFFLINE-LOGSTORAGE-DIR-PATH">/opt</SD>
+                      <SD GID="OFFLINE-LOGSTORAGE-TIMESTAMP">DISABLE</SD>
+                      <SD GID="OFFLINE-LOGSTORAGE-DELIMITER">_</SD>
+                      <SD GID="OFFLINE-LOGSTORAGE-MAX-COUNTER">999</SD>
+                      <SD GID="OFFLINE-LOGSTORAGE-CACHE-SIZE">30000</SD>
+                    </SDG>
+                    <SDG GID="UDP-MULTICAST-CONFIGURATION">
+                      <SD GID="UDP-CONNECTION-SETUP">ENABLE</SD>
+                      <SD GID="UDP-MULTICAST-IP-ADDRESS">255.0.0.37</SD>
+                      <SD GID="UDP-MULTICAST-IP-PORT">3491</SD>
+                    </SDG>
+                    <SDG GID="BINDADDRESS-LIMITATION">
+                      <SD GID="BIND-ADDRESS">0.0.0.0</SD>
+                    </SDG>
+                  </SDG>
+                </SDGS>
+              </ADMIN-DATA>
+              <DLT-ECU-ID>EEVP</DLT-ECU-ID>
+              <DLT-LOG-CHANNELS>
+                <DLT-LOG-CHANNEL UUID="ac333dde-92ec-4ef1-a58c-f2838d7ed442">
+                  <SHORT-NAME>AppIpsvTest</SHORT-NAME>
+                  <APPLICATION-ID>IPSV</APPLICATION-ID>
+                  <CONTEXT-ID>IPSV</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="35b39464-f914-45ab-9086-d71f0b3f00ca">
+                  <SHORT-NAME>CM</SHORT-NAME>
+                  <APPLICATION-ID>CM</APPLICATION-ID>
+                  <CONTEXT-ID>CM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="826acb70-f113-434c-8393-877bd9870d93">
+                  <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+                  <APPLICATION-ID>TCON</APPLICATION-ID>
+                  <CONTEXT-ID>TCON</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="9dd76c3b-496b-4d09-a265-d3a40e1aed65">
+                  <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+                  <APPLICATION-ID>TPRV</APPLICATION-ID>
+                  <CONTEXT-ID>TPRV</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="90a8a916-e6cd-4a2a-bad2-1741b0c0f62d">
+                  <SHORT-NAME>EM</SHORT-NAME>
+                  <APPLICATION-ID>EM</APPLICATION-ID>
+                  <CONTEXT-ID>EM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="dd80fe9e-a3fd-4956-a80a-3d80e7456764">
+                  <SHORT-NAME>IPCHandler</SHORT-NAME>
+                  <APPLICATION-ID>IPCH</APPLICATION-ID>
+                  <CONTEXT-ID>CTX0</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="00afcff6-486e-4f11-8d12-87d816c3aa1f">
+                  <SHORT-NAME>InfoHealthTest</SHORT-NAME>
+                  <APPLICATION-ID>HEAL</APPLICATION-ID>
+                  <CONTEXT-ID>HEAL</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="4d263570-792c-48b2-bf91-3534237165b2">
+                  <SHORT-NAME>KATECH</SHORT-NAME>
+                  <APPLICATION-ID>KATC</APPLICATION-ID>
+                  <CONTEXT-ID>KATC</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="9546793c-89a5-4d20-b8ee-b4a71c2ffff6">
+                  <SHORT-NAME>MonitoringManager</SHORT-NAME>
+                  <APPLICATION-ID>MONM</APPLICATION-ID>
+                  <CONTEXT-ID>MONM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="7562db1d-51cc-44df-9658-95b0bc70f492">
+                  <SHORT-NAME>OTAClient</SHORT-NAME>
+                  <APPLICATION-ID>OTAC</APPLICATION-ID>
+                  <CONTEXT-ID>OTAC</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="f15bb318-4b05-46c3-85e3-fc1b0541a8e7">
+                  <SHORT-NAME>OTATestP</SHORT-NAME>
+                  <APPLICATION-DESCRIPTION>OTA Test PPort Applicatoin</APPLICATION-DESCRIPTION>
+                  <APPLICATION-ID>OTAP</APPLICATION-ID>
+                  <CONTEXT-ID>OTAP</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="681256ae-6079-46e8-a386-e98a688ca6f0">
+                  <SHORT-NAME>OTATestR</SHORT-NAME>
+                  <APPLICATION-DESCRIPTION>OTA Test RPort Applicatoin</APPLICATION-DESCRIPTION>
+                  <APPLICATION-ID>OTAR</APPLICATION-ID>
+                  <CONTEXT-ID>OTAR</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="335111cd-152c-4417-9998-44994c5f796d">
+                  <SHORT-NAME>PHM</SHORT-NAME>
+                  <APPLICATION-ID>PHM</APPLICATION-ID>
+                  <CONTEXT-ID>PHM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                  <NON-VERBOSE-MODE>true</NON-VERBOSE-MODE>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="a455bff7-04e4-4960-8782-18f33f87006d">
+                  <SHORT-NAME>SC_PDW_FRONT</SHORT-NAME>
+                  <APPLICATION-ID>PDWF</APPLICATION-ID>
+                  <CONTEXT-ID>PDWF</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="72b07231-d484-477b-aace-e53c7f7ecf25">
+                  <SHORT-NAME>SC_PDW_REAR</SHORT-NAME>
+                  <APPLICATION-ID>PDWR</APPLICATION-ID>
+                  <CONTEXT-ID>PDWR</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="6e6f859a-1f78-4124-877f-ecba9d238953">
+                  <SHORT-NAME>SM</SHORT-NAME>
+                  <APPLICATION-ID>SM</APPLICATION-ID>
+                  <CONTEXT-ID>SM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="13519943-aa05-4f7d-8125-582beb627825">
+                  <SHORT-NAME>SOA_DMS</SHORT-NAME>
+                  <APPLICATION-ID>SDMS</APPLICATION-ID>
+                  <CONTEXT-ID>SDMS</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="99716d74-c0c4-443f-960a-4284a386c063">
+                  <SHORT-NAME>SOA_Debugger</SHORT-NAME>
+                  <APPLICATION-ID>SDBG</APPLICATION-ID>
+                  <CONTEXT-ID>SDBG</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="442884d7-3e7b-4377-9bd3-1c0d0b4b01f1">
+                  <SHORT-NAME>SOA_DriverSeat</SHORT-NAME>
+                  <APPLICATION-ID>SDST</APPLICATION-ID>
+                  <CONTEXT-ID>SDST</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="097aa9b9-8a00-4f53-a31d-3a9d4c14bad1">
+                  <SHORT-NAME>SOA_HVAC</SHORT-NAME>
+                  <APPLICATION-ID>SHVC</APPLICATION-ID>
+                  <CONTEXT-ID>SHVC</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="4ed33b1e-dead-4d9e-a00b-d904dd33b321">
+                  <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+                  <APPLICATION-ID>SMLM</APPLICATION-ID>
+                  <CONTEXT-ID>SMLM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="87d31bc5-fc00-4535-9a58-486fe469eed0">
+                  <SHORT-NAME>SOA_Power</SHORT-NAME>
+                  <APPLICATION-ID>SPWR</APPLICATION-ID>
+                  <CONTEXT-ID>SPWR</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="6e56db01-5f1f-49c7-9d96-9078a4811763">
+                  <SHORT-NAME>SOA_ROA</SHORT-NAME>
+                  <APPLICATION-ID>SROA</APPLICATION-ID>
+                  <CONTEXT-ID>SROA</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="a4f6a6d5-8fef-4f98-8ef0-764754a04b82">
+                  <SHORT-NAME>SOA_RearCurtain</SHORT-NAME>
+                  <APPLICATION-ID>SRCT</APPLICATION-ID>
+                  <CONTEXT-ID>SRCT</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="7395b2a8-81a4-4cca-aa3f-b5fde0ab4736">
+                  <SHORT-NAME>SOA_SmartFilm</SHORT-NAME>
+                  <APPLICATION-ID>SSFM</APPLICATION-ID>
+                  <CONTEXT-ID>SSFM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="fb276e84-57ba-450d-a1d2-a92778ab0aba">
+                  <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+                  <APPLICATION-ID>SWIP</APPLICATION-ID>
+                  <CONTEXT-ID>SWIP</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="75345161-646f-46ee-a9d7-b6a98d72f8d5">
+                  <SHORT-NAME>SubscriptionManager</SHORT-NAME>
+                  <APPLICATION-ID>SUSM</APPLICATION-ID>
+                  <CONTEXT-ID>SUSM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="48450097-636b-43c9-b120-5878f54001dd">
+                  <SHORT-NAME>UCM</SHORT-NAME>
+                  <APPLICATION-ID>UCM</APPLICATION-ID>
+                  <CONTEXT-ID>UCM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="ff136a7e-c7a0-4af0-8a5f-2c811b290b8c">
+                  <SHORT-NAME>VDI</SHORT-NAME>
+                  <APPLICATION-ID>VDI</APPLICATION-ID>
+                  <CONTEXT-ID>VDI</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="b8944019-c7ee-4788-81f1-0450895f75a3">
+                  <SHORT-NAME>VUCM</SHORT-NAME>
+                  <APPLICATION-ID>VUCM</APPLICATION-ID>
+                  <CONTEXT-ID>VUCM</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+              </DLT-LOG-CHANNELS>
+            </LOG-AND-TRACE-INSTANTIATION>
+            <OS-MODULE-INSTANTIATION UUID="92408555-a473-406a-9889-4eefe6bc103a">
+              <SHORT-NAME>POSIX</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP UUID="85d602e3-7448-4500-a557-3eab29e2e05f">
+                  <SHORT-NAME>DefaultResourceGroup</SHORT-NAME>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <UCM-MODULE-INSTANTIATION UUID="7968022a-5d6a-460b-a1eb-bea0f039a14a">
+              <SHORT-NAME>UCM</SHORT-NAME>
+              <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+            </UCM-MODULE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <PROCESSORS>
+            <PROCESSOR UUID="36248b53-7e1c-4ba9-94ff-95f89ba35f22">
+              <SHORT-NAME>S32G2</SHORT-NAME>
+              <CORES>
+                <PROCESSOR-CORE UUID="71e25ccb-79cb-4bbe-ac1f-88a67fe5040d">
+                  <SHORT-NAME>Core0</SHORT-NAME>
+                  <CORE-ID>0</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="7f5d1483-17e4-4a86-82cb-f564f6fd5b84">
+                  <SHORT-NAME>Core1</SHORT-NAME>
+                  <CORE-ID>1</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="54d63834-47f6-4c22-b1de-eb622fdd70d2">
+                  <SHORT-NAME>Core2</SHORT-NAME>
+                  <CORE-ID>2</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE UUID="f6020e68-81f0-45c5-b646-552951d0c1ae">
+                  <SHORT-NAME>Core3</SHORT-NAME>
+                  <CORE-ID>3</CORE-ID>
+                </PROCESSOR-CORE>
+              </CORES>
+            </PROCESSOR>
+          </PROCESSORS>
+          <TRUSTED-PLATFORM-EXECUTABLE-LAUNCH-BEHAVIOR>NO-TRUSTED-PLATFORM-SUPPORT</TRUSTED-PLATFORM-EXECUTABLE-LAUNCH-BEHAVIOR>
+        </MACHINE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="7a0063ec-82f2-435c-a5c1-4f5842ee20ad">
+          <SHORT-NAME>EndpointConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="d7cbdad2-6f03-4198-89a8-7c6b9bc0b82b">
+          <SHORT-NAME>FunctionGroup</SHORT-NAME>
+          <ELEMENTS>
+            <FUNCTION-GROUP-SET UUID="0351ebb5-c3db-4db9-b8c1-f7ad58d8e099">
+              <SHORT-NAME>EEVP_Main_FunctionGroup</SHORT-NAME>
+              <FUNCTION-GROUPS>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="392b1bff-0e82-4ba9-a357-2f3d604d38ec">
+                  <SHORT-NAME>MachineFG</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/MachineState</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="ce3d0f31-9319-4ed2-b306-91e0d50c2bb7">
+                  <SHORT-NAME>OTATestFG</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/OTATestState</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="5dda0350-689f-4a8f-a4d4-4d25f19c848e">
+                  <SHORT-NAME>SC</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SCState</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="386766fb-d874-4493-84ca-5eedd9bd7ffa">
+                  <SHORT-NAME>SFG01</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG01</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="97ffbc02-37fe-4c69-a7ec-c21bcc2daab0">
+                  <SHORT-NAME>SFG02</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG02</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="b9aef340-a4cb-422e-9308-661441cf0bc9">
+                  <SHORT-NAME>SFG03</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG03</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="d275c22f-284e-4afc-9640-246b0ec2b952">
+                  <SHORT-NAME>SFG04</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG04</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="9968a499-5bdc-46fe-839a-77f48da0e0a7">
+                  <SHORT-NAME>SFG05</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG05</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="40701a7d-7826-479c-afb2-32bf0e09dc5c">
+                  <SHORT-NAME>SFG06</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG06</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="61aa6e01-e47f-4bb2-b8e9-194b79b5213e">
+                  <SHORT-NAME>SFG07</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG07</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="7c3be16f-5caa-4135-af3d-13149e39afff">
+                  <SHORT-NAME>SFG08</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG08</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="968d5e44-f746-425b-aec7-8573c829f5a8">
+                  <SHORT-NAME>SFG09</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG09</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="f904f750-081a-4453-9a6d-29e100c4a8ee">
+                  <SHORT-NAME>SFG10</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG10</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="19b7c20a-6f44-40d1-8778-640d6435a895">
+                  <SHORT-NAME>SFG11</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG11</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="73ab500f-d578-4d9a-bfc9-f461f93bfb6b">
+                  <SHORT-NAME>SFG12</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG12</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="570e2190-4c6e-4fb3-a1c1-904387e5eeba">
+                  <SHORT-NAME>SFG13</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG13</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="c5e78907-9b64-4853-9919-39fdc82620d9">
+                  <SHORT-NAME>SFG14</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG14</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="0abcc712-1de3-439c-96d9-bc0372222451">
+                  <SHORT-NAME>SFG15</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG15</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="5e014665-2e18-4f44-a047-a8ee287f906d">
+                  <SHORT-NAME>SFG16</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG16</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="a5f31417-e502-488a-b21b-7aa77c2839b6">
+                  <SHORT-NAME>SFG17</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG17</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="154d6efc-6541-486d-9f89-8f9c8f0e63f5">
+                  <SHORT-NAME>SFG18</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG18</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="09380411-5077-4ec4-ba33-897bc2f32dc4">
+                  <SHORT-NAME>SFG19</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG19</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+                <MODE-DECLARATION-GROUP-PROTOTYPE UUID="7deb7a66-6041-42b1-a5db-457489953416">
+                  <SHORT-NAME>SFG20</SHORT-NAME>
+                  <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/SFG20</TYPE-TREF>
+                </MODE-DECLARATION-GROUP-PROTOTYPE>
+              </FUNCTION-GROUPS>
+            </FUNCTION-GROUP-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="7b87bae7-a07c-4920-ae00-06ac79eee237">
+          <SHORT-NAME>PlatformHealth</SHORT-NAME>
+          <ELEMENTS>
+            <PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION UUID="c16e1a24-72af-4a1b-aeb8-36c013744296">
+              <SHORT-NAME>EEVP_Main_PHM</SHORT-NAME>
+            </PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION>
+            <PHM-CONTRIBUTION-TO-MACHINE-MAPPING UUID="5388a6a0-dd37-490f-b91d-0f9ea0f9ba88">
+              <SHORT-NAME>EEVP_Main_PhmContributionToMachineMapping</SHORT-NAME>
+              <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+              <PHM-CONTRIBUTION-REFS>
+                <PHM-CONTRIBUTION-REF DEST="PLATFORM-HEALTH-MANAGEMENT-CONTRIBUTION">/Machine/PlatformHealth/EEVP_Main_PHM</PHM-CONTRIBUTION-REF>
+              </PHM-CONTRIBUTION-REFS>
+            </PHM-CONTRIBUTION-TO-MACHINE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c281b31c-97d0-4a08-8e54-797d3fb87745">
+          <SHORT-NAME>ProcessToMachine</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS-TO-MACHINE-MAPPING-SET UUID="532a2345-cad7-4377-bc6c-5582ae60dfd1">
+              <SHORT-NAME>EEVP_Main_ProcessToMachineMapping</SHORT-NAME>
+              <PROCESS-TO-MACHINE-MAPPINGS>
+                <PROCESS-TO-MACHINE-MAPPING UUID="60d6c077-e96c-453c-b074-620ce022acd2">
+                  <SHORT-NAME>ProcessToMachineMapping_AppIpsvTest_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/AppIpsvTest</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="0d58e5eb-8c53-4736-952e-56a250a5998e">
+                  <SHORT-NAME>ProcessToMachineMapping_CM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/CM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="c395a555-a969-4224-ae7f-d28a15b3e21d">
+                  <SHORT-NAME>ProcessToMachineMapping_DummyTest_Consumer_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <DESIGN-REF DEST="PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING">/Machine/ProcessToMachine/ProcessDesignToMachineDesignMappingSet/ProcessDesignToMachineDesignMapping_TestDummy_Consumer_TO_EEVP_MAIN</DESIGN-REF>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Consumer</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="c5d50a57-fb7c-4d4d-a744-b943f804a44e">
+                  <SHORT-NAME>ProcessToMachineMapping_DummyTest_Provider_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <DESIGN-REF DEST="PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING">/Machine/ProcessToMachine/ProcessDesignToMachineDesignMappingSet/ProcessDesignToMachineDesignMapping_TestDummy_Provider_TO_EEVP_MAIN</DESIGN-REF>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Provider</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="c06bf723-b7f8-4075-833a-a3f1fd865da3">
+                  <SHORT-NAME>ProcessToMachineMapping_EM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/EM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="5743be8c-cb07-4fb4-8d02-f16b519dcf7d">
+                  <SHORT-NAME>ProcessToMachineMapping_IPCHandler_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/IPCHandler</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="9f25247b-4a97-4297-998b-84407c424587">
+                  <SHORT-NAME>ProcessToMachineMapping_InfoHealthTest_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/InfoHealthTest</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="ca1407ea-2a98-4182-b758-85264231f548">
+                  <SHORT-NAME>ProcessToMachineMapping_KATECH_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="8c0bff41-9204-40ac-a709-c7c08e69fdfd">
+                  <SHORT-NAME>ProcessToMachineMapping_MonitoringManager_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/MonitoringManager</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="6a5d01a7-df97-4c58-8a37-1e49506c375c">
+                  <SHORT-NAME>ProcessToMachineMapping_OTAClient_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/OTAClient</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="082ade89-2da9-43a0-8e01-70231b782140">
+                  <SHORT-NAME>ProcessToMachineMapping_OTATestP_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/OTATestP</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="5f71bd8b-edc7-4efe-bbb1-d9e3d834e2e4">
+                  <SHORT-NAME>ProcessToMachineMapping_OTATestR_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/OTATestR</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="8345b4e2-e5c4-4744-9313-e3255fd52f7c">
+                  <SHORT-NAME>ProcessToMachineMapping_PHM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/PHM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="2e9d6c4e-d454-40be-b302-286e5ef25b4e">
+                  <SHORT-NAME>ProcessToMachineMapping_SC_PDW_FRONT_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SC_PDW_FRONT</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="29ecd981-5e32-4c5d-af89-9037828fb6f1">
+                  <SHORT-NAME>ProcessToMachineMapping_SC_PDW_REAR_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SC_PDW_REAR</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="58eaf27b-88ce-44c1-8206-b20386e4517d">
+                  <SHORT-NAME>ProcessToMachineMapping_SM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="4b55a041-535d-4ac8-a279-0ad1d6d9cd51">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_DMS_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_DMS</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="8ecf7688-a497-4b23-9067-202af65c548b">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_Debugger_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Debugger</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="23dc74bd-1031-4e15-bf76-3d813521a4a2">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_DriverSeat_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_DriverSeat</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="3225853f-caf8-4870-aa0f-34b892708421">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_HVAC_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_HVAC</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="8871908a-e3b4-4c9a-80a6-705cec93fec3">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_MoodLamp_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="a3386200-68b9-40f5-88fb-c63309a58647">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_Power_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Power</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="ef412e3b-9a8f-44f9-bd70-8b70483c29c2">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_ROA_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_ROA</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="41e85978-9fd1-4aea-bd68-6ade60fdc41f">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_RearCurtain_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_RearCurtain</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="2ecf91ac-f2d8-48c8-b814-af69e2813f72">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_SmartFilm_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_SmartFilm</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="b40c9ac8-2687-49f7-9d65-8858045383ad">
+                  <SHORT-NAME>ProcessToMachineMapping_SOA_Wiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="e6028cee-902f-42b0-a691-a7009e57b5e2">
+                  <SHORT-NAME>ProcessToMachineMapping_SubscriptionManager_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/SubscriptionManager</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="8432088f-2596-4b74-b38f-ebd1705c4b88">
+                  <SHORT-NAME>ProcessToMachineMapping_UCM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/UCM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="d129271a-a8ed-4752-92fe-8b542503f54f">
+                  <SHORT-NAME>ProcessToMachineMapping_VDI_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/VDI</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="ebc41e70-9d2b-4076-8c3c-14baf639800c">
+                  <SHORT-NAME>ProcessToMachineMapping_VUCM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/VUCM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+              </PROCESS-TO-MACHINE-MAPPINGS>
+            </PROCESS-TO-MACHINE-MAPPING-SET>
+            <PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING-SET UUID="f0f40258-f94d-4262-931e-21dff5dafaa9">
+              <SHORT-NAME>ProcessDesignToMachineDesignMappingSet</SHORT-NAME>
+              <PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPINGS>
+                <PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING UUID="ea198664-144c-4947-a189-07d80737cb00">
+                  <SHORT-NAME>ProcessDesignToMachineDesignMapping_AppIpsvTest_Consumer_TO_EEVP_MAIN</SHORT-NAME>
+                  <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_MAIN</MACHINE-DESIGN-REF>
+                  <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/Application/Process/AppIpsvTest_Consumer</PROCESS-DESIGN-REF>
+                </PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING>
+                <PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING UUID="ac0107ad-727c-40b6-80b1-30312138ad25">
+                  <SHORT-NAME>ProcessDesignToMachineDesignMapping_TestDummy_Consumer_TO_EEVP_MAIN</SHORT-NAME>
+                  <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_MAIN</MACHINE-DESIGN-REF>
+                  <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/Application/Process/TestDummy_Consumer</PROCESS-DESIGN-REF>
+                </PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING>
+                <PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING UUID="dbf6daa3-c548-4d1e-b607-0ead13fd9692">
+                  <SHORT-NAME>ProcessDesignToMachineDesignMapping_TestDummy_Provider_TO_EEVP_MAIN</SHORT-NAME>
+                  <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_MAIN</MACHINE-DESIGN-REF>
+                  <PROCESS-DESIGN-REF DEST="PROCESS-DESIGN">/Application/Process/TestDummy_Provider</PROCESS-DESIGN-REF>
+                </PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING>
+              </PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPINGS>
+            </PROCESS-DESIGN-TO-MACHINE-DESIGN-MAPPING-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="92c21ab2-47f6-4a4c-84d1-ca17661b25e2">
+      <SHORT-NAME>StateMachine</SHORT-NAME>
+      <ELEMENTS>
+        <MODE-DECLARATION-GROUP UUID="93f5e51b-5723-406b-a5af-e8b3ef95f694">
+          <SHORT-NAME>MachineState</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/MachineState/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="7332228d-92b0-4b64-b52c-b18d8b037662">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="2472e697-37f7-4f90-9668-67568260750b">
+              <SHORT-NAME>Restart</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="a6262519-ffea-4a48-b371-e7fd076085a9">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="d3b9aaa5-9e1c-4eff-8cd1-ee5166a44ba1">
+              <SHORT-NAME>Startup</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="4943fd1d-cdac-4761-b25f-93c9c28a3467">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="393bba28-ee7d-44cf-b434-4e042b1fc7eb">
+          <SHORT-NAME>OTATestState</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="8a717446-c3e2-463a-9758-79585aab072c">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="7f820e79-659e-414c-bf60-0897a14a70be">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6b20a3c7-f35b-461c-8fc0-84bdf107192f">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="967df0c5-fea6-4516-a3c0-4cb361a9ab99">
+          <SHORT-NAME>ProcessState</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/ProcessState/Idle</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="3ca12c62-bf97-47d0-acb9-56c0bcbe54a0">
+              <SHORT-NAME>Idle</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="e423454c-f3c1-4362-853a-332fcf13b44a">
+              <SHORT-NAME>Running</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="e49f0832-deb7-4098-af85-92e13af94089">
+              <SHORT-NAME>Starting</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="bc968d03-de0b-47a4-b027-5636eccd745a">
+              <SHORT-NAME>Terminated</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="b59989fb-9482-499b-b0bc-e8d8fb2f4727">
+          <SHORT-NAME>SCState</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="0683c44a-ef8f-4336-b0bc-96bb62fa753d">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="a804056e-7198-4016-af56-b4337d811ca6">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="fa224c09-ea6c-4d4f-8923-81fa01fc445b">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="c31492fc-6dfa-43c3-a440-f6c34e31cda1">
+          <SHORT-NAME>SFG01</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="9528e28d-0580-4857-8fe0-41104948b74a">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="bc3d76aa-6925-4286-b8ec-f612ae0713ab">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="2c498bed-a9ea-48ab-a6e4-49f4e7421908">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="bc3db417-2f4b-4160-9236-d164595cc8d7">
+          <SHORT-NAME>SFG02</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG02/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="50df5649-3db9-4071-a656-a64eb8dd4181">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="a3b59899-44b8-4418-93ca-6e34b66e9a63">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="afed4a30-f6bd-43e7-8797-b2a10d0e5a6d">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="57fd4be8-a573-4c7e-bc08-bfc108b2a589">
+          <SHORT-NAME>SFG03</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG03/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="0fe570db-27e5-47c4-aa98-e4a3a6d274d5">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="1262480f-f8df-407c-809c-ecd10e8ffed1">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="ee680e11-00c1-4337-ac2a-721fe77df425">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="05437250-3f3a-4c33-8a3b-faa5ff2f5596">
+          <SHORT-NAME>SFG04</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="1b06dc5b-9aac-4542-98e2-ae5643a69085">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="9961a039-b217-45c9-bc14-7bbc58d26a63">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6df4a0b0-0479-4cda-8373-d2425a00e5ed">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="acdc45af-b8a6-435c-a778-ac98d63a208d">
+          <SHORT-NAME>SFG05</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="63e32d0b-ab35-4f15-94ea-d42fd6310c3f">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="5743e2db-6d15-4528-986d-395437cf186d">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="33f3840f-7b20-4933-b869-ae7885e1dc64">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="3f48bf7d-7778-4d0a-8139-671fa945668e">
+          <SHORT-NAME>SFG06</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG06/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="eecb20d3-2a77-40df-8f03-4d0176cc8605">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="75507753-49cc-4f0c-9d73-ef4ccef9779b">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="ba6d862a-36db-49ab-87e1-750af61c1b8c">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="290d1401-b174-4a43-bc1f-2ad1600c0c99">
+          <SHORT-NAME>SFG07</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG07/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="ac1bb4da-948b-4d65-bfd6-2af5fd6f0356">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3054e000-3f98-4b8c-af19-87b1168c7a44">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="ac2806af-d6ec-4f1a-af30-60c102ec9028">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="5d9860d5-7a6b-4d4e-bde3-b8c8e5048d65">
+          <SHORT-NAME>SFG08</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG08/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="d1d5ca77-515c-49ef-8146-428e46b4c70e">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="c5404673-b71d-4462-8a60-5200c7871b0f">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="4fdf22e2-972d-4a68-94b7-42f270854b85">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="9166adb9-614a-44ff-9fe2-05e9e9fdf837">
+          <SHORT-NAME>SFG09</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG09/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="3f0090c1-1494-4f12-bf62-bc0b5a45cfaf">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="61fd486b-2f13-4bbe-923f-b0f80b93fe9f">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="d03e29e8-d17b-4a9f-8bcf-6f6332c1b40b">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="5bbf9013-580d-41bf-b34f-d70bcb1af231">
+          <SHORT-NAME>SFG10</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG10/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="a048db10-4b84-446e-81a7-c2a3d6331f0e">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="8d34de2f-7027-42f8-95bc-b0014a37a39b">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="4494a593-33b8-4327-8edc-f82a6dc1ba95">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="1380cf4c-893a-4c26-923d-fa611f69f635">
+          <SHORT-NAME>SFG11</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG11/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="6f5e368a-46dc-410e-bb5a-ffd7b84b0ede">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="e8894f11-537d-41f5-9f9a-f5fa67c414eb">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6aede840-b54b-43b6-a616-eb1908fd06d9">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="60353331-ddad-4f49-8f45-86aee959e290">
+          <SHORT-NAME>SFG12</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG12/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="c35c5b85-da5b-492b-86f3-92bee79e2ab9">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="2eeec26f-b2bd-4085-ad19-81247c1257a7">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="67a51a6c-11aa-4ebd-a6d4-6ea5b1cb6ff8">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="eb3607b5-8b68-4c0c-ba06-f3283306bc1c">
+          <SHORT-NAME>SFG13</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG13/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="2ee968d0-3e23-4784-906b-89217ba17128">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="4720aded-152f-45b5-b7dd-a7cd11bbdbb3">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="23c5954a-eaae-4849-859b-3573532b2c72">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="433c3127-5a2b-468f-8993-4e08702a46ea">
+          <SHORT-NAME>SFG14</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG14/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="000e677f-d0ce-4428-8170-184aee237ba1">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="72878310-8bbd-4409-ba42-db639f3b6ce3">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="e70a1cab-f6d4-4fd1-9a84-b8a63c353aa3">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="793d92d7-6e14-44d7-8c81-ab9252385cf5">
+          <SHORT-NAME>SFG15</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG15/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="7f05e3c6-1fd8-41f2-a8ba-9bfd864806ed">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="c5b116bd-653f-4303-8ed3-87cfc0b22c2e">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="3d484ba6-243b-425b-b8e0-a2901f948c03">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="8c4298c5-bae9-495f-a3ae-41c3eef70954">
+          <SHORT-NAME>SFG16</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG16/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="918de5d9-6454-40c3-92ab-e438aa2a4ab3">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="257df609-c476-4be9-a131-a690cf3f0eb2">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="ff43b960-510e-4d83-932b-ae84fd1e575b">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="27ba17c1-81d6-4ac1-8384-a1598c2d6486">
+          <SHORT-NAME>SFG17</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG17/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="597248f5-440e-4b9c-a205-e45bdd46727d">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="053d77b0-d0f4-408b-b875-17cba12d3fd8">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="a4776e15-8b8f-45c2-9f69-185acd8d16b5">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="e3d67fa1-0bdd-4130-8736-ed0b01b76d72">
+          <SHORT-NAME>SFG18</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG18/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="76c7e945-b084-43c9-ac64-3dec692007bc">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="66b0d0d5-58e2-41e6-8bd6-888800582459">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="67cb3bb9-10fe-4872-9366-0b135eeae706">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="73754485-e40f-435a-bb33-e481ec01e719">
+          <SHORT-NAME>SFG19</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG19/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="9c63f7fd-a811-4d7b-aa8a-d67fbdde988c">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="2db5a30f-4a5a-4624-bd34-31dedf350d1c">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="6dc2d4cf-2b7b-43bd-8ffc-5e7b99ebeebc">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+        <MODE-DECLARATION-GROUP UUID="35439635-6683-4ffd-b81c-83211a2b131a">
+          <SHORT-NAME>SFG20</SHORT-NAME>
+          <INITIAL-MODE-REF DEST="MODE-DECLARATION">/StateMachine/SFG20/Off</INITIAL-MODE-REF>
+          <MODE-DECLARATIONS>
+            <MODE-DECLARATION UUID="2c32c70e-e4ba-49cd-b86e-904aed7bb989">
+              <SHORT-NAME>Off</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="47a4d54b-2210-4538-99c8-b6be9a8b50e6">
+              <SHORT-NAME>On</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="bb63d9f6-7ea4-4554-a8ed-e0a7b1747d1a">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+          </MODE-DECLARATIONS>
+        </MODE-DECLARATION-GROUP>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

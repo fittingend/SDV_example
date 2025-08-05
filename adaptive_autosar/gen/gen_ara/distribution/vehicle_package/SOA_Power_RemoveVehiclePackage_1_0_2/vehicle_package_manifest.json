@@ -1,0 +1,81 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "vehicle-package-manifest",
+    "package-name" : "SOA_Power_RemoveVehiclePackage_1_0_2",
+    "packager-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "driver-notifications" : [
+        "process"
+    ],
+    "ucms" : [
+        {
+            "ucm-id" : "EEVP_UCM"
+        }
+    ],
+    "rollout-qualifications" : [
+        {
+            "name" : "RolloutQualification0",
+            "safety-policy" : "undefined",
+            "ucm-processings" : [
+                {
+                    "name" : "UcmProcessing0",
+                    "ucm" : "EEVP_UCM",
+                    "software-package-step" : [
+                        {
+                            "name" : "SoftwarePackageStep0",
+                            "transfer" : [
+                                {
+                                    "packages" : [
+                                        "SOA_Power_RemoveSoftwarePackage_1_0_2"
+                                    ],
+                                    "storing" : "ucm"
+                                }
+                            ],
+                            "process" : "SOA_Power_RemoveSoftwarePackage_1_0_2",
+                            "pre-activate" : [
+                            ],
+                            "verify" : [
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "software-packages" : [
+        {
+            "package-name" : "SOA_Power_RemoveSoftwarePackage_1_0_2",
+            "software-cluster" : "SOA_Power_SoftwareCluster",
+            "version" : "1.0.2",
+            "packager-id" : "79",
+            "action-type" : "remove",
+            "supported-ucm-min-version" : "1.0.0",
+            "supported-ucm-max-version" : "1.0.0",
+            "pre-activation-reboot" : "false",
+            "post-verification-reboot" : "false",
+            "packager-signature": {
+                "signature-name" : "ParaCertificate",
+                "algorithm-family" : "RSA",
+                "format" : "X-509",
+                "maximum-length" : "undefined"
+            },
+            "pre-activate" : [
+                {
+                    "function-group" : "SC",
+                    "state" : "Off"
+                }
+            ],
+            "verify" : [
+                {
+                    "function-group" : "SC",
+                    "state" : "Verify"
+                }
+            ]
+        }
+    ]
+}

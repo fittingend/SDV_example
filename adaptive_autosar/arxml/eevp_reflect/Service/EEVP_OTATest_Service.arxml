@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="eab1cb52-511d-4389-893e-b1faa138b024">
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE UUID="3f70a714-6f89-4bc8-a7a7-ad013823e7e5">
+          <SHORT-NAME>Main_OTA_Test</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>otatest</SHORT-NAME>
+              <SYMBOL>otatest</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>service</SHORT-NAME>
+              <SYMBOL>service</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <EVENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="68a669e7-7f71-4aeb-a244-0461dbd24ea2">
+              <SHORT-NAME>Event0</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int32_t</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </EVENTS>
+          <FIELDS>
+            <FIELD UUID="c0d4f7ad-63eb-44f4-b17d-109cc10fc7df">
+              <SHORT-NAME>Field0</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int32_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="36c9de2f-ef36-4068-aa65-652855e50795">
+              <SHORT-NAME>Method0</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="29246596-5f1a-44d5-b9ac-ef7c06be5d1b">
+                  <SHORT-NAME>Arg0</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int32_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a2d88b5f-23bf-4509-9a3d-2a7770b5bdc1">
+                  <SHORT-NAME>Arg1</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/String</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceDeloyment</SHORT-NAME>
+      <ELEMENTS>
+        <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="4abd4bd7-4077-488a-8fd2-633ab69e981f">
+          <SHORT-NAME>Main_OTA_Test</SHORT-NAME>
+          <EVENT-DEPLOYMENTS>
+            <SOMEIP-EVENT-DEPLOYMENT UUID="7613d6ba-8046-4f1f-995f-ab12938a0719">
+              <SHORT-NAME>Event0</SHORT-NAME>
+              <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ServiceInterface/Main_OTA_Test/Event0</EVENT-REF>
+              <EVENT-ID>1</EVENT-ID>
+              <SERIALIZER>SOMEIP</SERIALIZER>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-EVENT-DEPLOYMENT>
+          </EVENT-DEPLOYMENTS>
+          <FIELD-DEPLOYMENTS>
+            <SOMEIP-FIELD-DEPLOYMENT UUID="e054e804-3abd-40a7-8e0f-24448c563125">
+              <SHORT-NAME>Field0</SHORT-NAME>
+              <FIELD-REF DEST="FIELD">/ServiceInterface/Main_OTA_Test/Field0</FIELD-REF>
+              <GET UUID="6d478482-a957-418f-a109-7a82c4865513">
+                <SHORT-NAME>Get_Field0</SHORT-NAME>
+                <METHOD-ID>3</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </GET>
+              <NOTIFIER UUID="1eb64c97-46a1-4ce4-9aa9-22abef0fb45f">
+                <SHORT-NAME>Notification_Field0</SHORT-NAME>
+                <EVENT-ID>5</EVENT-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </NOTIFIER>
+              <SET UUID="bbe68b10-df0b-4215-8dc1-0c43ee99eae3">
+                <SHORT-NAME>Set_Field0</SHORT-NAME>
+                <METHOD-ID>4</METHOD-ID>
+                <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+              </SET>
+            </SOMEIP-FIELD-DEPLOYMENT>
+          </FIELD-DEPLOYMENTS>
+          <METHOD-DEPLOYMENTS>
+            <SOMEIP-METHOD-DEPLOYMENT UUID="01b180ec-a1b5-4d44-9a5d-2b5a041ec908">
+              <SHORT-NAME>Method0</SHORT-NAME>
+              <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Main_OTA_Test/Method0</METHOD-REF>
+              <METHOD-ID>2</METHOD-ID>
+              <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+            </SOMEIP-METHOD-DEPLOYMENT>
+          </METHOD-DEPLOYMENTS>
+          <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Main_OTA_Test</SERVICE-INTERFACE-REF>
+          <EVENT-GROUPS>
+            <SOMEIP-EVENT-GROUP UUID="e61bf21e-ee8d-4c93-a01f-d0a72b4621ed">
+              <SHORT-NAME>Eventgroup_Event0</SHORT-NAME>
+              <EVENT-GROUP-ID>6</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Event0</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+            <SOMEIP-EVENT-GROUP UUID="f00030c3-b97c-4744-aee1-ba8c49684c56">
+              <SHORT-NAME>Eventgroup_Notification_Field0</SHORT-NAME>
+              <EVENT-GROUP-ID>7</EVENT-GROUP-ID>
+              <EVENT-REFS>
+                <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Notification_Field0</EVENT-REF>
+              </EVENT-REFS>
+            </SOMEIP-EVENT-GROUP>
+          </EVENT-GROUPS>
+          <SERVICE-INTERFACE-ID>5008</SERVICE-INTERFACE-ID>
+          <SERVICE-INTERFACE-VERSION>
+            <MAJOR-VERSION>1</MAJOR-VERSION>
+            <MINOR-VERSION>0</MINOR-VERSION>
+          </SERVICE-INTERFACE-VERSION>
+        </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ServiceInstance</SHORT-NAME>
+      <ELEMENTS>
+        <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="560e154f-43eb-4ccd-8b05-a6eb95691a08">
+          <SHORT-NAME>EEVP_Consumer_Main_OTA_Test</SHORT-NAME>
+          <ADMIN-DATA>
+            <SDGS>
+              <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                <SD GID="CLIENT-ID">913</SD>
+              </SDG>
+            </SDGS>
+          </ADMIN-DATA>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <METHOD-REQUEST-PROPSS>
+            <SOMEIP-METHOD-PROPS>
+              <COLLECTION-PROPS/>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Get_Field0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+            <SOMEIP-METHOD-PROPS>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Set_Field0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+            <SOMEIP-METHOD-PROPS>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Method0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+          </METHOD-REQUEST-PROPSS>
+          <REQUIRED-EVENT-GROUPS>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>Eventgroup_Event0</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeloyment/Main_OTA_Test/Eventgroup_Event0</EVENT-GROUP-REF>
+              <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+            <SOMEIP-REQUIRED-EVENT-GROUP>
+              <SHORT-NAME>Eventgroup_Notification_Field0</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeloyment/Main_OTA_Test/Eventgroup_Notification_Field0</EVENT-GROUP-REF>
+              <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+            </SOMEIP-REQUIRED-EVENT-GROUP>
+          </REQUIRED-EVENT-GROUPS>
+          <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+          <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/DefaultSdClientConfig</SD-CLIENT-CONFIG-REF>
+        </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+        <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="6e4b838b-943f-4820-b44b-0f6c7eee7e92">
+          <SHORT-NAME>EEVP_Provider_Main_OTA_Test</SHORT-NAME>
+          <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test</SERVICE-INTERFACE-DEPLOYMENT-REF>
+          <EVENT-PROPSS>
+            <SOMEIP-EVENT-PROPS>
+              <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Event0</EVENT-REF>
+            </SOMEIP-EVENT-PROPS>
+            <SOMEIP-EVENT-PROPS>
+              <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Notification_Field0</EVENT-REF>
+            </SOMEIP-EVENT-PROPS>
+          </EVENT-PROPSS>
+          <METHOD-RESPONSE-PROPSS>
+            <SOMEIP-METHOD-PROPS>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Get_Field0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+            <SOMEIP-METHOD-PROPS>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Field0/Set_Field0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+            <SOMEIP-METHOD-PROPS>
+              <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeloyment/Main_OTA_Test/Method0</METHOD-REF>
+            </SOMEIP-METHOD-PROPS>
+          </METHOD-RESPONSE-PROPSS>
+          <PROVIDED-EVENT-GROUPS>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="4be277f7-bcde-4329-8f18-2788812a92fe">
+              <SHORT-NAME>Eventgroup_Event0</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeloyment/Main_OTA_Test/Eventgroup_Event0</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+            <SOMEIP-PROVIDED-EVENT-GROUP UUID="cafaab5c-67d7-4e77-b239-f75d095111c3">
+              <SHORT-NAME>Eventgroup_Notification_Field0</SHORT-NAME>
+              <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeloyment/Main_OTA_Test/Eventgroup_Notification_Field0</EVENT-GROUP-REF>
+              <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+            </SOMEIP-PROVIDED-EVENT-GROUP>
+          </PROVIDED-EVENT-GROUPS>
+          <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+          <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+        </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="9b0ba770-8745-464b-9991-b08c3adfb7af">
+          <SHORT-NAME>EEVP_Someip_Consumers_Main_OTA_Test</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/EEVP_Consumer_Main_OTA_Test</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>50100</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+        <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="453878fc-72d4-43d9-be09-37e7a9052fdf">
+          <SHORT-NAME>EEVP_Someip_Providers_Main_OTA_Test</SHORT-NAME>
+          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+          <SERVICE-INSTANCE-REFS>
+            <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/EEVP_Provider_Main_OTA_Test</SERVICE-INSTANCE-REF>
+          </SERVICE-INSTANCE-REFS>
+          <UDP-PORT>50101</UDP-PORT>
+        </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

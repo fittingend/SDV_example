@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="de68e202-c728-45fd-b8db-98769221ad0f">
+              <SHORT-NAME>DltLogChannelToProcessMapping_OTATestR_TO_OTATestR</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/OTATestR</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/OTATestR</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="492376ea-fd46-4653-a010-760505deadc9">
+              <SHORT-NAME>OTATestR</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="cc85a7d4-9960-4ea9-97d1-20696df778bd">
+                <SHORT-NAME>RootSwComponent</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/OTATestR</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="f9242b81-0660-478f-bde3-19f1337bd454">
+              <SHORT-NAME>OTATestR_RootSwComponent_OTATestR</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/OTATestR/RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/OTATestR/OTATestR</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/EEVP_Consumer_Main_OTA_Test</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Package</SHORT-NAME>
+          <ELEMENTS>
+            <SOFTWARE-PACKAGE UUID="4ccd24fe-5b39-4685-ba0b-2358f3fffd79">
+              <SHORT-NAME>Main_OTATestR_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+              <ACTION-TYPE>INSTALL</ACTION-TYPE>
+              <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+              <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+              <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+              <PACKAGER-ID>79</PACKAGER-ID>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+              <PRE-ACTIVATE-IREFS>
+                <PRE-ACTIVATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Off</TARGET-MODE-DECLARATION-REF>
+                </PRE-ACTIVATE-IREF>
+              </PRE-ACTIVATE-IREFS>
+              <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+              <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/Main_OTATestR_SoftwareCluster_1_0_0/Main_OTATestR_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+              <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+              <VERIFY-IREFS>
+                <VERIFY-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Verify</TARGET-MODE-DECLARATION-REF>
+                </VERIFY-IREF>
+              </VERIFY-IREFS>
+            </SOFTWARE-PACKAGE>
+            <VEHICLE-PACKAGE UUID="687804b4-78b1-49fe-af30-2b890f348f80">
+              <SHORT-NAME>Main_OTATestR_InstallVehiclePackage_1_0_0</SHORT-NAME>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <ROLLOUT-QUALIFICATIONS>
+                <VEHICLE-ROLLOUT-STEP UUID="ea04e30e-16c6-4bf3-9303-0567d0775fc1">
+                  <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                  <UCM-PROCESSINGS>
+                    <UCM-STEP UUID="3cc9998a-3757-4ff6-a1cb-0403e888f4a6">
+                      <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                      <SOFTWARE-PACKAGE-STEPS>
+                        <SOFTWARE-PACKAGE-STEP UUID="b3334da7-8683-44bc-b2aa-ac9feb9d184e">
+                          <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                          <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                          <TRANSFERS>
+                            <SOFTWARE-PACKAGE-STORING>
+                              <STORING>UCM</STORING>
+                              <TRANSFER-REFS>
+                                <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                              </TRANSFER-REFS>
+                            </SOFTWARE-PACKAGE-STORING>
+                          </TRANSFERS>
+                        </SOFTWARE-PACKAGE-STEP>
+                      </SOFTWARE-PACKAGE-STEPS>
+                      <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/Main_OTATestR_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                    </UCM-STEP>
+                  </UCM-PROCESSINGS>
+                </VEHICLE-ROLLOUT-STEP>
+              </ROLLOUT-QUALIFICATIONS>
+              <UCMS>
+                <UCM-DESCRIPTION UUID="6f341a23-4316-49ea-9d8e-639341b798c3">
+                  <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                  <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                </UCM-DESCRIPTION>
+              </UCMS>
+            </VEHICLE-PACKAGE>
+            <SOFTWARE-PACKAGE UUID="0045c83b-a3e5-41f4-b1c3-b836624a1e4f">
+              <SHORT-NAME>Main_OTATestR_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
+              <ACTION-TYPE>REMOVE</ACTION-TYPE>
+              <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+              <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+              <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+              <PACKAGER-ID>79</PACKAGER-ID>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+              <PRE-ACTIVATE-IREFS>
+                <PRE-ACTIVATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Off</TARGET-MODE-DECLARATION-REF>
+                </PRE-ACTIVATE-IREF>
+              </PRE-ACTIVATE-IREFS>
+              <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+              <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/Main_OTATest_SoftwareCluster_1_0_2/Main_OTATestR_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+              <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+              <VERIFY-IREFS>
+                <VERIFY-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Verify</TARGET-MODE-DECLARATION-REF>
+                </VERIFY-IREF>
+              </VERIFY-IREFS>
+            </SOFTWARE-PACKAGE>
+            <VEHICLE-PACKAGE UUID="a471f10d-e171-4784-ad52-be2a8bbf2755">
+              <SHORT-NAME>Main_OTATestR_RemoveVehiclePackage_1_0_2</SHORT-NAME>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <ROLLOUT-QUALIFICATIONS>
+                <VEHICLE-ROLLOUT-STEP UUID="4d158ef0-b8f0-45fc-92de-2114e863486e">
+                  <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                  <UCM-PROCESSINGS>
+                    <UCM-STEP UUID="1e0d1a71-40a4-4724-b257-1a3e21481aff">
+                      <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                      <SOFTWARE-PACKAGE-STEPS>
+                        <SOFTWARE-PACKAGE-STEP UUID="3d3fdd16-012f-4fd2-9bc6-2b8d84ba4217">
+                          <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                          <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
+                          <TRANSFERS>
+                            <SOFTWARE-PACKAGE-STORING>
+                              <STORING>UCM</STORING>
+                              <TRANSFER-REFS>
+                                <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
+                              </TRANSFER-REFS>
+                            </SOFTWARE-PACKAGE-STORING>
+                          </TRANSFERS>
+                        </SOFTWARE-PACKAGE-STEP>
+                      </SOFTWARE-PACKAGE-STEPS>
+                      <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/Main_OTATestR_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
+                    </UCM-STEP>
+                  </UCM-PROCESSINGS>
+                </VEHICLE-ROLLOUT-STEP>
+              </ROLLOUT-QUALIFICATIONS>
+              <UCMS>
+                <UCM-DESCRIPTION UUID="c97bbb2c-3788-4d7c-85ad-8d56288f65b8">
+                  <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                  <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                </UCM-DESCRIPTION>
+              </UCMS>
+            </VEHICLE-PACKAGE>
+            <SOFTWARE-PACKAGE UUID="3023dcf8-ae92-40f1-90ec-40aaf6d87e68">
+              <SHORT-NAME>Main_OTATestR_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
+              <ACTION-TYPE>UPDATE</ACTION-TYPE>
+              <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+              <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+              <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+              <PACKAGER-ID>79</PACKAGER-ID>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+              <PRE-ACTIVATE-IREFS>
+                <PRE-ACTIVATE-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Off</TARGET-MODE-DECLARATION-REF>
+                </PRE-ACTIVATE-IREF>
+              </PRE-ACTIVATE-IREFS>
+              <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+              <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/Main_OTATest_SoftwareCluster_1_0_1/Main_OTATestR_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+              <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+              <VERIFY-IREFS>
+                <VERIFY-IREF>
+                  <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                  <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Verify</TARGET-MODE-DECLARATION-REF>
+                </VERIFY-IREF>
+              </VERIFY-IREFS>
+            </SOFTWARE-PACKAGE>
+            <VEHICLE-PACKAGE UUID="c2bf2500-b4a7-436f-b62f-84ca929a435d">
+              <SHORT-NAME>Main_OTATestR_UpdateVehiclePackage_1_0_1</SHORT-NAME>
+              <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+              <ROLLOUT-QUALIFICATIONS>
+                <VEHICLE-ROLLOUT-STEP UUID="9ad4f7fb-58c3-40c3-afa2-a1566035ba14">
+                  <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                  <UCM-PROCESSINGS>
+                    <UCM-STEP UUID="678b4e81-db44-44af-9b7c-f0ac47ecc0de">
+                      <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                      <SOFTWARE-PACKAGE-STEPS>
+                        <SOFTWARE-PACKAGE-STEP UUID="abab522a-903a-4843-a502-484a2f4ba235">
+                          <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                          <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
+                          <TRANSFERS>
+                            <SOFTWARE-PACKAGE-STORING>
+                              <STORING>UCM</STORING>
+                              <TRANSFER-REFS>
+                                <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/Main_OTATestR_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
+                              </TRANSFER-REFS>
+                            </SOFTWARE-PACKAGE-STORING>
+                          </TRANSFERS>
+                        </SOFTWARE-PACKAGE-STEP>
+                      </SOFTWARE-PACKAGE-STEPS>
+                      <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/Main_OTATestR_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
+                    </UCM-STEP>
+                  </UCM-PROCESSINGS>
+                </VEHICLE-ROLLOUT-STEP>
+              </ROLLOUT-QUALIFICATIONS>
+              <UCMS>
+                <UCM-DESCRIPTION UUID="0ce3c613-4ed3-453f-b9cf-f57a709be400">
+                  <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                  <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                </UCM-DESCRIPTION>
+              </UCMS>
+            </VEHICLE-PACKAGE>
+          </ELEMENTS>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Main_OTATestR_SoftwareCluster_1_0_0</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="f6cc6cb4-d4f4-4b1a-ad81-addecf3ea767">
+                  <SHORT-NAME>Main_OTATestR_SoftwareCluster</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/OTATestR</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/OTATestR_RootSwComponent_OTATestR</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/OTATestR</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>79</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.0</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Main_OTATest_SoftwareCluster_1_0_1</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="4a5930f8-0b91-4a47-b8cd-1cbb47e160bb">
+                  <SHORT-NAME>Main_OTATestR_SoftwareCluster</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/OTATestR</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/OTATestR_RootSwComponent_OTATestR</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/OTATestR</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>79</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.1</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Main_OTATest_SoftwareCluster_1_0_2</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="37fe5243-08d7-4d9e-90bf-c64ac4f411c8">
+                  <SHORT-NAME>Main_OTATestR_SoftwareCluster</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/OTATestR</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/OTATestR_RootSwComponent_OTATestR</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/OTATestR</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>79</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.2</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="eb69c830-fa1f-47b3-ae54-df4d4e09953e">
+              <SHORT-NAME>OTATestR</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/OTATestR</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="d72d5ab7-58df-4120-ae5e-b67f92afc36a">
+                <SHORT-NAME>OTATestR</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/OTATestFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/OTATestState/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="7e19b254-0f45-472c-9247-6bcf6661baf3">
+              <SHORT-NAME>OTATestR</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="3c138785-bb9a-4cc8-b332-6e3e676bddb5">
+                  <SHORT-NAME>OTATestR</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Main_OTA_Test</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

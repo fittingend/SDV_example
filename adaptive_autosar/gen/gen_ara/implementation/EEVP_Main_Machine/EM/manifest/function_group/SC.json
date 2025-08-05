@@ -1,0 +1,22 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "function-group-manifest",
+    "function-group-name" : "SC",
+    "meta-model-identifier" : "SC",
+    "init-state" : "Off",
+    "function-group-states" : [
+        {
+            "state" : "Off",
+            "meta-model-identifier" : "SC/Off"
+        },
+        {
+            "state" : "On",
+            "meta-model-identifier" : "SC/On"
+        },
+        {
+            "state" : "Verify",
+            "meta-model-identifier" : "SC/Verify"
+        }
+    ]
+}

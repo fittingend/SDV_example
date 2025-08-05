@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="384e21da-354b-4016-9b3d-d16bf88009a4">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="3109a37d-80ce-4fd9-862d-1d1ef3264c29">
+              <SHORT-NAME>DltLogChannelToProcessMapping_SOA_MoodLamp_TO_SOA_MoodLamp</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/SOA_MoodLamp</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="38df8f5e-fb9d-46d9-b27f-c1da7bc493ed">
+              <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="73dbab32-df3f-41a8-a74e-4918d4954387">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/SOA_MoodLamp</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="cc3f65bb-9974-4aaa-a80d-0c3da2cd030b">
+              <SHORT-NAME>SOA_MoodLamp_AA_PPort_SOA_MoodLamp</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SOA_MoodLamp/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/SOA_MoodLamp/PPort_SOA_MoodLamp</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/Provider_SoaMlm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="83d15264-35d7-4588-849b-a1fd2583aaf1">
+              <SHORT-NAME>SOA_MoodLamp_AA_RPort_Zone1Mlm</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SOA_MoodLamp/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SOA_MoodLamp/RPort_Zone1Mlm</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/Consumer_Zone1Mlm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="e3b7cb55-cca7-4bb2-a262-9175c76e7812">
+                      <SHORT-NAME>SOA_MoodLamp_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_MoodLamp</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_PPort_SOA_MoodLamp</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_RPort_Zone1Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.0</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_1</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="a455c061-f64d-45f0-a5c2-29ed925f3f14">
+                      <SHORT-NAME>SOA_MoodLamp_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_MoodLamp</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_PPort_SOA_MoodLamp</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_RPort_Zone1Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.1</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_2</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="8a3dc9af-9320-4429-8e31-72e233c0ac59">
+                      <SHORT-NAME>SOA_MoodLamp_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_MoodLamp</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_PPort_SOA_MoodLamp</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_MoodLamp_AA_RPort_Zone1Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_MoodLamp</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.2</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-PACKAGE UUID="e95458ba-32c2-4b36-a893-27419a347623">
+                      <SHORT-NAME>SOA_MoodLamp_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_MoodLamp/SoftwareCluster_1_0_0/SOA_MoodLamp_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="d5484f58-a9b2-4487-a1e5-cd61980e9701">
+                      <SHORT-NAME>SOA_MoodLamp_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_MoodLamp/SoftwareCluster_1_0_2/SOA_MoodLamp_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="8868d27a-c642-465d-824e-10d2e7e4f63a">
+                      <SHORT-NAME>SOA_MoodLamp_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_MoodLamp/SoftwareCluster_1_0_1/SOA_MoodLamp_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>VehiclePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <VEHICLE-PACKAGE UUID="97749b51-980f-4b7e-8759-b25f9d16a158">
+                      <SHORT-NAME>SOA_MoodLamp_InstallVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="d7956390-ccc8-4ff7-b40d-9de250e9b967">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="54387cd6-0e6b-43c8-9a5c-8df696e9eb3f">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="079b7eca-28c8-40b7-88af-d637f63c050f">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_MoodLamp/VehiclePackage/SOA_MoodLamp_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="5f544b31-fa56-41ed-83ee-861005141df3">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="b4245052-cd02-4315-a80e-bba9e63e3b09">
+                      <SHORT-NAME>SOA_MoodLamp_RemoveVehiclePackage_1_0_2</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="28b6380e-f218-4acd-81f3-1bea5bde10ff">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="70b86197-2558-42b8-a6f9-9337a0a2f300">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="f34b282b-c769-4474-b1fc-3bac22c56857">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_MoodLamp/VehiclePackage/SOA_MoodLamp_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="0454da97-8459-48e0-8c52-1fd51cebb98c">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="d91b8899-339d-4a48-8ab6-6d9a662e2dd4">
+                      <SHORT-NAME>SOA_MoodLamp_UpdateVehiclePackage_1_0_1</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="960fd816-c63f-4bf0-b85a-1c3513334014">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="34fe4ef3-98dd-4218-88c1-67fdadd521cd">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="4009aa06-9543-41eb-9c6c-44a33801047b">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_MoodLamp/SoftwarePackage/SOA_MoodLamp_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_MoodLamp/VehiclePackage/SOA_MoodLamp_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="b4de13c5-7cb9-455c-ab0d-ab4b994bc0b0">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="2f35d883-eaec-42cf-b5cb-0c3b4753aa1a">
+              <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/SOA_MoodLamp</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="52200eea-5fac-4b80-9d21-f577fb3acd59">
+                <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_SOA_StartupConfig/SOA</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="2b79634a-2238-4a0c-a247-0feb3e16f232">
+              <SHORT-NAME>SOA_MoodLamp</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE UUID="d27c7005-253d-45e8-ac3c-636c8d902f27">
+                  <SHORT-NAME>PPort_SOA_MoodLamp</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaMlm</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="81b410ef-35af-4e5e-b472-8b50811506c1">
+                  <SHORT-NAME>RPort_Zone1Mlm</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Zone1Mlm</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

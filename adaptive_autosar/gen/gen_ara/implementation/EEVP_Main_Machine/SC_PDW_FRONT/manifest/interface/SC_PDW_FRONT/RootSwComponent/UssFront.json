@@ -1,0 +1,27 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "SC_PDW_FRONT/RootSwComponent/UssFront",
+    "service-protocol" : "someip",
+    "service-name" : "Zone_UssFront_Input",
+    "service-id" : "6208",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "882",
+    "events" : [
+        {
+            "name" : "UssFront",
+            "event-id" : "12920",
+            "transport" : "udp",
+            "max-segment-len" : "0",
+            "separation-time" : "0.0"
+        }
+    ],
+    "methods" : [
+    ],
+    "fields" : [
+    ]
+}

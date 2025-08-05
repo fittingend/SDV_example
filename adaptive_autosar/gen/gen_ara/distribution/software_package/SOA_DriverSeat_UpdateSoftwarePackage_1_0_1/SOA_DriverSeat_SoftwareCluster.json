@@ -1,0 +1,38 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "software-cluster-manifest",
+    "software-cluster-name" : "SOA_DriverSeat_SoftwareCluster",
+    "category" : "application-layer",
+    "version" : "1.0.1",
+    "vendor-id" : "79",
+    "type-approval" : "undefined",
+    "vendor-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "depends-on" : [
+    ],
+    "conflicts-to" : [
+    ],
+    "contained-artifacts" : [
+        {
+            "artifact-type" : "execution-manifest",
+            "uri" : "SOA_DriverSeat/etc/exec/SOA_DriverSeat.json"
+        },
+        {
+            "artifact-type" : "executable-application",
+            "uri" : "SOA_DriverSeat/bin/SOA_DriverSeat"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "SOA_DriverSeat/etc/interface/SOA_DriverSeat/AA/PPort_SOA_DriverSeat.json"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "SOA_DriverSeat/etc/interface/SOA_DriverSeat/AA/RPort_Zone1DrvSeat.json"
+        }
+    ]
+}

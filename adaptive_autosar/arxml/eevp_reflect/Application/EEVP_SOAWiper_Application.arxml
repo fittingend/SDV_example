@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="8071fbde-b3bd-4398-9e1a-39b6ca77d71e">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="bc7db1bd-fa52-4481-81a4-4fc566062af8">
+              <SHORT-NAME>DltLogChannelToProcessMapping_SOA_Wiper_TO_SOA_Wiper</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/SOA_Wiper</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="83693a77-29a6-420b-9200-03bcce49c09e">
+              <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="196cd880-2347-489c-a808-036de393e36a">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/SOA_Wiper</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="8b624efa-a09c-4285-8670-71636dd7ac9b">
+              <SHORT-NAME>SOA_Wiper_AA_PPort_SOA_Wiper</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SOA_Wiper/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/SOA_Wiper/PPort_SOA_Wiper</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/Provider_SoaWiper</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="aea1d22f-90c0-45f5-a812-0d30ceb4dbb3">
+              <SHORT-NAME>SOA_Wiper_AA_RPort_Zone4Wiper</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SOA_Wiper/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SOA_Wiper/RPort_Zone4Wiper</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/Consumer_Zone4Wiper</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="d499dfd9-b892-45e1-8c91-6bdae6e4eea9">
+                      <SHORT-NAME>SOA_Wiper_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_Wiper</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_PPort_SOA_Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_RPort_Zone4Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.0</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_1</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="7b520bd4-d1b3-45a0-a2fb-4699e4458647">
+                      <SHORT-NAME>SOA_Wiper_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_Wiper</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_PPort_SOA_Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_RPort_Zone4Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.1</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_2</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="6a320b9c-bd6c-4eaf-b3dc-325209d71f3c">
+                      <SHORT-NAME>SOA_Wiper_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SOA_Wiper</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_PPort_SOA_Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SOA_Wiper_AA_RPort_Zone4Wiper</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>79</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.2</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-PACKAGE UUID="f357fe45-25dd-4bab-9c8f-ff116fdf1b08">
+                      <SHORT-NAME>SOA_Wiper_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_Wiper/SoftwareCluster_1_0_0/SOA_Wiper_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="3ab3fb89-60ab-45ae-b001-045598c71283">
+                      <SHORT-NAME>SOA_Wiper_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_Wiper/SoftwareCluster_1_0_2/SOA_Wiper_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="418ec7f1-fa01-4507-9e58-830c21987276">
+                      <SHORT-NAME>SOA_Wiper_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>79</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SOA_Wiper/SoftwareCluster_1_0_1/SOA_Wiper_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>VehiclePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <VEHICLE-PACKAGE UUID="fdda174d-d307-46ec-be89-a403ba0ef7f2">
+                      <SHORT-NAME>SOA_Wiper_InstallVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="6d4cfa86-8958-437a-86f2-26ee6f970be7">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="42aec14b-e028-4b93-8205-71a4a60b142d">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="2167743e-ab32-4594-9b8a-85b350367919">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_Wiper/VehiclePackage/SOA_Wiper_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="fa4603c7-27ec-4021-a318-f1d09cb642b0">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="18e4f003-80b8-4703-8f5a-95d56a8bcc9a">
+                      <SHORT-NAME>SOA_Wiper_RemoveVehiclePackage_1_0_2</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="bd27ed28-b71c-48df-8927-619b3addd17e">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="4bb215c2-cce4-4b0a-8c4c-05b7ac10ec7b">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="9dbb288d-08dc-4c83-a4b4-1d080f297b39">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_Wiper/VehiclePackage/SOA_Wiper_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="6a079ba6-4b7a-4c5d-b81a-7348f3b5374b">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="c77cc30d-ee09-4b9e-8390-3caa1d4ebce0">
+                      <SHORT-NAME>SOA_Wiper_UpdateVehiclePackage_1_0_1</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="814e03cb-7bb6-4588-b31e-b1f960db390c">
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="6800ea23-535b-4a94-a0d2-212ba0fd9c09">
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="bd2ca3eb-5f49-4646-9599-c62d771d1ea6">
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SOA_Wiper/SoftwarePackage/SOA_Wiper_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SOA_Wiper/VehiclePackage/SOA_Wiper_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="f85a3058-f01e-4fdc-86e2-c58919eb294d">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="6015610b-a5c1-4705-a39b-dcef6f38847b">
+              <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/SOA_Wiper</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="d86afaab-8fe6-4a9d-b899-b1297f805e31">
+                <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_SOA_StartupConfig/SOA</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="b693e566-5d52-4a12-b4e0-c56ab64af49c">
+              <SHORT-NAME>SOA_Wiper</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE UUID="9a9ac4df-c3a3-4291-bec5-21f8760f7e42">
+                  <SHORT-NAME>PPort_SOA_Wiper</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaWiper</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="04c74cee-ef16-4526-af1a-62443390d3f5">
+                  <SHORT-NAME>RPort_Zone4Wiper</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Zone4Wiper</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

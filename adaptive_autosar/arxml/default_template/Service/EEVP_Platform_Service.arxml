@@ -1,0 +1,1992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="b6fb76da-66e4-40d2-a83a-9bae8802f822">
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE UUID="32bb61c2-3644-4170-be46-af9f86ffef6b">
+          <SHORT-NAME>NetworkState</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>nm</SHORT-NAME>
+              <SYMBOL>nm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="7eb3aaf2-7afa-4dc2-a1ca-11feaa8fe9d4">
+              <SHORT-NAME>NetworkCurrentType</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/NetworkStateType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="ee132d82-6d8f-461a-8b84-9756760cde4d">
+              <SHORT-NAME>NetworkRequestedType</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/NetworkStateType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="5da6f201-16cf-4a65-a60a-3f6e5f082f6e">
+          <SHORT-NAME>PackageManagement</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ucm</SHORT-NAME>
+              <SYMBOL>ucm</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>pkgmgr</SHORT-NAME>
+              <SYMBOL>pkgmgr</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="22115aad-e036-43bd-81d4-900ed063cec2">
+              <SHORT-NAME>CurrentStatus</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/PackageManagerStatusType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="df7e02fa-297e-4969-aa2b-2ff1eb26e1bd">
+              <SHORT-NAME>Activate</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/MissingDependencies</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/PreActivationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/UpdateSessionRejected</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/VerificationFailed</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="550a59ee-576f-4553-a279-00be99f6b28f">
+              <SHORT-NAME>Cancel</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="60f90b4f-5378-4161-9b33-aaa30a8ff446">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/CancelFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="f9192ecc-f8f5-4aed-9aa4-b9c4fb28a80d">
+              <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="4e33c9e5-2e7a-4a46-8222-137145e5395c">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="e67aacb9-1e4c-4f2c-bd7b-e0e237dcc32c">
+              <SHORT-NAME>Finish</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="d3567eab-4477-4f1f-a26e-ffd3230c3811">
+              <SHORT-NAME>GetHistory</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="cf69df00-79ca-43c0-8c2f-066bd2242079">
+                  <SHORT-NAME>timestampGE</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bb535275-5a88-48f9-ad7e-95643f2d2c3f">
+                  <SHORT-NAME>timestampLT</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="fe2a3c85-462b-4d10-b448-bc157e25d81a">
+                  <SHORT-NAME>history</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/GetHistoryVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="5d3b3f2a-295f-4595-a288-d518641e41ca">
+              <SHORT-NAME>GetId</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2bff5558-4c83-4363-ab2b-40dc5cdba198">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/UCMIdentifierType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="ba6383f4-31d1-403f-af33-ec118618e3a2">
+              <SHORT-NAME>GetSwClusterChangeInfo</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="794aa102-a479-43de-8314-6e889d9d356c">
+                  <SHORT-NAME>SwInfo</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwClusterInfoVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="c2bd1b8a-4d06-4ee0-9111-ab44493b3229">
+              <SHORT-NAME>GetSwClusterDescription</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="02865128-d885-4c11-8b8e-b80eec9d426b">
+                  <SHORT-NAME>SwCluster</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwDescVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="48fede2d-282d-4348-ba2b-7177d5f7a610">
+              <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="f4144b52-8723-4955-9e61-47348ebde56c">
+                  <SHORT-NAME>SwInfo</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwClusterInfoVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="58fe01bb-4726-4518-a718-6002a59542b5">
+              <SHORT-NAME>GetSwPackages</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="9c8f97b4-7252-425c-ab24-550fa7bb226b">
+                  <SHORT-NAME>Packages</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwClusterInfoVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="ea6a8025-d599-4490-98ff-ca98a1fda30b">
+              <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="40a4caee-7f41-4e4a-9f4b-0fc1a308e47b">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="452ccb8c-b323-4475-aa47-e60d5257f9da">
+                  <SHORT-NAME>progress</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="e4b362eb-879e-4bdb-8626-a6e94a84467d">
+              <SHORT-NAME>ProcessSwPackage</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="81216ab0-611b-4470-83b7-25e768ebd516">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatibleDelta</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidPackageManifest</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/ProcessSwPackageCancelled</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/ProcessedSoftwarePackageInconsistent</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/ServiceBusy</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="10f2a8c8-4872-4a0d-a407-918118710214">
+              <SHORT-NAME>RevertProcessedSwPackages</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/NotAbleToRevertPackages</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="5117aece-f960-454f-8581-9d6f4f5f6c42">
+              <SHORT-NAME>Rollback</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/NotAbleToRollback</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="d614d547-1c14-4c6e-b39f-930a0eac5edf">
+              <SHORT-NAME>TransferData</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="8abbc348-ffba-46ac-8ca8-6077977282f9">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="02a42017-e4bf-4b65-9488-5e1e4214199f">
+                  <SHORT-NAME>data</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/ByteVectorType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="9497032d-6863-4ed2-992e-80fb437d1de5">
+                  <SHORT-NAME>blockCounter</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/BlockInconsistent</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectBlock</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectBlockSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/TransferInterrupted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="0f7c7f04-532b-4d26-940c-a00e134408b0">
+              <SHORT-NAME>TransferExit</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bbfb4e17-3d49-49b6-90db-ef997899d034">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientData</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidPackageManifest</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/MissingDependencies</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OldVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="71d26c52-79a1-4602-a98a-ad60699347d0">
+              <SHORT-NAME>TransferStart</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="f533bb13-a148-4dae-a97b-f96a67a53ce8">
+                  <SHORT-NAME>size</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="82600c64-2c24-4380-ab4a-cbe510e94c2f">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="fbffafe3-65b6-4c92-b86f-d37b447f4c85">
+                  <SHORT-NAME>BlockSize</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="5498f155-973f-4a75-9fd9-18e70bdf6cc0">
+          <SHORT-NAME>TriggerInOut_MachineFG</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sm</SHORT-NAME>
+              <SYMBOL>sm</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>machinefg</SHORT-NAME>
+              <SYMBOL>machinefg</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="cd097e1e-1df4-4811-a67e-fe76264e4643">
+              <SHORT-NAME>Notifier</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/MachineState</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="18cd3a93-a802-4e46-8f85-640846f01ce8">
+              <SHORT-NAME>Trigger</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/MachineState</TYPE-TREF>
+              <HAS-GETTER>false</HAS-GETTER>
+              <HAS-NOTIFIER>false</HAS-NOTIFIER>
+              <HAS-SETTER>true</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="962c730d-cd80-4aaf-b461-40931af8775f">
+          <SHORT-NAME>UpdateRequest</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>sm</SHORT-NAME>
+              <SYMBOL>sm</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="caa30b5f-4889-4317-b776-afa020515117">
+              <SHORT-NAME>PrepareRollback</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bbe71a25-8c00-401b-b950-f84351b959d4">
+                  <SHORT-NAME>FunctionGroupList</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/FunctionGroupList</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRejected</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRollbackFailed</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="24c63abd-e3b6-4e04-9190-fc5b2e354b2a">
+              <SHORT-NAME>PrepareUpdate</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="365f9e73-6433-46fb-ac61-6080fc818a18">
+                  <SHORT-NAME>FunctionGroupList</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/FunctionGroupList</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kPrepareFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRejected</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="ca59b532-bf60-48d6-a5bb-81ba3f936831">
+              <SHORT-NAME>ResetMachine</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRejected</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="fed70cd9-9e62-4cc5-a645-1114f1cb65c6">
+              <SHORT-NAME>StartUpdateSession</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRejected</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="cc8a69ca-e51a-489b-82e5-32e3e01a2124">
+              <SHORT-NAME>StopUpdateSession</SHORT-NAME>
+              <FIRE-AND-FORGET>true</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="8f5b423f-3cfe-40fc-9ba8-2b7c686ea59d">
+              <SHORT-NAME>VerifyUpdate</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="51591b5c-4905-4213-a98c-f1491d712754">
+                  <SHORT-NAME>FunctionGroupList</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/FunctionGroupList</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kRejected</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/kVerifyFailed</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="aeee1b2a-64e5-45e1-a5bc-9f58adb5cd74">
+          <SHORT-NAME>VehicleDriverApplication</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>vucm</SHORT-NAME>
+              <SYMBOL>vucm</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>driver</SHORT-NAME>
+              <SYMBOL>driver</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="61821766-7b41-425b-b17d-e1e1748d2358">
+              <SHORT-NAME>ApprovalRequired</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="47a5d60c-8237-4c5e-b93c-2c97b2e1a0c4">
+              <SHORT-NAME>CampaignState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/CampaignStateType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="72bdd2a8-6d8a-4789-b394-b158d5c365ee">
+              <SHORT-NAME>SafetyPolicy</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SafetyPolicyType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="5d55f9c1-08ce-4dd9-9b3c-11eeed870c42">
+              <SHORT-NAME>SafetyState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="73897cd9-b9b9-4468-81b6-d41846dda2a3">
+              <SHORT-NAME>AllowCampaign</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="6877f946-f8fc-41f8-8d3c-41f214b6d145">
+              <SHORT-NAME>CancelCampaign</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="616565c8-6304-45e7-9db7-2b63f685867f">
+                  <SHORT-NAME>DisableCampaign</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/CancelFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="02630b3e-9138-4ebb-b2f9-e914f8508b77">
+              <SHORT-NAME>DriverApproval</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3ac41ec8-ef48-477d-aa0f-480807090117">
+                  <SHORT-NAME>Approval</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5a49afbf-0c3d-45e4-82bf-6e3017a7720f">
+                  <SHORT-NAME>SafetyPolicy</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SafetyPolicyType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="760efd24-6242-4b4e-97b8-861aca4303de">
+              <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="06bc59ea-d990-4c11-83fa-6511254b5aad">
+                  <SHORT-NAME>timestampGE</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="cd8fffa6-1e7d-4bd9-93d9-442ace07c59b">
+                  <SHORT-NAME>timestampLT</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="d3c14564-f3a3-4a2d-8e3b-6aa0dc138bfc">
+                  <SHORT-NAME>history</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/CampaignHistoryType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="1140aa1f-058b-4a2b-8649-4895bc6ff30a">
+              <SHORT-NAME>GetSwClusterDescription</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="9881e103-89bb-4c64-bb22-eb82e9866c38">
+                  <SHORT-NAME>SoftwareClusterDescriptions</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwDescVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="ad015fc7-41cc-44df-b439-b7a2b13bf41e">
+              <SHORT-NAME>GetSwPackageDescription</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="0d125a85-853f-44ad-a1e0-a3b2c2efccae">
+                  <SHORT-NAME>Packages</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwDescVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="b050c37c-7d57-4387-899b-cf30e0cbf4c7">
+              <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="6943f13c-a948-45c7-919f-cebcaa3abbe9">
+                  <SHORT-NAME>progress</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="12462cc8-4387-4e5d-b78e-c122f2bd352a">
+              <SHORT-NAME>GetSwTransferProgress</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="0314dac3-1a63-44d7-8b71-c220588e14cf">
+                  <SHORT-NAME>progress</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="a91b4097-75c7-41b1-bb67-a03ed4175f96">
+          <SHORT-NAME>VehiclePackageManagement</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>ara</SHORT-NAME>
+              <SYMBOL>ara</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>vucm</SHORT-NAME>
+              <SYMBOL>vucm</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>pkgmgr</SHORT-NAME>
+              <SYMBOL>pkgmgr</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <FIELDS>
+            <FIELD UUID="d2b9fabb-42b1-481c-952c-ba7959f8a1bc">
+              <SHORT-NAME>RequestedPackage</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwNameVersionType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="ae753fc7-500c-4417-9803-a780c04d9d8b">
+              <SHORT-NAME>SafetyState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="90da6918-616e-46e2-bc9d-3c5d9feed397">
+              <SHORT-NAME>TransferState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferStateType</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="ce248782-8ffe-43e7-ac3f-543b7a0a429a">
+              <SHORT-NAME>AllowCampaign</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="da1a0df8-166d-454e-be5d-528022d2d355">
+              <SHORT-NAME>CancelCampaign</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="432c87e6-ad88-4b82-ad1f-01f69894f5dd">
+                  <SHORT-NAME>DisableCampaign</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/CancelFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="82cfdbc4-6497-412e-974a-90ce8f9ff57e">
+              <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="4e4463cb-14fc-4f52-8aed-921b78664b90">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="a894d050-de8a-4b68-95de-1d0d683dc9a3">
+              <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="18e8ac0e-313d-4b8b-b06c-b358e7e22dcc">
+                  <SHORT-NAME>timestampGE</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="838bab82-6be2-453f-9830-f3000a5ea2f0">
+                  <SHORT-NAME>timestampLT</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5eb67ceb-accd-4f21-9abe-a357148ccc22">
+                  <SHORT-NAME>CampaignHistory</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/CampaignHistoryType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="46861b73-0cef-4148-b531-5fe4b7917bf5">
+              <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a1651b4a-1707-4d2d-9c9f-3e2eb81ffe5a">
+                  <SHORT-NAME>SwInfo</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwClusterInfoVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="7c75fff5-ff0e-4a99-ae64-7c8f28ce8862">
+              <SHORT-NAME>GetSwPackages</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="6620d73a-17a4-442f-8a11-71fdee9aefb4">
+                  <SHORT-NAME>Packages</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwPackageInfoVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="696e4437-99c2-4f53-89c8-44ac0feb3506">
+              <SHORT-NAME>SwPackageInventory</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5c4d27e2-49f0-41b9-abf9-6e611521f42f">
+                  <SHORT-NAME>AvailableSoftwarePackages</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwNameVersionVectorType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="7a7de551-9084-452b-bad4-f27f910c4a2c">
+                  <SHORT-NAME>RequiredSoftwarePackages</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwNameVersionVectorType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="b78be000-5781-489c-b2fa-eaa04b2efd0e">
+              <SHORT-NAME>TransferData</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="b634d96f-76a5-4b37-958c-dec7ed534e2b">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="44c1cd05-0574-4aab-926d-ad964e17418d">
+                  <SHORT-NAME>data</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/ByteVectorType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="789046e2-e81d-4832-bc51-f26262883bc0">
+                  <SHORT-NAME>blockCounter</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/BlockInconsistent</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectBlock</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectBlockSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncorrectSize</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/TransferInterrupted</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="346717e1-aa08-4f0d-96c3-c96f8032de9b">
+              <SHORT-NAME>TransferExit</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="9e68fc0e-42e1-4fac-a04b-c002ab5f1fb5">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/AuthenticationFailed</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/IncompatiblePackageVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientData</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidPackageManifest</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InvalidTransferId</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/MissingDependencies</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OldVersion</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/OperationNotPermitted</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/PackageInconsistent</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="e10e343b-45d2-47d4-ab9f-f524f278d20e">
+              <SHORT-NAME>TransferStart</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="06bd777c-967e-45c9-aaa4-316518d3306d">
+                  <SHORT-NAME>SoftwarePackageName</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/SwNameType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ddb49402-5fc5-41df-8894-7831118be1ae">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a9e2f838-6410-494a-a66b-d3146fc648e8">
+                  <SHORT-NAME>size</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="44aa60d2-ce7d-4190-8b94-2c923433b06c">
+                  <SHORT-NAME>BlockSize</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientComputationPower</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/UnexpectedPackage</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="03ac58ee-c3dc-48ce-91c5-15b292d01924">
+              <SHORT-NAME>TransferVehiclePackage</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="b5a870b8-d18e-417a-8e43-a3f67ea4b986">
+                  <SHORT-NAME>size</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint64_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="94945efa-0dcc-477c-8a46-eab8a188072d">
+                  <SHORT-NAME>id</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/FunctionalClusterType/TransferIdType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="78662b54-31de-401f-96e0-042cfbee5da5">
+                  <SHORT-NAME>BlockSize</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+              <POSSIBLE-AP-ERROR-REFS>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/InsufficientMemory</POSSIBLE-AP-ERROR-REF>
+                <POSSIBLE-AP-ERROR-REF DEST="AP-APPLICATION-ERROR">/ServiceInterface/ErrorDomain/NewCampaignDisabled</POSSIBLE-AP-ERROR-REF>
+              </POSSIBLE-AP-ERROR-REFS>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="53ad0f97-f10d-481d-ac09-fcb653341d7f">
+          <SHORT-NAME>ErrorDomain</SHORT-NAME>
+          <ELEMENTS>
+            <AP-APPLICATION-ERROR UUID="56eb3924-ee1f-4984-9ad7-34bec7524454">
+              <SHORT-NAME>AuthenticationFailed</SHORT-NAME>
+              <ERROR-CODE>8</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="a86a85a7-1a6f-4259-8235-d631cf98d02f">
+              <SHORT-NAME>BlockInconsistent</SHORT-NAME>
+              <ERROR-CODE>25</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="92c6d7c5-e9b9-431f-bb14-448d9086c2a1">
+              <SHORT-NAME>CancelFailed</SHORT-NAME>
+              <ERROR-CODE>16</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="a5461104-84d7-4911-98f0-9a5ef9ea3c50">
+              <SHORT-NAME>IncompatibleDelta</SHORT-NAME>
+              <ERROR-CODE>29</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="2c3a1ec1-e784-474d-9a79-31ce6210a943">
+              <SHORT-NAME>IncompatiblePackageVersion</SHORT-NAME>
+              <ERROR-CODE>24</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="161a6e03-2e1d-4661-892f-0c28300d73b3">
+              <SHORT-NAME>IncorrectBlock</SHORT-NAME>
+              <ERROR-CODE>2</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="a719f9d1-5313-4071-b959-e6aa9da19aa2">
+              <SHORT-NAME>IncorrectBlockSize</SHORT-NAME>
+              <ERROR-CODE>30</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="9be3e19d-20e8-498b-9efc-668cd2a6517b">
+              <SHORT-NAME>IncorrectSize</SHORT-NAME>
+              <ERROR-CODE>3</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="81e5f52f-4b3d-4114-8f02-15e2d0bbcfda">
+              <SHORT-NAME>InsufficientComputationPower</SHORT-NAME>
+              <ERROR-CODE>28</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="074abc41-e7c4-4215-b1c9-2037da1a5b66">
+              <SHORT-NAME>InsufficientData</SHORT-NAME>
+              <ERROR-CODE>6</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="72d2466c-89c9-4d24-beb1-b31605a1d546">
+              <SHORT-NAME>InsufficientMemory</SHORT-NAME>
+              <ERROR-CODE>1</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="b588a9c8-2ee9-4566-bc9d-870e44d9c442">
+              <SHORT-NAME>InvalidPackageManifest</SHORT-NAME>
+              <ERROR-CODE>13</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="7077daa2-7ce5-4ab2-b1e6-6e464e9fcbe3">
+              <SHORT-NAME>InvalidTransferId</SHORT-NAME>
+              <ERROR-CODE>4</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="70c04f95-dc84-4302-9538-3e141efca26f">
+              <SHORT-NAME>MissingDependencies</SHORT-NAME>
+              <ERROR-CODE>21</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="89b83f02-6035-43e2-a13a-d00c65e8dcc1">
+              <SHORT-NAME>NewCampaignDisabled</SHORT-NAME>
+              <ERROR-CODE>31</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="e1aec5d4-3ac4-4b6d-8fd4-1f7689b21cf7">
+              <SHORT-NAME>NotAbleToRevertPackages</SHORT-NAME>
+              <ERROR-CODE>15</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="11222769-20d4-45ff-8e08-3916e28c3705">
+              <SHORT-NAME>NotAbleToRollback</SHORT-NAME>
+              <ERROR-CODE>18</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="f10e1da4-bc97-416c-929a-b77e438c65d5">
+              <SHORT-NAME>OldVersion</SHORT-NAME>
+              <ERROR-CODE>9</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="a7621b7e-b096-4995-a2c1-4ec165ec3257">
+              <SHORT-NAME>OperationNotPermitted</SHORT-NAME>
+              <ERROR-CODE>5</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="37d1c41f-d708-4572-ae8c-248427ced168">
+              <SHORT-NAME>PackageInconsistent</SHORT-NAME>
+              <ERROR-CODE>7</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="2a65b651-0f20-488e-ae5b-09506612677f">
+              <SHORT-NAME>PreActivationFailed</SHORT-NAME>
+              <ERROR-CODE>19</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="11205659-d128-4772-bb5f-d2c39abf1cdd">
+              <SHORT-NAME>ProcessSwPackageCancelled</SHORT-NAME>
+              <ERROR-CODE>22</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="6b6215c7-2ae0-4682-b68e-07d829364bcf">
+              <SHORT-NAME>ProcessedSoftwarePackageInconsistent</SHORT-NAME>
+              <ERROR-CODE>23</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR-DOMAIN UUID="e8bd1592-884e-4797-b2c9-1a39422654ce">
+              <SHORT-NAME>SMErrorDomain</SHORT-NAME>
+              <VALUE>13835058055282163729</VALUE>
+            </AP-APPLICATION-ERROR-DOMAIN>
+            <AP-APPLICATION-ERROR UUID="5a35d0b3-d820-4169-9fa4-683e52b7f78c">
+              <SHORT-NAME>ServiceBusy</SHORT-NAME>
+              <ERROR-CODE>12</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="56e9b0ef-6b23-41dd-8ad0-05d190238a84">
+              <SHORT-NAME>TransferInterrupted</SHORT-NAME>
+              <ERROR-CODE>26</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR-DOMAIN UUID="3e5a2a0d-bd38-428c-ac4e-0006f00f3e1e">
+              <SHORT-NAME>UCMErrorDomain</SHORT-NAME>
+              <VALUE>13835058055282164000</VALUE>
+            </AP-APPLICATION-ERROR-DOMAIN>
+            <AP-APPLICATION-ERROR UUID="4afb6d18-ab4a-4322-a21d-14bb2641ac35">
+              <SHORT-NAME>UnexpectedPackage</SHORT-NAME>
+              <ERROR-CODE>32</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="74a6eef6-8798-4ff4-a7ec-afb136be10a0">
+              <SHORT-NAME>UpdateSessionRejected</SHORT-NAME>
+              <ERROR-CODE>33</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="6bc568d2-2a2f-424b-9796-a985d5d0cb84">
+              <SHORT-NAME>VerificationFailed</SHORT-NAME>
+              <ERROR-CODE>27</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/UCMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="fa5d21c4-dc96-4122-81c4-3a722a565022">
+              <SHORT-NAME>kPrepareFailed</SHORT-NAME>
+              <ERROR-CODE>7</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/SMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="a451c2c2-db7e-40cd-8a28-e51715f1c2d7">
+              <SHORT-NAME>kRejected</SHORT-NAME>
+              <ERROR-CODE>5</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/SMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="493a70b0-52e2-4d53-923c-d985f637706d">
+              <SHORT-NAME>kRollbackFailed</SHORT-NAME>
+              <ERROR-CODE>8</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/SMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+            <AP-APPLICATION-ERROR UUID="5a940ea2-c40d-459f-b6dc-846d4671f1b0">
+              <SHORT-NAME>kVerifyFailed</SHORT-NAME>
+              <ERROR-CODE>6</ERROR-CODE>
+              <ERROR-DOMAIN-REF DEST="AP-APPLICATION-ERROR-DOMAIN">/ServiceInterface/ErrorDomain/SMErrorDomain</ERROR-DOMAIN-REF>
+            </AP-APPLICATION-ERROR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="ef2223d1-bcb9-4e01-b1f1-e0181baea7c0">
+      <SHORT-NAME>ServiceDeployment</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="ddaf2481-6a70-4655-9c45-1d3ce3eee295">
+          <SHORT-NAME>Ipc</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="3d4a3418-3275-440a-b664-3091b8874055">
+          <SHORT-NAME>Someip</SHORT-NAME>
+          <ELEMENTS>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="52889804-b331-4e5b-86bd-98a74b231b8e">
+              <SHORT-NAME>PackageManagement</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="56fb39ec-be4b-4ed5-a6b5-e992d6c0e5f9">
+                  <SHORT-NAME>CurrentStatus</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/PackageManagement/CurrentStatus</FIELD-REF>
+                  <GET UUID="9d8c6594-39f0-460d-8294-16fc4401f300">
+                    <SHORT-NAME>Get_CurrentStatus</SHORT-NAME>
+                    <METHOD-ID>21</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="1a40dde4-bd26-4a9a-b8ca-5ca53c37f9b3">
+                    <SHORT-NAME>Notification_CurrentStatus</SHORT-NAME>
+                    <EVENT-ID>22</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="1d134f6a-1c9a-4688-8b54-e7c9d30d6ffe">
+                  <SHORT-NAME>Activate</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/Activate</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="fdea0068-c43a-4eb1-a56a-6a0c17b1cb6a">
+                  <SHORT-NAME>Cancel</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/Cancel</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="837924c5-9990-4432-8673-6edbd6bcab3e">
+                  <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/DeleteTransfer</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="ac6ef3c4-650b-4c82-bf98-84ba11e9bd68">
+                  <SHORT-NAME>Finish</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/Finish</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="23b19f9d-3f5a-4044-b97b-c30eb6669f45">
+                  <SHORT-NAME>GetHistory</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetHistory</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="8489e192-152a-4ea5-91f2-3706019557b2">
+                  <SHORT-NAME>GetId</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetId</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="da0dee54-5ec1-4586-a984-a3268c4b2536">
+                  <SHORT-NAME>GetSwClusterChangeInfo</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetSwClusterChangeInfo</METHOD-REF>
+                  <METHOD-ID>7</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="93e1547b-4d98-44bc-8d67-9d30787e3e75">
+                  <SHORT-NAME>GetSwClusterDescription</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetSwClusterDescription</METHOD-REF>
+                  <METHOD-ID>8</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f35e32ca-882b-4c7c-aabe-1bf171ab5eb7">
+                  <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetSwClusterInfo</METHOD-REF>
+                  <METHOD-ID>9</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="5b375833-e214-4f2b-b0bb-77adc2dd4427">
+                  <SHORT-NAME>GetSwPackages</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetSwPackages</METHOD-REF>
+                  <METHOD-ID>10</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="853bf21b-e795-49e2-9c5d-9fc18f7652ec">
+                  <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/GetSwProcessProgress</METHOD-REF>
+                  <METHOD-ID>11</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="cab38aa1-7cf9-4a5b-bad0-37ab82da6e4d">
+                  <SHORT-NAME>ProcessSwPackage</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/ProcessSwPackage</METHOD-REF>
+                  <METHOD-ID>12</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="d4abb95e-4ce3-4dba-9c80-0d2452fdab96">
+                  <SHORT-NAME>RevertProcessedSwPackages</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/RevertProcessedSwPackages</METHOD-REF>
+                  <METHOD-ID>13</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c966f368-9d4d-49bf-995c-2920701f86b6">
+                  <SHORT-NAME>Rollback</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/Rollback</METHOD-REF>
+                  <METHOD-ID>14</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f66c16d4-3fd0-4431-9584-d90ab40bcc41">
+                  <SHORT-NAME>TransferData</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/TransferData</METHOD-REF>
+                  <METHOD-ID>15</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="e2b4f663-7e5a-44e1-995f-8adecaaead03">
+                  <SHORT-NAME>TransferExit</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/TransferExit</METHOD-REF>
+                  <METHOD-ID>16</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="10f95947-a1ce-4e54-a896-db8d220769b3">
+                  <SHORT-NAME>TransferStart</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/PackageManagement/TransferStart</METHOD-REF>
+                  <METHOD-ID>17</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/PackageManagement</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="9b2319fb-9861-4ddb-a1f3-7bab0f31dcf0">
+                  <SHORT-NAME>Eventgroup_Notification_CurrentStatus</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/PackageManagement/CurrentStatus/Notification_CurrentStatus</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>4866</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="bc8ae78d-eabe-4477-86b8-6a0dfe463985">
+              <SHORT-NAME>TriggerInOut_MachineFG</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="a029d168-bdee-4383-a521-a60a2885a3d9">
+                  <SHORT-NAME>Notifier</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/TriggerInOut_MachineFG/Notifier</FIELD-REF>
+                  <GET UUID="5708d294-3ce3-4c9e-a292-b194fd2d0d68">
+                    <SHORT-NAME>Get_Notifier</SHORT-NAME>
+                    <METHOD-ID>1</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="c3f081fb-8581-4c87-8513-1dffa8a7b937">
+                    <SHORT-NAME>Notification_Notifier</SHORT-NAME>
+                    <EVENT-ID>2</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="64b084be-9364-4512-9abc-148193587a02">
+                  <SHORT-NAME>Trigger</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/TriggerInOut_MachineFG/Trigger</FIELD-REF>
+                  <SET UUID="23d4d6ec-ea4c-460f-bb1e-427f834375b7">
+                    <SHORT-NAME>Set_Trigger</SHORT-NAME>
+                    <METHOD-ID>3</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </SET>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TriggerInOut_MachineFG</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="b0ba11a1-6ed9-400d-8595-08c814e8798f">
+                  <SHORT-NAME>Eventgroup_Notification_Notifier</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/TriggerInOut_MachineFG/Notifier/Notification_Notifier</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>4869</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="62c29c93-5214-4a23-bae6-2e1b2e8c2a21">
+              <SHORT-NAME>UpdateRequest</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="3a6a5ed7-5158-481d-90eb-fb2045b484fe">
+                  <SHORT-NAME>PrepareRollback</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/PrepareRollback</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="944486ed-3b8e-4350-95c9-06a335d60b09">
+                  <SHORT-NAME>PrepareUpdate</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/PrepareUpdate</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="76594ac5-0c88-4719-b9f0-4e808b11cd1c">
+                  <SHORT-NAME>ResetMachine</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/ResetMachine</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="a69bdf42-5211-47a5-8008-6644953bf500">
+                  <SHORT-NAME>StartUpdateSession</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/StartUpdateSession</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="87d26b80-e3e1-4a41-b9f5-ecaeab0af401">
+                  <SHORT-NAME>StopUpdateSession</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/StopUpdateSession</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="fade204d-520e-4fb2-adeb-22386a1c2448">
+                  <SHORT-NAME>VerifyUpdate</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/UpdateRequest/VerifyUpdate</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/UpdateRequest</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>4865</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="3350f560-7cd9-482b-96d3-a846669c4ca8">
+              <SHORT-NAME>VehicleDriverApplication</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="b3a34959-fd6a-4d05-be5c-29b38d615b9b">
+                  <SHORT-NAME>ApprovalRequired</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehicleDriverApplication/ApprovalRequired</FIELD-REF>
+                  <GET UUID="f9870b08-5938-4008-bebd-04224e29aad6">
+                    <SHORT-NAME>Get_ApprovalRequired</SHORT-NAME>
+                    <METHOD-ID>21</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="33379fb0-b9a9-41e5-b484-cd2604f19a6b">
+                    <SHORT-NAME>Notification_ApprovalRequired</SHORT-NAME>
+                    <EVENT-ID>22</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="7bd7be3d-b3cd-4d98-9f84-08fbdd67d7a3">
+                  <SHORT-NAME>CampaignState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehicleDriverApplication/CampaignState</FIELD-REF>
+                  <GET UUID="e8c7121b-8c56-4d8c-a541-5304a2f73031">
+                    <SHORT-NAME>Get_CampaignState</SHORT-NAME>
+                    <METHOD-ID>23</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="a86fcf5d-dd8a-4d47-a6f9-e934e11f0732">
+                    <SHORT-NAME>Notification_CampaignState</SHORT-NAME>
+                    <EVENT-ID>24</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="c0674ec5-c217-47d7-812c-975b8cae48a7">
+                  <SHORT-NAME>SafetyPolicy</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehicleDriverApplication/SafetyPolicy</FIELD-REF>
+                  <GET UUID="63c1174c-e00e-4bb3-9282-acffc19dc5e9">
+                    <SHORT-NAME>Get_SafetyPolicy</SHORT-NAME>
+                    <METHOD-ID>25</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="a8311d26-e5a5-4ef4-9b1e-57203d1f8e12">
+                    <SHORT-NAME>Notification_SafetyPolicy</SHORT-NAME>
+                    <EVENT-ID>26</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="a0c2493a-4a3e-4e98-a7cc-ef045d404680">
+                  <SHORT-NAME>SafetyState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehicleDriverApplication/SafetyState</FIELD-REF>
+                  <GET UUID="5e4c5600-260a-4ee9-996f-719c81c73225">
+                    <SHORT-NAME>Get_SafetyState</SHORT-NAME>
+                    <METHOD-ID>27</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="cb831d37-abce-442f-acdd-ff64873758bd">
+                    <SHORT-NAME>Notification_SafetyState</SHORT-NAME>
+                    <EVENT-ID>28</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="4964f0ed-fa81-469a-91de-dfaf472dd490">
+                  <SHORT-NAME>AllowCampaign</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/AllowCampaign</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="dfad566c-6529-4f16-b594-0129226b5564">
+                  <SHORT-NAME>CancelCampaign</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/CancelCampaign</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="78a8ea6d-a106-4b31-a313-9315b53a57fe">
+                  <SHORT-NAME>DriverApproval</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/DriverApproval</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="8b66df16-0918-45a8-a42e-67946293c817">
+                  <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/GetCampaignHistory</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="2a7c4683-d595-44c8-a45f-2acd55853d39">
+                  <SHORT-NAME>GetSwClusterDescription</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/GetSwClusterDescription</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="e4cd9d7e-731b-499c-85b4-9fb2f9a6d693">
+                  <SHORT-NAME>GetSwPackageDescription</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/GetSwPackageDescription</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="376c9b9a-dc47-412e-b779-fe4f9c92e4ed">
+                  <SHORT-NAME>GetSwProcessProgress</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/GetSwProcessProgress</METHOD-REF>
+                  <METHOD-ID>7</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f6d3fa8c-a2b4-4575-bc67-b7c2bd8cbcae">
+                  <SHORT-NAME>GetSwTransferProgress</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehicleDriverApplication/GetSwTransferProgress</METHOD-REF>
+                  <METHOD-ID>8</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VehicleDriverApplication</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="69c62fd0-63e6-4ad3-a485-ffaa50d1f044">
+                  <SHORT-NAME>Eventgroup_Notification_ApprovalRequired</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication/ApprovalRequired/Notification_ApprovalRequired</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="27d2178c-4666-488f-8ddc-0fcdd815e7fb">
+                  <SHORT-NAME>Eventgroup_Notification_CampaignState</SHORT-NAME>
+                  <EVENT-GROUP-ID>2</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication/CampaignState/Notification_CampaignState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="8f873a42-600a-45fc-ba1d-aa3986fe1433">
+                  <SHORT-NAME>Eventgroup_Notification_SafetyPolicy</SHORT-NAME>
+                  <EVENT-GROUP-ID>3</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication/SafetyPolicy/Notification_SafetyPolicy</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="cf2c2e95-0ccc-45a3-aabf-f645fec9109d">
+                  <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                  <EVENT-GROUP-ID>4</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication/SafetyState/Notification_SafetyState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>4867</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="0c55921d-41b8-4317-a2c1-7d2e13b70a25">
+              <SHORT-NAME>VehiclePackageManagement</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="112c7c77-48f8-4041-802e-d8af51aff77a">
+                  <SHORT-NAME>RequestedPackage</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehiclePackageManagement/RequestedPackage</FIELD-REF>
+                  <GET UUID="fa3a52c2-be1f-4f96-b925-7bf85063e49f">
+                    <SHORT-NAME>Get_RequestedPackage</SHORT-NAME>
+                    <METHOD-ID>21</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="84b22671-69d4-4317-ab38-717ecea87ea2">
+                    <SHORT-NAME>Notification_RequestedPackage</SHORT-NAME>
+                    <EVENT-ID>21</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="d2f99fdf-f2d4-4621-b96a-31d35716cd3b">
+                  <SHORT-NAME>SafetyState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehiclePackageManagement/SafetyState</FIELD-REF>
+                  <GET UUID="8fe6e7dc-9603-4c60-b2be-10eaa0e44413">
+                    <SHORT-NAME>Get_SafetyState</SHORT-NAME>
+                    <METHOD-ID>22</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="e94cc5d8-68e6-4027-b70d-c433f8a10e4d">
+                    <SHORT-NAME>Notification_SafetyState</SHORT-NAME>
+                    <EVENT-ID>22</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="090460b3-f04e-4793-ab7c-bc2c9edb79db">
+                  <SHORT-NAME>TransferState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/VehiclePackageManagement/TransferState</FIELD-REF>
+                  <GET UUID="398cd0fd-d7a9-46d8-a53b-cffe6c260bc1">
+                    <SHORT-NAME>Get_TransferState</SHORT-NAME>
+                    <METHOD-ID>23</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="bb3e353f-a7d9-49b3-8aa1-14e5e5b88eeb">
+                    <SHORT-NAME>Notification_TransferState</SHORT-NAME>
+                    <EVENT-ID>23</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c21aaa2a-2740-4de8-aa36-8003d1c1a3e2">
+                  <SHORT-NAME>AllowCampaign</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/AllowCampaign</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="0b2192a7-53f9-4bdc-8f4b-d4c8b1ddd080">
+                  <SHORT-NAME>CancelCampaign</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/CancelCampaign</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="48019d1e-3dae-4f77-be77-f69f9a3538f9">
+                  <SHORT-NAME>DeleteTransfer</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/DeleteTransfer</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="6f56b740-8507-45f6-b4cc-c9a9e468e725">
+                  <SHORT-NAME>GetCampaignHistory</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/GetCampaignHistory</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="9da8ed09-aaea-437b-ba37-04f3da2325f6">
+                  <SHORT-NAME>GetSwClusterInfo</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/GetSwClusterInfo</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="bbd5e3b9-eaed-43f3-9c2b-f8ef5b77d5e9">
+                  <SHORT-NAME>GetSwPackages</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/GetSwPackages</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="881464df-06b3-4af1-a197-74c1bd1b6606">
+                  <SHORT-NAME>SwPackageInventory</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/SwPackageInventory</METHOD-REF>
+                  <METHOD-ID>7</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="6863349d-0706-4c15-9cf0-afb66e3a0231">
+                  <SHORT-NAME>TransferData</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/TransferData</METHOD-REF>
+                  <METHOD-ID>8</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="b74a8371-d0e5-442b-a57a-095760fdc046">
+                  <SHORT-NAME>TransferExit</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/TransferExit</METHOD-REF>
+                  <METHOD-ID>9</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="aedc5608-4917-4733-a6b8-056f856083de">
+                  <SHORT-NAME>TransferStart</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/TransferStart</METHOD-REF>
+                  <METHOD-ID>10</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="cc0cd60c-3479-4ba5-ab9e-59aa641f3792">
+                  <SHORT-NAME>TransferVehiclePackage</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VehiclePackageManagement/TransferVehiclePackage</METHOD-REF>
+                  <METHOD-ID>11</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>TCP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VehiclePackageManagement</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="129c8f20-8465-4db1-847a-c3b985f703f4">
+                  <SHORT-NAME>Eventgroup_Notification_RequestedPackage</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehiclePackageManagement/RequestedPackage/Notification_RequestedPackage</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="5ed08217-3e1f-47da-9692-fdf77b85ab00">
+                  <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                  <EVENT-GROUP-ID>2</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehiclePackageManagement/SafetyState/Notification_SafetyState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="105c76f4-e402-49c6-90c1-c236f31e61c4">
+                  <SHORT-NAME>Eventgroup_Notification_TransferState</SHORT-NAME>
+                  <EVENT-GROUP-ID>3</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/VehiclePackageManagement/TransferState/Notification_TransferState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>4868</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="7268e561-afd7-4f1c-9661-f80cff992e66">
+      <SHORT-NAME>ServiceInstance</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="1f1c8c40-f955-4a7a-8ea8-a656ffba1f32">
+          <SHORT-NAME>Endpoint</SHORT-NAME>
+          <ELEMENTS>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="44f7dde7-3682-4373-ac38-3ee145a02804">
+              <SHORT-NAME>EEVP_Platform_SomeipConsumers_SM</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_Platform_Consumer_TriggerInOut_MachineFG</SERVICE-INSTANCE-REF>
+                <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_Platform_Consumer_UpdateRequest</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>55003</TCP-PORT>
+              <UDP-PORT>55003</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="6bfd1845-7d7f-4588-8c7c-4c003f90358b">
+              <SHORT-NAME>EEVP_Platform_SomeipConsumers_UCM</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_Platform_Consumer_PackageManagement</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>55002</TCP-PORT>
+              <UDP-PORT>55002</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="ddc65da8-7043-453c-a114-fc9623717b65">
+              <SHORT-NAME>EEVP_Platform_SomeipProviders_SM</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_Platform_Provider_TriggerInOut_MachineFG</SERVICE-INSTANCE-REF>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_Platform_Provider_UpdateRequest</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>50003</TCP-PORT>
+              <UDP-PORT>50003</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="31ac5bad-1229-42b8-9644-43b716801281">
+              <SHORT-NAME>EEVP_Platform_SomeipProviders_UCM</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_Platform_Provider_PackageManagement</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>50001</TCP-PORT>
+              <UDP-PORT>50001</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="85bc85e6-3f5e-475c-9f09-e341a4ba3e25">
+              <SHORT-NAME>EEVP_Platform_SomeipProviders_VUCM</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_Platform_Provider_VehicleDriverApplication</SERVICE-INSTANCE-REF>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_Platform_Provider_VehiclePackageManagement</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>50002</TCP-PORT>
+              <UDP-PORT>50002</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c71181c9-0ea4-47f8-90f7-24747ebb6169">
+          <SHORT-NAME>Ipc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="c5c255e8-183c-4cd7-829b-217e88b202e2">
+              <SHORT-NAME>Consumer</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="63d917e7-b81f-41bf-b512-8defba728680">
+              <SHORT-NAME>Provider</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="e2f4288c-4168-4b93-adf5-cd9974d2d033">
+          <SHORT-NAME>SdTimingConfig</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="815cf76b-c143-4cd0-a0e3-275c30ad821d">
+              <SHORT-NAME>Client</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="6dbea2ab-15b7-4663-8e21-da6ace57ae1b">
+                  <SHORT-NAME>DefaultSdClientConfig</SHORT-NAME>
+                  <INITIAL-FIND-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.1</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-FIND-BEHAVIOR>
+                  <SERVICE-FIND-TIME-TO-LIVE>16777215</SERVICE-FIND-TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+                <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="02873601-8ad9-45d5-8d3b-de4c640afded">
+                  <SHORT-NAME>SmSdClientConfig</SHORT-NAME>
+                  <INITIAL-FIND-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.0</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.1</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-FIND-BEHAVIOR>
+                  <SERVICE-FIND-TIME-TO-LIVE>16777215</SERVICE-FIND-TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+                <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG UUID="16deb022-adeb-4112-b8cb-212f0f12c92d">
+                  <SHORT-NAME>UcmSdClientConfig</SHORT-NAME>
+                  <INITIAL-FIND-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.0</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.1</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-FIND-BEHAVIOR>
+                  <SERVICE-FIND-TIME-TO-LIVE>16777215</SERVICE-FIND-TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="f0e7b7ac-59dc-4c3b-a775-4240366d3f0c">
+              <SHORT-NAME>Server</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="5070e94b-3da6-4748-914d-d20ef804c390">
+                  <SHORT-NAME>DefaultSdServerConfig</SHORT-NAME>
+                  <INITIAL-OFFER-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.1</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.01</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.1</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>3</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-OFFER-BEHAVIOR>
+                  <OFFER-CYCLIC-DELAY>2.0</OFFER-CYCLIC-DELAY>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <SERVICE-OFFER-TIME-TO-LIVE>16777215</SERVICE-OFFER-TIME-TO-LIVE>
+                </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+                <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="e1321d35-1862-4860-b309-b4fde9e1e596">
+                  <SHORT-NAME>SmSdServerConfig</SHORT-NAME>
+                  <INITIAL-OFFER-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.0</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.0</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>0</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-OFFER-BEHAVIOR>
+                  <OFFER-CYCLIC-DELAY>0.5</OFFER-CYCLIC-DELAY>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <SERVICE-OFFER-TIME-TO-LIVE>16777215</SERVICE-OFFER-TIME-TO-LIVE>
+                </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+                <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG UUID="841ef7c2-5e3e-4c45-83ce-e16182025667">
+                  <SHORT-NAME>UcmSdServerConfig</SHORT-NAME>
+                  <INITIAL-OFFER-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>0.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.0</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>0.0</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>0</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-OFFER-BEHAVIOR>
+                  <OFFER-CYCLIC-DELAY>1.0</OFFER-CYCLIC-DELAY>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <SERVICE-OFFER-TIME-TO-LIVE>16777215</SERVICE-OFFER-TIME-TO-LIVE>
+                </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="b9af9b6f-f183-42a0-b0a5-cd84e9494331">
+              <SHORT-NAME>Subscription</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="23173740-1f04-4480-8bf5-b0d62f78a1ca">
+                  <SHORT-NAME>DefaultSdPublishConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="de37b138-2f9c-481c-baea-94d4d183424d">
+                  <SHORT-NAME>DefaultSdSubscribeConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <TIME-TO-LIVE>16777215</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="9b4dfe3b-3218-487e-a850-f001649e28da">
+                  <SHORT-NAME>SmSdPublishConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="8880ccef-6518-49cb-bb94-ba31f0961af2">
+                  <SHORT-NAME>SmSdSubscribeConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <TIME-TO-LIVE>16777215</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG UUID="924bd5a1-6097-4bb6-8324-a0666f978c3f">
+                  <SHORT-NAME>UcmSdPublishConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                </SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG UUID="e756d0a8-23aa-46d0-b156-a4774b154015">
+                  <SHORT-NAME>UcmSdSubscribeConfig</SHORT-NAME>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>0.0</MAX-VALUE>
+                    <MIN-VALUE>0.0</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <SUBSCRIBE-EVENTGROUP-RETRY-DELAY>0.0</SUBSCRIBE-EVENTGROUP-RETRY-DELAY>
+                  <SUBSCRIBE-EVENTGROUP-RETRY-MAX>0</SUBSCRIBE-EVENTGROUP-RETRY-MAX>
+                  <TIME-TO-LIVE>16777215</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="f239fb35-0e95-4a7b-9d76-61fb0fdf9b49">
+          <SHORT-NAME>Someip</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="82146fb8-6d34-40c9-91bb-c809fa2b726f">
+              <SHORT-NAME>Consumer</SHORT-NAME>
+              <ELEMENTS>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="0c518978-bfee-4327-9d10-d136b3947dd4">
+                  <SHORT-NAME>EEVP_Platform_Consumer_PackageManagement</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                        <SD GID="CLIENT-ID">769</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/PackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_CurrentStatus</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/PackageManagement/Eventgroup_Notification_CurrentStatus</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/UcmSdClientConfig</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="56310c6b-3704-463a-84b4-f473a9335a8e">
+                  <SHORT-NAME>EEVP_Platform_Consumer_TriggerInOut_MachineFG</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                        <SD GID="CLIENT-ID">770</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TriggerInOut_MachineFG</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_Notifier</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/TriggerInOut_MachineFG/Eventgroup_Notification_Notifier</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/SmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/SmSdClientConfig</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="4c9c2094-2a6d-4f34-ac96-9a47927532e2">
+                  <SHORT-NAME>EEVP_Platform_Consumer_UpdateRequest</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                        <SD GID="CLIENT-ID">770</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/UpdateRequest</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/SmSdClientConfig</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="9e497c52-0e54-435c-bded-b612b82a0fdb">
+                  <SHORT-NAME>EEVP_Platform_Consumer_VehicleDriverApplication</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                        <SD GID="CLIENT-ID">771</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_ApprovalRequired</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_ApprovalRequired</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_CampaignState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_CampaignState</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_SafetyPolicy</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_SafetyPolicy</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_SafetyState</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/UcmSdClientConfig</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="2fc11f1e-755f-4d47-b7e1-12f19ea5f133">
+                  <SHORT-NAME>EEVP_Platform_Consumer_VehiclePackageManagement</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
+                        <SD GID="CLIENT-ID">770</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VehiclePackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_RequestedPackage</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_RequestedPackage</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_SafetyState</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>Eventgroup_Notification_TransferState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_TransferState</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/UcmSdClientConfig</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="6c90c750-ab39-4674-aa18-ef5f700420f6">
+              <SHORT-NAME>Provider</SHORT-NAME>
+              <ELEMENTS>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="c6a324f1-b605-433b-ac8f-de86d413355a">
+                  <SHORT-NAME>EEVP_Platform_Provider_PackageManagement</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/PackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="10508676-bc9b-4ff6-ab1e-876341d862aa">
+                      <SHORT-NAME>Eventgroup_Notification_CurrentStatus</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/PackageManagement/Eventgroup_Notification_CurrentStatus</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/UcmSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="463fa1ea-a15f-4515-9fd8-0d3bc554a810">
+                  <SHORT-NAME>EEVP_Platform_Provider_TriggerInOut_MachineFG</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TriggerInOut_MachineFG</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="f331982b-a741-489b-ac56-edd421688de5">
+                      <SHORT-NAME>Eventgroup_Notification_Notifier</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/TriggerInOut_MachineFG/Eventgroup_Notification_Notifier</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/SmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/SmSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="f2c3f460-c199-4732-bbff-6cbfe4607808">
+                  <SHORT-NAME>EEVP_Platform_Provider_UpdateRequest</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/UpdateRequest</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/SmSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="17c0bbca-0526-4fc6-8de7-8d7e592c874b">
+                  <SHORT-NAME>EEVP_Platform_Provider_VehicleDriverApplication</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VehicleDriverApplication</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="2b39b4de-ab2f-42c4-a8fd-ad3e6326d4fc">
+                      <SHORT-NAME>Eventgroup_Notification_ApprovalRequired</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_ApprovalRequired</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="894e3aa8-aa2b-4741-8af4-e8cc1c1f5b87">
+                      <SHORT-NAME>Eventgroup_Notification_CampaignState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_CampaignState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="530d4e84-7f35-47a4-a860-e99d1e7d4535">
+                      <SHORT-NAME>Eventgroup_Notification_SafetyPolicy</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_SafetyPolicy</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="9963e714-f43b-4801-a31d-2fd565edbc80">
+                      <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehicleDriverApplication/Eventgroup_Notification_SafetyState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/UcmSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="4212f7e8-6cf6-4ac8-b153-1358d869ffb9">
+                  <SHORT-NAME>EEVP_Platform_Provider_VehiclePackageManagement</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VehiclePackageManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="074b3e67-b3b3-4b0e-ac19-e171d23ac6c7">
+                      <SHORT-NAME>Eventgroup_Notification_RequestedPackage</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_RequestedPackage</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="f1724900-6af7-4e49-981d-26acebf3807a">
+                      <SHORT-NAME>Eventgroup_Notification_SafetyState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_SafetyState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="33c7be40-6d3a-453b-bcef-0608561e9a5c">
+                      <SHORT-NAME>Eventgroup_Notification_TransferState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/VehiclePackageManagement/Eventgroup_Notification_TransferState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/UcmSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/UcmSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

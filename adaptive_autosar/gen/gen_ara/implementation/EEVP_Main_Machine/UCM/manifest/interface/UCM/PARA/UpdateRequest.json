@@ -1,0 +1,74 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "UCM/PARA/UpdateRequest",
+    "service-protocol" : "someip",
+    "service-name" : "UpdateRequest",
+    "service-id" : "4865",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "771",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "PrepareRollback",
+            "method-id" : "1",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "PrepareUpdate",
+            "method-id" : "2",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "ResetMachine",
+            "method-id" : "3",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "StartUpdateSession",
+            "method-id" : "4",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "StopUpdateSession",
+            "method-id" : "5",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "VerifyUpdate",
+            "method-id" : "6",
+            "transport" : "tcp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+    ]
+}

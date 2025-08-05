@@ -1,0 +1,73 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "vehicle-package-manifest",
+    "package-name" : "DummyTest_Consumer_Remove_1_0_1",
+    "packager-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "driver-notifications" : [
+        "process"
+    ],
+    "ucms" : [
+        {
+            "ucm-id" : "EEVP_UCM"
+        }
+    ],
+    "rollout-qualifications" : [
+        {
+            "name" : "RolloutQualification",
+            "safety-policy" : "undefined",
+            "ucm-processings" : [
+                {
+                    "name" : "UcmProcessing",
+                    "ucm" : "EEVP_UCM",
+                    "software-package-step" : [
+                        {
+                            "name" : "SoftwarePackageStep",
+                            "transfer" : [
+                                {
+                                    "packages" : [
+                                        "DummyTest_Consumer_Remove_1_0_1"
+                                    ],
+                                    "storing" : "ucm"
+                                }
+                            ],
+                            "process" : "DummyTest_Consumer_Remove_1_0_1",
+                            "pre-activate" : [
+                            ],
+                            "verify" : [
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "software-packages" : [
+        {
+            "package-name" : "DummyTest_Consumer_Remove_1_0_1",
+            "software-cluster" : "DummyTest_Consumer",
+            "version" : "1.0.1",
+            "packager-id" : "101",
+            "action-type" : "remove",
+            "supported-ucm-min-version" : "1.0.0",
+            "supported-ucm-max-version" : "1.0.1",
+            "pre-activation-reboot" : "false",
+            "post-verification-reboot" : "false",
+            "packager-signature": {
+                "signature-name" : "ParaCertificate",
+                "algorithm-family" : "RSA",
+                "format" : "X-509",
+                "maximum-length" : "undefined"
+            },
+            "pre-activate" : [
+            ],
+            "verify" : [
+            ]
+        }
+    ]
+}
