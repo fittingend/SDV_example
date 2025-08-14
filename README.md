@@ -91,10 +91,11 @@ cd $PARA_CORE/bin
 
 SFG01: KATECH  
 SFG02: IntelligentWiper(한자연)  
+SFG03: ServiceCreator(한자연) 
 
 작업 브랜치: /dev/(구독앱) branch에서 작업 부탁드립니다.
 
 테스트 완료 후:
-1. eevp_main_machine/adaptive_autosar/arxml/eevp_reflect에 로컬에서 작업한 AutoSAR.io 프로젝트의 ARXML을 복사하여 최신화  
-2. ARXML 최신화 완료 후 main 브랜치로 PR 보내주세요.
+1. eevp_main_machine/adaptive_autosar/arxml/eevp_reflect에 로컬에서 작업한 AutoSAR.io 프로젝트의 ARXML 과 gen_ara 복사하여 최신화  
+2. ARXML/gen_ara/ap_(구독앱) 유저코드 최신화 완료 후 main 브랜치로 PR 보내주세요.
 
