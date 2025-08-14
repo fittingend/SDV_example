@@ -29,7 +29,7 @@ source ~/sdv/SOURCE_THIS
 
 #### 3. 폴더 구조
 
-src/eevp_main_machine/  
+sdv/src/eevp_main_machine/  
 ├── ap_app/ # 모비스 앱 모음  
 ├── subscription_app/ # 구독 서비스 앱 모음  
 └── adaptive_autosar/ # Adaptive Autosar 모음  
@@ -57,13 +57,15 @@ ARXML 설계 완료 후 autoSAR.io 프로젝트의 gen_ara폴더를 adaptive_aut
 
 가장 처음 빌드할 시에는 -c -p 옵션 필수 (-c는 초기화, -p는 바이너리 폴더 생성)
 
-bash ~/sdv/src/eevp_main_machine/ap_app/ap_sm/docker_build.sh -c -p (필수)
+****필수****
 
-bash ~/sdv/src/eevp_main_machine/ap_app/ap_ipchandler/docker_build.sh (필수)
+bash ~/sdv/src/eevp_main_machine/ap_app/ap_sm/docker_build.sh -c -p
+
+bash ~/sdv/src/eevp_main_machine/ap_app/ap_ipchandler/docker_build.sh
 
 ****선택(구독 어플리케이션)****
 
-ex) bash ~/sdv/src/eevp_main_machine/ap_intelligent_wiper/docker_build.sh
+ex) bash ~/sdv/src/eevp_main_machine/subscription_app/ap_intelligent_wiper/docker_build.sh
 
 5.2 간편 빌드 방법
 

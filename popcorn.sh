@@ -10,7 +10,7 @@ export SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 
 # Run Docker (sdv-adaptive-application 폴더 지정)
-docker run --privileged -d -p 41003:22 -v /var/run/docker.sock:/var/run/docker.sock \
+docker run --privileged -d -p 41004:22 -v /var/run/docker.sock:/var/run/docker.sock \
     -v $SCRIPT_DIR:/home/popcornsar/sdv \
     -v $USER_HOME/appdata:/appdata \
     -v $USER_HOME/bin:/home/popcornsar/bin \
