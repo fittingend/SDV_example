@@ -1,5 +1,5 @@
 # SDV_example
-SDV 구독앱 개발 레퍼런스 코드
+SDV 구독앱 개발 ARXML 및 레퍼런스 코드
 
 ### 필수 요구 사항
 ---
@@ -80,22 +80,33 @@ cd $PARA_CORE/bin
 
 (~/sdv/에 test.sh 스크립트로 존재)
 
-#### 7. 참고사항  
+#### 7. 개발시 유의사항  
 구독SW FunctionGroup 설정 → 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
 
 - Adaptive AUTOSAR Flatform에서는 FunctionGroup에 지정된 프로세스들이 함께 실행/종료됩니다.
 
 - 상호 의존성을 줄이고자 FunctionGroup을 사전에 미리 지정(SFG01~SFG20)해두었으니 ARXML 설계 시 포함만 해주시면 됩니다.
 
-- 다른 SW와 FunctionGroup이 겹치지 않도록 공유 부탁드립니다.
+- 다른 SW와 FunctionGroup이 겹치지 않도록 아래 테이블 🙌<u>**업데이트**</u> 부탁드립니다.
 
-SFG01: KATECH  
-SFG02: IntelligentWiper(한자연)  
-SFG03: ServiceCreator(한자연) 
+
+| FG| 구독앱| 담당기관|
+| --- | --- | --- |
+| SFG01| KATECH  (roa-리어커튼) | 한자연 |
+| SFG02 | IntelligentWiper | 한자연 |
+| SFG03 | ServiceCreator | 한자연 |
+| SFG04 | | |
+| SFG05 | | |
+| SFG06 | | |
+| SFG07 | | |
+| SFG08 | | |
+| SFG09 | | |
+| SFG10 | | |
 
 작업 브랜치: /dev/(구독앱) branch에서 작업 부탁드립니다.
 
 테스트 완료 후:
 1. eevp_main_machine/adaptive_autosar/arxml/eevp_reflect에 로컬에서 작업한 AutoSAR.io 프로젝트의 ARXML 과 gen_ara 복사하여 최신화  
-2. ARXML/gen_ara/ap_(구독앱) 유저코드 최신화 완료 후 main 브랜치로 PR 보내주세요.
+2. **ARXML/gen_ara/ap_(구독앱) 소스코드** push 완료 후 🙋‍♀️<u>**main 브랜치로 PR**</u> 보내주세요.
+
 
