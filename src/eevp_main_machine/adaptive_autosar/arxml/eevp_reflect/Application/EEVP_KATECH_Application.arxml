@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="8e40deb0-42e9-4025-9913-01faaab07b55">
+              <SHORT-NAME>DltLogChannelToProcessMapping_KATECH_TO_KATECH</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/KATECH</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="fe7bab63-ab0d-47f0-ae1f-3e088b813c96">
+              <SHORT-NAME>KATECH</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="e13853e0-8c00-4096-9abd-767ef94b2690">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/KATECH</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="cf428133-d9d7-4040-a279-5fda0b2df715">
+              <SHORT-NAME>KATECH_AA_RPortRearCurtain</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/KATECH/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/KATECH/RPortRearCurtain</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_KATECH_Consumer_RearCurtain</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="825d637c-134c-40cb-bc0d-a570c1a2add3">
+              <SHORT-NAME>KATECH_AA_RPortRoa</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/KATECH/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/KATECH/RPortRoa</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_KATECH_Consumer_SoaRoa</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="169e7f59-be7e-4dfd-b797-f9539430c540">
+              <SHORT-NAME>KATECH_AA_RPortSubscriptionManagement</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/KATECH/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/KATECH/RPortSubscriptionManagement</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_KATECH_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="838ee8c3-1a90-4ea9-9d61-44946c98ae6b">
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>KATECH</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="843f1df0-787e-4ab2-8cce-6e7a4257d114">
+                      <SHORT-NAME>KATECH_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/KATECH</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRearCurtain</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRoa</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>102</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.0</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-PACKAGE UUID="5bb40d4a-4559-4b4a-931e-1913203034bf">
+                      <SHORT-NAME>KATECH_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>102</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="9acb8cbc-f7b3-46f3-b9b9-efa0fd8eb877">
+                      <SHORT-NAME>KATECH_RemoveSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>102</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="d693bd3d-a020-4861-aa5d-2ec9a1f5529b">
+                      <SHORT-NAME>KATECH_UpdateSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>102</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                    </SOFTWARE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>VehiclePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <VEHICLE-PACKAGE UUID="1baf0164-1b27-46b0-bcab-d5988cd9836d">
+                      <SHORT-NAME>KATECH_InstallVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="adec3585-3f64-4727-9a7b-8d7c67510d71">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="5f8139b3-bc8b-4ac7-b693-c051699286e1">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="850e7841-b610-4011-9a0e-26e81312484e">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="de8272d2-d09a-409f-bf7a-be30d2624556">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="8ac3649d-3e1f-44ae-8103-223af609526e">
+                      <SHORT-NAME>KATECH_RemoveVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="186de073-ca80-4b67-a2c9-fd26320d0af5">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="b10120bd-76cc-4b41-8bcb-80668c063d71">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="e3e06217-cfb3-413d-8cb9-34c9a9ab8f99">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_RemoveVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="09547eb5-f1aa-4410-ae36-a1a94e7d162a">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="2c1dab86-6ff6-4a96-be21-61dc2b0d06a6">
+                      <SHORT-NAME>KATECH_UpdateVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="068887c4-3da3-47de-83c4-6657d3faa998">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="30b1b231-3e49-4a83-b54b-bdd7e5ee387a">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="385f956a-ae91-42ba-a6b8-ea9280780c8f">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_UpdateVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="e3498168-6442-4789-be56-2cf450912b92">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="094f709d-46b8-47ff-87a6-66a1f277bd2a">
+              <SHORT-NAME>KATECH</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/KATECH</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="9c9a8893-b1e7-4556-850c-d20476465912">
+                <SHORT-NAME>KATECH</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="aba03338-0ae1-44f5-9b92-389a3415755b">
+              <SHORT-NAME>KATECH</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="1a2b84ad-e7f1-4166-8d25-639fa2748ec6">
+                  <SHORT-NAME>RPortRearCurtain</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaRcurtain</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="125371b1-818c-4c37-a9d7-5f9e54c78b19">
+                  <SHORT-NAME>RPortRoa</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaRoa</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="adb3d475-c02a-44d2-a28d-9aae003546c2">
+                  <SHORT-NAME>RPortSubscriptionManagement</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SubscriptionManagement</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,163 @@
+@startuml
+
+class EventNotifier {
+    {abstract} +EventArrived(Event eventKind) : void
+}
+
+class EventRegister {
+    -EventNotifier* : eventNotifier_
+    -SendEvent(Event eventKind) : void
+    +RegisterEventHandler(EventNotifier &ev) : void
+}
+
+class Main_IPC_RoutingIPCProxy {
+    generated code from tool
+}
+
+class IPCRoutingIPCProxy {
+    -Main_IPC_RoutingIPCProxy proxy_
+    -SysCtrlReq -sysCtrlReq_
+
+    -Subscribe() : void
+    -Unsubscribe() : void
+    -SystemControlRequest_ReceiveHandler() : void
+    -FindServiceCallback(..) : void
+
+    +Initialize() : bool
+    +Release() : void
+    +SystemControlResponse(SysCtrlResp& response) : bool
+    +GetSysCtrlReq() : SysCtrlReq
+    +SendSysCtrlResp() : void
+}
+
+class UpdateRequestSkeleton {
+    generated code from tool
+}
+
+class SMUpdateRequestSkeleton {
+    -bool in_session_
+    +PrepareRollback(FunctionGroupList FunctionGroupList) : PrepareRollbackOutput
+    +PrepareUpdate(FunctionGroupList FunctionGroupList) : PrepareUpdateOutput
+    +ResetMachine() : ResetMachineOutput
+    +StartUpdateSession() : StartUpdateSessionOutput
+    +VerifyUpdate(FunctionGroupList FunctionGroupList) : VerifyUpdateOutput
+}
+
+class StateClient {
+    from EM library
+}
+
+class StateManager {
+    {static} +getInstance : StateManager&
+    +Initailize() : bool
+    +RequestMode(String &group, String &state) : ErrorCode
+    +RequestModes(FunctionGroupList &groups, String &state) : ErrorCode
+
+    -std::unique_ptr<StateClient> stateClient_;
+    -Mode mode_;
+    -ChangeState(String &group, String &state) : bool
+}
+
+EventRegister *-- EventNotifier
+IPCRoutingIPCProxy --|> EventRegister
+IPCRoutingIPCProxy *-- Main_IPC_RoutingIPCProxy
+SMUpdateRequestSkeleton --|> UpdateRequestSkeleton
+SMUpdateRequestSkeleton --|> EventRegister
+StateManager *-- StateClient
+@enduml
+
+@startuml
+actor IPCRoutingIPCProxy as ipc_proxy
+actor ipc_skeleton
+
+ipc_skeleton -> ipc_proxy : SystemControlRequest_ReceiveHandler
+ipc_proxy -> ipc_skeleton : SystemControlResponse
+@enduml
+
+@startuml
+
+class EventNotifier {
+    {abstract} +EventArrived(Event eventKind) : void
+}
+
+class EventRegister {
+    -EventNotifier* : eventNotifier_
+    -SendEvent(Event eventKind) : void
+    +RegisterEventHandler(EventNotifier &ev) : void
+}
+
+class UpdateRequestSkeleton {
+    generated code from tool
+}
+
+class SMUpdateRequestSkeleton {
+    -bool in_session_
+    +PrepareRollback(FunctionGroupList FunctionGroupList) : PrepareRollbackOutput
+    +PrepareUpdate(FunctionGroupList FunctionGroupList) : PrepareUpdateOutput
+    +ResetMachine() : ResetMachineOutput
+    +StartUpdateSession() : StartUpdateSessionOutput
+    +VerifyUpdate(FunctionGroupList FunctionGroupList) : VerifyUpdateOutput
+}
+
+EventRegister *-- EventNotifier
+SMUpdateRequestSkeleton --|> UpdateRequestSkeleton
+SMUpdateRequestSkeleton --|> EventRegister
+@enduml
+
+@startuml
+
+class EventNotifier {
+    {abstract} +EventArrived(Event eventKind) : void
+}
+
+class EventRegister {
+    -EventNotifier* : eventNotifier_
+    -SendEvent(Event eventKind) : void
+    +RegisterEventHandler(EventNotifier &ev) : void
+}
+
+class Main_IPC_RoutingIPCProxy {
+    generated code from tool
+}
+
+class IPCRoutingIPCProxy {
+    -Main_IPC_RoutingIPCProxy proxy_
+    -SysCtrlReq -sysCtrlReq_
+
+    -Subscribe() : void
+    -Unsubscribe() : void
+    -SystemControlRequest_ReceiveHandler() : void
+    -FindServiceCallback(..) : void
+
+    +Initialize() : bool
+    +Release() : void
+    +SystemControlResponse(SysCtrlResp& response) : bool
+    +GetSysCtrlReq() : SysCtrlReq
+    +SendSysCtrlResp() : void
+}
+
+EventRegister *-- EventNotifier
+IPCRoutingIPCProxy --|> EventRegister
+IPCRoutingIPCProxy *-- Main_IPC_RoutingIPCProxy
+@enduml
+
+@startuml
+
+
+class StateClient {
+    from EM library
+}
+
+class StateManager {
+    {static} +getInstance : StateManager&
+    +Initailize() : bool
+    +RequestMode(String &group, String &state) : ErrorCode
+    +RequestModes(FunctionGroupList &groups, String &state) : ErrorCode
+
+    -std::unique_ptr<StateClient> stateClient_;
+    -Mode mode_;
+    -ChangeState(String &group, String &state) : bool
+}
+
+StateManager *-- StateClient
+@enduml

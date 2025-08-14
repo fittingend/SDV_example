@@ -1,0 +1,42 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "software-cluster-manifest",
+    "software-cluster-name" : "SOA_HVAC_SoftwareCluster",
+    "category" : "application-layer",
+    "version" : "1.0.2",
+    "vendor-id" : "79",
+    "type-approval" : "undefined",
+    "vendor-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "depends-on" : [
+    ],
+    "conflicts-to" : [
+    ],
+    "contained-artifacts" : [
+        {
+            "artifact-type" : "execution-manifest",
+            "uri" : "SOA_HVAC/etc/exec/SOA_HVAC.json"
+        },
+        {
+            "artifact-type" : "executable-application",
+            "uri" : "SOA_HVAC/bin/SOA_HVAC"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "SOA_HVAC/etc/interface/SOA_HVAC/AA/PPort_SOA_HVAC.json"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "SOA_HVAC/etc/interface/SOA_HVAC/AA/RPort_Zone1VehicleInfo.json"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "SOA_HVAC/etc/interface/SOA_HVAC/AA/RPort_Zone5_HVAC.json"
+        }
+    ]
+}

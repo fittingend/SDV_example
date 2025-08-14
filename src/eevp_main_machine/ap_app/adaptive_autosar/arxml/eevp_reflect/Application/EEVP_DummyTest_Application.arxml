@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="38293163-16f3-4dd5-8f2e-f52ef09af760">
+              <SHORT-NAME>DltLogChannelToProcessMapping_DummyTest_Consumer_TO_DummyTest_Consumer</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/DummyTest_Consumer</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Consumer</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="fc58a684-bca3-483e-84c7-cdc7f0b2f415">
+              <SHORT-NAME>DltLogChannelToProcessMapping_DummyTest_Provider_TO_DummyTest_Provider</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/DummyTest_Provider</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Provider</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="3b311d08-fa01-419a-9d36-6ed97f4bfd9f">
+              <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="ef8c9661-fe84-410d-a472-9de7c9b12ae0">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/DummyTest_Consumer</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+            <EXECUTABLE UUID="def12382-706f-4659-9fff-fbee4ee6344d">
+              <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="46514c9c-3a8e-44ab-a5f0-c8b9f83d0618">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/DummyTest_Provider</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="7e1faa98-93b9-4271-8f7f-8bfc08d75861">
+              <SHORT-NAME>DummyTest_Consumer_AA_DummyTest_RPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/DummyTest_Consumer/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/DummyTest_Consumer/DummyTest_RPort</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Consumer</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/DummyTest_Consumer</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="f23a814d-a06c-421d-8c36-506d33aacde1">
+              <SHORT-NAME>DummyTest_Provider_AA_DummyTest_PPort</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/DummyTest_Provider/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/DummyTest_Provider/DummyTest_PPort</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Provider</PROCESS-REF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/DummyTest_Provider</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="47a66a85-0892-4e8f-a42a-2adc87cb3fc6">
+                  <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+                  <DESC>
+                    <L-2>1.0.0</L-2>
+                  </DESC>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Consumer</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/DummyTest_Consumer_AA_DummyTest_RPort</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Consumer</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>101</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.0</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>SoftwareCluster_1_0_1</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="406b04c2-48c5-44cc-9de3-9bbce246245a">
+                  <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+                  <DESC>
+                    <L-2>1.0.1</L-2>
+                  </DESC>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Consumer</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/DummyTest_Consumer_AA_DummyTest_RPort</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/DummyTest_Consumer</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>101</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.1</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-PACKAGE UUID="2ff46613-9158-4f56-9d2d-7a2e9c290e79">
+                  <SHORT-NAME>DummyTest_Consumer_Install_1_0_0</SHORT-NAME>
+                  <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                  <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                  <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                  <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                  <PACKAGER-ID>101</PACKAGER-ID>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                  <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                  <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SoftwareCluster_1_0_1/DummyTest_Consumer</SOFTWARE-CLUSTER-REF>
+                  <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                </SOFTWARE-PACKAGE>
+                <SOFTWARE-PACKAGE UUID="60f821d7-eff5-4f85-b070-b794f73c4cb8">
+                  <SHORT-NAME>DummyTest_Consumer_Remove_1_0_1</SHORT-NAME>
+                  <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                  <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                  <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.1</MAXIMUM-SUPPORTED-UCM-VERSION>
+                  <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                  <PACKAGER-ID>101</PACKAGER-ID>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                  <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                  <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SoftwareCluster_1_0_1/DummyTest_Consumer</SOFTWARE-CLUSTER-REF>
+                  <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                </SOFTWARE-PACKAGE>
+                <SOFTWARE-PACKAGE UUID="5248a725-f523-4ebb-bc6a-0214e696bf62">
+                  <SHORT-NAME>DummyTest_Consumer_Update_1_0_1</SHORT-NAME>
+                  <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                  <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                  <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                  <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                  <PACKAGER-ID>101</PACKAGER-ID>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                  <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                  <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SoftwareCluster_1_0_1/DummyTest_Consumer</SOFTWARE-CLUSTER-REF>
+                  <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                </SOFTWARE-PACKAGE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>VehiclePackage</SHORT-NAME>
+              <ELEMENTS>
+                <VEHICLE-PACKAGE UUID="3cfbb529-df87-4ebb-93df-b3691bef4a89">
+                  <SHORT-NAME>DummyTest_Consumer_Install_1_0_0</SHORT-NAME>
+                  <DESC>
+                    <L-2>DummyTest_Consumer_Install_1_0_0</L-2>
+                  </DESC>
+                  <DRIVER-NOTIFICATIONS>
+                    <VEHICLE-DRIVER-NOTIFICATION>
+                      <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                      <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                    </VEHICLE-DRIVER-NOTIFICATION>
+                  </DRIVER-NOTIFICATIONS>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <ROLLOUT-QUALIFICATIONS>
+                    <VEHICLE-ROLLOUT-STEP UUID="a8034922-8709-4412-b29a-759d1a2c153f">
+                      <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                      <UCM-PROCESSINGS>
+                        <UCM-STEP UUID="388c3173-5ae2-4efb-94c6-8aea9be567de">
+                          <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                          <SOFTWARE-PACKAGE-STEPS>
+                            <SOFTWARE-PACKAGE-STEP UUID="57c5bf53-7a0b-4229-842b-9337ae096854">
+                              <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                              <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Install_1_0_0</PROCESS-REF>
+                              <TRANSFERS>
+                                <SOFTWARE-PACKAGE-STORING>
+                                  <STORING>UCM</STORING>
+                                  <TRANSFER-REFS>
+                                    <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Install_1_0_0</TRANSFER-REF>
+                                  </TRANSFER-REFS>
+                                </SOFTWARE-PACKAGE-STORING>
+                              </TRANSFERS>
+                            </SOFTWARE-PACKAGE-STEP>
+                          </SOFTWARE-PACKAGE-STEPS>
+                          <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/VehiclePackage/DummyTest_Consumer_Install_1_0_0/EEVP_UCM</UCM-REF>
+                        </UCM-STEP>
+                      </UCM-PROCESSINGS>
+                    </VEHICLE-ROLLOUT-STEP>
+                  </ROLLOUT-QUALIFICATIONS>
+                  <UCMS>
+                    <UCM-DESCRIPTION UUID="d417d62d-1dca-47b0-affd-c81800705773">
+                      <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                      <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                    </UCM-DESCRIPTION>
+                  </UCMS>
+                </VEHICLE-PACKAGE>
+                <VEHICLE-PACKAGE UUID="de18e17c-f9ab-48fd-b8be-a2807188ee20">
+                  <SHORT-NAME>DummyTest_Consumer_Remove_1_0_1</SHORT-NAME>
+                  <DESC>
+                    <L-2>DummyTest_Consumer_Remove_1_0_1</L-2>
+                  </DESC>
+                  <DRIVER-NOTIFICATIONS>
+                    <VEHICLE-DRIVER-NOTIFICATION>
+                      <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                      <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                    </VEHICLE-DRIVER-NOTIFICATION>
+                  </DRIVER-NOTIFICATIONS>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <ROLLOUT-QUALIFICATIONS>
+                    <VEHICLE-ROLLOUT-STEP UUID="41688ae1-c2b3-41cf-9570-5b0e77525995">
+                      <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                      <UCM-PROCESSINGS>
+                        <UCM-STEP UUID="4a23459e-6db1-4f73-b6db-9edaea0f70f8">
+                          <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                          <SOFTWARE-PACKAGE-STEPS>
+                            <SOFTWARE-PACKAGE-STEP UUID="6d09c1f2-eeff-46c9-883f-083717c4d8de">
+                              <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                              <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Remove_1_0_1</PROCESS-REF>
+                              <TRANSFERS>
+                                <SOFTWARE-PACKAGE-STORING>
+                                  <STORING>UCM</STORING>
+                                  <TRANSFER-REFS>
+                                    <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Remove_1_0_1</TRANSFER-REF>
+                                  </TRANSFER-REFS>
+                                </SOFTWARE-PACKAGE-STORING>
+                              </TRANSFERS>
+                            </SOFTWARE-PACKAGE-STEP>
+                          </SOFTWARE-PACKAGE-STEPS>
+                          <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/VehiclePackage/DummyTest_Consumer_Remove_1_0_1/EEVP_UCM</UCM-REF>
+                        </UCM-STEP>
+                      </UCM-PROCESSINGS>
+                    </VEHICLE-ROLLOUT-STEP>
+                  </ROLLOUT-QUALIFICATIONS>
+                  <UCMS>
+                    <UCM-DESCRIPTION UUID="7a9c39a5-61fd-49aa-8d09-830933616e68">
+                      <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                      <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                    </UCM-DESCRIPTION>
+                  </UCMS>
+                </VEHICLE-PACKAGE>
+                <VEHICLE-PACKAGE UUID="18387f8c-cea2-4530-b8d1-63e8f6d8c874">
+                  <SHORT-NAME>DummyTest_Consumer_Update_1_0_1</SHORT-NAME>
+                  <DESC>
+                    <L-2>DummyTest_Consumer_Update_1_0_1</L-2>
+                  </DESC>
+                  <DRIVER-NOTIFICATIONS>
+                    <VEHICLE-DRIVER-NOTIFICATION>
+                      <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                      <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                    </VEHICLE-DRIVER-NOTIFICATION>
+                  </DRIVER-NOTIFICATIONS>
+                  <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                  <ROLLOUT-QUALIFICATIONS>
+                    <VEHICLE-ROLLOUT-STEP UUID="3c06310a-2f33-4b92-8616-455fa42c0940">
+                      <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                      <UCM-PROCESSINGS>
+                        <UCM-STEP UUID="eb60d2e5-2a15-41bf-b20a-6690dc23d0e7">
+                          <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                          <SOFTWARE-PACKAGE-STEPS>
+                            <SOFTWARE-PACKAGE-STEP UUID="c91c5b81-3193-4d74-8337-bdd3758714ad">
+                              <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                              <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Update_1_0_1</PROCESS-REF>
+                              <TRANSFERS>
+                                <SOFTWARE-PACKAGE-STORING>
+                                  <STORING>UCM</STORING>
+                                  <TRANSFER-REFS>
+                                    <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SoftwarePackage/DummyTest_Consumer_Update_1_0_1</TRANSFER-REF>
+                                  </TRANSFER-REFS>
+                                </SOFTWARE-PACKAGE-STORING>
+                              </TRANSFERS>
+                            </SOFTWARE-PACKAGE-STEP>
+                          </SOFTWARE-PACKAGE-STEPS>
+                          <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/VehiclePackage/DummyTest_Consumer_Update_1_0_1/EEVP_UCM</UCM-REF>
+                        </UCM-STEP>
+                      </UCM-PROCESSINGS>
+                    </VEHICLE-ROLLOUT-STEP>
+                  </ROLLOUT-QUALIFICATIONS>
+                  <UCMS>
+                    <UCM-DESCRIPTION UUID="31883987-4fe9-448f-8571-7784b845c67e">
+                      <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                      <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                    </UCM-DESCRIPTION>
+                  </UCMS>
+                </VEHICLE-PACKAGE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="c14f1949-d637-4339-bf93-ed99f1c91ffb">
+              <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Consumer</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="d24feab3-2daa-4482-9434-fa998e5aecfc">
+                <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SC</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SCState/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <PROCESS UUID="3e8763cd-91ef-4b7e-8171-de4ec35bb6c5">
+              <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Provider</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="8750f7bf-b5d8-48c9-bea5-14820a84cb7a">
+                <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <EXECUTION-DEPENDENCYS>
+                    <EXECUTION-DEPENDENCY>
+                      <PROCESS-STATE-IREF>
+                        <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Application/Process/CM/CM</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                        <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/ProcessState/Running</TARGET-MODE-DECLARATION-REF>
+                      </PROCESS-STATE-IREF>
+                    </EXECUTION-DEPENDENCY>
+                  </EXECUTION-DEPENDENCYS>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/MachineState/Startup</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <PROCESS-DESIGN UUID="abfe473a-2762-46b5-ba6e-ea0a4ca44dcf">
+              <SHORT-NAME>TestDummy_Consumer</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Consumer</EXECUTABLE-REF>
+            </PROCESS-DESIGN>
+            <PROCESS-DESIGN UUID="c2dff6c5-199c-4b7b-b39c-a39ae08a27dd">
+              <SHORT-NAME>TestDummy_Provider</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/DummyTest_Provider</EXECUTABLE-REF>
+            </PROCESS-DESIGN>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+          <ELEMENTS>
+            <STARTUP-CONFIG-SET UUID="4b35ac4d-d14b-4a9f-b251-8761e5d952bd">
+              <SHORT-NAME>EEVP_DummyTest_StartupConfig</SHORT-NAME>
+              <STARTUP-CONFIGS>
+                <STARTUP-CONFIG UUID="52a86307-2861-4029-a9ce-e63e92ab6739">
+                  <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHED_OTHER</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>0</SCHEDULING-PRIORITY>
+                  <TIMEOUT>
+                    <ENTER-TIMEOUT-VALUE>2.0</ENTER-TIMEOUT-VALUE>
+                    <EXIT-TIMEOUT-VALUE>2.0</EXIT-TIMEOUT-VALUE>
+                  </TIMEOUT>
+                </STARTUP-CONFIG>
+                <STARTUP-CONFIG UUID="210e49ec-ca99-4a75-b354-72dd6d005ffd">
+                  <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+                  <SCHEDULING-POLICY>SCHED_OTHER</SCHEDULING-POLICY>
+                  <SCHEDULING-PRIORITY>0</SCHEDULING-PRIORITY>
+                  <TIMEOUT>
+                    <ENTER-TIMEOUT-VALUE>2.0</ENTER-TIMEOUT-VALUE>
+                    <EXIT-TIMEOUT-VALUE>2.0</EXIT-TIMEOUT-VALUE>
+                  </TIMEOUT>
+                </STARTUP-CONFIG>
+              </STARTUP-CONFIGS>
+            </STARTUP-CONFIG-SET>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="a343b533-e264-49de-b019-9b57e53c996d">
+              <SHORT-NAME>DummyTest_Consumer</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="1364114d-a56b-40fa-8b96-a5325e61da05">
+                  <SHORT-NAME>DummyTest_RPort</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/DummyTest</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="a73f8cca-f2db-456a-84be-63fedb98e7b4">
+              <SHORT-NAME>DummyTest_Provider</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE UUID="73721bac-c15d-4e55-b052-2e051d04985f">
+                  <SHORT-NAME>DummyTest_PPort</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/DummyTest</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ada6b156-a067-4d81-81cd-f79c8e3b7205">
+      <SHORT-NAME>System</SHORT-NAME>
+      <ELEMENTS>
+        <SYSTEM UUID="3642dadd-9945-4d32-927b-d84b3ce836fe">
+          <SHORT-NAME>System</SHORT-NAME>
+          <CATEGORY>SYSTEM_DESCRIPTION</CATEGORY>
+          <FIBEX-ELEMENTS>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_MAIN</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="MACHINE-DESIGN">/System/Ecu/EEVP_IVI</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+            <FIBEX-ELEMENT-REF-CONDITIONAL>
+              <FIBEX-ELEMENT-REF DEST="ETHERNET-CLUSTER">/System/CommunicationCluster/EEVP_EthernetCluster</FIBEX-ELEMENT-REF>
+            </FIBEX-ELEMENT-REF-CONDITIONAL>
+          </FIBEX-ELEMENTS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE UUID="1b5595ac-2951-4230-ad82-14bd90160a1d">
+              <SHORT-NAME>System</SHORT-NAME>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/System/SwComponent/System</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+          <SYSTEM-VERSION>1.0.0;EEVP</SYSTEM-VERSION>
+        </SYSTEM>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="bbf798a5-0b7f-40b8-a8cc-7c94644f9104">
+          <SHORT-NAME>CommunicationCluster</SHORT-NAME>
+          <ELEMENTS>
+            <ETHERNET-CLUSTER UUID="6bb64f05-1f8a-4bf5-824a-eda6f0c7067c">
+              <SHORT-NAME>EEVP_EthernetCluster</SHORT-NAME>
+              <ETHERNET-CLUSTER-VARIANTS>
+                <ETHERNET-CLUSTER-CONDITIONAL>
+                  <PHYSICAL-CHANNELS>
+                    <ETHERNET-PHYSICAL-CHANNEL UUID="79cf9cd6-747e-458b-889d-651051193376">
+                      <SHORT-NAME>PhysicalChannel</SHORT-NAME>
+                      <CATEGORY>WIRED</CATEGORY>
+                      <COMM-CONNECTORS>
+                        <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+                        </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                        <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                          <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_IVI/eth0</COMMUNICATION-CONNECTOR-REF>
+                        </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      </COMM-CONNECTORS>
+                      <NETWORK-ENDPOINTS>
+                        <NETWORK-ENDPOINT UUID="f21ad5e8-c40f-41ed-8dc8-30d84ca145b8">
+                          <SHORT-NAME>EEVP_AP_Endpoint</SHORT-NAME>
+                          <NETWORK-ENDPOINT-ADDRESSES>
+                            <IPV-4-CONFIGURATION>
+                              <DEFAULT-GATEWAY>10.100.0.1</DEFAULT-GATEWAY>
+                              <IPV-4-ADDRESS>10.100.0.40</IPV-4-ADDRESS>
+                              <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                              <NETWORK-MASK>255.255.0.0</NETWORK-MASK>
+                            </IPV-4-CONFIGURATION>
+                          </NETWORK-ENDPOINT-ADDRESSES>
+                        </NETWORK-ENDPOINT>
+                        <NETWORK-ENDPOINT UUID="46d020f7-fe31-4bd3-a4b5-4a668ec1de83">
+                          <SHORT-NAME>EEVP_IVI_Endpoint</SHORT-NAME>
+                          <NETWORK-ENDPOINT-ADDRESSES>
+                            <IPV-4-CONFIGURATION>
+                              <DEFAULT-GATEWAY>10.100.0.1</DEFAULT-GATEWAY>
+                              <IPV-4-ADDRESS>10.100.0.20</IPV-4-ADDRESS>
+                              <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                              <NETWORK-MASK>255.255.0.0</NETWORK-MASK>
+                            </IPV-4-CONFIGURATION>
+                          </NETWORK-ENDPOINT-ADDRESSES>
+                        </NETWORK-ENDPOINT>
+                        <NETWORK-ENDPOINT UUID="2e227123-24f2-4b0b-ab3e-d46362079c72">
+                          <SHORT-NAME>SOMEIP_SD_Endpoint</SHORT-NAME>
+                          <NETWORK-ENDPOINT-ADDRESSES>
+                            <IPV-4-CONFIGURATION>
+                              <IPV-4-ADDRESS>224.224.24.245</IPV-4-ADDRESS>
+                              <IPV-4-ADDRESS-SOURCE>FIXED</IPV-4-ADDRESS-SOURCE>
+                            </IPV-4-CONFIGURATION>
+                          </NETWORK-ENDPOINT-ADDRESSES>
+                        </NETWORK-ENDPOINT>
+                      </NETWORK-ENDPOINTS>
+                    </ETHERNET-PHYSICAL-CHANNEL>
+                  </PHYSICAL-CHANNELS>
+                </ETHERNET-CLUSTER-CONDITIONAL>
+              </ETHERNET-CLUSTER-VARIANTS>
+            </ETHERNET-CLUSTER>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="cbb48276-4f5b-4bd0-96f8-ea6315b07aa1">
+          <SHORT-NAME>Ecu</SHORT-NAME>
+          <ELEMENTS>
+            <MACHINE-DESIGN UUID="11c92ac1-ae58-4938-85cc-6732e2143479">
+              <SHORT-NAME>EEVP_IVI</SHORT-NAME>
+              <COMMUNICATION-CONNECTORS>
+                <ETHERNET-COMMUNICATION-CONNECTOR UUID="4f54c42d-cc24-4549-8a62-a8b42561039c">
+                  <SHORT-NAME>eth0</SHORT-NAME>
+                  <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/System/CommunicationCluster/EEVP_EthernetCluster/PhysicalChannel/EEVP_IVI_Endpoint</UNICAST-NETWORK-ENDPOINT-REF>
+                </ETHERNET-COMMUNICATION-CONNECTOR>
+              </COMMUNICATION-CONNECTORS>
+              <SERVICE-DISCOVER-CONFIGS>
+                <SOMEIP-SERVICE-DISCOVERY>
+                  <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/System/CommunicationCluster/EEVP_EthernetCluster/PhysicalChannel/SOMEIP_SD_Endpoint</MULTICAST-SD-IP-ADDRESS-REF>
+                  <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+                </SOMEIP-SERVICE-DISCOVERY>
+              </SERVICE-DISCOVER-CONFIGS>
+            </MACHINE-DESIGN>
+            <MACHINE-DESIGN UUID="5123718d-dc3c-47c8-853f-29b2e146347a">
+              <SHORT-NAME>EEVP_MAIN</SHORT-NAME>
+              <COMMUNICATION-CONNECTORS>
+                <USER-DEFINED-COMMUNICATION-CONNECTOR UUID="c7b49ded-a889-4cbd-91cb-5eba0584f660">
+                  <SHORT-NAME>IPC</SHORT-NAME>
+                </USER-DEFINED-COMMUNICATION-CONNECTOR>
+                <ETHERNET-COMMUNICATION-CONNECTOR UUID="25eb6f54-5f25-4370-a7ea-cb4124a4a3ea">
+                  <SHORT-NAME>eth0</SHORT-NAME>
+                  <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/System/CommunicationCluster/EEVP_EthernetCluster/PhysicalChannel/EEVP_AP_Endpoint</UNICAST-NETWORK-ENDPOINT-REF>
+                </ETHERNET-COMMUNICATION-CONNECTOR>
+              </COMMUNICATION-CONNECTORS>
+              <SERVICE-DISCOVER-CONFIGS>
+                <SOMEIP-SERVICE-DISCOVERY>
+                  <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/System/CommunicationCluster/EEVP_EthernetCluster/PhysicalChannel/SOMEIP_SD_Endpoint</MULTICAST-SD-IP-ADDRESS-REF>
+                  <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+                </SOMEIP-SERVICE-DISCOVERY>
+              </SERVICE-DISCOVER-CONFIGS>
+            </MACHINE-DESIGN>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="255baffb-4498-4346-8b87-e52f61757033">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <COMPOSITION-SW-COMPONENT-TYPE UUID="fcb2cc5d-9e32-46d7-acc8-e907fc135f45">
+              <SHORT-NAME>EEVP_IVI</SHORT-NAME>
+            </COMPOSITION-SW-COMPONENT-TYPE>
+            <COMPOSITION-SW-COMPONENT-TYPE UUID="d0d12259-8c89-487b-a631-eb1167991a3a">
+              <SHORT-NAME>EEVP_MAIN</SHORT-NAME>
+            </COMPOSITION-SW-COMPONENT-TYPE>
+            <COMPOSITION-SW-COMPONENT-TYPE UUID="480c2b89-6934-4bcb-b3b1-b64bc289c08e">
+              <SHORT-NAME>System</SHORT-NAME>
+              <COMPONENTS>
+                <SW-COMPONENT-PROTOTYPE UUID="3b222acf-1be9-468f-be67-490967677caf">
+                  <SHORT-NAME>EEVP_IVI</SHORT-NAME>
+                  <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/System/SwComponent/EEVP_IVI</TYPE-TREF>
+                </SW-COMPONENT-PROTOTYPE>
+                <SW-COMPONENT-PROTOTYPE UUID="3e3f5df3-7c80-4c81-8f1a-dc9462c58f5d">
+                  <SHORT-NAME>EEVP_MAIN</SHORT-NAME>
+                  <TYPE-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/System/SwComponent/EEVP_MAIN</TYPE-TREF>
+                </SW-COMPONENT-PROTOTYPE>
+              </COMPONENTS>
+            </COMPOSITION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

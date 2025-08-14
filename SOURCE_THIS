@@ -1,0 +1,6 @@
+export PARA_CORE=/tmp/para-root
+export PARA_CONF=/tmp/para-root/etc
+export PARA_DATA=/tmp/para-root/var
+export PARA_APPL=/tmp/para-root/opt
+export work=/home/popcornsar/sdv/src/eevp_main_machine
+

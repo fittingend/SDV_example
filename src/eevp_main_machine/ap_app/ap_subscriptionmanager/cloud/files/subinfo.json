@@ -1,0 +1,19 @@
+{
+    "values": [
+    {
+        "appName": "SOA_Wiper",
+        "status": "ACTIVE"
+    },
+    {
+        "appName": "MoodLamp",
+        "status": "ACTIVE"
+    },
+    {
+        "appName": "SWType_Test",
+        "status": "ACTIVE"
+    },
+    {
+        "appName": "NewAppTest_1",
+        "status": "ACTIVE"
+    }
+}

@@ -1,0 +1,40 @@
+
+arxml for eevp
+
+Project Configuration in AutoSAR.io
+
+```
+{AUTOSAR_Project}
+├/Application
+│ ├EEVP_Platform_Application.arxml (common)
+│ ├ ...
+│ └EEVP_{Application or Domain}_Application.arxml (additional by vendor/developer)
+├/DataType
+│ ├EEVP_Platform_Type.arxml (common)
+│ ├ ...
+│ └EEVP_{Application or Domain}_Type.arxml (additional by vendor/developer)
+├/Machine
+│ ├EEVP_Main_Machine.arxml (common)
+│ ├ ...
+│ └EEVP_{ECU}_Machine.arxml (common, customer additional)
+├/Service
+│ ├EEVP_Platform_Service.arxml (common)
+│ ├ ...
+│ └EEVP_{Application or Domain}_Service.arxml (additional by vendor/developer)
+└/System
+   └EEVP_System.arxml (common)
+```
+
+Notes
+- /default_template, ECU & Adaptive Platform 공통 arxml 및 템플릿 arxml
+    - 개발자 환경에는 EEVP_Platform_xxx.arxml 및 EEVP_System.arxml이 항상 존재한다고 가정
+    - 어플리케이션 또는 도메인 분류에 따라 EEVP_{Application or Domain}_xxx.arxml을 추가하는 구조
+    - 개발자는 시작시 작업 Project에 EEVP_Template_xxx.arxml을 임포트하고, 이름을 바꿔 제안 방식대로 설계 추가
+- /eevp_reflect, 2024-04-25 기준 진행한 arxml을 양식에 맞게 재설계한 예제
+- 리뷰 및 확정 후 필요없는 부분 정리 예정
+
+Future Works
+- AUTOSAR 모델 구조 리뷰
+
+ETC
+- 리뷰 이후 generated code 기존대로 업데이트 예정

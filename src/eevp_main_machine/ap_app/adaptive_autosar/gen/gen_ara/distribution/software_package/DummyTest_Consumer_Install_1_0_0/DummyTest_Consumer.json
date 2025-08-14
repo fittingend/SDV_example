@@ -1,0 +1,34 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "software-cluster-manifest",
+    "software-cluster-name" : "DummyTest_Consumer",
+    "category" : "application-layer",
+    "version" : "1.0.1",
+    "vendor-id" : "101",
+    "type-approval" : "undefined",
+    "vendor-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "depends-on" : [
+    ],
+    "conflicts-to" : [
+    ],
+    "contained-artifacts" : [
+        {
+            "artifact-type" : "execution-manifest",
+            "uri" : "DummyTest_Consumer/etc/exec/DummyTest_Consumer.json"
+        },
+        {
+            "artifact-type" : "executable-application",
+            "uri" : "DummyTest_Consumer/bin/DummyTest_Consumer"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "DummyTest_Consumer/etc/interface/DummyTest_Consumer/AA/DummyTest_RPort.json"
+        }
+    ]
+}

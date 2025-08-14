@@ -1,0 +1,6 @@
+adaptive_autosar
+para_root
+build
+*.swp
+*.swo
+.vscode

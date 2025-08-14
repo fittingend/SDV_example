@@ -1,0 +1,32 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "package-manifest",
+    "package-name" : "SOA_SmartFilm_InstallSoftwarePackage_1_0_0",
+    "software-cluster" : "SOA_SmartFilm_SoftwareCluster",
+    "version" : "1.0.0",
+    "packager-id" : "79",
+    "action-type" : "install",
+    "supported-ucm-min-version" : "1.0.0",
+    "supported-ucm-max-version" : "1.0.0",
+    "pre-activation-reboot" : "false",
+    "post-verification-reboot" : "false",
+    "packager-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "pre-activate" : [
+        {
+            "function-group" : "SC",
+            "state" : "Off"
+        }
+    ],
+    "verify" : [
+        {
+            "function-group" : "SC",
+            "state" : "Verify"
+        }
+    ]
+}

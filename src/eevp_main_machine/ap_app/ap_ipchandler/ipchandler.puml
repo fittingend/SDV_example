@@ -1,0 +1,143 @@
+@startuml
+class IPCRoutingIPCSkeleton {
+    -CpInfo cpInfo_
+    -ApInfo apInfo_
+    -std::uint8_t sysCtrlReq_
+    -SendPowerState()
+    +SystemControlResponse(SysCtrlResp& response) : SystemControlResponseOutput
+    +GetOneTimeSystemInfo() : GetOneTimeSystemInfoOutput
+    +SetAPSystemInfo(String apVersion) : SetAPSystemInfoOutput
+    +ASMInfoRequest() : ASMInfoRequestOutput
+    +UpdateCpInfo(const CpInfo& cpInfo) : void
+    +ApInfo GetApInfo() : void
+    +CpInfo GetCpInfo() : void
+};
+
+struct TimeoutEventInfo
+{
+    +AAEventHandler *evnetHandler;
+    +TimeoutEvent eventKind;
+}
+
+class AAEventHandler {
+    -std::shared_ptr<routingipc::IPCRoutingIPCSkeleton> routingIPCSkeleton_
+    +Run() : void
+    {static} +OnEvent(evutil_socket_t fd, short event, void* arg) : void
+    {static} +OnTimeoutEvent(evutil_socket_t fd, short event, void* arg) : void
+}
+
+class EventNotifier {
+    {abstract} +EventArrived(Event eventKind) : void
+}
+
+class EventRegister {
+    -EventNotifier* : eventNotifier_
+    -SendEvent(Event eventKind) : void
+    +RegisterEventHandler(EventNotifier &ev) : void
+}
+
+class IPCInf {
+    -std::deque<CpInfo> cpInfos_
+    {static} +getInstance() : IPCIntf&
+    +PushCpInfo(void *buf) : void
+    +PopCpInfo(CpInfo& cpInfo): bool
+    +SendApInfo(const ApInfo& apInfo) : void
+    +IsNotified() : bool
+}
+
+IPCInf --|> EventRegister
+AAEventHandler *-- IPCRoutingIPCSkeleton
+EventRegister *-- EventNotifier
+@enduml
+
+@startuml
+
+class Main_IPC_RoutingIPCSkeleton {
+    generation code by tool
+}
+
+class IPCRoutingIPCSkeleton {
+    -CpInfo cpInfo_
+    -ApInfo apInfo_
+    -std::uint8_t sysCtrlReq_
+    -SendPowerState()
+    +SystemControlResponse(SysCtrlResp& response) : SystemControlResponseOutput
+    +GetOneTimeSystemInfo() : GetOneTimeSystemInfoOutput
+    +SetAPSystemInfo(String apVersion) : SetAPSystemInfoOutput
+    +ASMInfoRequest() : ASMInfoRequestOutput
+    +UpdateCpInfo(const CpInfo& cpInfo) : void
+    +ApInfo GetApInfo() : void
+    +CpInfo GetCpInfo() : void
+}
+
+class AAEventHandler {
+    -std::shared_ptr<routingipc::IPCRoutingIPCSkeleton> routingIPCSkeleton_
+    +Run() : void
+    {static} +OnEvent(evutil_socket_t fd, short event, void* arg) : void
+    {static} +OnTimeoutEvent(evutil_socket_t fd, short event, void* arg) : void
+}
+
+AAEventHandler *-- IPCRoutingIPCSkeleton
+IPCRoutingIPCSkeleton --|> Main_IPC_RoutingIPCSkeleton
+@enduml
+
+@startuml
+class EventNotifier {
+    {abstract} +EventArrived(Event eventKind) : void
+}
+
+class EventRegister {
+    -EventNotifier* : eventNotifier_
+    -SendEvent(Event eventKind) : void
+    +RegisterEventHandler(EventNotifier &ev) : void
+}
+
+class IPCInf {
+    -std::deque<CpInfo> cpInfos_
+    {static} +getInstance() : IPCIntf&
+    +PushCpInfo(void *buf) : void
+    +PopCpInfo(CpInfo& cpInfo): bool
+    +SendApInfo(const ApInfo& apInfo) : void
+    +IsNotified() : bool
+}
+
+IPCInf --|> EventRegister
+EventRegister *-- EventNotifier
+@enduml
+
+@startuml
+actor ipc_shm
+actor IPCInf as ipc_int
+actor EventHandler
+actor IPCRoutingIPCSkeleton as skeleton
+actor client
+ipc_shm -> ipc_shm : rx_callback_sect2_data
+ipc_shm -> ipc_int : IPC_RxCallback
+ipc_int -> ipc_int : IPCIntf::getInstance().PushCpInfo
+ipc_int -> EventHandler : SendEvent
+EventHandler -> EventHandler : IPCIntf::getInstance().PopCpInfo
+EventHandler -> skeleton : UpdateCpInfo
+skeleton -> skeleton : Save cpInfo
+client -> skeleton : GetOneTimeSystemInfo()
+skeleton -> client : Response to GetOneTimeSystemInfo()
+@enduml
+
+@startuml
+actor ipc_shm
+actor IPCInf as ipc_int
+actor IPCRoutingIPCSkeleton as skeleton
+actor client
+
+client -> skeleton : SystemControlResponse()
+skeleton -> skeleton : Save ApInfo
+skeleton -> ipc_int : SendApInfo()
+ipc_int -> ipc_shm : ipc_send()
+client -> skeleton : SetAPSystemInfo()
+skeleton -> skeleton : Save ApInfo
+skeleton -> ipc_int : SendApInfo()
+ipc_int -> ipc_shm : ipc_send()
+client -> skeleton : ASMInfoRequest()
+skeleton -> skeleton : Load ApInfo
+skeleton -> ipc_int : SendApInfo()
+ipc_int -> ipc_shm : ipc_send()
+@enduml

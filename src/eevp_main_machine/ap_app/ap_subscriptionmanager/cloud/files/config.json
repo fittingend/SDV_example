@@ -1,0 +1,11 @@
+{
+    "serverUrl": "http://ota.litmobility.net",
+    "vin": "12340ABCD0123",
+    "passWord": "sdv1234!@",
+    "localtest": "true",
+    "loginurl" : "http://ota.litmobility.net/api/v1/membership/vehicles/auth/login",
+    "pushurl" : "http://ota.litmobility.net/api/v1/ota/vehicles/installed-apps/sync",
+    "pullurl" : "http://ota.litmobility.net/api/v1/ota/actions",
+    "refreshurl" : "http://ota.litmobility.net/api/v1/membership/vehicles/auth/refresh",
+    "suburl" : "http://ota.litmobility.net/api/v1/order/subscriptions/status"
+}
