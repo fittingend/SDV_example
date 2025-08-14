@@ -82,8 +82,10 @@ build.sh 에서 빌드하고자 하는 modules 입력 및 주석 처리 후
 
 (~/sdv/에 test.sh 스크립트로 존재)
 
-#### 7. 개발시 유의사항  
-7.1. 구독SW FunctionGroup 설정 → 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
+#### 7. 개발시 참고 및 유의사항  
+7.1. arxml 설계는 아래 비디오 참고 부탁드립니다: https://drive.google.com/file/d/12CyRW6FuNO60p7GWbb7CrmrkrDJxB2Ml/view
+
+7.2. 구독SW FunctionGroup 설정 → 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
 
 - Adaptive AUTOSAR Flatform에서는 FunctionGroup에 지정된 프로세스들이 함께 실행/종료됩니다.
 
@@ -105,6 +107,7 @@ build.sh 에서 빌드하고자 하는 modules 입력 및 주석 처리 후
 | SFG09 | | |
 | SFG10 | | |
 
-7.2. **🙌작업 브랜치: /dev/(구독앱) branch에서 작업** 부탁드립니다.
+7.3. **🙌작업 브랜치: /dev/(구독앱) branch에서 작업** 부탁드립니다.
 
-7.3. 도커 환경에서 구독앱 구동 테스트까지 완료 후 **ARXML/gen_ara/ap_(구독앱) 소스코드** push 완료 후 <u>**main 브랜치로 PR**</u>🙋‍♀️ 보내주세요.
+7.4. 도커 환경에서 구독앱 구동 테스트까지 완료 후 **ARXML/gen_ara/ap_(구독앱) 소스코드** push 완료 후 <u>**main 브랜치로 PR**</u>🙋‍♀️ 보내주세요.
+
