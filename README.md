@@ -110,9 +110,9 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | SFG01| KATECH  (roa-리어커튼) | 한자연 |
 | SFG02 | IntelligentWiper | 한자연 |
 | SFG03 | ServiceCreator | 한자연 |
-| SFG04 | | |
-| SFG05 | | |
-| SFG06 | | |
+| SFG04 | BatteryMonitor | 티스마트 |
+| SFG05 | SmokingMonitor | 티스마트 |
+| SFG06 | Reserved(미정) | 티스마트 |
 | SFG07 | | |
 | SFG08 | | |
 | SFG09 | | |
