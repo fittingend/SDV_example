@@ -30,9 +30,9 @@ password: 0 or edu!@#$(따로 도커 환경을 실행했을 시)
 #### 3. 폴더 구조
 
 sdv/src/eevp_main_machine/  
-├── ap_app/ # 모비스 앱 모음  
-├── subscription_app/ # 구독 서비스 앱 모음  
-└── adaptive_autosar/ # Adaptive Autosar 모음  
+├── ap_app/ # 타세부 앱 모음  
+├── subscription_app/ # 3세부 구독 서비스 앱 모음  
+└── adaptive_autosar/ # Adaptive Autosar (arxml, gen_ara) 모음  
 
 #### 4. 빌드 전 구독 앱 심볼릭링크 생성
 
