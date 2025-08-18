@@ -99,7 +99,7 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 [사용자 매뉴얼 (PDF)](/readme_file/Eevp.Subscription.Service-v21-20250818_125207.pdf)
 
 #### 4.  구독SW FunctionGroup 설정 필요 
--  FG 은 구독앱 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
+- FG 은 구독앱 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
 - Adaptive AUTOSAR Flatform에서는 FunctionGroup에 지정된 프로세스들이 함께 실행/종료됩니다
 - 상호 의존성을 줄이고자 FunctionGroup을 사전에 미리 지정(SFG01~SFG20)해두었으니 ARXML 설계 시 포함만 해주시면 됩니다
 - 다른 SW와 FunctionGroup이 겹치지 않도록 <u>**아래 테이블 업데이트**</u>🙌 부탁드립니다.
@@ -123,6 +123,6 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 
 #### 6. Pull Request
 도커 환경에서 구독앱 구동 테스트까지 완료 후 <u>**main 브랜치로 PR**</u>🙋‍♀️ 보내주세요.
-도커 환경에서는 아래와 같이 log 확인이 가능합니다:
-예시)ap_katech 빌드후 ./EM 실행시 아래와 같은 로그 출력
-![image](./readme_file/docker_log.png)
+
+- 도커 환경에서는 아래와 같이 log 확인이 가능합니다
+- 예시) ap_katech 빌드후 ./EM 실행시 아래와 같은 로그 출력![image](./readme_file/docker_log.png)
