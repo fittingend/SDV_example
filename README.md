@@ -90,9 +90,15 @@ build.sh 에서 빌드하고자 하는 modules 입력 및 주석 처리 후
 https://drive.google.com/file/d/12CyRW6FuNO60p7GWbb7CrmrkrDJxB2Ml/view
 
 #### 2. ap_katech 레퍼런스 코드
-ap_katech 은 개발 및 제어기 구동 검증이 완료된 서비스입니다. ap_katech 은 roa 센서값에 따라 rear curtain 을 제어하며 ap_roa 와 ap_rearcurtain 서비스를 사용합니다. 해당 앱의 arxml 과 소스코드를 레퍼런스 삼아 개발하시면 편리합니다.
+ap_katech 은 개발 및 제어기 구동 검증이 완료된 서비스입니다. ap_katech 은 roa 센서값에 따라 rear curtain 을 제어하며 ap_roa, ap_rearcurtain, ap_subscriptionmanager 서비스를 사용합니다. 해당 앱의 arxml 과 소스코드를 레퍼런스 삼아 개발하시면 편리합니다.
 
-#### 3.  구독SW FunctionGroup 설정 필요 
+#### 3.  ap_subscriptionmanager 인터페이스 추가 필요
+모든 구독앱은 해당 인터페이스를 통해 구독상태 (enable/disable) 상태를 가져와야 합니다.
+코드 구현은 ap_katech 의 소스코드 부분을 참고하시고
+arxml 설계는 pdf 파일을 참고하시기 바랍니다:
+[사용자 매뉴얼 (PDF)](/readme_file/Eevp.Subscription.Service-v21-20250818_125207.pdf)
+
+#### 4.  구독SW FunctionGroup 설정 필요 
 -  FG 은 구독앱 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
 - Adaptive AUTOSAR Flatform에서는 FunctionGroup에 지정된 프로세스들이 함께 실행/종료됩니다
 - 상호 의존성을 줄이고자 FunctionGroup을 사전에 미리 지정(SFG01~SFG20)해두었으니 ARXML 설계 시 포함만 해주시면 됩니다
@@ -112,9 +118,11 @@ ap_katech 은 개발 및 제어기 구동 검증이 완료된 서비스입니다
 | SFG09 | | |
 | SFG10 | | |
 
-#### 4. 작업 브랜치
+#### 5. 작업 브랜치
 /dev/(구독앱) branch에서 작업 부탁드립니다.
 
-#### 5. Pull Request
+#### 6. Pull Request
 도커 환경에서 구독앱 구동 테스트까지 완료 후 <u>**main 브랜치로 PR**</u>🙋‍♀️ 보내주세요.
-
+도커 환경에서는 아래와 같이 log 확인이 가능합니다:
+예시)ap_katech 빌드후 ./EM 실행시 아래와 같은 로그 출력
+![image](./readme_file/docker_log.png)
