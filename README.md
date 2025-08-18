@@ -126,3 +126,19 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 
 - 도커 환경에서는 아래와 같이 log 확인이 가능합니다
 - 예시) ap_katech 빌드후 ./EM 실행시 아래와 같은 로그 출력![image](./readme_file/docker_log.png)
+  
+#### 7. 10종 제어기 IF 파일 
+
+| 10종 제어기| 파일| 기타|
+| --- | --- | --- |
+| 1. 스마트필름| [인터페이스 (PDF)](/readme_file/01_Eevp.Control.SoaSmartFilm-v2-20250715_183413.pdf)| |
+| 2. 공조|  [인터페이스 (PDF)](/readme_file/02_Eevp.Control.SoaHvac-v5-20250715_183205.pdf)| |
+| 3. ROA|  [인터페이스 (PDF)](/readme_file/03_Eevp.Control.SoaRoa-v9-20250715_183406.pdf)| |
+| 4. DMS|  [인터페이스 (PDF)](/readme_file/04_Eevp.Control.SoaDms-v2-20250715_183221.pdf)| |
+| 5. 무드램프| [인터페이스 (PDF)](/readme_file/05_Eevp.Control.SoaMlm-v11-20250715_183326.pdf)| |
+| 6. 와이퍼| [인터페이스 (PDF)](/readme_file/06_Eevp.Control.SoaWiper-v8-20250715_183430.pdf)| |
+| 7. 시트| [인터페이스 (PDF)](/readme_file/07_Eevp.Control.SoaDriverSeat-v9-20250715_183243.pdf)| |
+| 8. 리어커튼| [인터페이스 (PDF)](/readme_file/08_Eevp.Control.SoaRcurtain-v8-20250715_183348.pdf)| |
+| 9. 초음파|[인터페이스 (PDF)](/readme_file/09_Eevp.Pdw.Service-v9-20250715_183510.pdf) | |
+| <s>10. 전원</s> |<s>[인터페이스 (PDF)](/readme_file/10_Eevp.Control.SoaPower-v10-20250715_183420.pdf) </s> |구독앱에서 실질적으로 사용 어려움 |
+| 그외) 차속과 기어 |[인터페이스 (PDF)](/readme_file/Zone1.VehicleInfo.Input-v2-20250715_190033.pdf) |현재(25.08.18) ap_soa 로 VC main 구독앱에 제공 아직 불가능. 추후 가능해지면 관련 코드 업데이트 예정 |
