@@ -4,7 +4,7 @@
     "manifest-type" : "software-cluster-manifest",
     "software-cluster-name" : "KATECH_SoftwareCluster",
     "category" : "application-layer",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "vendor-id" : "102",
     "type-approval" : "undefined",
     "vendor-signature": {
@@ -33,6 +33,10 @@
         {
             "artifact-type" : "service-instance-manifest",
             "uri" : "KATECH/etc/interface/KATECH/AA/RPortRoa.json"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "KATECH/etc/interface/KATECH/AA/RPortSubscriptionManagement.json"
         }
     ]
 }

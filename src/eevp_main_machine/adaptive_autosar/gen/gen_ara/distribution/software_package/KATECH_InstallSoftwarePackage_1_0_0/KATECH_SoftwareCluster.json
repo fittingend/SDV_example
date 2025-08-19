@@ -33,6 +33,10 @@
         {
             "artifact-type" : "service-instance-manifest",
             "uri" : "KATECH/etc/interface/KATECH/AA/RPortRoa.json"
+        },
+        {
+            "artifact-type" : "service-instance-manifest",
+            "uri" : "KATECH/etc/interface/KATECH/AA/RPortSubscriptionManagement.json"
         }
     ]
 }

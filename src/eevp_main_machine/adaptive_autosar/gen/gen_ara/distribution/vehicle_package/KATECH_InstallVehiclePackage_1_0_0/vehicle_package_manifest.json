@@ -19,15 +19,15 @@
     ],
     "rollout-qualifications" : [
         {
-            "name" : "RolloutQualification",
+            "name" : "RolloutQualification0",
             "safety-policy" : "undefined",
             "ucm-processings" : [
                 {
-                    "name" : "UcmProcessing",
+                    "name" : "UcmProcessing0",
                     "ucm" : "EEVP_UCM",
                     "software-package-step" : [
                         {
-                            "name" : "SoftwarePackageStep",
+                            "name" : "SoftwarePackageStep0",
                             "transfer" : [
                                 {
                                     "packages" : [
@@ -65,8 +65,16 @@
                 "maximum-length" : "undefined"
             },
             "pre-activate" : [
+                {
+                    "function-group" : "SFG01",
+                    "state" : "Off"
+                }
             ],
             "verify" : [
+                {
+                    "function-group" : "SFG01",
+                    "state" : "Verify"
+                }
             ]
         }
     ]

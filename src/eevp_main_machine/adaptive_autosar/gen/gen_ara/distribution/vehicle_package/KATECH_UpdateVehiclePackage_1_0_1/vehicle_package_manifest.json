@@ -2,7 +2,7 @@
     "generation-by" : "PARA, PopcornSAR",
     "autosar-version" : "R20-11",
     "manifest-type" : "vehicle-package-manifest",
-    "package-name" : "KATECH_RemoveVehiclePackage_1_0_0",
+    "package-name" : "KATECH_UpdateVehiclePackage_1_0_1",
     "packager-signature": {
         "signature-name" : "ParaCertificate",
         "algorithm-family" : "RSA",
@@ -19,24 +19,24 @@
     ],
     "rollout-qualifications" : [
         {
-            "name" : "RolloutQualification",
+            "name" : "RolloutQualification0",
             "safety-policy" : "undefined",
             "ucm-processings" : [
                 {
-                    "name" : "UcmProcessing",
+                    "name" : "UcmProcessing0",
                     "ucm" : "EEVP_UCM",
                     "software-package-step" : [
                         {
-                            "name" : "SoftwarePackageStep",
+                            "name" : "SoftwarePackageStep0",
                             "transfer" : [
                                 {
                                     "packages" : [
-                                        "KATECH_RemoveSoftwarePackage_1_0_0"
+                                        "KATECH_UpdateSoftwarePackage_1_0_1"
                                     ],
                                     "storing" : "ucm"
                                 }
                             ],
-                            "process" : "KATECH_RemoveSoftwarePackage_1_0_0",
+                            "process" : "KATECH_UpdateSoftwarePackage_1_0_1",
                             "pre-activate" : [
                             ],
                             "verify" : [
@@ -49,11 +49,11 @@
     ],
     "software-packages" : [
         {
-            "package-name" : "KATECH_RemoveSoftwarePackage_1_0_0",
+            "package-name" : "KATECH_UpdateSoftwarePackage_1_0_1",
             "software-cluster" : "KATECH_SoftwareCluster",
-            "version" : "1.0.0",
+            "version" : "1.0.1",
             "packager-id" : "102",
-            "action-type" : "remove",
+            "action-type" : "update",
             "supported-ucm-min-version" : "1.0.0",
             "supported-ucm-max-version" : "1.0.0",
             "pre-activation-reboot" : "false",
@@ -65,8 +65,16 @@
                 "maximum-length" : "undefined"
             },
             "pre-activate" : [
+                {
+                    "function-group" : "SFG01",
+                    "state" : "Off"
+                }
             ],
             "verify" : [
+                {
+                    "function-group" : "SFG01",
+                    "state" : "Verify"
+                }
             ]
         }
     ]

@@ -64,6 +64,44 @@
           <AR-PACKAGES>
             <AR-PACKAGE>
               <SHORT-NAME>KATECH</SHORT-NAME>
+              <ELEMENTS>
+                <SOFTWARE-CLUSTER UUID="1f57bfe7-9ad9-4bf9-8888-4500a867ff43">
+                  <SHORT-NAME>KATECH_SoftwareCluster</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/KATECH</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRearCurtain</CONTAINED-PACKAGE-ELEMENT-REF>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRoa</CONTAINED-PACKAGE-ELEMENT-REF>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortSubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>102</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.1</VERSION>
+                </SOFTWARE-CLUSTER>
+                <SOFTWARE-CLUSTER UUID="2ace2e9e-5460-4029-8b66-62350a535bb2">
+                  <SHORT-NAME>KATECH_SoftwareCluster</SHORT-NAME>
+                  <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                  <CONTAINED-AR-ELEMENT-REFS>
+                    <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/KATECH</CONTAINED-AR-ELEMENT-REF>
+                  </CONTAINED-AR-ELEMENT-REFS>
+                  <CONTAINED-PACKAGE-ELEMENT-REFS>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRearCurtain</CONTAINED-PACKAGE-ELEMENT-REF>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRoa</CONTAINED-PACKAGE-ELEMENT-REF>
+                    <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortSubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
+                  </CONTAINED-PACKAGE-ELEMENT-REFS>
+                  <CONTAINED-PROCESS-REFS>
+                    <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</CONTAINED-PROCESS-REF>
+                  </CONTAINED-PROCESS-REFS>
+                  <VENDOR-ID>102</VENDOR-ID>
+                  <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                  <VERSION>1.0.2</VERSION>
+                </SOFTWARE-CLUSTER>
+              </ELEMENTS>
               <AR-PACKAGES>
                 <AR-PACKAGE>
                   <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
@@ -77,6 +115,7 @@
                       <CONTAINED-PACKAGE-ELEMENT-REFS>
                         <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRearCurtain</CONTAINED-PACKAGE-ELEMENT-REF>
                         <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortRoa</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/KATECH_AA_RPortSubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
                       </CONTAINED-PACKAGE-ELEMENT-REFS>
                       <CONTAINED-PROCESS-REFS>
                         <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</CONTAINED-PROCESS-REF>
@@ -99,12 +138,24 @@
                       <PACKAGER-ID>102</PACKAGER-ID>
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
                       <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
                       <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
                       <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
                     </SOFTWARE-PACKAGE>
                     <SOFTWARE-PACKAGE UUID="9acb8cbc-f7b3-46f3-b9b9-efa0fd8eb877">
-                      <SHORT-NAME>KATECH_RemoveSoftwarePackage_1_0_0</SHORT-NAME>
+                      <SHORT-NAME>KATECH_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
                       <ACTION-TYPE>REMOVE</ACTION-TYPE>
                       <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
                       <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
@@ -112,12 +163,24 @@
                       <PACKAGER-ID>102</PACKAGER-ID>
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
                       <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
-                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
                       <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
                     </SOFTWARE-PACKAGE>
                     <SOFTWARE-PACKAGE UUID="d693bd3d-a020-4861-aa5d-2ec9a1f5529b">
-                      <SHORT-NAME>KATECH_UpdateSoftwarePackage_1_0_0</SHORT-NAME>
+                      <SHORT-NAME>KATECH_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
                       <ACTION-TYPE>UPDATE</ACTION-TYPE>
                       <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
                       <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
@@ -125,9 +188,21 @@
                       <PACKAGER-ID>102</PACKAGER-ID>
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
                       <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
-                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/SoftwareCluster_1_0_0/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/KATECH/KATECH_SoftwareCluster</SOFTWARE-CLUSTER-REF>
                       <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG01</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG01/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
                     </SOFTWARE-PACKAGE>
                   </ELEMENTS>
                 </AR-PACKAGE>
@@ -145,13 +220,13 @@
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <ROLLOUT-QUALIFICATIONS>
                         <VEHICLE-ROLLOUT-STEP UUID="adec3585-3f64-4727-9a7b-8d7c67510d71">
-                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
                           <UCM-PROCESSINGS>
                             <UCM-STEP UUID="5f8139b3-bc8b-4ac7-b693-c051699286e1">
-                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
                               <SOFTWARE-PACKAGE-STEPS>
                                 <SOFTWARE-PACKAGE-STEP UUID="850e7841-b610-4011-9a0e-26e81312484e">
-                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
                                   <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_InstallSoftwarePackage_1_0_0</PROCESS-REF>
                                   <TRANSFERS>
                                     <SOFTWARE-PACKAGE-STORING>
@@ -176,7 +251,7 @@
                       </UCMS>
                     </VEHICLE-PACKAGE>
                     <VEHICLE-PACKAGE UUID="8ac3649d-3e1f-44ae-8103-223af609526e">
-                      <SHORT-NAME>KATECH_RemoveVehiclePackage_1_0_0</SHORT-NAME>
+                      <SHORT-NAME>KATECH_RemoveVehiclePackage_1_0_2</SHORT-NAME>
                       <DRIVER-NOTIFICATIONS>
                         <VEHICLE-DRIVER-NOTIFICATION>
                           <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
@@ -186,25 +261,25 @@
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <ROLLOUT-QUALIFICATIONS>
                         <VEHICLE-ROLLOUT-STEP UUID="186de073-ca80-4b67-a2c9-fd26320d0af5">
-                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
                           <UCM-PROCESSINGS>
                             <UCM-STEP UUID="b10120bd-76cc-4b41-8bcb-80668c063d71">
-                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
                               <SOFTWARE-PACKAGE-STEPS>
                                 <SOFTWARE-PACKAGE-STEP UUID="e3e06217-cfb3-413d-8cb9-34c9a9ab8f99">
-                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
-                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
                                   <TRANSFERS>
                                     <SOFTWARE-PACKAGE-STORING>
                                       <STORING>UCM</STORING>
                                       <TRANSFER-REFS>
-                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_0</TRANSFER-REF>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
                                       </TRANSFER-REFS>
                                     </SOFTWARE-PACKAGE-STORING>
                                   </TRANSFERS>
                                 </SOFTWARE-PACKAGE-STEP>
                               </SOFTWARE-PACKAGE-STEPS>
-                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_RemoveVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
                             </UCM-STEP>
                           </UCM-PROCESSINGS>
                         </VEHICLE-ROLLOUT-STEP>
@@ -217,7 +292,7 @@
                       </UCMS>
                     </VEHICLE-PACKAGE>
                     <VEHICLE-PACKAGE UUID="2c1dab86-6ff6-4a96-be21-61dc2b0d06a6">
-                      <SHORT-NAME>KATECH_UpdateVehiclePackage_1_0_0</SHORT-NAME>
+                      <SHORT-NAME>KATECH_UpdateVehiclePackage_1_0_1</SHORT-NAME>
                       <DRIVER-NOTIFICATIONS>
                         <VEHICLE-DRIVER-NOTIFICATION>
                           <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
@@ -227,25 +302,25 @@
                       <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
                       <ROLLOUT-QUALIFICATIONS>
                         <VEHICLE-ROLLOUT-STEP UUID="068887c4-3da3-47de-83c4-6657d3faa998">
-                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <SHORT-NAME>RolloutQualification0</SHORT-NAME>
                           <UCM-PROCESSINGS>
                             <UCM-STEP UUID="30b1b231-3e49-4a83-b54b-bdd7e5ee387a">
-                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SHORT-NAME>UcmProcessing0</SHORT-NAME>
                               <SOFTWARE-PACKAGE-STEPS>
                                 <SOFTWARE-PACKAGE-STEP UUID="385f956a-ae91-42ba-a6b8-ea9280780c8f">
-                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
-                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <SHORT-NAME>SoftwarePackageStep0</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
                                   <TRANSFERS>
                                     <SOFTWARE-PACKAGE-STORING>
                                       <STORING>UCM</STORING>
                                       <TRANSFER-REFS>
-                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_0</TRANSFER-REF>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/KATECH/SoftwarePackage/KATECH_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
                                       </TRANSFER-REFS>
                                     </SOFTWARE-PACKAGE-STORING>
                                   </TRANSFERS>
                                 </SOFTWARE-PACKAGE-STEP>
                               </SOFTWARE-PACKAGE-STEPS>
-                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_UpdateVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/KATECH/VehiclePackage/KATECH_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
                             </UCM-STEP>
                           </UCM-PROCESSINGS>
                         </VEHICLE-ROLLOUT-STEP>
