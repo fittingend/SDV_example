@@ -40,7 +40,7 @@ sdv/src/eevp_main_machine/
 
 도커 환경에서
 
-<u>**option 1. 직접 빌드 방법**</u>
+<u>**option 1. 직접 생성 방법**</u>
 
 도커 환경에서 각 앱의 폴더에 들어가서 심볼릭링크 생성
 
