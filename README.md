@@ -121,6 +121,9 @@ VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370
 | KATECH (ROA-RearCurtain 데모앱)| 0x351 | Eevp.Control.SoaRoa| 40000| 한자연 |
 | KATECH (ROA-RearCurtain 데모앱) | 0x352| Eevp.Control.SoaRcurtain| 40001| 한자연|
 | KATECH (ROA-RearCurtain 데모앱) | 0x353| Eevp.Subscription.Service| 40002|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0x354| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0x355| Eevp.Control.SoaWiper| 40011|한자연 |
+| ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation |40100~40120 |한자연 |
 |1|2|3|4|5\
 
 
