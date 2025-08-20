@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : vehiclepackagemanagement_common.h
 /// SERVICE INTERFACE NAME            : VehiclePackageManagement
-/// GENERATED DATE                    : 2025-08-13 16:15:25
+/// GENERATED DATE                    : 2025-08-20 13:40:18
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

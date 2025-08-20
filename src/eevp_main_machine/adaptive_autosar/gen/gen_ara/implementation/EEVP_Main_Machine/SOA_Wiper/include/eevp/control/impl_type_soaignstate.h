@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaignstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaIgnState
-/// GENERATED DATE                    : 2025-08-13 16:15:22
+/// GENERATED DATE                    : 2025-08-20 13:40:16
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

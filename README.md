@@ -84,7 +84,9 @@ ii) 구독앱 빌드 예) ap_intelligent_wiper 구독앱 빌드시
 
 `cd ~/sdv/src/eevp_main_machine/  `
 
-build.sh 에서 빌드하고자 하는 modules 입력 및 주석 처리 후  
+build_template.sh를 build.sh로 복사 후  
+build.sh 에서 빌드하고자 하는 modules 입력 및 주석 처리하여 사용  
+(build_template.sh 수정 X)  
 
 `./build.sh`
 

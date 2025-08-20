@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soadeviceisnormal.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaDeviceIsNormal
-/// GENERATED DATE                    : 2025-08-13 16:15:19
+/// GENERATED DATE                    : 2025-08-20 13:40:13
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

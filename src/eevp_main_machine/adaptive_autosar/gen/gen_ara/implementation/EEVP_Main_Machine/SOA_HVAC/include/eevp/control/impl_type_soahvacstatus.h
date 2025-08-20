@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soahvacstatus.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaHvacStatus
-/// GENERATED DATE                    : 2025-08-13 16:15:20
+/// GENERATED DATE                    : 2025-08-20 13:40:13
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

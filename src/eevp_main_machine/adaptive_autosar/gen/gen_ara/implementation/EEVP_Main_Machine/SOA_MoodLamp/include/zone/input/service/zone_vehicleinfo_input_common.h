@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : zone_vehicleinfo_input_common.h
 /// SERVICE INTERFACE NAME            : Zone_VehicleInfo_Input
-/// GENERATED DATE                    : 2025-08-13 16:15:20
+/// GENERATED DATE                    : 2025-08-20 13:40:14
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
