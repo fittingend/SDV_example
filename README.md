@@ -112,7 +112,19 @@ ap_katech 은 개발 및 제어기 구동 검증이 완료된 서비스입니다
 arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 [사용자 매뉴얼 (PDF)](/readme_file/Eevp.Subscription.Service-v21-20250818_125207.pdf)
 
-#### 4.  구독SW FunctionGroup 설정 필요 
+#### 4.  구독앱 별 SOME/IP Client ID 정보 
+
+VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370
+
+| Application Name| Client ID| 사용 interface| TCP UDP port | 담당기관 |
+| --- | --- | --- | --- | --- |
+| KATECH (ROA-RearCurtain 데모앱)| 0x351 | Eevp.Control.SoaRoa| 40000| 한자연 |
+| KATECH (ROA-RearCurtain 데모앱) | 0x352| Eevp.Control.SoaRcurtain| 40001| 한자연|
+| KATECH (ROA-RearCurtain 데모앱) | 0x353| Eevp.Subscription.Service| 40002|한자연 |
+|1|2|3|4|5\
+
+
+#### 5.  구독SW FunctionGroup 설정 필요 
 - FG 은 구독앱 설치/삭제/업데이트 시 SW 프로세스 실행/종료를 위함
 - Adaptive AUTOSAR Flatform에서는 FunctionGroup에 지정된 프로세스들이 함께 실행/종료됩니다
 - 상호 의존성을 줄이고자 FunctionGroup을 사전에 미리 지정(SFG01~SFG20)해두었으니 ARXML 설계 시 포함만 해주시면 됩니다
@@ -132,16 +144,16 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | SFG09 | | |
 | SFG10 | | |
 
-#### 5. 작업 브랜치
+#### 6. 작업 브랜치
 /dev/(구독앱) branch에서 작업 부탁드립니다.
 
-#### 6. Pull Request
+#### 7. Pull Request
 도커 환경에서 구독앱 구동 테스트까지 완료 후 <u>**main 브랜치로 PR**</u>🙋‍♀️ 보내주세요.
 
 - 도커 환경에서는 아래와 같이 log 확인이 가능합니다
 - 예시) ap_katech 빌드후 ./EM 실행시 아래와 같은 로그 출력![image](./readme_file/docker_log.png)
   
-#### 7. 10종 제어기 IF 파일 
+#### 8. 10종 제어기 IF 파일 
 
 | 10종 제어기| 파일| 기타|
 | --- | --- | --- |
