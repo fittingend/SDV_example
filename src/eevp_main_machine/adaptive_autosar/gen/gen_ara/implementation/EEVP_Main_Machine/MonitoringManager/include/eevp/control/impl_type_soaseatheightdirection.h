@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaseatheightdirection.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaSeatHeightDirection
-/// GENERATED DATE                    : 2025-08-20 13:40:08
+/// GENERATED DATE                    : 2025-08-20 14:38:09
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

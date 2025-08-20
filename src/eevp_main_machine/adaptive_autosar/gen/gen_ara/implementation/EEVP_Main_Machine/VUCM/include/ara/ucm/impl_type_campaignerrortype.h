@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_campaignerrortype.h
 /// IMPLEMENTATION DATA TYPE NAME     : CampaignErrorType
-/// GENERATED DATE                    : 2025-08-20 13:40:19
+/// GENERATED DATE                    : 2025-08-20 14:38:20
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

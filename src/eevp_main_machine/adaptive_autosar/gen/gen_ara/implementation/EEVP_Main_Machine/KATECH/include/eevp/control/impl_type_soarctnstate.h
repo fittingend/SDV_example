@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soarctnstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaRctnState
-/// GENERATED DATE                    : 2025-08-20 13:40:06
+/// GENERATED DATE                    : 2025-08-20 14:38:06
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

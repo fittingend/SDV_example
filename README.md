@@ -121,10 +121,10 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | 기관| Port 번호 사용 범위|
 | --- | --- | 
 | 한자연 | 40000 ~ 40099 |
-| 롯데이노베이트|  40100 ~ 400199 | 
-| 티스마트 | 40200 ~ 400299 |
-| 국민대| 40300 ~ 400399  |
-| 한국공학대| 40400 ~ 400499  |
+| 롯데이노베이트|  40100 ~ 40199 | 
+| 티스마트 | 40200 ~ 40299 |
+| 국민대| 40300 ~ 40399  |
+| 한국공학대| 40400 ~ 40499  |
 
 - VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370 ❗❗(25.08.20) client ID 관련해 총괄과 개수 확인중❗❗
 - 다른 SW와 겹치지 않도록 <u>**아래 테이블 업데이트**</u>🙌 부탁드립니다.
@@ -136,7 +136,7 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | KATECH (ROA-RearCurtain 데모앱) | 0x353| Eevp.Subscription.Service| 40002|한자연 |
 | IntelligentWiper (한자연 구독앱) | 0x354| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
 | IntelligentWiper (한자연 구독앱) | 0x355| Eevp.Control.SoaWiper| 40011|한자연 |
-| ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation |40100~40120 |한자연 |
+| ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation | 40050~40070 |한자연 |
 |1|2|3|4|5\
 
 

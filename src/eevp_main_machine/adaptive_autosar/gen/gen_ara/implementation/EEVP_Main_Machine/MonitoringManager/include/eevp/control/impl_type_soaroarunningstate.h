@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaroarunningstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaRoaRunningState
-/// GENERATED DATE                    : 2025-08-20 13:40:08
+/// GENERATED DATE                    : 2025-08-20 14:38:08
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
