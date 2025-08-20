@@ -116,8 +116,7 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 
 #### 4.  구독앱 별 SOME/IP Client ID 및 port 정보 
 - 서비스 인터페이스별로 유니크한 port 번호와 client ID (proxy 기준) 가 지정되어야 합니다.
-- 다른 SW와 겹치지 않도록 <u>**아래 테이블 업데이트**</u>🙌 부탁드립니다.
-- VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370 ❗❗(25.08.20) client ID 관련해 총괄과 개수 확인중❗❗
+- 아래 테이블같이 기관별로 port 100개씩 배분합니다.
 
 | 기관| Port 번호 사용 범위|
 | --- | --- | 
@@ -127,7 +126,9 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | 국민대| 40300 ~ 400399  |
 | 한국공학대| 40400 ~ 400499  |
 
-
+- VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370 ❗❗(25.08.20) client ID 관련해 총괄과 개수 확인중❗❗
+- 다른 SW와 겹치지 않도록 <u>**아래 테이블 업데이트**</u>🙌 부탁드립니다.
+  
 | Application Name| Client ID| 사용 interface| TCP UDP port | 담당기관 |
 | --- | --- | --- | --- | --- |
 | KATECH (ROA-RearCurtain 데모앱)| 0x351 | Eevp.Control.SoaRoa| 40000| 한자연 |
