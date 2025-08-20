@@ -114,11 +114,10 @@ ap_katech 은 개발 및 제어기 구동 검증이 완료된 서비스입니다
 arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 [사용자 매뉴얼 (PDF)](/readme_file/Eevp.Subscription.Service-v21-20250818_125207.pdf)
 
-#### 4.  구독앱 별 SOME/IP Client ID 정보 
-
-VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370
-
--> ❗❗(25.08.20) client ID 관련해 총괄과 개수 확인중
+#### 4.  구독앱 별 SOME/IP Client ID 및 port 정보 
+- 서비스 인터페이스별로 유니크한 port 번호와 client ID (proxy 기준) 가 지정되어야 합니다.
+- 다른 SW와 겹치지 않도록 <u>**아래 테이블 업데이트**</u>🙌 부탁드립니다.
+- VC Main 3세부 구독앱에 배분된 ID : 0x351 ~ 0x370 ❗❗(25.08.20) client ID 관련해 총괄과 개수 확인중❗❗
 
 | 기관| Port 번호 사용 범위|
 | --- | --- | 
