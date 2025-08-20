@@ -38,7 +38,21 @@ sdv/src/eevp_main_machine/
 
 각 어플리케이션 폴더에 adaptive_autosar폴더로 이어지는 심볼릭링크를 생성한다.
 
-도커 환경에서  
+도커 환경에서
+
+<u>**option 1. 직접 빌드 방법**</u>
+
+도커 환경에서 각 앱의 폴더에 들어가서 심볼릭링크 생성
+
+ln -s ../../adaptive_autosar adaptive_autosar 명령어 사용  
+
+예)  
+cd ~/sdv/src/eevp_main_machine/ap_app/ap_sm  
+ln -s ../../adaptive_autosar adaptive_autosar  
+
+
+<u>**option 2. 간편 생성 방법**</u>
+
 **eevp_main_machine 폴더 내**
 
 `./sub_symbollink.sh
