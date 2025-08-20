@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_healthstatus.h
 /// IMPLEMENTATION DATA TYPE NAME     : HealthStatus
-/// GENERATED DATE                    : 2025-08-13 16:15:09
+/// GENERATED DATE                    : 2025-08-20 13:40:05
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

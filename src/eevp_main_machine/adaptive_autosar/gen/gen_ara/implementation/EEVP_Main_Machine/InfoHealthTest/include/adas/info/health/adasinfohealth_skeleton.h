@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : adasinfohealth_skeleton.h
 /// SERVICE INTERFACE NAME            : AdasInfoHealth
-/// GENERATED DATE                    : 2025-08-13 16:15:09
+/// GENERATED DATE                    : 2025-08-20 13:40:05
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

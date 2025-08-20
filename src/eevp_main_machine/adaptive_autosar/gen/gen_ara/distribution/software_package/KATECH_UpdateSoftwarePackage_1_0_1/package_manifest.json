@@ -4,7 +4,7 @@
     "manifest-type" : "package-manifest",
     "package-name" : "KATECH_UpdateSoftwarePackage_1_0_1",
     "software-cluster" : "KATECH_SoftwareCluster",
-    "version" : "1.0.1",
+    "version" : "1.0.2",
     "packager-id" : "102",
     "action-type" : "update",
     "supported-ucm-min-version" : "1.0.0",

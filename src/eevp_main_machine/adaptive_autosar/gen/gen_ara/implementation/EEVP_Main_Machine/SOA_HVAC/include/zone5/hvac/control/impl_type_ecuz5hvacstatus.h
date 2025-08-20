@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_ecuz5hvacstatus.h
 /// IMPLEMENTATION DATA TYPE NAME     : EcuZ5HvacStatus
-/// GENERATED DATE                    : 2025-08-13 16:15:20
+/// GENERATED DATE                    : 2025-08-20 13:40:13
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

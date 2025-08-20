@@ -35,3 +35,5 @@
 build/
 manifest/
 .vscode/
+
+# build.sh

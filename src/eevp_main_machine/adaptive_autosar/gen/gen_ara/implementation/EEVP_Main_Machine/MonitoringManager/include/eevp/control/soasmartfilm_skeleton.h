@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soasmartfilm_skeleton.h
 /// SERVICE INTERFACE NAME            : SoaSmartFilm
-/// GENERATED DATE                    : 2025-08-13 16:15:11
+/// GENERATED DATE                    : 2025-08-20 13:40:07
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

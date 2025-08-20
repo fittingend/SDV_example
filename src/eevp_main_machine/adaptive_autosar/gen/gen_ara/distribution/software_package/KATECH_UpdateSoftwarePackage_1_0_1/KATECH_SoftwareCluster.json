@@ -4,7 +4,7 @@
     "manifest-type" : "software-cluster-manifest",
     "software-cluster-name" : "KATECH_SoftwareCluster",
     "category" : "application-layer",
-    "version" : "1.0.1",
+    "version" : "1.0.2",
     "vendor-id" : "102",
     "type-approval" : "undefined",
     "vendor-signature": {
