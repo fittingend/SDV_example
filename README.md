@@ -151,7 +151,6 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0x361 | Eevp.Control.SoaRcurtain | 40200 ~ 40299 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0x362 | Eevp.Control.SoaSmartFilm | 40200 ~ 40299 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0x363 | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
-|1|2|3|4|5\
 
 
 #### 5.  구독SW FunctionGroup 설정 필요 
