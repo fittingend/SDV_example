@@ -10,16 +10,21 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : intelligentwiper.h
 /// SOFTWARE COMPONENT NAME           : IntelligentWiper
-/// GENERATED DATE                    : 2025-08-07 19:04:14
+/// GENERATED DATE                    : 2025-08-14 16:16:30
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 #ifndef PARA_AA_GEN_SOFTWARE_COMPONENT_INTELLIGENTWIPER_AA_H
 #define PARA_AA_GEN_SOFTWARE_COMPONENT_INTELLIGENTWIPER_AA_H
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// INCLUSION HEADER FILES
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-#include "intelligentwiper/aa/port/rportwiper.h"
+#include "intelligentwiper/aa/port/rport_wiper.h"
+#include "intelligentwiper/aa/port/rport_vehicleinfo.h"
  
 #include "para/swc/port_pool.h"
+
+#include <memory>
+#include <thread>
+#include "logic.h" // Logic 클래스 헤더 포함
  
 namespace intelligentwiper
 {
@@ -57,8 +62,17 @@ private:
     /// @brief Logger for software component
     ara::log::Logger& m_logger;
     
-    /// @brief Instance of Port {IntelligentWiper.RPortWiper}
-    std::unique_ptr<intelligentwiper::aa::port::RPortWiper> m_RPortWiper;
+    /// @brief Logic instance
+    std::unique_ptr<intelligentwiper::aa::Logic> m_logic;
+
+    /// @brief Instance of Port {IntelligentWiper.RPort_Wiper}
+    std::unique_ptr<intelligentwiper::aa::port::RPort_Wiper> m_RPort_Wiper;
+    
+    /// @brief Instance of Port {IntelligentWiper.RPort_VehicleInfo}
+    std::unique_ptr<intelligentwiper::aa::port::RPort_VehicleInfo> m_RPort_VehicleInfo;
+
+    /// @brief Logic thread
+    std::thread m_logicThread;
 };
  
 } /// namespace aa

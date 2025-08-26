@@ -162,7 +162,7 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="50f7bfbb-69aa-4cd9-baf9-e5f0908c2465">
+                <DLT-LOG-CHANNEL UUID="7b33827b-30a2-4a81-974f-7dfa7f52e485">
                   <SHORT-NAME>IntelligentWiper</SHORT-NAME>
                   <APPLICATION-ID>INTW</APPLICATION-ID>
                   <CONTEXT-ID>INTW</CONTEXT-ID>
@@ -619,6 +619,11 @@
                   <SHORT-NAME>ProcessToMachineMapping_InfoHealthTest_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/InfoHealthTest</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="d5a9be6d-18d4-42f2-99f0-5eb6bfb890f3">
+                  <SHORT-NAME>ProcessToMachineMapping_IntelligentWiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/IntelligentWiper</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ca1407ea-2a98-4182-b758-85264231f548">
                   <SHORT-NAME>ProcessToMachineMapping_KATECH_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
