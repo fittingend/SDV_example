@@ -1,0 +1,2322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="c62f33cc-747f-4a84-a1f3-d41a82cc4785">
+      <SHORT-NAME>ServiceDeployment</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="c7fba68e-eb0f-4a60-958e-34b3b7cb6748">
+          <SHORT-NAME>Ipc</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="4730edbc-ae32-4775-89f3-76b770c5292b">
+          <SHORT-NAME>Someip</SHORT-NAME>
+          <ELEMENTS>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="1332e7dc-3170-4965-84f4-8a5839f1c0e4">
+              <SHORT-NAME>BCM_Horn</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c4427766-72d1-45ff-a2a6-efad7ff17edb">
+                  <SHORT-NAME>Alert</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_Horn/Alert</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="641a61f9-9a40-4999-9cd6-aea86cf8d658">
+                  <SHORT-NAME>start</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_Horn/start</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="b2f2d428-7d7d-4731-803f-b73cc6de2267">
+                  <SHORT-NAME>stop</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_Horn/stop</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_Horn</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9030</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="f88ec2e2-ad66-4ddd-a676-07249c185330">
+              <SHORT-NAME>BCM_WiperWash</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="e60249df-1af2-4ec3-8038-d68bd9c20b1e">
+                  <SHORT-NAME>wiperInterval</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/BCM_WiperWash/wiperInterval</FIELD-REF>
+                  <GET UUID="6917f69f-5cec-426f-8000-70b835267136">
+                    <SHORT-NAME>Get_wiperInterval</SHORT-NAME>
+                    <METHOD-ID>5</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="9b47b063-e4bc-43b6-a13c-2d788cac3029">
+                    <SHORT-NAME>Notification_wiperInterval</SHORT-NAME>
+                    <EVENT-ID>6</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="73c00d41-61b7-4835-a9cf-a158753b06bd">
+                  <SHORT-NAME>wiperLevel</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/BCM_WiperWash/wiperLevel</FIELD-REF>
+                  <GET UUID="2de28956-7743-498a-ba42-61fd2cd9ef3e">
+                    <SHORT-NAME>Get_wiperLevel</SHORT-NAME>
+                    <METHOD-ID>7</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="b41a4b0e-8b5c-4131-973b-0f40d59ed543">
+                    <SHORT-NAME>Notification_wiperLevel</SHORT-NAME>
+                    <EVENT-ID>8</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="b0be64cb-c6ef-4104-aed6-46a492e9d379">
+                  <SHORT-NAME>setWipingInterval</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_WiperWash/setWipingInterval</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="90f7dfd3-d698-4220-8e85-c810e13ca40c">
+                  <SHORT-NAME>setWipingLevel</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_WiperWash/setWipingLevel</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="fc29bdcc-07c5-4754-add9-7903a750c760">
+                  <SHORT-NAME>startWiping</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_WiperWash/startWiping</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="333fa5a9-d5dc-48ab-9aa9-ea35b71e5a5d">
+                  <SHORT-NAME>stopWiping</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/BCM_WiperWash/stopWiping</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_WiperWash</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="ff7002bd-ef74-4b16-878b-fa09c0dc7464">
+                  <SHORT-NAME>Eventgroup_Notification_wiperInterval</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperInterval/Notification_wiperInterval</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="435ec7b6-4f10-4aa1-a5f0-3404a046843a">
+                  <SHORT-NAME>Eventgroup_Notification_wiperLevel</SHORT-NAME>
+                  <EVENT-GROUP-ID>2</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperLevel/Notification_wiperLevel</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>5005</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="9e91b509-d778-45fd-953b-1686e2b0e5f3">
+              <SHORT-NAME>Ctrl_MoodLamp</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="bed9f36f-0e12-4c36-b4b4-b83c66acb9b5">
+                  <SHORT-NAME>getBrightness</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/getBrightness</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="ae51e9ec-50f2-4fd4-95eb-de331c7316c6">
+                  <SHORT-NAME>getColor</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/getColor</METHOD-REF>
+                  <METHOD-ID>7</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="6fe9e641-33a4-4966-8e01-751370d30099">
+                  <SHORT-NAME>getPowerStatus</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/getPowerStatus</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="36c7800d-d187-4afc-975f-299040398273">
+                  <SHORT-NAME>setBrightness</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/setBrightness</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="3857440f-ce6b-4854-a34f-7a0503f07911">
+                  <SHORT-NAME>setColor</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/setColor</METHOD-REF>
+                  <METHOD-ID>8</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="88b2ef2f-edcc-400d-a461-1073a2c47119">
+                  <SHORT-NAME>setPowerStatus</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/setPowerStatus</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="b3772c3e-ec11-4d25-a1f4-5ef54e2d3762">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="de8682e8-dd2c-4d7d-9fb4-41182b4dc4af">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_MoodLamp/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Ctrl_MoodLamp</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9048</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="b6143b2b-c089-44d2-bfac-14f24ebd9d2a">
+              <SHORT-NAME>Ctrl_RearCurtain</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="364d8061-d522-4bb7-9192-a4302efc1cb6">
+                  <SHORT-NAME>getOpeningRate</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_RearCurtain/getOpeningRate</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="24b79039-e520-429d-bb9b-06c1c0ddcf91">
+                  <SHORT-NAME>setOpeningRate</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Ctrl_RearCurtain/setOpeningRate</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Ctrl_RearCurtain</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9049</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="38181510-0072-4eeb-86b3-c22cffcdaa34">
+              <SHORT-NAME>DMS_Func</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="d6b255c2-508f-4f57-a6fc-718c11d5f96c">
+                  <SHORT-NAME>isDetectDrowsy</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/DMS_Func/isDetectDrowsy</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/DMS_Func</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9047</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="2235c84a-f60d-48ae-afb9-1a3046dd6f55">
+              <SHORT-NAME>Snsr_FaceDetectModule</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="43dd241e-707e-4607-a2cb-bc0feec29ed5">
+                  <SHORT-NAME>getEmotion</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_FaceDetectModule/getEmotion</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="74119a7e-d58b-4ea1-a667-3c02bf8c54f0">
+                  <SHORT-NAME>isRunning</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_FaceDetectModule/isRunning</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="0f9a1cd5-8d38-45b6-9835-8bd9b34ad6e8">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_FaceDetectModule/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="a1e3badd-d086-4b8c-b2de-94aae4a1a75e">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_FaceDetectModule/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_FaceDetectModule</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9040</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="4d78b3ae-bca5-4b1c-aa92-3010f920e3b5">
+              <SHORT-NAME>Snsr_Heartbeat</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="00a2cfd3-1040-4e41-925e-97be033e82ae">
+                  <SHORT-NAME>getHr</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_Heartbeat/getHr</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_Heartbeat</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9041</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="92bec137-686e-4b70-b6e7-f29f9295b859">
+              <SHORT-NAME>Snsr_USS</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c1bac6a2-1a02-4fc4-abd8-89db5658722e">
+                  <SHORT-NAME>isDetect</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_USS/isDetect</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="5cf97e3a-2e6c-481e-87a5-d043fb354d41">
+                  <SHORT-NAME>ntfFltSt</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_USS/ntfFltSt</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="310296df-9918-4a5d-a20b-a13823a82f83">
+                  <SHORT-NAME>ntfSonarInfo</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/Snsr_USS/ntfSonarInfo</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_USS</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9034</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="40ca7108-0c29-4948-9130-e2eb4055d863">
+              <SHORT-NAME>TMS_AC</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="0804e9b3-2381-4e06-9437-f8a38ac5fbf3">
+                  <SHORT-NAME>getAirOutletTemp</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/getAirOutletTemp</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="0704b18f-3500-4bce-81fe-e4f1a8fcf735">
+                  <SHORT-NAME>getTargetTemp</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/getTargetTemp</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="9ad072c9-cbe3-4d4d-afbb-df54ed34afcd">
+                  <SHORT-NAME>isRunning</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/isRunning</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="94149b51-706b-434c-9dea-813854d92648">
+                  <SHORT-NAME>setTargetTemp</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/setTargetTemp</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="8b1fc24a-e937-4e2c-8a2a-607541fea035">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="74f0385b-30db-48d0-9721-4882311b662b">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_AC/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_AC</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9042</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="5d0de6b4-fd60-4514-b92e-d214335635d8">
+              <SHORT-NAME>TMS_EnvMonitor</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="6c6fd771-35dd-433c-9038-1cc3dc28dcd3">
+                  <SHORT-NAME>getHumidity</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/getHumidity</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="b4399f8c-62af-48eb-aa6f-fcf8fe24207e">
+                  <SHORT-NAME>getLightIntensity</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/getLightIntensity</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="0d09a4fc-3bf1-4349-83bf-57de2bdfd588">
+                  <SHORT-NAME>getTemp</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/getTemp</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="a534a3e5-dfda-4174-a0f0-4b0f2c1a3f83">
+                  <SHORT-NAME>notifyHumidity</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/notifyHumidity</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="87144516-2f8f-4b48-b3b9-da6b12176ac2">
+                  <SHORT-NAME>notifyLightIntensity</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/notifyLightIntensity</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="569049dd-5498-4ee0-ab78-c4ec98eb9f79">
+                  <SHORT-NAME>notifyTemp</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_EnvMonitor/notifyTemp</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_EnvMonitor</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9046</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="a04ebbbc-1c78-4209-adad-d5db02271f32">
+              <SHORT-NAME>TMS_Fragrance</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="a8911130-f375-49ef-99e8-31b1027fca1c">
+                  <SHORT-NAME>getConcentration</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/getConcentration</METHOD-REF>
+                  <METHOD-ID>5</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="2642231f-7c45-4565-9bf6-919fd2267ba8">
+                  <SHORT-NAME>getType</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/getType</METHOD-REF>
+                  <METHOD-ID>7</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c5e18781-3a1a-48e4-8d8c-c3d25ff29e00">
+                  <SHORT-NAME>isRunning</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/isRunning</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="7e351fa0-8ecd-4cd6-998d-a7d92c28c38e">
+                  <SHORT-NAME>setConcentration</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/setConcentration</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="e4910a40-d99c-4842-843e-db704547fbf1">
+                  <SHORT-NAME>setType</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/setType</METHOD-REF>
+                  <METHOD-ID>6</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="d9c836cf-c84f-4715-8421-9ad1f44e7e4d">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c5c14ad4-4647-4df7-be2c-1b91f985747f">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Fragrance/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Fragrance</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9045</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="77dbaaa1-8a4b-47a5-bf5e-de615ada7fdd">
+              <SHORT-NAME>TMS_Purifier</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="22e4df49-8a40-4777-9c2a-b5c8f3fe67fc">
+                  <SHORT-NAME>isRunning</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Purifier/isRunning</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c4aca0bb-1846-4155-987d-55756ab5aec5">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Purifier/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c43c6b8e-8279-49be-94a2-e09a098993ad">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Purifier/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Purifier</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9044</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="20b65ec1-7258-4131-a740-85a8d094dbc4">
+              <SHORT-NAME>TMS_Ventilation</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="95b12aff-c469-4fc6-bc13-8e8c602e6985">
+                  <SHORT-NAME>isRunning</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Ventilation/isRunning</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="9c17b675-5230-461b-b447-89b3a45c3a62">
+                  <SHORT-NAME>turnOff</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Ventilation/turnOff</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="5ae3ef3b-ae40-41a1-83e8-86e8af76c95d">
+                  <SHORT-NAME>turnOn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/TMS_Ventilation/turnOn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Ventilation</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9043</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="2b71c9be-56b2-4279-a43a-28b36c3c5c3f">
+              <SHORT-NAME>VCS_AccrPedal</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c6bb6163-0fd0-4afa-a8ff-6fc7a6716e82">
+                  <SHORT-NAME>notifyAccrPedal</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_AccrPedal/notifyAccrPedal</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_AccrPedal</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9003</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="300ab5af-8bd2-4818-8dbd-7194f757b5fd">
+              <SHORT-NAME>VCS_Brake</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="c29bc19f-18e1-4669-ab96-0e7ca086b6fa">
+                  <SHORT-NAME>notifyMCPrs</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Brake/notifyMCPrs</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f05c3b70-b4ed-4ee1-9470-a514ee4221e5">
+                  <SHORT-NAME>notifyTq</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Brake/notifyTq</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f4172124-8bfe-438d-859b-95a32834970a">
+                  <SHORT-NAME>setTargetAx</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Brake/setTargetAx</METHOD-REF>
+                  <METHOD-ID>3</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="290dc05a-dcf3-4fd0-8a33-b99c55b65b98">
+                  <SHORT-NAME>setTotalForce</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Brake/setTotalForce</METHOD-REF>
+                  <METHOD-ID>4</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_Brake</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9032</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="aed8fe37-594a-4a7f-854f-32a4c3338708">
+              <SHORT-NAME>VCS_BrakePedal</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="571b40cb-c9a4-473c-a306-62081c1087f5">
+                  <SHORT-NAME>nofityBrakeSwitch</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_BrakePedal/notifyBrakeSwitch</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="94cd86d6-d3e2-47b7-86d6-bb100569ed9d">
+                  <SHORT-NAME>notifyBrakeStatus</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_BrakePedal/notifyBrakeStatus</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_BrakePedal</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9002</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="bee021c7-4582-4206-9a72-cdd37106ba22">
+              <SHORT-NAME>VCS_EPB</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="24438bbc-c8ce-41ab-996e-7ad21410f562">
+                  <SHORT-NAME>notifystaticSlope</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_EPB/notifystaticSlope</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_EPB</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9033</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="fff2ebbf-4735-4fd9-a9ad-7a77bcb31f5d">
+              <SHORT-NAME>VCS_Gear</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="94f48fb6-e62c-46a0-88f7-bd271adb406f">
+                  <SHORT-NAME>notifyGear</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Gear/notifyGear</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="48d18173-75c4-47c7-849a-4ae2b39be886">
+                  <SHORT-NAME>setTarget</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_Gear/setTarget</METHOD-REF>
+                  <METHOD-ID>2</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_Gear</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9004</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="816e9c5a-4249-43de-9249-5b60fd6be805">
+              <SHORT-NAME>VCS_TqDmd</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="f7de339a-b4eb-42f7-b166-9f8f514494bd">
+                  <SHORT-NAME>setDrivePedalPosn</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_TqDmd/setDrivePedalPosn</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_TqDmd</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9031</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="b86c62b6-ca26-4032-9af0-76822bd38f0b">
+              <SHORT-NAME>VCS_VehSpd</SHORT-NAME>
+              <METHOD-DEPLOYMENTS>
+                <SOMEIP-METHOD-DEPLOYMENT UUID="60df6881-c174-4bbf-b75f-beb1c74e153d">
+                  <SHORT-NAME>notifyVehSpd</SHORT-NAME>
+                  <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ServiceInterface/VCS_VehSpd/notifyVehSpd</METHOD-REF>
+                  <METHOD-ID>1</METHOD-ID>
+                  <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                </SOMEIP-METHOD-DEPLOYMENT>
+              </METHOD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_VehSpd</SERVICE-INTERFACE-REF>
+              <SERVICE-INTERFACE-ID>9001</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="80c4a3bf-a4f6-4138-a4c6-6b70bedafe8d">
+      <SHORT-NAME>ServiceInstance</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="1f1c8c40-f955-4a7a-8ea8-a656ffba1f32">
+          <SHORT-NAME>Endpoint</SHORT-NAME>
+          <ELEMENTS>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="e34502e1-c7ab-411f-a994-04a3654ede69">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_BCM_WiperWash</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_BCM_WiperWash</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40050</TCP-PORT>
+              <UDP-PORT>40050</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="eb16e1bb-1a23-48de-9dd9-1453f3493558">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_Ctrl_MoodLamp</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Ctrl_MoodLamp</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40051</TCP-PORT>
+              <UDP-PORT>40051</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="b3c960f7-63f5-404e-8e3a-2aa51a834363">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_Ctrl_RearCurtain</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Ctrl_RearCurtain</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40052</TCP-PORT>
+              <UDP-PORT>40052</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="e6ebd416-5939-467c-be37-664af41af118">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_Snsr_FaceDetectModule</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Snsr_FaceDetectModule</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40053</TCP-PORT>
+              <UDP-PORT>40053</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="c6193e05-8462-41f5-b074-fb6b5cce46eb">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_Snsr_Heartbeat</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Snsr_Heartbeat</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40054</TCP-PORT>
+              <UDP-PORT>40054</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="4a912c1e-d098-41b4-86a0-4849a16901c8">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_Snsr_USS</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Snsr_USS</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40055</TCP-PORT>
+              <UDP-PORT>40055</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="08631af6-bc1b-4317-a63e-7fcd375e3320">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_TMS_AC</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_AC</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40056</TCP-PORT>
+              <UDP-PORT>40056</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="6dad8590-cdbe-4339-afba-50bb1312cba2">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_TMS_EnvMonitor</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_EnvMonitor</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40057</TCP-PORT>
+              <UDP-PORT>40057</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="344b13f7-e411-4e24-97e8-9480d6a56202">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_TMS_Fragrance</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Fragrance</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40058</TCP-PORT>
+              <UDP-PORT>40058</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="94a0e882-0b74-40b0-88c4-bf8d5806c979">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_TMS_Purifier</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Purifier</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40059</TCP-PORT>
+              <UDP-PORT>40059</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="5e919caa-20b8-408b-86d5-a19b17c9a5cb">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_TMS_Ventilation</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Ventilation</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40060</TCP-PORT>
+              <UDP-PORT>40060</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="6fbecf3b-fd0b-4355-a788-122848a3f84e">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_AccrPedal</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_AccrPedal</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40061</TCP-PORT>
+              <UDP-PORT>40061</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="81e7ff3c-c314-496f-b096-cb3ce59de506">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_Brake</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_Brake</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40062</TCP-PORT>
+              <UDP-PORT>40062</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="116a4401-5dc2-4a57-91ea-2f253dff6af0">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_BrakePedal</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_BrakePedal</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40063</TCP-PORT>
+              <UDP-PORT>40063</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="34dcb165-17ad-4309-bcb7-d9ab27116bb4">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_EPB</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_EPB</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40064</TCP-PORT>
+              <UDP-PORT>40064</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="883cba2b-5542-4562-9332-db826f9e08d2">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_Gear</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_Gear</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40065</TCP-PORT>
+              <UDP-PORT>40065</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="9d70658b-32bd-47d4-a3a6-97080aa44a3e">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_VCS_VehSpd</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_VehSpd</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40066</TCP-PORT>
+              <UDP-PORT>40066</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="505fa4de-86eb-4120-8390-e7645cff6d2e">
+          <SHORT-NAME>Ipc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="43417451-e9e9-4247-b13a-3076c1db22cd">
+              <SHORT-NAME>Consumer</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="f8be8af6-7701-4bf8-a60e-7f10ef8660db">
+              <SHORT-NAME>Provider</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="e2f4288c-4168-4b93-adf5-cd9974d2d033">
+          <SHORT-NAME>SdTimingConfig</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="815cf76b-c143-4cd0-a0e3-275c30ad821d">
+              <SHORT-NAME>Client</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="f0e7b7ac-59dc-4c3b-a775-4240366d3f0c">
+              <SHORT-NAME>Server</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="516973fc-ffda-4ff6-a4a1-2fba41df2d92">
+              <SHORT-NAME>Subscription</SHORT-NAME>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="9d35ed01-dcee-435d-8e84-bea00cb0a0be">
+          <SHORT-NAME>Someip</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="d7fd1a94-af27-46ba-a104-dc80e46e1bb6">
+              <SHORT-NAME>Consumer</SHORT-NAME>
+            </AR-PACKAGE>
+            <AR-PACKAGE UUID="ba6bf8bd-2ba1-488a-8887-191220e900c5">
+              <SHORT-NAME>Provider</SHORT-NAME>
+              <ELEMENTS>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="98309dbf-22c0-4d21-9c7b-b30f65bffc4a">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_BCM_WiperWash</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <EVENT-PROPSS>
+                    <SOMEIP-EVENT-PROPS>
+                      <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperInterval/Notification_wiperInterval</EVENT-REF>
+                    </SOMEIP-EVENT-PROPS>
+                    <SOMEIP-EVENT-PROPS>
+                      <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperLevel/Notification_wiperLevel</EVENT-REF>
+                    </SOMEIP-EVENT-PROPS>
+                  </EVENT-PROPSS>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperInterval/Get_wiperInterval</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/wiperLevel/Get_wiperLevel</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/setWipingInterval</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/setWipingLevel</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/startWiping</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash/stopWiping</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="8767adb6-a734-4a31-a218-225b313adb4b">
+                      <SHORT-NAME>Eventgroup_Notification_wiperInterval</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/BCM_WiperWash/Eventgroup_Notification_wiperInterval</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="e4323131-0fbf-4725-a5ca-2acd58140b8a">
+                      <SHORT-NAME>Eventgroup_Notification_wiperLevel</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/BCM_WiperWash/Eventgroup_Notification_wiperLevel</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>5005</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="dce12be0-bed6-4297-895e-c18e776cfcf6">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_Ctrl_MoodLamp</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/getPowerStatus</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/setPowerStatus</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/getBrightness</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/setBrightness</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/getColor</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_MoodLamp/setColor</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9048</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="a7e1823f-5f4e-4401-b61c-7ca67d8d97e3">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_Ctrl_RearCurtain</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_RearCurtain</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_RearCurtain/getOpeningRate</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Ctrl_RearCurtain/setOpeningRate</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9049</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="e002d631-a7d8-462e-babf-7fe5dede2274">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_Snsr_FaceDetectModule</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_FaceDetectModule</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_FaceDetectModule/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_FaceDetectModule/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_FaceDetectModule/isRunning</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_FaceDetectModule/getEmotion</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9040</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="5bf6c280-c108-48e3-9aa0-ba277c6ce9c9">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_Snsr_Heartbeat</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_Heartbeat</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_Heartbeat/getHr</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9041</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="4465d599-2cea-4d2b-9aec-1e3efb164857">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_Snsr_USS</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_USS</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_USS/ntfSonarInfo</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_USS/ntfFltSt</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/Snsr_USS/isDetect</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9034</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="c2e99c3f-ca9c-48d1-bdcc-27e97b5f477f">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_TMS_AC</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/isRunning</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/setTargetTemp</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/getTargetTemp</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_AC/getAirOutletTemp</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9042</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="8568c7d4-66e0-4c55-9a00-50cbdba5af9a">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_TMS_EnvMonitor</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/notifyHumidity</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/getTemp</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/notifyTemp</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/getHumidity</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/getLightIntensity</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_EnvMonitor/notifyLightIntensity</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9046</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="e745acf1-bd81-4568-821f-b9534774b4de">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_TMS_Fragrance</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/isRunning</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/setConcentration</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/getConcentration</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/setType</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Fragrance/getType</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9045</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="22a4c563-7feb-4f9a-961d-f053265bdc56">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_TMS_Purifier</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Purifier</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Purifier/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Purifier/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Purifier/isRunning</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9044</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="5fbbbfea-f7b6-4126-b7e0-caf25c574624">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_TMS_Ventilation</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Ventilation</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Ventilation/turnOn</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Ventilation/turnOff</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/TMS_Ventilation/isRunning</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9043</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="7c161c0e-5289-4a1c-94ee-73b2b9630e39">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_AccrPedal</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_AccrPedal</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_AccrPedal/notifyAccrPedal</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9003</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="9897e851-a588-42f2-94c4-2d0352a29dad">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_Brake</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Brake</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Brake/notifyMCPrs</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Brake/setTargetAx</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Brake/setTotalForce</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Brake/notifyTq</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9032</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="eac09c7f-df11-4633-96f7-e5253bf5bbfb">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_BrakePedal</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_BrakePedal</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_BrakePedal/nofityBrakeSwitch</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_BrakePedal/notifyBrakeStatus</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9002</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="71fd78f1-b722-4831-83b8-e10c373b769b">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_EPB</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_EPB</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_EPB/notifystaticSlope</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9033</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="6b0e224c-8cfb-4226-a214-cee994f555cd">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_Gear</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Gear</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Gear/notifyGear</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <COLLECTION-PROPS/>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_Gear/setTarget</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9004</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="a0f722b0-246e-4298-8268-4934e0084107">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_VCS_VehSpd</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/VCS_VehSpd</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <COLLECTION-PROPS/>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/VCS_VehSpd/notifyVehSpd</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>9001</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="ada7792a-06c0-49ac-ad74-652b05089e17">
+      <SHORT-NAME>ServiceInterface</SHORT-NAME>
+      <ELEMENTS>
+        <SERVICE-INTERFACE UUID="a0e98345-ffa4-46b6-82a8-6b1048177764">
+          <SHORT-NAME>BCM_Horn</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="ac242c5b-ed1d-4432-b49d-e624b4419c88">
+              <SHORT-NAME>Alert</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="0ed1f8ee-824c-46bd-ac13-d6ebfb717ba1">
+                  <SHORT-NAME>BCM_PeriodMode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="685ad32a-ba90-4d9a-8cd1-732a053e4f7e">
+              <SHORT-NAME>start</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="71dd642f-4aab-41d1-9436-71335edd4259">
+              <SHORT-NAME>stop</SHORT-NAME>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="051a69e4-e315-4cb4-8adf-d75f7ba9aec1">
+          <SHORT-NAME>BCM_WiperWash</SHORT-NAME>
+          <CATEGORY>COMMUNICATION_GROUP</CATEGORY>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <FIELDS>
+            <FIELD UUID="a4273940-07b3-4fb0-a93d-ad66b8b0c92a">
+              <SHORT-NAME>wiperInterval</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="4935f519-319f-4518-8ac9-d528aec45229">
+              <SHORT-NAME>wiperLevel</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_WipingLevel</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="0194f162-fd26-499a-a86c-1dfcf388d269">
+              <SHORT-NAME>setWipingInterval</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ab5735e2-e7ea-4501-87a2-1cd7d1b53da9">
+                  <SHORT-NAME>wipingInterval</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="c4a738e3-c820-4e50-90b6-9e2f9be49817">
+                  <SHORT-NAME>BCM_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="dc3cf913-fc16-450a-8eef-292a854cd853">
+              <SHORT-NAME>setWipingLevel</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="73f522e4-6ed1-40ce-909e-1899179c4d15">
+                  <SHORT-NAME>wipingLevel</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_WipingLevel</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="84f51236-3814-4439-866e-25b4374e88ed">
+                  <SHORT-NAME>BCM_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="bfea99ee-e98f-492a-a2ef-f917760d1c78">
+              <SHORT-NAME>startWiping</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="8482436f-a9c3-4e09-8d84-312529937815">
+                  <SHORT-NAME>returnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="09eaba10-9976-43b6-ab0d-d39cf3499f4e">
+              <SHORT-NAME>stopWiping</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="4ffcb701-3a8f-4b6f-87ad-38252bdc743d">
+                  <SHORT-NAME>returnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="d96085f7-ca47-40b0-a040-dddca3c7dabb">
+          <SHORT-NAME>Ctrl_MoodLamp</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="c9e2019b-b042-4b52-b0a9-fcbd82c6a448">
+              <SHORT-NAME>getBrightness</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3db84a03-69ed-4c6e-aba6-c72461dc9f72">
+                  <SHORT-NAME>brightness</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/brightness</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="898cbb79-4baa-4d0b-affa-4abb1b320e60">
+              <SHORT-NAME>getColor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bcca4a2d-9076-4b0f-bc74-7df46030275a">
+                  <SHORT-NAME>color</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/color</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="a89362c0-a187-4b1e-bf1a-5592e26eaf4a">
+              <SHORT-NAME>getPowerStatus</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="853095ee-c68a-4660-8e4a-01e2e1304b2c">
+                  <SHORT-NAME>lampStatus</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/lampStatus</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="c599a680-df01-4ae1-8764-ef2eea24604d">
+              <SHORT-NAME>setBrightness</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2f3d0b58-e8aa-4be4-b851-db7301a4d6f3">
+                  <SHORT-NAME>brightness</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/brightness</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="90f4d672-13c2-4d0d-85f8-f089d3c26756">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="c0dd9276-ebd7-4a39-88b4-6e07f0e8fbda">
+              <SHORT-NAME>setColor</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="34b7326b-5e57-4694-bab2-b2ad4bc57569">
+                  <SHORT-NAME>color</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/color</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="eda722b8-aa6f-4a30-bbd9-5dc82d031e1a">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="1dc7ef70-3a63-48cd-953f-427171d8d0a0">
+              <SHORT-NAME>setPowerStatus</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="125d5378-c0d4-4caf-b4f8-ba8715cc36c9">
+                  <SHORT-NAME>lampStatus</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/lampStatus</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="130aa438-5a8d-4cfd-84cf-34ada7eed5e8">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="40a8f2ed-ad29-45cc-bf7e-e9ac88304fb3">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="1a6ad376-6545-4b3b-ab36-5fa842204821">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="de830ca3-6736-4f0c-9e3b-7eda66a14f1d">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2e97b202-bf72-43db-8578-82a803042233">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="5cad751d-5ab6-4327-9bd5-bab2cc06097c">
+          <SHORT-NAME>Ctrl_RearCurtain</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="e309ab46-9cfe-46c8-b06f-00587c60cd25">
+              <SHORT-NAME>getOpeningRate</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="b39a628c-fba5-46f1-a07b-1ee8f77e840f">
+                  <SHORT-NAME>rate</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="7ab1713c-6d0e-4b22-b73f-c1af8ed13278">
+              <SHORT-NAME>setOpeningRate</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="68bc6ce1-cbad-4295-ba19-62f919ae6991">
+                  <SHORT-NAME>rate</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="9d6e7638-749d-4ca8-8c07-f885ea4e9e0a">
+                  <SHORT-NAME>Ctrl_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/Ctrl_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="3a6c390d-57a0-4c7b-a513-21a4247e2f3a">
+          <SHORT-NAME>DMS_Func</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="5830cfd4-b117-4cfc-a0c8-3e4a990ffd9e">
+              <SHORT-NAME>isDetectDrowsy</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ec4e7fcc-f696-42ff-990e-3e1e4206d196">
+                  <SHORT-NAME>DMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/DMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="cedb5aaf-690b-4316-adb9-d5d6cacb0849">
+          <SHORT-NAME>Snsr_FaceDetectModule</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="2a60a18a-13c2-4107-b901-c8f2c49e3d8d">
+              <SHORT-NAME>getEmotion</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a48ce434-2671-4432-8825-787081e39776">
+                  <SHORT-NAME>FDM_EmotionType</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/FDM_EmotionType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="172e70b7-0f1c-4a7d-8dcc-749a8af66855">
+              <SHORT-NAME>isRunning</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="437e1448-302a-4f5f-9a69-adf8ef89db3d">
+                  <SHORT-NAME>status</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="51ac327e-8384-4ccc-9b9e-37b22573e42a">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="07c712dd-d26e-4750-a342-78a40d54b024">
+                  <SHORT-NAME>FDM_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/FDM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="51d98ac9-2d1b-4720-9c32-3f89a6006c90">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bc520eb8-37f7-4e3b-8f3d-8f068405aff7">
+                  <SHORT-NAME>FDM_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/FDM_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="f8f772e4-bdea-4ea5-8ff6-59ec6488d396">
+          <SHORT-NAME>Snsr_Heartbeat</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="dd939a2e-c641-4d0a-9f42-bd655f8d60da">
+              <SHORT-NAME>getHr</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ffd7aeab-dbf8-40fe-bec7-9a1455221b32">
+                  <SHORT-NAME>hrStatus</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="ab0b49b3-b7fa-40fe-8a7f-5faae13a174f">
+          <SHORT-NAME>Snsr_USS</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="2ef2c5d3-4419-4e1c-b36e-5f0bf815deef">
+              <SHORT-NAME>isDetect</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="85f51513-c8ff-42a4-93ef-fb38d872ea25">
+                  <SHORT-NAME>detect</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="bbe65e21-af12-4e6c-85fb-9bd52ebf6f36">
+              <SHORT-NAME>ntfFltSt</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5313f224-2e72-4713-bdcc-5ec673e2b1a6">
+                  <SHORT-NAME>ntfFltSt</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="68877d46-de47-4ba4-86a1-2f3ae9b88a31">
+              <SHORT-NAME>ntfSonarInfo</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="6811b4a6-2941-43a8-9b31-72d6afa1734e">
+                  <SHORT-NAME>UssSonarinfo</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/USSSonarInfo</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="4eaab43c-8dfc-4329-a090-8bc5bccd37a0">
+          <SHORT-NAME>TMS_AC</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="6e4c0606-44ff-41e2-bb73-0a0c30dbff4c">
+              <SHORT-NAME>getAirOutletTemp</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ba802598-7822-4df1-81c1-172b7a9af8d6">
+                  <SHORT-NAME>outletId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="d8641adc-ae1c-40be-8f90-cdc3f1a6962d">
+                  <SHORT-NAME>outletTemp</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="14c39eb9-eb33-4c6c-9968-81c2cd5f2d3d">
+              <SHORT-NAME>getTargetTemp</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="b3fe4ced-65f7-483c-8178-f3619c0f6854">
+                  <SHORT-NAME>zoneId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="e07da661-5ba6-435b-bd3d-28787c51fd58">
+                  <SHORT-NAME>targetTemp</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="9b47c836-3e76-4e0c-ae6b-3a1fd2a4f1f1">
+              <SHORT-NAME>isRunning</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="1a45671e-f71e-45df-a2a0-714edf82ebdb">
+                  <SHORT-NAME>status</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="9972bdc8-8dbd-49ef-9bd4-09a1358326a9">
+              <SHORT-NAME>setTargetTemp</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="8b80cf45-410b-4097-83a3-01211354d0c1">
+                  <SHORT-NAME>zoneId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="76f30fdc-ed4c-4b53-b682-4a744f8dbba6">
+                  <SHORT-NAME>targetTemp</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="658e50ea-e25e-469e-a320-fb862022a87f">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="f7a50510-810d-4fd0-bf2f-c5006cf3e19b">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5661c318-1f38-457d-8e19-ae71d0db0b06">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="1327f264-0116-490f-bf19-5888877f5d71">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="ff654c75-4b50-4db2-bf1d-5226ff2cda00">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="f4928cca-797c-458e-98b3-c8ed3db68e35">
+          <SHORT-NAME>TMS_EnvMonitor</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="ce8977fa-3622-49e7-b411-ccdc1e166e35">
+              <SHORT-NAME>getHumidity</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="741a3739-d957-423a-8937-b4639859c976">
+                  <SHORT-NAME>zoneId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZone</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="6bac1d2f-3885-4338-bcf2-b82b32a1da80">
+                  <SHORT-NAME>humidity</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="c07cc7cd-b718-4677-967a-8cb735ad422b">
+              <SHORT-NAME>getLightIntensity</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="56be3555-4cb5-430f-8dc7-89edf004dfc7">
+                  <SHORT-NAME>zoneId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZone</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="471bd753-a15e-480c-8f75-5683f372d02b">
+                  <SHORT-NAME>lightIntensity</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="af035827-1b16-4bb7-9ca0-30a144d94755">
+              <SHORT-NAME>getTemp</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="32de7376-70de-4d59-b509-d8631d182ade">
+                  <SHORT-NAME>zoneId</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZone</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="63843243-969d-446c-babd-5ee45dae1cd7">
+                  <SHORT-NAME>temp</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/int16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="c5b02c69-d6a2-4123-acca-2bc51d86362c">
+              <SHORT-NAME>notifyHumidity</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="00d999ff-6856-45da-8ff7-d48711300c95">
+                  <SHORT-NAME>TMS_EnvZoneHumidityAry</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZoneHumidityAry</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="e9df974c-72d9-4652-8094-96659a1bc3ac">
+              <SHORT-NAME>notifyLightIntensity</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="47aa4f00-dd58-4ba2-a70a-c2400bb235b9">
+                  <SHORT-NAME>TMS_EnvZoneLightIntensityAry</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZoneLightIntensityAry</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="de767428-8aa8-41ca-a95d-481aef3d4acf">
+              <SHORT-NAME>notifyTemp</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="23b19910-3422-4881-92a4-ba04e2ab0615">
+                  <SHORT-NAME>TMS_EnvZoneTempAry</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_EnvZoneTempAry</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="73c21451-b99a-45ef-a57d-2e217a91cc4f">
+          <SHORT-NAME>TMS_Fragrance</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="4e4a6f3b-c68d-4ef2-bf81-5e530d22c5c9">
+              <SHORT-NAME>getConcentration</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="48e5a99a-09c4-44d7-9c02-fe6b5f752984">
+                  <SHORT-NAME>concentration</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="03241770-3205-408f-8026-6e87b5a5fc80">
+              <SHORT-NAME>getType</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="bb313e98-f1f6-4268-8a8f-bdf762a97ea1">
+                  <SHORT-NAME>TMS_FragranceType</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_FragranceType</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="3d6aaa22-bacf-41a7-a826-c23a69354caa">
+              <SHORT-NAME>isRunning</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="854baf38-9dcc-415d-a5f2-7ec70d0ea829">
+                  <SHORT-NAME>state</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="51594f18-2c12-4821-a9af-86013c86e6e8">
+              <SHORT-NAME>setConcentration</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="7159dad2-6bd7-4449-baed-3521a83c6398">
+                  <SHORT-NAME>concentration</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="297ec0ad-1748-4db2-88d7-5b884ac0d950">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="df734850-0749-4018-9c37-240b32f7b2a8">
+              <SHORT-NAME>setType</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="57a32c19-3ba5-43d7-bf25-eee9e3346e9c">
+                  <SHORT-NAME>type</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_FragranceType</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3259decc-2ef4-4f01-afa8-59c729db10b7">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="0092ce00-171f-4d18-9dd4-e20a6945b43e">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="26838d2a-36df-4836-9e4a-c12f737a17a5">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="fd4784d8-c98c-48f3-a0f9-c0121bb869e6">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="061b9f96-fcdf-4fd3-92e7-3e68e74ef858">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="80df65a2-ceba-4396-b041-c0b5d4a25041">
+          <SHORT-NAME>TMS_Purifier</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="f4cfd0b4-f4f5-4c7d-b534-13894d937be8">
+              <SHORT-NAME>isRunning</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2b51b715-090f-40e9-bcd8-f6fa88673631">
+                  <SHORT-NAME>status</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="640a2371-1f32-46d8-a431-0ed4edf51b69">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="5df41d91-e1db-4ce8-8499-be55fbc2a146">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="470ff771-cece-4e64-ac36-8f81c2bd458c">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3e8db513-e0b0-4d63-8aad-e6f7c4d1d3d9">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="80c624b4-3c7b-4628-a8ac-373f16a98819">
+          <SHORT-NAME>TMS_Ventilation</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="222e3669-dcf4-4d2e-bb93-8faeaca3b627">
+              <SHORT-NAME>isRunning</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3e11983f-6cca-4b33-8654-b221492e890c">
+                  <SHORT-NAME>status</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="38227e63-807e-46f9-b97a-cbace7ffe984">
+              <SHORT-NAME>turnOff</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="3d8a9a5d-d04b-4833-8ec4-f7eac2a0813a">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="d71f4e8d-5a6c-4199-90c7-009cc405119d">
+              <SHORT-NAME>turnOn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2648f106-7546-4ce8-b3c7-b2703e00eb06">
+                  <SHORT-NAME>TMS_ReturnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/TMS_ReturnCode</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="8dcb4c32-9146-411c-8b86-4f466a7234d5">
+          <SHORT-NAME>VCS_AccrPedal</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="2855eec8-b2a2-43a1-a5c0-00e5d25dcd7a">
+              <SHORT-NAME>notifyAccrPedal</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="264e5ff8-7121-4815-b83a-a836fe634408">
+                  <SHORT-NAME>VCS_AccrPedal</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_AccrPedal</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="469b019a-3fe5-43a1-9081-cac3c7b24f95">
+          <SHORT-NAME>VCS_Brake</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="1f477f1b-6805-46a7-8bc5-1678e65dcc9e">
+              <SHORT-NAME>notifyMCPrs</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="eb4faf58-c7ee-469e-8cad-0278d3183363">
+                  <SHORT-NAME>VCS_MCPrs</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_MCPrs</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="3378af7b-0a4d-495b-b343-b57df4ba60b7">
+              <SHORT-NAME>notifyTq</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="2e0519ac-838e-4253-bbf4-c4c8c3a8cd22">
+                  <SHORT-NAME>VCS_TqCtrl</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_TqCtrl</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="9ebf3781-eec4-4577-8c19-ffb4da62084b">
+              <SHORT-NAME>setTargetAx</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="fe4c04b8-4b72-4586-9e1a-203e9ae4e2ec">
+                  <SHORT-NAME>ax</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_Acceleration</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="fac58f4d-13a5-459d-a774-f62840445130">
+              <SHORT-NAME>setTotalForce</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="7ed9fada-bb6b-4e53-99dd-7a5248f65e9e">
+                  <SHORT-NAME>lgtBrkFTotal</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_LgtBrkFTotal</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="de90380f-4e92-4fc5-9b37-70960b33532e">
+          <SHORT-NAME>VCS_BrakePedal</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="d4482397-2fe9-4ce7-8225-d1d567166f67">
+              <SHORT-NAME>notifyBrakeStatus</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="0d2d7c2c-d40d-41c2-bc12-f8ead9c98cd3">
+                  <SHORT-NAME>VCS_BrakePosn</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_BrakePosn</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="b4278ce3-a98e-426b-9bc8-654e3380e0c5">
+              <SHORT-NAME>notifyBrakeSwitch</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="d3dcb065-81b4-4200-a1da-88cacea31ccb">
+                  <SHORT-NAME>VCS_BrakeSwitch</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_BrakeSwitch</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="aaea2315-7a05-41f3-8a41-6fe8aed4ed1a">
+          <SHORT-NAME>VCS_EPB</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="4dca6f44-1f27-46a2-bf81-c5ed06105a09">
+              <SHORT-NAME>notifystaticSlope</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="1382a00e-f95a-4593-9d1a-8c3b8043d72b">
+                  <SHORT-NAME>VCS_Slope</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_Slope</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="64a54bb2-0227-4ac2-b402-12f74decf32e">
+          <SHORT-NAME>VCS_Gear</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="2c23b062-1720-4209-94fe-88ad29ab10fb">
+              <SHORT-NAME>notifyGear</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="c25d1165-fe55-4602-b4d5-5245faa97bf4">
+                  <SHORT-NAME>VCS_Gear</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_Gear</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+            <CLIENT-SERVER-OPERATION UUID="200a0cad-abe8-4509-960f-631cf0052deb">
+              <SHORT-NAME>setTarget</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="705acd88-3123-43d9-83da-ef9ef8d5ff12">
+                  <SHORT-NAME>targetGear</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_Gear</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a6e04a7c-8e4e-4635-958a-23e2ec81806d">
+                  <SHORT-NAME>returnCode</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/bool</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="801b342e-6d3b-4022-9853-0b3fc6a74e09">
+          <SHORT-NAME>VCS_TqDmd</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="2fd7ef06-f7b9-4e7f-9e15-81374855cae8">
+              <SHORT-NAME>setDrivePedalPosn</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="46ea01cf-729f-43bc-a433-68bcc6610bf2">
+                  <SHORT-NAME>drivePedalPosn</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint16_t</TYPE-TREF>
+                  <DIRECTION>IN</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+        <SERVICE-INTERFACE UUID="6988d36a-53e7-4c9f-b42b-246e4aef6f25">
+          <SHORT-NAME>VCS_VehSpd</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <METHODS>
+            <CLIENT-SERVER-OPERATION UUID="a628f309-c15d-44c1-a147-01748bc68c90">
+              <SHORT-NAME>notifyVehSpd</SHORT-NAME>
+              <ARGUMENTS>
+                <ARGUMENT-DATA-PROTOTYPE UUID="a631e17c-1642-4ad5-8012-0f80d8533d14">
+                  <SHORT-NAME>VCS_VehSpd</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/VCS_VehSpd</TYPE-TREF>
+                  <DIRECTION>OUT</DIRECTION>
+                </ARGUMENT-DATA-PROTOTYPE>
+              </ARGUMENTS>
+              <FIRE-AND-FORGET>false</FIRE-AND-FORGET>
+            </CLIENT-SERVER-OPERATION>
+          </METHODS>
+        </SERVICE-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
