@@ -25,7 +25,10 @@ target_link_libraries(${PARA_APP_NAME}
 # ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
-               intelligentwiper/aa/port/rportwiper.cpp
+               intelligentwiper/aa/port/rport_wiper.cpp
+               intelligentwiper/aa/port/rport_vehicleinfo.cpp
+               intelligentwiper/aa/port/rport_subscriptionmanagement.cpp
                intelligentwiper/aa/intelligentwiper.cpp
+               intelligentwiper/aa/logic.cpp
                main.cpp
 )
