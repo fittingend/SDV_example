@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soarcurtain_skeleton.h
 /// SERVICE INTERFACE NAME            : SoaRcurtain
-/// GENERATED DATE                    : 2025-08-13 16:15:21
+/// GENERATED DATE                    : 2025-08-26 14:43:18
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

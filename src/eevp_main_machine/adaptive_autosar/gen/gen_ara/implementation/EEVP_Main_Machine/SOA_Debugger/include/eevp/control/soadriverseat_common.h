@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soadriverseat_common.h
 /// SERVICE INTERFACE NAME            : SoaDriverSeat
-/// GENERATED DATE                    : 2025-08-13 16:15:18
+/// GENERATED DATE                    : 2025-08-26 14:43:15
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

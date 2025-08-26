@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : vehiclepackagemanagement_skeleton.h
 /// SERVICE INTERFACE NAME            : VehiclePackageManagement
-/// GENERATED DATE                    : 2025-08-13 16:15:13
+/// GENERATED DATE                    : 2025-08-26 14:43:12
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

@@ -1,0 +1,88 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "SOA_SmartFilm/AA/RPort_Zone5_SmtFilm",
+    "service-protocol" : "someip",
+    "service-name" : "Zone5SmtFilm",
+    "service-id" : "6403",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "842",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "SetAllOpacity",
+            "method-id" : "16386",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetOpacity",
+            "method-id" : "16385",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+        {
+            "name" : "zone5SmtFilmDeviceNormal",
+            "getter" : {
+                "method-id" : "1",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16385",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "zone5SmtFilmOpacities",
+            "getter" : {
+                "method-id" : "2",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16386",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        }
+    ]
+}

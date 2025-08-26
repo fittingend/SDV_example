@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : zone5power_proxy.h
 /// SERVICE INTERFACE NAME            : Zone5Power
-/// GENERATED DATE                    : 2025-08-13 16:15:20
+/// GENERATED DATE                    : 2025-08-26 14:43:17
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : ctrl_rearcurtain_common.h
 /// SERVICE INTERFACE NAME            : Ctrl_RearCurtain
-/// GENERATED DATE                    : 2025-08-26 12:19:34
+/// GENERATED DATE                    : 2025-08-26 14:43:20
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

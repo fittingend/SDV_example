@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : otamonitoring_skeleton.h
 /// SERVICE INTERFACE NAME            : OtaMonitoring
-/// GENERATED DATE                    : 2025-08-13 16:15:13
+/// GENERATED DATE                    : 2025-08-26 14:43:11
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

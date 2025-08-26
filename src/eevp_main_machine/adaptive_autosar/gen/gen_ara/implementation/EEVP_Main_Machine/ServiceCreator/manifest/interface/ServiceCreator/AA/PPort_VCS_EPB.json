@@ -1,0 +1,29 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "pport",
+    "instance-specifier" : "ServiceCreator/AA/PPort_VCS_EPB",
+    "service-protocol" : "someip",
+    "service-name" : "VCS_EPB",
+    "service-id" : "9033",
+    "instance-id" : "9033",
+    "major-version" : "1",
+    "minor-version" : "0",
+    "client-id" : "undefined",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "notifystaticSlope",
+            "method-id" : "1",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+    ]
+}

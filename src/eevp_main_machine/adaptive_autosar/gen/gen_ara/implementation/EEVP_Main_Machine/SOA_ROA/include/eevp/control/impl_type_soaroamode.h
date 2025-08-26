@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaroamode.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaRoaMode
-/// GENERATED DATE                    : 2025-08-13 16:15:21
+/// GENERATED DATE                    : 2025-08-26 14:43:18
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

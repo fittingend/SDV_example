@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_vcs_lgtbrkftotal.h
 /// IMPLEMENTATION DATA TYPE NAME     : VCS_LgtBrkFTotal
-/// GENERATED DATE                    : 2025-08-26 12:19:36
+/// GENERATED DATE                    : 2025-08-26 14:43:22
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

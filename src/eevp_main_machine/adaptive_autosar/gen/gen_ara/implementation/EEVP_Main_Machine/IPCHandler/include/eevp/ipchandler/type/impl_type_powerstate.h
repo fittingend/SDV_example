@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_powerstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : PowerState
-/// GENERATED DATE                    : 2025-08-13 16:15:09
+/// GENERATED DATE                    : 2025-08-26 14:43:09
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

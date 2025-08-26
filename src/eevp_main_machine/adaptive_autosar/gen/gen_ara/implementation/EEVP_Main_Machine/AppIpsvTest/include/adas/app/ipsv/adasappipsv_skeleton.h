@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : adasappipsv_skeleton.h
 /// SERVICE INTERFACE NAME            : AdasAppIpsv
-/// GENERATED DATE                    : 2025-08-13 16:15:08
+/// GENERATED DATE                    : 2025-08-26 14:43:08
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

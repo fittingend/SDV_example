@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaseatmotorposition.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaSeatMotorPosition
-/// GENERATED DATE                    : 2025-08-13 16:15:27
+/// GENERATED DATE                    : 2025-08-26 14:43:07
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

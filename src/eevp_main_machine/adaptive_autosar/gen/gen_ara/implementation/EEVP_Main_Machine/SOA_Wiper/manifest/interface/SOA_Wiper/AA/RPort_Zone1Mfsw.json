@@ -1,0 +1,27 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "SOA_Wiper/AA/RPort_Zone1Mfsw",
+    "service-protocol" : "someip",
+    "service-name" : "Zone1MfswInput",
+    "service-id" : "5424",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "2354",
+    "events" : [
+        {
+            "name" : "onMfswInput",
+            "event-id" : "12915",
+            "transport" : "udp",
+            "max-segment-len" : "0",
+            "separation-time" : "0.0"
+        }
+    ],
+    "methods" : [
+    ],
+    "fields" : [
+    ]
+}

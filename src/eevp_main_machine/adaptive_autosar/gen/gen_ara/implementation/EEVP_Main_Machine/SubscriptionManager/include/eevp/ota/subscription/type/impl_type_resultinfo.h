@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_resultinfo.h
 /// IMPLEMENTATION DATA TYPE NAME     : resultInfo
-/// GENERATED DATE                    : 2025-08-13 16:15:23
+/// GENERATED DATE                    : 2025-08-26 14:43:22
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

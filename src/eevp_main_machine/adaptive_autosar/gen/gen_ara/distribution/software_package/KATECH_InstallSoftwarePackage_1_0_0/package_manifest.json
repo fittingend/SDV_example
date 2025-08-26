@@ -18,15 +18,7 @@
         "maximum-length" : "undefined"
     },
     "pre-activate" : [
-        {
-            "function-group" : "SFG01",
-            "state" : "Off"
-        }
     ],
     "verify" : [
-        {
-            "function-group" : "SFG01",
-            "state" : "Verify"
-        }
     ]
 }

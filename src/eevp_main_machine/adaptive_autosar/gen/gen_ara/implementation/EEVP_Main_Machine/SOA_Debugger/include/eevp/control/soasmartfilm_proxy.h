@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soasmartfilm_proxy.h
 /// SERVICE INTERFACE NAME            : SoaSmartFilm
-/// GENERATED DATE                    : 2025-08-13 16:15:17
+/// GENERATED DATE                    : 2025-08-26 14:43:14
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

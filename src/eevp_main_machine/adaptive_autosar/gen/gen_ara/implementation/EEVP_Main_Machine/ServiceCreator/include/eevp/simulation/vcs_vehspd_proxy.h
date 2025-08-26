@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : vcs_vehspd_proxy.h
 /// SERVICE INTERFACE NAME            : VCS_VehSpd
-/// GENERATED DATE                    : 2025-08-26 12:19:35
+/// GENERATED DATE                    : 2025-08-26 14:43:21
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

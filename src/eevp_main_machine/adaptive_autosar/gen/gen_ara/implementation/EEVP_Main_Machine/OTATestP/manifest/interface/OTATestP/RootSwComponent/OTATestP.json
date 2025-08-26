@@ -1,0 +1,61 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "pport",
+    "instance-specifier" : "OTATestP/RootSwComponent/OTATestP",
+    "service-protocol" : "someip",
+    "service-name" : "Main_OTA_Test",
+    "service-id" : "5008",
+    "instance-id" : "1",
+    "major-version" : "1",
+    "minor-version" : "0",
+    "client-id" : "undefined",
+    "events" : [
+        {
+            "name" : "Event0",
+            "event-id" : "1",
+            "transport" : "udp",
+            "max-segment-len" : "0",
+            "separation-time" : "0.0"
+        }
+    ],
+    "methods" : [
+        {
+            "name" : "Method0",
+            "method-id" : "2",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+        {
+            "name" : "Field0",
+            "getter" : {
+                "method-id" : "3",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "4",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "5",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        }
+    ]
+}

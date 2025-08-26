@@ -1,0 +1,47 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "pport",
+    "instance-specifier" : "ServiceCreator/AA/PPort_TMS_Ventilation",
+    "service-protocol" : "someip",
+    "service-name" : "TMS_Ventilation",
+    "service-id" : "9043",
+    "instance-id" : "9043",
+    "major-version" : "1",
+    "minor-version" : "0",
+    "client-id" : "undefined",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "isRunning",
+            "method-id" : "3",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "turnOff",
+            "method-id" : "2",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "turnOn",
+            "method-id" : "1",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+    ]
+}

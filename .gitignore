@@ -33,7 +33,6 @@
 
 # Build Folder
 build/
-manifest/
 .vscode/
 
 build.sh

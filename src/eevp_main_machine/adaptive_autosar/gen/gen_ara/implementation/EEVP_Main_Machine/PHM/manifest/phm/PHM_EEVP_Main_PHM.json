@@ -1,0 +1,15 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "platform-health-management-manifest",
+    "checkpoints" : [
+    ],
+    "health-channel-external" : [
+    ],
+    "health-channel-supervisions" : [
+    ],
+    "local-supervisions" : [
+    ],
+    "global-supervisions" : [
+    ]
+}

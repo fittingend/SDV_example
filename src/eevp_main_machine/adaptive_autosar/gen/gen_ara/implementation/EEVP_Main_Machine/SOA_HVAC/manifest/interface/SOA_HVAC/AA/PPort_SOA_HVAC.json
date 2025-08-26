@@ -1,0 +1,244 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "pport",
+    "instance-specifier" : "SOA_HVAC/AA/PPort_SOA_HVAC",
+    "service-protocol" : "someip",
+    "service-name" : "SoaHvac",
+    "service-id" : "4952",
+    "instance-id" : "4966",
+    "major-version" : "1",
+    "minor-version" : "0",
+    "client-id" : "undefined",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "SetAcOnOff",
+            "method-id" : "16386",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetAirSource",
+            "method-id" : "16393",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetAutoTemp",
+            "method-id" : "16387",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetBackwardDefrostOn",
+            "method-id" : "16395",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetBlowingDirection",
+            "method-id" : "16391",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetBlowingForce",
+            "method-id" : "16390",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetDriverTemp",
+            "method-id" : "16388",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetForwardDefrostOn",
+            "method-id" : "16394",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetHvacPower",
+            "method-id" : "16385",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetPassengerTemp",
+            "method-id" : "16389",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "SetSync",
+            "method-id" : "16392",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+        {
+            "name" : "soaHvacDeviceNormal",
+            "getter" : {
+                "method-id" : "1",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16385",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "soaHvacSetting",
+            "getter" : {
+                "method-id" : "2",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16386",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "soaHvacStatus",
+            "getter" : {
+                "method-id" : "3",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16387",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "SoaHvacSwVersion",
+            "getter" : {
+                "method-id" : "5",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16389",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "soaHvacTemps",
+            "getter" : {
+                "method-id" : "4",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "16388",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        }
+    ]
+}

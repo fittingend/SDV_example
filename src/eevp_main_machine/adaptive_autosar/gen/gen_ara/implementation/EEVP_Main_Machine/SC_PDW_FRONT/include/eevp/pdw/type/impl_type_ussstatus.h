@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_ussstatus.h
 /// IMPLEMENTATION DATA TYPE NAME     : UssStatus
-/// GENERATED DATE                    : 2025-08-13 16:15:15
+/// GENERATED DATE                    : 2025-08-26 14:43:13
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

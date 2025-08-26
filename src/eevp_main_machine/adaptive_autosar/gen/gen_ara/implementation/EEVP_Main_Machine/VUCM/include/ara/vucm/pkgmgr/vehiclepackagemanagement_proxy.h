@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : vehiclepackagemanagement_proxy.h
 /// SERVICE INTERFACE NAME            : VehiclePackageManagement
-/// GENERATED DATE                    : 2025-08-13 16:15:25
+/// GENERATED DATE                    : 2025-08-26 14:43:25
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

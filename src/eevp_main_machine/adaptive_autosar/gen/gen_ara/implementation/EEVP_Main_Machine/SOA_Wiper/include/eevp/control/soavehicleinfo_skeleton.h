@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soavehicleinfo_skeleton.h
 /// SERVICE INTERFACE NAME            : SoaVehicleInfo
-/// GENERATED DATE                    : 2025-08-13 16:15:22
+/// GENERATED DATE                    : 2025-08-26 14:43:19
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
