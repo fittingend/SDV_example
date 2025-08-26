@@ -162,7 +162,7 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="96bd93a3-9938-42af-9c8e-14342a5760e2">
+                <DLT-LOG-CHANNEL UUID="50f7bfbb-69aa-4cd9-baf9-e5f0908c2465">
                   <SHORT-NAME>IntelligentWiper</SHORT-NAME>
                   <APPLICATION-ID>INTW</APPLICATION-ID>
                   <CONTEXT-ID>INTW</CONTEXT-ID>
@@ -359,6 +359,16 @@
                   <SHORT-NAME>SOA_Wiper</SHORT-NAME>
                   <APPLICATION-ID>SWIP</APPLICATION-ID>
                   <CONTEXT-ID>SWIP</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="4a402c37-3ee9-436b-b4c8-9912d4c3d57f">
+                  <SHORT-NAME>ServiceCreator</SHORT-NAME>
+                  <APPLICATION-ID>SVCT</APPLICATION-ID>
+                  <CONTEXT-ID>SVCT</CONTEXT-ID>
                   <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
                   <LOG-TRACE-LOG-MODES>
                     <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
@@ -610,11 +620,6 @@
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/InfoHealthTest</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
-                <PROCESS-TO-MACHINE-MAPPING UUID="cb2c15ac-8b42-4479-b462-24efeb54975b">
-                  <SHORT-NAME>ProcessToMachineMapping_IntelligentWiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
-                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
-                  <PROCESS-REF DEST="PROCESS">/Application/Executable/IntelligentWiper</PROCESS-REF>
-                </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ca1407ea-2a98-4182-b758-85264231f548">
                   <SHORT-NAME>ProcessToMachineMapping_KATECH_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
@@ -710,6 +715,11 @@
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="b3027d50-7c1f-4759-b938-4e3fe4e68d97">
+                  <SHORT-NAME>ProcessToMachineMapping_ServiceCreator_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/ServiceCreator</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="e6028cee-902f-42b0-a691-a7009e57b5e2">
                   <SHORT-NAME>ProcessToMachineMapping_SubscriptionManager_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
@@ -726,7 +736,7 @@
                   <PROCESS-REF DEST="PROCESS">/Application/Process/VDI</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ebc41e70-9d2b-4076-8c3c-14baf639800c">
-                  <SHORT-NAME>ProcessToMachineMapping_VUCM_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <SHORT-NAME>ProcessToMachineMapping_VUCM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/VUCM</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
