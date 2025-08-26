@@ -8,10 +8,10 @@ modules="
 ap_sm|-c -p|ap_app
 ap_ipchandler||ap_app
 ap_soa_wiper||ap_app
-ap_intelligent_wiper||subscription_app
+#ap_intelligent_wiper||subscription_app
 #ap_katech||subscription_app
 #ap_lotte_service||subscription_app
-#ap_service_creator||subscription_app
+ap_service_creator||subscription_app
 #ap_sesl_service||subscription_app
 #ap_tsmart||subscription_app
 "
