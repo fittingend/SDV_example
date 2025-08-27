@@ -151,6 +151,9 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0x361 | Eevp.Control.SoaRcurtain | 40200 ~ 40299 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0x362 | Eevp.Control.SoaSmartFilm | 40200 ~ 40299 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0x363 | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
+| LITSmartFilm (롯데이노베이트 앱C) | 0x364 | Eevp.Control.Service | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.Service | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
 |1|2|3|4|5\
 
 
@@ -169,7 +172,7 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | SFG04 | BatteryMonitor | 티스마트 |
 | SFG05 | SmokingMonitor | 티스마트 |
 | SFG06 | RestingEnv | 티스마트 |
-| SFG07 | | |
+| SFG07 | LITSmartFilm| 롯데이노베이트|
 | SFG08 | | |
 | SFG09 | | |
 | SFG10 | | |
