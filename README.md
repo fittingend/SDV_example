@@ -170,7 +170,7 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | SFG04 | BatteryMonitor | 티스마트 |
 | SFG05 | SmokingMonitor | 티스마트 |
 | SFG06 | RestingEnv | 티스마트 |
-| SFG07 | | |
+| SFG07 | | PreventRollback | 국민대학교 |
 | SFG08 | | |
 | SFG09 | | |
 | SFG10 | | |
