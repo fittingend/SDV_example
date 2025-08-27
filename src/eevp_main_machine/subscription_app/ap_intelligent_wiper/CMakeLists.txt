@@ -46,15 +46,4 @@ INCLUDE_DIRECTORIES(${PARA_INC_DIR})
 
 MESSAGE(STATUS "PARA_APP_GEN_INCLUDE_DIR : ${PARA_APP_GEN_INCLUDE_DIR}")
 
-SET(SRC
-	src/intelligentwiper/aa/port/rportwiper.cpp
-	src/intelligentwiper/aa/intelligentwiper.cpp
-	src/main.cpp)
-
-ADD_EXECUTABLE(${PROJECT_NAME} ${SRC})
-
-Para_Target(${PARA_APP_NAME}
-	PARA_LIBS_PRIVATE core log exec com
-	PARA_GEN_DIR ${PARA_APP_GEN_DIR}
-	OUTPUT_NAME ${PARA_APP_NAME}
-)
+add_subdirectory(src)
