@@ -25,7 +25,9 @@ target_link_libraries(${PARA_APP_NAME}
 # ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
-               consumer/aa/port/rport.cpp
-               consumer/aa/consumer.cpp
+               lit/aa/port/rportsoadms.cpp
+               lit/aa/port/rportsoasmartfilm.cpp
+               lit/aa/port/rportsubscriptionmanagement.cpp
+               lit/aa/lit.cpp
                main.cpp
 )
