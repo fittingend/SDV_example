@@ -152,9 +152,9 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0x362 | Eevp.Control.SoaSmartFilm | 40200 ~ 40299 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0x363 | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
 | IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.Service | 40100 ~ 40199 |롯데이노베이트 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.Service | 40100 ~ 40199 |롯데이노베이트 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x367 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0x367 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
 |1|2|3|4|5\
 
 
