@@ -33,6 +33,14 @@
         <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
           <SHORT-NAME>Manifest</SHORT-NAME>
           <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="c3a42337-6001-4afe-b04f-e929d78cac26">
+              <SHORT-NAME>ServiceCreator_AA_PPort_BCM_ExteriorSignal</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_BCM_ExteriorSignal</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_BCM_ExteriorSignal</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
             <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="6df798b7-b7ca-4797-a953-17c4d4f125b5">
               <SHORT-NAME>ServiceCreator_AA_PPort_BCM_WiperWash</SHORT-NAME>
               <PORT-PROTOTYPE-IREF>
@@ -209,6 +217,10 @@
             <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="207a232b-e057-4802-b3f1-f285e7430c7f">
               <SHORT-NAME>ServiceCreator</SHORT-NAME>
               <PORTS>
+                <P-PORT-PROTOTYPE UUID="ed7af2d5-bd5c-426e-8855-6b73ea223fc4">
+                  <SHORT-NAME>PPort_BCM_ExteriorSignal</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_ExteriorSignal</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
                 <P-PORT-PROTOTYPE UUID="f09ebf87-8914-4865-bf72-3299ca408028">
                   <SHORT-NAME>PPort_BCM_WiperWash</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_WiperWash</PROVIDED-INTERFACE-TREF>
