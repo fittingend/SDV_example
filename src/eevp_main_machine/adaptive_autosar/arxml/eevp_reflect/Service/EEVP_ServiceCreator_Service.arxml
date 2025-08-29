@@ -10,6 +10,61 @@
         <AR-PACKAGE UUID="4730edbc-ae32-4775-89f3-76b770c5292b">
           <SHORT-NAME>Someip</SHORT-NAME>
           <ELEMENTS>
+            <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="97504387-c643-48d6-b860-c5a90492cbce">
+              <SHORT-NAME>BCM_ExteriorSignal</SHORT-NAME>
+              <FIELD-DEPLOYMENTS>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="b6d35c50-ffbd-49f5-acc9-ccdbbad871f1">
+                  <SHORT-NAME>hornState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/BCM_ExteriorSignal/hornState</FIELD-REF>
+                  <GET UUID="940980f3-f371-4321-b03b-1f874f941adb">
+                    <SHORT-NAME>Get_hornState</SHORT-NAME>
+                    <METHOD-ID>1</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="87e63db1-75b7-4e36-bf03-f2afd3731900">
+                    <SHORT-NAME>Notification_hornState</SHORT-NAME>
+                    <EVENT-ID>11</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+                <SOMEIP-FIELD-DEPLOYMENT UUID="2214a131-20d8-4eb8-82b1-926cb4107097">
+                  <SHORT-NAME>lightState</SHORT-NAME>
+                  <FIELD-REF DEST="FIELD">/ServiceInterface/BCM_ExteriorSignal/lightState</FIELD-REF>
+                  <GET UUID="77eafdf0-816f-4056-b76b-0617570f576b">
+                    <SHORT-NAME>Get_lightState</SHORT-NAME>
+                    <METHOD-ID>2</METHOD-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </GET>
+                  <NOTIFIER UUID="53c2aa24-c751-487e-9483-d9e300639917">
+                    <SHORT-NAME>Notification_lightState</SHORT-NAME>
+                    <EVENT-ID>12</EVENT-ID>
+                    <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                  </NOTIFIER>
+                </SOMEIP-FIELD-DEPLOYMENT>
+              </FIELD-DEPLOYMENTS>
+              <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_ExteriorSignal</SERVICE-INTERFACE-REF>
+              <EVENT-GROUPS>
+                <SOMEIP-EVENT-GROUP UUID="e91eaef7-c557-4a2b-b7d5-63230b3bbd33">
+                  <SHORT-NAME>Eventgroup_Notification_hornState</SHORT-NAME>
+                  <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Notification_hornState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+                <SOMEIP-EVENT-GROUP UUID="76815684-1c64-4170-aa01-f35fd5e2996d">
+                  <SHORT-NAME>Eventgroup_Notification_lightState</SHORT-NAME>
+                  <EVENT-GROUP-ID>2</EVENT-GROUP-ID>
+                  <EVENT-REFS>
+                    <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/lightState/Notification_lightState</EVENT-REF>
+                  </EVENT-REFS>
+                </SOMEIP-EVENT-GROUP>
+              </EVENT-GROUPS>
+              <SERVICE-INTERFACE-ID>9060</SERVICE-INTERFACE-ID>
+              <SERVICE-INTERFACE-VERSION>
+                <MAJOR-VERSION>1</MAJOR-VERSION>
+                <MINOR-VERSION>0</MINOR-VERSION>
+              </SERVICE-INTERFACE-VERSION>
+            </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
             <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT UUID="1332e7dc-3170-4965-84f4-8a5839f1c0e4">
               <SHORT-NAME>BCM_Horn</SHORT-NAME>
               <METHOD-DEPLOYMENTS>
@@ -664,6 +719,15 @@
         <AR-PACKAGE UUID="1f1c8c40-f955-4a7a-8ea8-a656ffba1f32">
           <SHORT-NAME>Endpoint</SHORT-NAME>
           <ELEMENTS>
+            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="dc5e543a-47a7-40cd-a745-f73603285cdf">
+              <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_BCM_ExteriorSignal</SHORT-NAME>
+              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
+              <SERVICE-INSTANCE-REFS>
+                <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_BCM_ExteriorSignal</SERVICE-INSTANCE-REF>
+              </SERVICE-INSTANCE-REFS>
+              <TCP-PORT>40067</TCP-PORT>
+              <UDP-PORT>40067</UDP-PORT>
+            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
             <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="e34502e1-c7ab-411f-a994-04a3654ede69">
               <SHORT-NAME>EEVP_ServiceCreator_SomeipProviders_BCM_WiperWash</SHORT-NAME>
               <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
@@ -853,6 +917,45 @@
             <AR-PACKAGE UUID="ba6bf8bd-2ba1-488a-8887-191220e900c5">
               <SHORT-NAME>Provider</SHORT-NAME>
               <ELEMENTS>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="57acc039-9d52-4c99-a87c-048719c64c33">
+                  <SHORT-NAME>EEVP_ServiceCreator_Provider_BCM_ExteriorSignal</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <EVENT-PROPSS>
+                    <SOMEIP-EVENT-PROPS>
+                      <COLLECTION-PROPS/>
+                      <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Notification_hornState</EVENT-REF>
+                    </SOMEIP-EVENT-PROPS>
+                    <SOMEIP-EVENT-PROPS>
+                      <COLLECTION-PROPS/>
+                      <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/lightState/Notification_lightState</EVENT-REF>
+                    </SOMEIP-EVENT-PROPS>
+                  </EVENT-PROPSS>
+                  <METHOD-RESPONSE-PROPSS>
+                    <SOMEIP-METHOD-PROPS>
+                      <COLLECTION-PROPS/>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Get_hornState</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                    <SOMEIP-METHOD-PROPS>
+                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/lightState/Get_lightState</METHOD-REF>
+                    </SOMEIP-METHOD-PROPS>
+                  </METHOD-RESPONSE-PROPSS>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="aa49788f-a068-41d0-873b-f43ec997aaf8">
+                      <SHORT-NAME>Eventgroup_Notification_hornState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/BCM_ExteriorSignal/Eventgroup_Notification_hornState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP UUID="05bea1fc-f543-42ef-ab5c-601079e4d4a7">
+                      <SHORT-NAME>Eventgroup_Notification_lightState</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/BCM_ExteriorSignal/Eventgroup_Notification_lightState</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>0</MULTICAST-THRESHOLD>
+                      <SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-SERVER-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdPublishConfig</SD-SERVER-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Server/DefaultSdServerConfig</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
                 <PROVIDED-SOMEIP-SERVICE-INSTANCE UUID="98309dbf-22c0-4d21-9c7b-b30f65bffc4a">
                   <SHORT-NAME>EEVP_ServiceCreator_Provider_BCM_WiperWash</SHORT-NAME>
                   <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/BCM_WiperWash</SERVICE-INTERFACE-DEPLOYMENT-REF>
@@ -1200,6 +1303,37 @@
     <AR-PACKAGE UUID="ada7792a-06c0-49ac-ad74-652b05089e17">
       <SHORT-NAME>ServiceInterface</SHORT-NAME>
       <ELEMENTS>
+        <SERVICE-INTERFACE UUID="5d6c0e91-a1c8-4ecd-8215-8e193242caac">
+          <SHORT-NAME>BCM_ExteriorSignal</SHORT-NAME>
+          <NAMESPACES>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>eevp</SHORT-NAME>
+              <SYMBOL>eevp</SYMBOL>
+            </SYMBOL-PROPS>
+            <SYMBOL-PROPS>
+              <SHORT-NAME>simulation</SHORT-NAME>
+              <SYMBOL>simulation</SYMBOL>
+            </SYMBOL-PROPS>
+          </NAMESPACES>
+          <MAJOR-VERSION>1</MAJOR-VERSION>
+          <MINOR-VERSION>0</MINOR-VERSION>
+          <FIELDS>
+            <FIELD UUID="d4f247ee-4464-41c9-9c97-3f93989d0c23">
+              <SHORT-NAME>hornState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_HornState</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+            <FIELD UUID="6492ce86-22b6-45df-8998-b136e6aed8b7">
+              <SHORT-NAME>lightState</SHORT-NAME>
+              <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/CppImplementationType/BCM_HeadlightState</TYPE-TREF>
+              <HAS-GETTER>true</HAS-GETTER>
+              <HAS-NOTIFIER>true</HAS-NOTIFIER>
+              <HAS-SETTER>false</HAS-SETTER>
+            </FIELD>
+          </FIELDS>
+        </SERVICE-INTERFACE>
         <SERVICE-INTERFACE UUID="a0e98345-ffa4-46b6-82a8-6b1048177764">
           <SHORT-NAME>BCM_Horn</SHORT-NAME>
           <NAMESPACES>
