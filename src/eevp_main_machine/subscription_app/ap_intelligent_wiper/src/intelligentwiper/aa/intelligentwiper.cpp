@@ -7,7 +7,7 @@ namespace intelligentwiper
     {
 
         IntelligentWiper::IntelligentWiper()
-            : m_logger(ara::log::CreateLogger("INTW", "SWC", ara::log::LogLevel::kVerbose)), m_running(false), m_workers(4)
+            : m_logger(ara::log::CreateLogger("INTW", "MAIN", ara::log::LogLevel::kVerbose)), m_running(false), m_workers(4)
         {
         }
 
@@ -23,6 +23,8 @@ namespace intelligentwiper
             m_RPort_VehicleInfo = std::make_unique<intelligentwiper::aa::port::RPort_VehicleInfo>();
             m_RPort_Wiper = std::make_unique<intelligentwiper::aa::port::RPort_Wiper>();
             m_RPort_SubscriptionManagement = std::make_unique<intelligentwiper::aa::port::RPort_SubscriptionManagement>();
+            m_RPort_PDW_FRONT = std::make_unique<intelligentwiper::aa::port::RPort_PDW_FRONT>();
+            m_RPort_PDW_REAR = std::make_unique<intelligentwiper::aa::port::RPort_PDW_REAR>();
 
             m_logic = std::make_unique<intelligentwiper::aa::Logic>(m_RPort_Wiper.get(), m_RPort_VehicleInfo.get());
 
@@ -36,6 +38,8 @@ namespace intelligentwiper
             m_RPort_Wiper->Start();
             m_RPort_VehicleInfo->Start();
             m_RPort_SubscriptionManagement->Start();
+            m_RPort_PDW_FRONT->Start();
+            m_RPort_PDW_REAR->Start();
 
             m_running = true;
 
@@ -61,6 +65,8 @@ namespace intelligentwiper
             m_RPort_Wiper->Terminate();
             m_RPort_VehicleInfo->Terminate();
             m_RPort_SubscriptionManagement->Terminate();
+            m_RPort_PDW_FRONT->Terminate();
+            m_RPort_PDW_REAR->Terminate();
         }
 
         void IntelligentWiper::Run()
@@ -78,6 +84,14 @@ namespace intelligentwiper
                             { m_RPort_VehicleInfo->ReceiveFieldsoaVehicleInfoCyclic(); });
             m_workers.Async([this]
                             { m_RPort_SubscriptionManagement->ReceiveEventnotifySubscriptionInfoCyclic(); });
+            m_workers.Async([this]
+                            { m_RPort_PDW_FRONT->ReceiveEventDistanceLevelCyclic(); });
+            m_workers.Async([this]
+                            { m_RPort_PDW_FRONT->ReceiveFieldUssStatusCyclic(); });
+            m_workers.Async([this]
+                            { m_RPort_PDW_REAR->ReceiveEventDistanceLevelCyclic(); });
+            m_workers.Async([this]
+                            { m_RPort_PDW_REAR->ReceiveFieldUssStatusCyclic(); });
 
             while (1)
             {
