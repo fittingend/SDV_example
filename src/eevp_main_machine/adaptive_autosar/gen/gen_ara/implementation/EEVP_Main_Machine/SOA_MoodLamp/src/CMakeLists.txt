@@ -19,7 +19,15 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               soa_moodlamp/aa/port/pport_soa_moodlamp.cpp
+               soa_moodlamp/aa/port/rport_zone1mlm.cpp
+               soa_moodlamp/aa/port/rport_zone1vehicleinfo.cpp
+               soa_moodlamp/aa/soa_moodlamp.cpp
                main.cpp
 )

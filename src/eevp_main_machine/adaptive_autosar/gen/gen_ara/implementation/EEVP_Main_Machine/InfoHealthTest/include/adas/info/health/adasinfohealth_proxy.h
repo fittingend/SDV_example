@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : adasinfohealth_proxy.h
 /// SERVICE INTERFACE NAME            : AdasInfoHealth
-/// GENERATED DATE                    : 2025-08-26 14:43:09
+/// GENERATED DATE                    : 2025-08-30 10:51:14
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

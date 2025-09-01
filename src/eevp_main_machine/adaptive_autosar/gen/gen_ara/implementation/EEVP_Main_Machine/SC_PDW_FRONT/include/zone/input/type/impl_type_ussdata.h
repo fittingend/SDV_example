@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_ussdata.h
 /// IMPLEMENTATION DATA TYPE NAME     : UssData
-/// GENERATED DATE                    : 2025-08-26 14:43:13
+/// GENERATED DATE                    : 2025-08-30 10:51:48
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

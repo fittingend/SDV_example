@@ -19,7 +19,15 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               soa_dms/aa/port/pport_soa_dms.cpp
+               soa_dms/aa/port/rport_zone1vehicleinfo.cpp
+               soa_dms/aa/port/rport_zone5dms.cpp
+               soa_dms/aa/soa_dms.cpp
                main.cpp
 )

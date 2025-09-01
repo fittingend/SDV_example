@@ -19,7 +19,26 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               monitoringmanager/aa/port/pportmonitoringmanagement.cpp
+               monitoringmanager/aa/port/rportdms.cpp
+               monitoringmanager/aa/port/rportdrvseat.cpp
+               monitoringmanager/aa/port/rporthvac.cpp
+               monitoringmanager/aa/port/rportmoodlamp.cpp
+               monitoringmanager/aa/port/rportotamonitoring.cpp
+               monitoringmanager/aa/port/rportpdwfront.cpp
+               monitoringmanager/aa/port/rportpdwrear.cpp
+               monitoringmanager/aa/port/rportpower.cpp
+               monitoringmanager/aa/port/rportrearcurtain.cpp
+               monitoringmanager/aa/port/rportroa.cpp
+               monitoringmanager/aa/port/rportsmartfilm.cpp
+               monitoringmanager/aa/port/rportstatemanager.cpp
+               monitoringmanager/aa/port/rportwiper.cpp
+               monitoringmanager/aa/monitoringmanager.cpp
                main.cpp
 )

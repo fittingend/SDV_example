@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="979d2c70-b8ec-4595-bd91-de6f7e2f5d71">
+              <SHORT-NAME>DltLogChannelToProcessMapping_PreventRollback_TO_PreventRollback</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/PreventRollback</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/PreventRollback</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="05c05db2-383c-4a12-ac3d-66c4b7918c9e">
+              <SHORT-NAME>PreventRollback</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="558178c2-bf23-4160-9fbe-0a6d33ed9700">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/PreventRollback</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="555fe2aa-d912-4253-8332-27b88ac9c0da">
+              <SHORT-NAME>PreventRollback_AA_RPortBCM_ExteriorSignal</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortBCM_ExteriorSignal</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_BCM_ExteriorSignal</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="8ad65b22-91ad-40b2-912c-1b0c3f326bfb">
+              <SHORT-NAME>PreventRollback_AA_RPortMain_PDW_Service</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortMain_PDW_Service</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_Main_PDW_Service</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="0fa4ab49-069c-4cba-96b3-5d9b397c26e4">
+              <SHORT-NAME>PreventRollback_AA_RPortSoaVehicleInfo</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortSoaVehicleInfo</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_SoaVehicleInfo</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="41194bdb-53c4-4c31-aeb2-330a9b3b7a95">
+              <SHORT-NAME>PreventRollback_AA_RPortSubscriptionManagement</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortSubscriptionManagement</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="177d2817-3f67-4bbd-8495-f21daedab86c">
+              <SHORT-NAME>PreventRollback_AA_RPortVCS_AccrPedal</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortVCS_AccrPedal</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_VCS_AccrPedal</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="f4955fbb-9c75-4609-a973-cbf6f3326df6">
+              <SHORT-NAME>PreventRollback_AA_RPortVCS_BrakePedal</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortVCS_BrakePedal</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_VCS_BrakePedal</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="b04117cb-db97-4245-93b6-0643057e4a58">
+              <SHORT-NAME>PreventRollback_AA_RPortVCS_Gear</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/PreventRollback/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/PreventRollback/RPortVCS_Gear</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_PreventRollback_Consumer_VCS_Gear</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="272b5201-55ed-4b52-82ae-cc89545d3096">
+              <SHORT-NAME>PreventRollback</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/PreventRollback</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="1a95f5dc-8435-4312-a210-e2c6ca2cd7a5">
+                <SHORT-NAME>PreventRollback</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG07</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG07/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG07</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG07/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="199bac63-f538-4f8a-8e61-dbf06aef3ba1">
+              <SHORT-NAME>PreventRollback</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="e89a5b42-5d01-4ec4-b36b-7b5bb5c31720">
+                  <SHORT-NAME>RPortBCM_ExteriorSignal</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BCM_ExteriorSignal</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="438ed7f5-ff8b-4d5a-a21b-8b7bd505caae">
+                  <SHORT-NAME>RPortMain_PDW_Service</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Main_PDW_Service</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="3460627e-a39f-44f5-997c-fb91eaa0b550">
+                  <SHORT-NAME>RPortSoaVehicleInfo</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaVehicleInfo</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="c2e73912-38cc-4a94-b2a5-d261556fca3c">
+                  <SHORT-NAME>RPortSubscriptionManagement</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SubscriptionManagement</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="8d433e0c-52af-40e8-a132-fc0600274c5d">
+                  <SHORT-NAME>RPortVCS_AccrPedal</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_AccrPedal</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35a81383-8767-42d9-b5e5-c2c902e4328c">
+                  <SHORT-NAME>RPortVCS_BrakePedal</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_BrakePedal</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="0dc96687-0542-46a9-b145-83abd781bed0">
+                  <SHORT-NAME>RPortVCS_Gear</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_Gear</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

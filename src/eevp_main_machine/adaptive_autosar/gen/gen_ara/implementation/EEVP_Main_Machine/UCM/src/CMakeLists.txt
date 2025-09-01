@@ -19,7 +19,14 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               ucm/para/port/packagemanagement.cpp
+               ucm/para/port/updaterequest.cpp
+               ucm/para/ucm.cpp
                main.cpp
 )

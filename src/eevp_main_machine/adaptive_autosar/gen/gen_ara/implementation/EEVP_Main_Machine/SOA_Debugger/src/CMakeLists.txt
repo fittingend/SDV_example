@@ -19,7 +19,21 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               soa_debugger/aa/port/rport_soadbg_dms.cpp
+               soa_debugger/aa/port/rport_soadbg_driverseat.cpp
+               soa_debugger/aa/port/rport_soadbg_hvac.cpp
+               soa_debugger/aa/port/rport_soadbg_moodlamp.cpp
+               soa_debugger/aa/port/rport_soadbg_power.cpp
+               soa_debugger/aa/port/rport_soadbg_roa.cpp
+               soa_debugger/aa/port/rport_soadbg_rearcurtain.cpp
+               soa_debugger/aa/port/rport_soadbg_smartfilm.cpp
+               soa_debugger/aa/port/rport_soadbg_wiper.cpp
+               soa_debugger/aa/soa_debugger.cpp
                main.cpp
 )

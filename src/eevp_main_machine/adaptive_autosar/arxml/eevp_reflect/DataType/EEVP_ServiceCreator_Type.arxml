@@ -36,6 +36,58 @@
                 </CPP-TEMPLATE-ARGUMENT>
               </TEMPLATE-ARGUMENTS>
             </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="9d1f1152-2e56-4f6b-9314-1be8b4feae8f">
+              <SHORT-NAME>BCM_HeadlightState</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/BCM_HeadlightState</COMPU-METHOD-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>eevp</SHORT-NAME>
+                  <SYMBOL>eevp</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>simulation</SHORT-NAME>
+                  <SYMBOL>simulation</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>type</SHORT-NAME>
+                  <SYMBOL>type</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="308f7648-947f-4086-8eda-a6c6aad63423">
+              <SHORT-NAME>BCM_HornState</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <COMPU-METHOD-REF DEST="COMPU-METHOD">/DataType/Semantics/BCM_HornState</COMPU-METHOD-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>eevp</SHORT-NAME>
+                  <SYMBOL>eevp</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>simulation</SHORT-NAME>
+                  <SYMBOL>simulation</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>type</SHORT-NAME>
+                  <SYMBOL>type</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint8_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
             <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="09d9083a-4d4d-4998-a1dc-a70aa5151598">
               <SHORT-NAME>BCM_ReturnCode</SHORT-NAME>
               <CATEGORY>TYPE_REFERENCE</CATEGORY>
@@ -1734,6 +1786,50 @@
         <AR-PACKAGE UUID="c056a92a-1e2d-4086-932b-730ea2e1684c">
           <SHORT-NAME>Semantics</SHORT-NAME>
           <ELEMENTS>
+            <COMPU-METHOD UUID="c5847e38-ca1f-4308-b8ca-9da0ff71452d">
+              <SHORT-NAME>BCM_HeadlightState</SHORT-NAME>
+              <CATEGORY>TEXTTABLE</CATEGORY>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>OFF</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>ON</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
+            <COMPU-METHOD UUID="e6eeb603-2aa6-415a-b66b-be863b357da6">
+              <SHORT-NAME>BCM_HornState</SHORT-NAME>
+              <CATEGORY>TEXTTABLE</CATEGORY>
+              <COMPU-INTERNAL-TO-PHYS>
+                <COMPU-SCALES>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>OFF</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                  <COMPU-SCALE>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                    <COMPU-CONST>
+                      <VT>ON</VT>
+                    </COMPU-CONST>
+                  </COMPU-SCALE>
+                </COMPU-SCALES>
+              </COMPU-INTERNAL-TO-PHYS>
+            </COMPU-METHOD>
             <COMPU-METHOD UUID="8ddf250a-f18f-43bc-852f-169378b24133">
               <SHORT-NAME>BCM_ReturnCode</SHORT-NAME>
               <CATEGORY>TEXTTABLE</CATEGORY>

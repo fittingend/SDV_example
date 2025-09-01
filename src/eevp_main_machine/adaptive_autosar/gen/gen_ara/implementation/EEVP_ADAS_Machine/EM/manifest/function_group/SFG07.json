@@ -15,6 +15,14 @@
             "meta-model-identifier" : "SFG07/On"
         },
         {
+            "state" : "Shutdown",
+            "meta-model-identifier" : "SFG07/Shutdown"
+        },
+        {
+            "state" : "Verify",
+            "meta-model-identifier" : "SFG07/Verify"
+        },
+        {
             "state" : "Verify",
             "meta-model-identifier" : "SFG07/Verify"
         }

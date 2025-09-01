@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_distancelevel.h
 /// IMPLEMENTATION DATA TYPE NAME     : DistanceLevel
-/// GENERATED DATE                    : 2025-08-26 14:43:13
+/// GENERATED DATE                    : 2025-08-30 10:51:50
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

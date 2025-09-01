@@ -1,0 +1,70 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "PreventRollback/AA/RPortBCM_ExteriorSignal",
+    "service-protocol" : "someip",
+    "service-name" : "BCM_ExteriorSignal",
+    "service-id" : "9060",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "873",
+    "events" : [
+    ],
+    "methods" : [
+    ],
+    "fields" : [
+        {
+            "name" : "hornState",
+            "getter" : {
+                "method-id" : "1",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "11",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        },
+        {
+            "name" : "lightState",
+            "getter" : {
+                "method-id" : "2",
+                "transport" : "udp",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "setter" : {
+                "method-id" : "0",
+                "transport" : "undefined",
+                "req-max-segment-len" : "0",
+                "req-separation-time" : "0.0",
+                "resp-max-segment-len" : "0",
+                "resp-separation-time" : "0.0"
+            },
+            "notifier" : {
+                "event-id" : "12",
+                "transport" : "udp",
+                "max-segment-len" : "0",
+                "separation-time" : "0.0"
+            }
+        }
+    ]
+}

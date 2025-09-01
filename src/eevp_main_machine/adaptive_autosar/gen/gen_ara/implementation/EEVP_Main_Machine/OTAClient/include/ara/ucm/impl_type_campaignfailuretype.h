@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_campaignfailuretype.h
 /// IMPLEMENTATION DATA TYPE NAME     : CampaignFailureType
-/// GENERATED DATE                    : 2025-08-26 14:43:12
+/// GENERATED DATE                    : 2025-08-30 10:51:37
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

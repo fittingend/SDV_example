@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : bcm_wiperwash_proxy.h
 /// SERVICE INTERFACE NAME            : BCM_WiperWash
-/// GENERATED DATE                    : 2025-08-26 14:43:21
+/// GENERATED DATE                    : 2025-08-30 10:52:32
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

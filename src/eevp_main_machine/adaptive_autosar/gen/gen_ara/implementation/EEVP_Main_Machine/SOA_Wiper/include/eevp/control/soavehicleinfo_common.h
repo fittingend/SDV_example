@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soavehicleinfo_common.h
 /// SERVICE INTERFACE NAME            : SoaVehicleInfo
-/// GENERATED DATE                    : 2025-08-26 14:43:19
+/// GENERATED DATE                    : 2025-08-30 10:52:24
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
@@ -30,7 +30,7 @@
 /// INCLUSION OF CPP IMPLEMENTATION DATA TYPE HEADER FILES
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// @uptrace{SWS_CM_10372}
-#include "eevp/control/impl_type_vehicleinfo.h"
+#include "zone/input/type/impl_type_vehicleinfo.h"
 /// @uptrace{SWS_CM_01005}
 namespace eevp
 {

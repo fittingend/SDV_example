@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaroadetectstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaRoaDetectState
-/// GENERATED DATE                    : 2025-08-26 14:43:18
+/// GENERATED DATE                    : 2025-08-30 10:52:17
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

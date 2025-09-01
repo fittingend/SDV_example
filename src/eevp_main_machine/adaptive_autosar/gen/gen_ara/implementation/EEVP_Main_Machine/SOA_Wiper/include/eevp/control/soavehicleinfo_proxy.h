@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soavehicleinfo_proxy.h
 /// SERVICE INTERFACE NAME            : SoaVehicleInfo
-/// GENERATED DATE                    : 2025-08-26 14:43:19
+/// GENERATED DATE                    : 2025-08-30 10:52:24
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
@@ -45,7 +45,7 @@ class soaVehicleInfo
 public:
     /// @brief Type alias for type of field value
     /// @uptrace{SWS_CM_00162, SWS_CM_90437}
-    using FieldType = eevp::control::VehicleInfo;
+    using FieldType = zone::input::type::VehicleInfo;
     /// @brief Constructor
     explicit soaVehicleInfo(para::com::ProxyInterface* interface) : mInterface(interface)
     {

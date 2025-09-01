@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soarctnmotordir.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaRctnMotorDir
-/// GENERATED DATE                    : 2025-08-26 14:43:09
+/// GENERATED DATE                    : 2025-08-30 10:51:18
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

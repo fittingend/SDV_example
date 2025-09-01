@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_deviceinfo.h
 /// IMPLEMENTATION DATA TYPE NAME     : DeviceInfo
-/// GENERATED DATE                    : 2025-08-26 14:43:08
+/// GENERATED DATE                    : 2025-08-30 10:51:10
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

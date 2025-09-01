@@ -19,7 +19,15 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               sc_pdw_front/rootswcomponent/port/pdwfront.cpp
+               sc_pdw_front/rootswcomponent/port/ussfront.cpp
+               sc_pdw_front/rootswcomponent/port/vehicleinfo.cpp
+               sc_pdw_front/rootswcomponent/sc_pdw_front.cpp
                main.cpp
 )

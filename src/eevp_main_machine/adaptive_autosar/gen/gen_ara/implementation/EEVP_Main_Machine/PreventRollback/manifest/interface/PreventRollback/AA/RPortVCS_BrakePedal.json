@@ -1,0 +1,38 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "service-instance-manifest",
+    "port-type" : "rport",
+    "instance-specifier" : "PreventRollback/AA/RPortVCS_BrakePedal",
+    "service-protocol" : "someip",
+    "service-name" : "VCS_BrakePedal",
+    "service-id" : "9002",
+    "instance-id" : "ANY",
+    "major-version" : "1",
+    "minor-version" : "ANY",
+    "client-id" : "876",
+    "events" : [
+    ],
+    "methods" : [
+        {
+            "name" : "notifyBrakeSwitch",
+            "method-id" : "1",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        },
+        {
+            "name" : "notifyBrakeStatus",
+            "method-id" : "2",
+            "transport" : "udp",
+            "req-max-segment-len" : "0",
+            "req-separation-time" : "0.0",
+            "resp-max-segment-len" : "0",
+            "resp-separation-time" : "0.0"
+        }
+    ],
+    "fields" : [
+    ]
+}

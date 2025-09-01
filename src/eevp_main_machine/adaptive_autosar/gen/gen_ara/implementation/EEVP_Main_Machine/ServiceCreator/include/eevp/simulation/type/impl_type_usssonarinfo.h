@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_usssonarinfo.h
 /// IMPLEMENTATION DATA TYPE NAME     : USSSonarInfo
-/// GENERATED DATE                    : 2025-08-26 14:43:21
+/// GENERATED DATE                    : 2025-08-30 10:52:36
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

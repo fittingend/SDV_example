@@ -19,7 +19,13 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               intelligentwiper/aa/port/rport_wiper.cpp
+               intelligentwiper/aa/intelligentwiper.cpp
                main.cpp
 )

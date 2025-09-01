@@ -18,32 +18,14 @@
         <AR-PACKAGE UUID="1f1c8c40-f955-4a7a-8ea8-a656ffba1f32">
           <SHORT-NAME>Endpoint</SHORT-NAME>
           <ELEMENTS>
-            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="52bb4a26-acb9-4810-935a-54bca89a5070">
-              <SHORT-NAME>EEVP_IntelligentWiper_SomeipConsumers_SubscriptionManagement</SHORT-NAME>
-              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
-              <SERVICE-INSTANCE-REFS>
-                <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_IntelligentWiper_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
-              </SERVICE-INSTANCE-REFS>
-              <TCP-PORT>40012</TCP-PORT>
-              <UDP-PORT>40012</UDP-PORT>
-            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
-            <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="0508e876-fa4a-4029-9d26-db110f2f2e2f">
-              <SHORT-NAME>EEVP_IntelligentWiper_SomeipConsumers_VehicleInfo</SHORT-NAME>
-              <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
-              <SERVICE-INSTANCE-REFS>
-                <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_IntelligentWiper_Consumer_SoaVehicleInfo</SERVICE-INSTANCE-REF>
-              </SERVICE-INSTANCE-REFS>
-              <TCP-PORT>40010</TCP-PORT>
-              <UDP-PORT>40010</UDP-PORT>
-            </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
             <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING UUID="6d472dc4-88b8-48b7-b3d3-fcb71b28de06">
               <SHORT-NAME>EEVP_IntelligentWiper_SomeipConsumers_Wiper</SHORT-NAME>
               <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/System/Ecu/EEVP_MAIN/eth0</COMMUNICATION-CONNECTOR-REF>
               <SERVICE-INSTANCE-REFS>
                 <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_IntelligentWiper_Consumer_SoaWiper</SERVICE-INSTANCE-REF>
               </SERVICE-INSTANCE-REFS>
-              <TCP-PORT>40011</TCP-PORT>
-              <UDP-PORT>40011</UDP-PORT>
+              <TCP-PORT>55100</TCP-PORT>
+              <UDP-PORT>55100</UDP-PORT>
             </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
           </ELEMENTS>
         </AR-PACKAGE>
@@ -78,33 +60,6 @@
             <AR-PACKAGE UUID="d7fd1a94-af27-46ba-a104-dc80e46e1bb6">
               <SHORT-NAME>Consumer</SHORT-NAME>
               <ELEMENTS>
-                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="a2462dc5-7499-43d4-b63f-ccc9c5d2b4bf">
-                  <SHORT-NAME>EEVP_IntelligentWiper_Consumer_SoaVehicleInfo</SHORT-NAME>
-                  <ADMIN-DATA>
-                    <SDGS>
-                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
-                        <SD GID="CLIENT-ID">866</SD>
-                      </SDG>
-                    </SDGS>
-                  </ADMIN-DATA>
-                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/SoaVehicleInfo</SERVICE-INTERFACE-DEPLOYMENT-REF>
-                  <METHOD-REQUEST-PROPSS>
-                    <SOMEIP-METHOD-PROPS>
-                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/SoaVehicleInfo/soaVehicleInfo/Get_soaVehicleInfo</METHOD-REF>
-                    </SOMEIP-METHOD-PROPS>
-                  </METHOD-REQUEST-PROPSS>
-                  <REQUIRED-EVENT-GROUPS>
-                    <SOMEIP-REQUIRED-EVENT-GROUP>
-                      <SHORT-NAME>Eventgroup_Notification_soaVehicleInfo</SHORT-NAME>
-                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/SoaVehicleInfo/Eventgroup_Notification_soaVehicleInfo</EVENT-GROUP-REF>
-                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
-                    </SOMEIP-REQUIRED-EVENT-GROUP>
-                  </REQUIRED-EVENT-GROUPS>
-                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
-                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
-                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/DefaultClientConfig</SD-CLIENT-CONFIG-REF>
-                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
-                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
                 <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="b2ee7111-59fa-4339-b0e2-cc6b0b10956a">
                   <SHORT-NAME>EEVP_IntelligentWiper_Consumer_SoaWiper</SHORT-NAME>
                   <ADMIN-DATA>
@@ -147,33 +102,6 @@
                     <SOMEIP-REQUIRED-EVENT-GROUP>
                       <SHORT-NAME>Eventgroup_Notification_soaWiperSwVersion</SHORT-NAME>
                       <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/SoaWiper/Eventgroup_Notification_soaWiperSwVersion</EVENT-GROUP-REF>
-                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
-                    </SOMEIP-REQUIRED-EVENT-GROUP>
-                  </REQUIRED-EVENT-GROUPS>
-                  <REQUIRED-MINOR-VERSION>ANY</REQUIRED-MINOR-VERSION>
-                  <REQUIRED-SERVICE-INSTANCE-ID>ANY</REQUIRED-SERVICE-INSTANCE-ID>
-                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/ServiceInstance/SdTimingConfig/Client/DefaultClientConfig</SD-CLIENT-CONFIG-REF>
-                  <VERSION-DRIVEN-FIND-BEHAVIOR>EXACT-OR-ANY-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
-                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
-                <REQUIRED-SOMEIP-SERVICE-INSTANCE UUID="8a8f2116-2533-43d3-a01c-b11d0aebd8f7">
-                  <SHORT-NAME>EEVP_IntelligentWiper_Consumer_SubscriptionManagement</SHORT-NAME>
-                  <ADMIN-DATA>
-                    <SDGS>
-                      <SDG GID="PARA-SOMEIP-CONFIGURATION">
-                        <SD GID="CLIENT-ID">868</SD>
-                      </SDG>
-                    </SDGS>
-                  </ADMIN-DATA>
-                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/ServiceDeployment/Someip/SubscriptionManagement</SERVICE-INTERFACE-DEPLOYMENT-REF>
-                  <METHOD-REQUEST-PROPSS>
-                    <SOMEIP-METHOD-PROPS>
-                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/SubscriptionManagement/registerSubscriptionApp</METHOD-REF>
-                    </SOMEIP-METHOD-PROPS>
-                  </METHOD-REQUEST-PROPSS>
-                  <REQUIRED-EVENT-GROUPS>
-                    <SOMEIP-REQUIRED-EVENT-GROUP>
-                      <SHORT-NAME>Eventgroup_notifySubscriptionEvent</SHORT-NAME>
-                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/ServiceDeployment/Someip/SubscriptionManagement/Eventgroup_notifySubscriptionEvent</EVENT-GROUP-REF>
                       <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/ServiceInstance/SdTimingConfig/Subscription/DefaultSdSubscribeConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
                     </SOMEIP-REQUIRED-EVENT-GROUP>
                   </REQUIRED-EVENT-GROUPS>

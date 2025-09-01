@@ -19,7 +19,13 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               dummytest_consumer/aa/port/dummytest_rport.cpp
+               dummytest_consumer/aa/dummytest_consumer.cpp
                main.cpp
 )

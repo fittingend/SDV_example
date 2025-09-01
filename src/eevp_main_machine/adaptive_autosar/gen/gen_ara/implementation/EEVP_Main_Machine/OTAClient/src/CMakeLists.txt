@@ -19,7 +19,15 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               otaclient/aa/port/pportotamonitoring.cpp
+               otaclient/aa/port/pportotasubscription.cpp
+               otaclient/aa/port/vehiclepackagemanagement.cpp
+               otaclient/aa/otaclient.cpp
                main.cpp
 )

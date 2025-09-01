@@ -162,7 +162,7 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="7b33827b-30a2-4a81-974f-7dfa7f52e485">
+                <DLT-LOG-CHANNEL UUID="96bd93a3-9938-42af-9c8e-14342a5760e2">
                   <SHORT-NAME>IntelligentWiper</SHORT-NAME>
                   <APPLICATION-ID>INTW</APPLICATION-ID>
                   <CONTEXT-ID>INTW</CONTEXT-ID>
@@ -177,6 +177,16 @@
                   <APPLICATION-ID>KATC</APPLICATION-ID>
                   <CONTEXT-ID>KATC</CONTEXT-ID>
                   <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="97ef5a56-44ae-4495-80d9-18b0069514ba">
+                  <SHORT-NAME>LightBeep</SHORT-NAME>
+                  <APPLICATION-ID>LIBP</APPLICATION-ID>
+                  <CONTEXT-ID>LIBP</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>ERROR</LOG-TRACE-DEFAULT-LOG-LEVEL>
                   <LOG-TRACE-LOG-MODES>
                     <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
@@ -234,6 +244,16 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                   <NON-VERBOSE-MODE>true</NON-VERBOSE-MODE>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="18896c84-c899-4c16-8f24-e83dccfda6ad">
+                  <SHORT-NAME>PreventRollback</SHORT-NAME>
+                  <APPLICATION-ID>PRRB</APPLICATION-ID>
+                  <CONTEXT-ID>PRRB</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
                 <DLT-LOG-CHANNEL UUID="a455bff7-04e4-4960-8782-18f33f87006d">
                   <SHORT-NAME>SC_PDW_FRONT</SHORT-NAME>
@@ -365,7 +385,7 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="4a402c37-3ee9-436b-b4c8-9912d4c3d57f">
+                <DLT-LOG-CHANNEL UUID="e56689e4-bb3f-44d6-8aba-2b00f33ec5a4">
                   <SHORT-NAME>ServiceCreator</SHORT-NAME>
                   <APPLICATION-ID>SVCT</APPLICATION-ID>
                   <CONTEXT-ID>SVCT</CONTEXT-ID>
@@ -620,10 +640,10 @@
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/InfoHealthTest</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
-                <PROCESS-TO-MACHINE-MAPPING UUID="d5a9be6d-18d4-42f2-99f0-5eb6bfb890f3">
+                <PROCESS-TO-MACHINE-MAPPING UUID="cb2c15ac-8b42-4479-b462-24efeb54975b">
                   <SHORT-NAME>ProcessToMachineMapping_IntelligentWiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
-                  <PROCESS-REF DEST="PROCESS">/Application/Process/IntelligentWiper</PROCESS-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Executable/IntelligentWiper</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ca1407ea-2a98-4182-b758-85264231f548">
                   <SHORT-NAME>ProcessToMachineMapping_KATECH_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
@@ -654,6 +674,11 @@
                   <SHORT-NAME>ProcessToMachineMapping_PHM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/PHM</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="708aaccf-fea9-4d78-aa29-187e089e9ec0">
+                  <SHORT-NAME>ProcessToMachineMapping_PreventRollback_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/PreventRollback</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="2e9d6c4e-d454-40be-b302-286e5ef25b4e">
                   <SHORT-NAME>ProcessToMachineMapping_SC_PDW_FRONT_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
@@ -720,7 +745,7 @@
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
-                <PROCESS-TO-MACHINE-MAPPING UUID="b3027d50-7c1f-4759-b938-4e3fe4e68d97">
+                <PROCESS-TO-MACHINE-MAPPING UUID="1e9e494e-576a-4d86-a57d-d3be550f0647">
                   <SHORT-NAME>ProcessToMachineMapping_ServiceCreator_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/ServiceCreator</PROCESS-REF>
@@ -741,7 +766,7 @@
                   <PROCESS-REF DEST="PROCESS">/Application/Process/VDI</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ebc41e70-9d2b-4076-8c3c-14baf639800c">
-                  <SHORT-NAME>ProcessToMachineMapping_VUCM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
+                  <SHORT-NAME>ProcessToMachineMapping_VUCM_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/VUCM</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
@@ -943,7 +968,13 @@
             <MODE-DECLARATION UUID="3054e000-3f98-4b8c-af19-87b1168c7a44">
               <SHORT-NAME>On</SHORT-NAME>
             </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="94295ba4-9bb8-4eed-8bc5-c1e07932afc1">
+              <SHORT-NAME>Shutdown</SHORT-NAME>
+            </MODE-DECLARATION>
             <MODE-DECLARATION UUID="ac2806af-d6ec-4f1a-af30-60c102ec9028">
+              <SHORT-NAME>Verify</SHORT-NAME>
+            </MODE-DECLARATION>
+            <MODE-DECLARATION UUID="ed7609fe-0a5e-46da-be21-917c2c81fb44">
               <SHORT-NAME>Verify</SHORT-NAME>
             </MODE-DECLARATION>
           </MODE-DECLARATIONS>

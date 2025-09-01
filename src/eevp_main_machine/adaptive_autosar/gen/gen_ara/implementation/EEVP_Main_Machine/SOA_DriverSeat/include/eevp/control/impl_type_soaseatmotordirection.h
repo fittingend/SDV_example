@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaseatmotordirection.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaSeatMotorDirection
-/// GENERATED DATE                    : 2025-08-26 14:43:16
+/// GENERATED DATE                    : 2025-08-30 10:52:06
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

@@ -19,7 +19,15 @@ target_include_directories(${PARA_APP_NAME}
                            PRIVATE
                            ${CMAKE_CURRENT_SOURCE_DIR}/include)
 # ============================================================================
+target_link_libraries(${PARA_APP_NAME}
+                      PRIVATE
+                      pthread)
+# ============================================================================
 target_sources(${PARA_APP_NAME}
                PRIVATE
+               soa_driverseat/aa/port/pport_soa_driverseat.cpp
+               soa_driverseat/aa/port/rport_zone1drvseat.cpp
+               soa_driverseat/aa/port/rport_zone1vehicleinfo.cpp
+               soa_driverseat/aa/soa_driverseat.cpp
                main.cpp
 )

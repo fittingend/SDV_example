@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : subscriptionmanagement_skeleton.h
 /// SERVICE INTERFACE NAME            : SubscriptionManagement
-/// GENERATED DATE                    : 2025-08-26 14:43:09
+/// GENERATED DATE                    : 2025-08-30 10:51:16
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
