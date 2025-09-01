@@ -162,20 +162,20 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="7b33827b-30a2-4a81-974f-7dfa7f52e485">
-                  <SHORT-NAME>IntelligentWiper</SHORT-NAME>
-                  <APPLICATION-ID>INTW</APPLICATION-ID>
-                  <CONTEXT-ID>INTW</CONTEXT-ID>
+                <DLT-LOG-CHANNEL UUID="4d263570-792c-48b2-bf91-3534237165b2">
+                  <SHORT-NAME>KATECH</SHORT-NAME>
+                  <APPLICATION-ID>KATC</APPLICATION-ID>
+                  <CONTEXT-ID>KATC</CONTEXT-ID>
                   <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
                   <LOG-TRACE-LOG-MODES>
                     <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="4d263570-792c-48b2-bf91-3534237165b2">
-                  <SHORT-NAME>KATECH</SHORT-NAME>
-                  <APPLICATION-ID>KATC</APPLICATION-ID>
-                  <CONTEXT-ID>KATC</CONTEXT-ID>
+                <DLT-LOG-CHANNEL UUID="109efb1a-5c6d-43a9-bc52-20fa055766c9">
+                  <SHORT-NAME>LIT</SHORT-NAME>
+                  <APPLICATION-ID>LIT</APPLICATION-ID>
+                  <CONTEXT-ID>LIT</CONTEXT-ID>
                   <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
                   <LOG-TRACE-LOG-MODES>
                     <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
@@ -359,16 +359,6 @@
                   <SHORT-NAME>SOA_Wiper</SHORT-NAME>
                   <APPLICATION-ID>SWIP</APPLICATION-ID>
                   <CONTEXT-ID>SWIP</CONTEXT-ID>
-                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
-                  <LOG-TRACE-LOG-MODES>
-                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
-                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
-                  </LOG-TRACE-LOG-MODES>
-                </DLT-LOG-CHANNEL>
-                <DLT-LOG-CHANNEL UUID="4a402c37-3ee9-436b-b4c8-9912d4c3d57f">
-                  <SHORT-NAME>ServiceCreator</SHORT-NAME>
-                  <APPLICATION-ID>SVCT</APPLICATION-ID>
-                  <CONTEXT-ID>SVCT</CONTEXT-ID>
                   <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
                   <LOG-TRACE-LOG-MODES>
                     <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
@@ -620,15 +610,15 @@
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/InfoHealthTest</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
-                <PROCESS-TO-MACHINE-MAPPING UUID="d5a9be6d-18d4-42f2-99f0-5eb6bfb890f3">
-                  <SHORT-NAME>ProcessToMachineMapping_IntelligentWiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
-                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
-                  <PROCESS-REF DEST="PROCESS">/Application/Process/IntelligentWiper</PROCESS-REF>
-                </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="ca1407ea-2a98-4182-b758-85264231f548">
                   <SHORT-NAME>ProcessToMachineMapping_KATECH_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/KATECH</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="6773d812-acaa-4a45-b0dc-e640514d502f">
+                  <SHORT-NAME>ProcessToMachineMapping_LIT_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/LIT</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="8c0bff41-9204-40ac-a709-c7c08e69fdfd">
                   <SHORT-NAME>ProcessToMachineMapping_MonitoringManager_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
@@ -719,11 +709,6 @@
                   <SHORT-NAME>ProcessToMachineMapping_SOA_Wiper_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/SOA_Wiper</PROCESS-REF>
-                </PROCESS-TO-MACHINE-MAPPING>
-                <PROCESS-TO-MACHINE-MAPPING UUID="b3027d50-7c1f-4759-b938-4e3fe4e68d97">
-                  <SHORT-NAME>ProcessToMachineMapping_ServiceCreator_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
-                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
-                  <PROCESS-REF DEST="PROCESS">/Application/Process/ServiceCreator</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="e6028cee-902f-42b0-a691-a7009e57b5e2">
                   <SHORT-NAME>ProcessToMachineMapping_SubscriptionManager_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
