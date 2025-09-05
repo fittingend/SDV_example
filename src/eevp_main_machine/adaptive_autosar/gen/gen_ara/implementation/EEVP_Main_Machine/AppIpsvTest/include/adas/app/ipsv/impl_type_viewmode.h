@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_viewmode.h
 /// IMPLEMENTATION DATA TYPE NAME     : ViewMode
-/// GENERATED DATE                    : 2025-08-26 14:43:08
+/// GENERATED DATE                    : 2025-09-05 11:31:50
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

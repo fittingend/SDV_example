@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soadriverseat_proxy.h
 /// SERVICE INTERFACE NAME            : SoaDriverSeat
-/// GENERATED DATE                    : 2025-08-26 14:43:15
+/// GENERATED DATE                    : 2025-09-05 11:32:08
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

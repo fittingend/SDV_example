@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : subscriptionmanagement_proxy.h
 /// SERVICE INTERFACE NAME            : SubscriptionManagement
-/// GENERATED DATE                    : 2025-08-26 14:43:09
+/// GENERATED DATE                    : 2025-09-05 11:31:54
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

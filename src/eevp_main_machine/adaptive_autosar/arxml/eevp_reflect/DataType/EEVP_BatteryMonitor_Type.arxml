@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="2239cb42-6dfd-4d5d-b157-02fb0c18a3e3">
+      <SHORT-NAME>DataType</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="829f1df0-b501-401a-a1c5-ee957e229ab2">
+          <SHORT-NAME>CppImplementationType</SHORT-NAME>
+          <ELEMENTS>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE UUID="cfff9cfc-5653-4fc6-a0ec-3da95092660f">
+              <SHORT-NAME>Struct_BmsInfo</SHORT-NAME>
+              <CATEGORY>STRUCTURE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL/>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>eevp</SHORT-NAME>
+                  <SYMBOL>eevp</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>bmsinfo</SHORT-NAME>
+                  <SYMBOL>bmsinfo</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <SUB-ELEMENTS>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="026ab4cd-1d8d-4bad-bcd1-267cf234c8f6">
+                  <SHORT-NAME>InterfaceIDforDbg</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="aae5b469-1cd8-4d2b-a07a-58697f09aa84">
+                  <SHORT-NAME>DataSerialNumber</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="f6586786-5b03-4b3e-8af4-76111b80c03c">
+                  <SHORT-NAME>VehicleUniqueSnr</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="b9a439af-e410-4b9e-89a8-37ffd8b109f2">
+                  <SHORT-NAME>EMS_BatteryAvgTemperature</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="fd1f1531-99d7-49e6-9007-c4beba88f1b3">
+                  <SHORT-NAME>EMS_ChargerOutputVolt</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="30609800-cffc-4ceb-8696-36c6915ca7f6">
+                  <SHORT-NAME>EMS_ChargerOutputCurr</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="4a741279-ee58-4881-8ae9-f2a15b9477c1">
+                  <SHORT-NAME>EMS_ReturnCode</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="72f3645e-4327-4bd7-845d-0095e1d7e985">
+                  <SHORT-NAME>EMS_ConnectionStatus</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="4d7d8496-260f-40b9-b55f-058cd82589cf">
+                  <SHORT-NAME>EMS_TargetVolt</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="bc0b98dc-0b7e-403b-bf5a-62b7f264d7e8">
+                  <SHORT-NAME>EMS_TargetCurr</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="100b5276-07de-4f9c-92c0-fb96c05fc0c8">
+                  <SHORT-NAME>EMS_RemainHour</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="d9de62e3-5639-4fe2-8fe8-dbec028e8caf">
+                  <SHORT-NAME>EMS_RemainMin</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="0ca5b40b-6616-47f7-9e5c-8fb104f8dae2">
+                  <SHORT-NAME>EMS_HVBattSOC</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="c89e398c-2ece-4e9c-b7aa-4238e23c51e7">
+                  <SHORT-NAME>EMS_HVBattSOE</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="22d6a984-81c4-4837-afbc-18ed27e909bb">
+                  <SHORT-NAME>EMS_HVBattSOH</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="b7c46728-8733-412a-9ed7-618af4317352">
+                  <SHORT-NAME>EMS_BattVolt</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="fa7fc49e-8a6a-430c-9d52-8f53b4e7bc6d">
+                  <SHORT-NAME>EMS_BattCurr</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="20148cb6-2250-4bff-919f-3e855a5fada4">
+                  <SHORT-NAME>EMS_Obc_dcVolt</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="6e29d39c-6aac-47bd-9a59-8073ffbdc558">
+                  <SHORT-NAME>EMS_Obc_dcCurr</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="37aeba74-f357-464a-8637-2248eda6c29d">
+                  <SHORT-NAME>EMS_Avn_ChargeCurrSetSts</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="f342925b-2b31-4052-b9be-e25b906c1af4">
+                  <SHORT-NAME>EMS_HvBatt_MainRlyCloseReq</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="2a69dcef-12e1-480b-8b20-fbfa86442f63">
+                  <SHORT-NAME>EMS_HvBatt_preChrgRlyStatus</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="93b8e851-407d-4fce-b76c-e0f9b715cd6b">
+                  <SHORT-NAME>EMS_HvBatt_posRlyStatus</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="a6021049-12d9-4136-94e4-0749baa67fdf">
+                  <SHORT-NAME>EMS_HvBatt_negRlyStatus</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="1a89711c-7662-4dae-a251-58bd9393ec6e">
+                  <SHORT-NAME>EMS_Avn_DcChargingTartgetSetSts</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT UUID="26b8cc4f-7456-4fcf-8c9b-cbdfbc41104e">
+                  <SHORT-NAME>EMS_Avn_AcChargingTartgetSetSts</SHORT-NAME>
+                  <TYPE-REFERENCE>
+                    <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/DataType/BaseType/uint32_t</TYPE-REFERENCE-REF>
+                  </TYPE-REFERENCE>
+                </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+              </SUB-ELEMENTS>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c056a92a-1e2d-4086-932b-730ea2e1684c">
+          <SHORT-NAME>Semantics</SHORT-NAME>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

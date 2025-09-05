@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_onetimesysinfo.h
 /// IMPLEMENTATION DATA TYPE NAME     : OneTimeSysInfo
-/// GENERATED DATE                    : 2025-08-26 14:43:14
+/// GENERATED DATE                    : 2025-09-05 11:32:06
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

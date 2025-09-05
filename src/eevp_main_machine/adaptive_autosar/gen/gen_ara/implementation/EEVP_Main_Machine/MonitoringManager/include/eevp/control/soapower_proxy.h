@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soapower_proxy.h
 /// SERVICE INTERFACE NAME            : SoaPower
-/// GENERATED DATE                    : 2025-08-26 14:43:10
+/// GENERATED DATE                    : 2025-09-05 11:31:57
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
