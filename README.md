@@ -141,17 +141,17 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | BatteryMonitor (티스마트 앱A) | 0xB6A | BmsInfoSrv | 40201 |티스마트 |
 | BatteryMonitor (티스마트 앱A) | 0xB6B | Eevp.Control.SoaMlm | 40202 |티스마트 |
 | BatteryMonitor (티스마트 앱A) | 0xB6C | Eevp.Subscription.Service | 40203 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0xB6D | Eevp.Control.SoaDms | 40300 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0xB6E | Eevp.Control.SoaMlm | 40301 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0xB6F | Eevp.Control.SoaHvac | 40302 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0xB70 | Eevp.Control.SoaSmartFilm | 40303 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0xB71 | Eevp.Subscription.Service | 40304 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB72 | Eevp.Control.SoaVehicleInfo | 40400 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB73 | Eevp.Control.SoaDriverSeat | 40401 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB74 | Eevp.Control.SoaMlm | 40402 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB75 | Eevp.Control.SoaRcurtain | 40403 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 40404 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 40405 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6D | Eevp.Control.SoaDms | 40204 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6E | Eevp.Control.SoaMlm | 40205 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6F | Eevp.Control.SoaHvac | 40206 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB70 | Eevp.Control.SoaSmartFilm | 40207 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB71 | Eevp.Subscription.Service | 40208 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB72 | Eevp.Control.SoaVehicleInfo | 40209 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB73 | Eevp.Control.SoaDriverSeat | 4020A |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB74 | Eevp.Control.SoaMlm | 4020B |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB75 | Eevp.Control.SoaRcurtain | 4020C |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 4020D |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 4020E |티스마트 |
 | IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
