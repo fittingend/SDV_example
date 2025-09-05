@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_direction.h
 /// IMPLEMENTATION DATA TYPE NAME     : Direction
-/// GENERATED DATE                    : 2025-08-26 14:43:13
+/// GENERATED DATE                    : 2025-09-05 11:32:05
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

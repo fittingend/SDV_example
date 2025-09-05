@@ -5,8 +5,8 @@
     "service-protocol" : "someip",
     "connector" : "eth0",
     "unicast-address" : "10.100.0.40",
-    "tcp-port" : "40011",
-    "udp-port" : "40011",
+    "tcp-port" : "55100",
+    "udp-port" : "55100",
     "skeletons" : [
     ],
     "proxies" : [

@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : soasmartfilm_common.h
 /// SERVICE INTERFACE NAME            : SoaSmartFilm
-/// GENERATED DATE                    : 2025-08-26 14:43:11
+/// GENERATED DATE                    : 2025-09-05 11:31:56
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

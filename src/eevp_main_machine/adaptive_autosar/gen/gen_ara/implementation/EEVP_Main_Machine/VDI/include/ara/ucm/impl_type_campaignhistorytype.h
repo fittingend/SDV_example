@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_campaignhistorytype.h
 /// IMPLEMENTATION DATA TYPE NAME     : CampaignHistoryType
-/// GENERATED DATE                    : 2025-08-26 14:43:24
+/// GENERATED DATE                    : 2025-09-05 11:32:22
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   

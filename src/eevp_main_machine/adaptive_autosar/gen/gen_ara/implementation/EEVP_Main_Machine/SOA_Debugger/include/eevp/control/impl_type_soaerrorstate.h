@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : impl_type_soaerrorstate.h
 /// IMPLEMENTATION DATA TYPE NAME     : SoaErrorState
-/// GENERATED DATE                    : 2025-08-26 14:43:15
+/// GENERATED DATE                    : 2025-09-05 11:32:10
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                                                                                                        
 /// CAUTION!! AUTOMATICALLY GENERATED FILE - DO NOT EDIT                                                   
