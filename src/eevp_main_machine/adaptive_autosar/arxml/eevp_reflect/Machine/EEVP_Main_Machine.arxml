@@ -102,6 +102,26 @@
                     <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
                   </LOG-TRACE-LOG-MODES>
                 </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="70d3e9e8-f208-4391-b71c-b896c4be58e6">
+                  <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+                  <APPLICATION-ID>BTMN</APPLICATION-ID>
+                  <CONTEXT-ID>BTMN</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
+                <DLT-LOG-CHANNEL UUID="7cc396a1-2c45-41e1-b82d-2ce4de2e9b8a">
+                  <SHORT-NAME>BmsInfo</SHORT-NAME>
+                  <APPLICATION-ID>BMIN</APPLICATION-ID>
+                  <CONTEXT-ID>BMIN</CONTEXT-ID>
+                  <LOG-TRACE-DEFAULT-LOG-LEVEL>INFO</LOG-TRACE-DEFAULT-LOG-LEVEL>
+                  <LOG-TRACE-LOG-MODES>
+                    <LOG-TRACE-LOG-MODE>CONSOLE</LOG-TRACE-LOG-MODE>
+                    <LOG-TRACE-LOG-MODE>NETWORK</LOG-TRACE-LOG-MODE>
+                  </LOG-TRACE-LOG-MODES>
+                </DLT-LOG-CHANNEL>
                 <DLT-LOG-CHANNEL UUID="35b39464-f914-45ab-9086-d71f0b3f00ca">
                   <SHORT-NAME>CM</SHORT-NAME>
                   <APPLICATION-ID>CM</APPLICATION-ID>
@@ -577,6 +597,16 @@
                   <SHORT-NAME>ProcessToMachineMapping_AppIpsvTest_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
                   <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
                   <PROCESS-REF DEST="PROCESS">/Application/Process/AppIpsvTest</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="2027d167-607c-4000-83d7-d285b0ca65d8">
+                  <SHORT-NAME>ProcessToMachineMapping_BatteryMonitor_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/BatteryMonitor</PROCESS-REF>
+                </PROCESS-TO-MACHINE-MAPPING>
+                <PROCESS-TO-MACHINE-MAPPING UUID="33089c6e-6ac7-4519-87f5-d6c1b54adc37">
+                  <SHORT-NAME>ProcessToMachineMapping_BmsInfo_TO_EEVP_Main_Machine_TO_UnknownModule</SHORT-NAME>
+                  <MACHINE-REF DEST="MACHINE">/Machine/EEVP_Main_Machine</MACHINE-REF>
+                  <PROCESS-REF DEST="PROCESS">/Application/Process/BmsInfo</PROCESS-REF>
                 </PROCESS-TO-MACHINE-MAPPING>
                 <PROCESS-TO-MACHINE-MAPPING UUID="0d58e5eb-8c53-4736-952e-56a250a5998e">
                   <SHORT-NAME>ProcessToMachineMapping_CM_TO_EEVP_Machine_TO_UnknownModule</SHORT-NAME>
