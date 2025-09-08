@@ -138,20 +138,21 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | IntelligentWiper (한자연 구독앱) | 0x354| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
 | IntelligentWiper (한자연 구독앱) | 0x355| Eevp.Control.SoaWiper| 40011|한자연 |
 | ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation | 40050 ~ 40070 |한자연 |
-| BatteryMonitor (티스마트 앱A) | 0x356 | BmsInfoSrv | 40200 ~ 40299 |티스마트 |
-| BatteryMonitor (티스마트 앱A) | 0x357 | Eevp.Control.SoaMlm | 40200 ~ 40299 |티스마트 |
-| BatteryMonitor (티스마트 앱A) | 0x358 | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0x359 | Eevp.Control.SoaDms | 40200 ~ 40299 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0x35A | Eevp.Control.SoaMlm | 40200 ~ 40299 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0x35B | Eevp.Control.SoaHvac | 40200 ~ 40299 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0x35C | Eevp.Control.SoaSmartFilm | 40200 ~ 40299 |티스마트 |
-| SmokingMonitor (티스마트 앱B) | 0x35D | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x35E | Eevp.Control.SoaVehicleInfo | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x35F | Eevp.Control.SoaDriverSeat | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x360 | Eevp.Control.SoaMlm | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x361 | Eevp.Control.SoaRcurtain | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x362 | Eevp.Control.SoaSmartFilm | 40200 ~ 40299 |티스마트 |
-| RestingEnv (티스마트 앱C) | 0x363 | Eevp.Subscription.Service | 40200 ~ 40299 |티스마트 |
+| BatteryMonitor (티스마트 앱A) | (Provider) | BmsInfoSrv | 40200 |티스마트 |
+| BatteryMonitor (티스마트 앱A) | 0xB6A | BmsInfoSrv | 40201 |티스마트 |
+| BatteryMonitor (티스마트 앱A) | 0xB6B | Eevp.Control.SoaMlm | 40202 |티스마트 |
+| BatteryMonitor (티스마트 앱A) | 0xB6C | Eevp.Subscription.Service | 40203 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6D | Eevp.Control.SoaDms | 40210 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6E | Eevp.Control.SoaMlm | 40211 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB6F | Eevp.Control.SoaHvac | 40212 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB70 | Eevp.Control.SoaSmartFilm | 40213 |티스마트 |
+| SmokingMonitor (티스마트 앱B) | 0xB71 | Eevp.Subscription.Service | 40214 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB72 | Eevp.Control.SoaVehicleInfo | 40220 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB73 | Eevp.Control.SoaDriverSeat | 40221 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB74 | Eevp.Control.SoaMlm | 40222 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB75 | Eevp.Control.SoaRcurtain | 40223 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 40224 |티스마트 |
+| RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 40225 |티스마트 |
 | IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
