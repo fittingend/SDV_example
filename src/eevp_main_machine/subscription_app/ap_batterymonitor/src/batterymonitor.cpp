@@ -44,9 +44,32 @@ private:
     BATTERYMONITOR* batterymonitor;  // BATTERYMONITOR 애플리케이션 인스턴스에 대한 포인터
 };
 
+// BmsInfo 이벤트 받는 리스너
+// BMS 정보 들어오면 BATTERYMONITOR에 전달함
+class BmsInfoListener 
+    : public eevp::bmsinfo::service::IBmsInfoListener {
+public:
+    //BmsInfoListener 객체 만들 때 BATTERYMONITOR 인스턴스의 포인터를 받아서 내부 멤버 변수 bmsinfo 으로 저장하는 것. 이후에 이 포인터를 통해 BATTERYMONITOR의 메서드를 호출
+    explicit BmsInfoListener(BATTERYMONITOR* appInstance)
+        : bmsinfo(appInstance) {}
+
+    // BMS 정보 들어오면 BATTERYMONITOR에 넘김
+    void ems_BmsInfo(const eevp::bmsinfo::Struct_BmsInfo& info) override
+    {
+        // BATTERYMONITOR 객체의 함수에 구독 정보 전달
+        bmsinfo->ems_BmsInfo(info);
+    }
+
+private:
+    BATTERYMONITOR* bmsinfo;  // BATTERYMONITOR 애플리케이션 인스턴스에 대한 포인터
+};
+
 BATTERYMONITOR::BATTERYMONITOR() :
         mLogger(ara::log::CreateLogger("KATC", "SWC", ara::log::LogLevel::kInfo)),
         mSubscription(false),
+        bFlag_BMSInfo_ListenerRx(false),
+        brightness(false),
+        brightness_prev(false),
         moodLampProxyImpl{nullptr},
         bmsInfoProxyImpl{nullptr},
         subscriptionManagementProxyImpl{nullptr}
@@ -91,24 +114,36 @@ void BATTERYMONITOR::Run() {
         if (!mSubscriptionCv.wait_for(lock, std::chrono::seconds(5),
             [&]() { return mSubscription || !mRunning; })) {
             mLogger.LogInfo() << "Still unsubscribed... waiting.";
-            subscription_status = mSubscription;            //subscription_status
             continue;
         }
-
-        subscription_status = mSubscription;            //subscription_status
 
         if (!mRunning) {mLogger.LogInfo() << "App is finished..."; break;} // 종료 신호 받으면 나감
 
         mLogger.LogInfo() << "App is subscribed. Starting main logic.";
 
         while (mSubscription && mRunning) {
-            // 실제 동작 수행 - lampctrl
+
+            if(bFlag_BMSInfo_ListenerRx == 1)
+            {
+                // 실제 동작 수행 - bmsinfo&msg&lamp
+                mLogger.LogInfo() << "Logic Start!!!!!!!";
+                BatteryMonitor_triggered_sys(batterymonitor_B, &brightness, &socket_data);         //Subfunction By Matlab (subfunction.h)
+                mLogger.LogInfo() << "Brightness Check : "<< brightness;
+                bFlag_BMSInfo_ListenerRx = 0;
+                mLogger.LogInfo() << "Logic Finish!!!!!!!";
+            }
+
+            //MoodLamp & Socket
             if(brightness != brightness_prev)
+            {
+                mLogger.LogInfo() << "Logic MoodLamp Control & Socket Send Start!!!!!!!";
                 RequestMlmSetBrightness(brightness);
+                SendSocket(socket_data);                                                            //Subfunction for Socket (subfunction.h)
+            }
             brightness_prev = brightness;
 
             mLogger.LogInfo() << "BatteryMonitor APP is running!!!!!!";
-            std::this_thread::sleep_for(std::chrono::seconds(5));
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
             // 중간에 구독이 끊기면 break
             if (!mSubscription) {
@@ -141,7 +176,6 @@ BATTERYMONITOR::setRunningState() {
 }
 
 /// SubscriptionManagement Start
-
 void BATTERYMONITOR::notifySubscriptionInfo(const eevp::subscription::type::SubscriptionInfo& value) {
     mLogger.LogInfo() << __func__;
 
@@ -153,11 +187,15 @@ void BATTERYMONITOR::notifySubscriptionInfo(const eevp::subscription::type::Subs
 
         if (value.isSubscription) {
             mLogger.LogInfo() << "App subscribed → waking up logic";
-            mSubscriptionCv.notify_all();
+            //mSubscriptionCv.notify_all();
         } else {
             mLogger.LogInfo() << "App unsubscribed → logic will pause";
             // `Run()` 내 루프가 이 상태 보고 break 됨
         }
+
+
+         mLogger.LogInfo() << "[Event listener]cbSubscriptionInfo : appName = " << value.appName
+                             << ", isSubscription = " << (value.isSubscription ? "true" : "false");
     }
 }
 void 
@@ -170,7 +208,6 @@ BATTERYMONITOR::getSubscriptionInfo()
 
 
 /// MoodLamp Start
-
 // void
 void
 BATTERYMONITOR::RequestMlmSetRgbColor(const std::uint8_t& colorTableIndex) {
@@ -188,6 +225,25 @@ BATTERYMONITOR::RequestMlmSetBrightness(const std::uint16_t& brightness) {
 
 /// MoodLamp End
 
+/// BMSInfo Start
+void BATTERYMONITOR::ems_BmsInfo(const eevp::bmsinfo::Struct_BmsInfo& bmsInfo) {
+    mLogger.LogInfo() << __func__;
+    if(mSubscription == 1)
+    {
+        bFlag_BMSInfo_ListenerRx = 1;
+        memcpy(&batterymonitor_B.RxTriggered, &bmsInfo, sizeof(bmsInfo));
+                mLogger.LogInfo() << "[BMSInfo Listener] Message Recieve Success";
+                mLogger.LogInfo() << "[BMSInfo Listener] DataSerialNumber = " << batterymonitor_B.RxTriggered.DataSerialNumber;
+
+    }
+    else
+    {
+        bFlag_BMSInfo_ListenerRx = 0;
+        mLogger.LogInfo() << "[BMSInfo Listener] Not Subscription -> Listener Fail";
+    }
+}
+/// BMSInfo End
+
 
 bool
 BATTERYMONITOR::startMlmProxy() {
@@ -203,8 +259,8 @@ bool
 BATTERYMONITOR::startBMSInfoProxy() {
     mLogger.LogInfo() << __func__;
     bmsInfoProxyImpl = std::make_shared<eevp::bmsinfosrv::BmsInfoProxyImpl>();
-    //auto rearCurtainListener = std::make_shared<RearCurtainListener>(this);
-    //bmsInfoProxyImpl->setEventListener(rearCurtainListener);
+    auto bmsInfoListener = std::make_shared<BmsInfoListener>(this);
+    bmsInfoProxyImpl->setEventListener(bmsInfoListener);
     bmsInfoProxyImpl->init();
     return true;
 }
