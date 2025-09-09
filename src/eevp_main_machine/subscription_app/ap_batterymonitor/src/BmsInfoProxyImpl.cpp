@@ -25,10 +25,10 @@ BmsInfoProxyImpl::~BmsInfoProxyImpl() {
     }
 }
 
-// void
-// BmsInfoProxyImpl::setEventListener(std::shared_ptr<IBmsInfoListener> _listener) {
-//     listener = _listener;
-// }
+void
+BmsInfoProxyImpl::setEventListener(std::shared_ptr<eevp::bmsinfo::service::IBmsInfoListener> _listener) {
+    listener = _listener;
+}
 
 bool
 BmsInfoProxyImpl::init() {
@@ -78,7 +78,7 @@ BmsInfoProxyImpl::FindServiceCallback(
     
     // 이미 프록시가 존재한다면 기존 구독 해제 및 프록시 제거
     if (mProxy != nullptr) {
-        UnsubscribeBmsInfo();// 기존 BmsInfoSrvProxy 이벤트 핸들러 해제
+        UnsubscribeBmsInfo();// 기존 ems_BmsInfo 이벤트 핸들러 해제
         mFindHandle = nullptr;// 이전 핸들 제거
         mProxy = nullptr;// 프록시 포인터 제거
     }
@@ -92,7 +92,7 @@ BmsInfoProxyImpl::FindServiceCallback(
     // 새로운 BmsInfoSrvProxy 생성
     mProxy = std::make_shared<proxy::BmsInfoSrvProxy>(container.at(0));
 
-    // BmsInfoSrvProxy 수신 시작 (리스너 등록)
+    // ems_BmsInfo 수신 시작 (리스너 등록)
     SubscribeBmsInfo();
     // 대기 중인 init() 측 조건 변수 깨움
     cvHandle.notify_one();
@@ -129,21 +129,14 @@ BmsInfoProxyImpl::cbBmsInfo() {
 
     mProxy->ems_BmsInfo.GetNewSamples([&](auto msg) {
 
-        if(subscription_status == 1)
-        {
-            const auto& bmsInfo = *msg;
-            memcpy(&batterymonitor_B.RxTriggered, &bmsInfo, sizeof(bmsInfo));
-            mLogger.LogInfo() << "Recieve Success";
-            mLogger.LogInfo() << "cbBmsInfo : DataSerialNumber = " << batterymonitor_B.RxTriggered.DataSerialNumber;
+        
+        const auto& bmsInfo = *msg;
+      
 
-            // 실제 동작 수행 - bmsinfo&msg&lamporder
-            BatteryMonitor_triggered_sys(batterymonitor_B, &brightness);
+        // 외부에서 등록한 리스너가 있다면 전달
+        if (listener != nullptr) {
+            listener->ems_BmsInfo(bmsInfo);
         }
-
-        // // 외부에서 등록한 리스너가 있다면 전달 (예: KATECH::BmsInfoSrvProxy 호출됨)
-        // if (listener != nullptr) {
-        //     listener->BmsInfoSrvProxy(bmsInfo);
-        // }
     });
 }
 void
