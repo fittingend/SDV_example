@@ -10,9 +10,9 @@
 #include "eevp/control/soamlm_proxy.h"
 #include "eevp/subscription/service/subscriptionmanagement_proxy.h"
 
-// #include "IMlmListener.h"
+#include "IMlmListener.h"
 #include "ISubscriptionManagementListener.h"
-// #include "IBmsInfoListener.h"
+#include "IBmsInfoListener.h"
 
 #include "MoodLampProxyImpl.h"
 #include "SubscriptionManagementProxyImpl.h"
@@ -45,6 +45,10 @@ public:
     void notifySubscriptionInfo(const eevp::subscription::type::SubscriptionInfo& subscriptionInfo);
     void getSubscriptionInfo();
 
+    //BMSInfo
+    void ems_BmsInfo(const eevp::bmsinfo::Struct_BmsInfo& bmsInfo);
+
+
     /// @brief App name
     static const eevp::type::String mAppname;
 
@@ -71,6 +75,17 @@ private:
     ara::log::Logger& mLogger;
     /// @brief Subscription Flag
     bool mSubscription;
+    /// BMSInfo Flag
+    bool bFlag_BMSInfo_ListenerRx;
+
+    /// lamp - start
+    uint8_t brightness;
+    uint8_t brightness_prev;
+    /// lamp - finish
+
+    /// socket - start //below structure are defined in subfunction.h
+    Socket_Data   socket_data;
+    //socket - end
 
     std::mutex mSubscriptionMutex;
     std::condition_variable mSubscriptionCv;
