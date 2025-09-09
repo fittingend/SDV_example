@@ -21,11 +21,6 @@
 //
 #include "batterymonitor_subfunction.h"
 
-bool subscription_status = 0;
-
-uint8_t brightness = 0;
-uint8_t brightness_prev = 0;
-
 //시간계산 변수 시작
 time_t now;
 time_t finishtime;
@@ -54,17 +49,11 @@ B_batterymonitor_T batterymonitor_B;
 DW_batterymonitor_T batterymonitor_DW;
 
 // Model step function
-void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *brightness)
+void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *brightness, Socket_Data* socket_data)
 {
     std::array<uint8_t, 20> rtb_RCData_l;
     std::array<uint8_t, 100> rtb_Ydata_cq;
     std::shared_ptr<ara::core::Result<size_t>> resultPtr;
-    //socket - start
-    Socket_Header socket_header;
-    Socket_Data   socket_data;
-    uint8_t socket_frame[sizeof(Socket_Header)
-                            +sizeof(Socket_Data)+1];
-    //socket - end
     uint64m_T rtb_Gain1;
     double rtb_miss;
     double rtb_y;
@@ -221,12 +210,12 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
             // ;
 
             // MATLAB Function: '<S2>/Determine_AppVersion'
-            socket_data.AppVer[0] = 0U;
-            socket_data.AppVer[1] = 1U;
-            socket_data.AppVer[2] = 0U;
-            socket_data.AppVer[3] = 1U;
-            socket_data.AppVer[4] = 0U;
-            socket_data.AppVer[5] = 1U;
+            socket_data->AppVer[0] = 0U;
+            socket_data->AppVer[1] = 1U;
+            socket_data->AppVer[2] = 0U;
+            socket_data->AppVer[3] = 1U;
+            socket_data->AppVer[4] = 0U;
+            socket_data->AppVer[5] = 1U;
 
             // MATLAB Function: '<S2>/Determine_ChargeStatus' incorporates:
             //   UnitDelay: '<S2>/Unit Delay3'
@@ -3972,18 +3961,18 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
                 rtb_count_cl = 255U;
             }
 
-            socket_data.CompleteTime[0] = static_cast<uint8_t>(rtb_count_cl);
+            socket_data->CompleteTime[0] = static_cast<uint8_t>(rtb_count_cl);
             if (rtb_count_a > 255U) {
                 rtb_count_a = 255U;
             }
 
-            socket_data.CompleteTime[1] = static_cast<uint8_t>(rtb_count_a);
+            socket_data->CompleteTime[1] = static_cast<uint8_t>(rtb_count_a);
 
             // End of MATLAB Function: '<S2>/Calculate_CompleteTime'
 
             // MATLAB Function: '<S2>/Calculate_PresentTime'
             for (i = 0; i < 8; i++) {
-                socket_data.Date[i] = 0U;
+                socket_data->Date[i] = 0U;
             }
 
             //시간계산 시작
@@ -3991,23 +3980,23 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
             now += 9 * 60 * 60;                   
             tm* kstTime = std::gmtime(&now);      
 
-            socket_data.Date[0] = (kstTime->tm_year + 1900) / 100;  
-            socket_data.Date[1] = (kstTime->tm_year + 1900) % 100;  
-            socket_data.Date[2] = kstTime->tm_mon + 1;              
-            socket_data.Date[3] = kstTime->tm_mday;                 
-            socket_data.Date[4] = kstTime->tm_hour;                 
-            socket_data.Date[5] = kstTime->tm_min;                  
-            socket_data.Date[6] = kstTime->tm_sec;
+            socket_data->Date[0] = (kstTime->tm_year + 1900) / 100;  
+            socket_data->Date[1] = (kstTime->tm_year + 1900) % 100;  
+            socket_data->Date[2] = kstTime->tm_mon + 1;              
+            socket_data->Date[3] = kstTime->tm_mday;                 
+            socket_data->Date[4] = kstTime->tm_hour;                 
+            socket_data->Date[5] = kstTime->tm_min;                  
+            socket_data->Date[6] = kstTime->tm_sec;
 
             for(int i=0;i<7;i++)
-                socket_data.Date[i] = toBCD(socket_data.Date[i]);
+                socket_data->Date[i] = toBCD(socket_data->Date[i]);
             //시작계산 끝
 
             // End of MATLAB Function: '<S2>/Calculate_PresentTime'
 
             // MATLAB Function: '<S2>/Calculate_FinishedTime'
             for (i = 0; i < 7; i++) {
-                socket_data.FinishedTime[i] = 0U;
+                socket_data->FinishedTime[i] = 0U;
             }
 
             //시간계산 시작
@@ -4015,16 +4004,16 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
             finishtime = now + additionalSeconds;
             tm* kstFinishTime = std::gmtime(&finishtime);
 
-            socket_data.FinishedTime[0] = (kstFinishTime->tm_year + 1900) / 100;
-            socket_data.FinishedTime[1] = (kstFinishTime->tm_year + 1900) % 100;
-            socket_data.FinishedTime[2] = kstFinishTime->tm_mon + 1;
-            socket_data.FinishedTime[3] = kstFinishTime->tm_mday;
-            socket_data.FinishedTime[4] = kstFinishTime->tm_hour;
-            socket_data.FinishedTime[5] = kstFinishTime->tm_min;
-            socket_data.FinishedTime[6] = kstFinishTime->tm_sec;
+            socket_data->FinishedTime[0] = (kstFinishTime->tm_year + 1900) / 100;
+            socket_data->FinishedTime[1] = (kstFinishTime->tm_year + 1900) % 100;
+            socket_data->FinishedTime[2] = kstFinishTime->tm_mon + 1;
+            socket_data->FinishedTime[3] = kstFinishTime->tm_mday;
+            socket_data->FinishedTime[4] = kstFinishTime->tm_hour;
+            socket_data->FinishedTime[5] = kstFinishTime->tm_min;
+            socket_data->FinishedTime[6] = kstFinishTime->tm_sec;
 
             for(int i=0;i<7;i++)
-                socket_data.FinishedTime[i] = toBCD(socket_data.FinishedTime[i]);
+                socket_data->FinishedTime[i] = toBCD(socket_data->FinishedTime[i]);
             //시작계산 끝
 
             // End of MATLAB Function: '<S2>/Calculate_FinishedTime'
@@ -4122,90 +4111,90 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
                 //   UnitDelay: '<S4>/Unit Delay2'
 
                 // Send event
-                socket_data.ChargeStopReason = batterymonitor_DW.UnitDelay5_DSTATE_k;
+                socket_data->ChargeStopReason = batterymonitor_DW.UnitDelay5_DSTATE_k;
                 //시간계산 시작
                 elapsedtime = now - starttime;
                 starttime = now;
-                socket_data.ElapsedTime[0] = elapsedtime / 3600;
-                socket_data.ElapsedTime[1] = elapsedtime / 60;
+                socket_data->ElapsedTime[0] = elapsedtime / 3600;
+                socket_data->ElapsedTime[1] = elapsedtime / 60;
                 for(int i=0;i<2;i++)
-                socket_data.ElapsedTime[i] = toBCD(socket_data.ElapsedTime[i]);
+                socket_data->ElapsedTime[i] = toBCD(socket_data->ElapsedTime[i]);
                 //시간계산 끝
-                socket_data.Temp.tRslt = batterymonitor_DW.UnitDelay45_DSTATE;
-                socket_data.Temp.XaxisScale = batterymonitor_DW.UnitDelay4_DSTATE_m;
-                socket_data.Temp.YaxisValidCnt = batterymonitor_DW.UnitDelay1_DSTATE_k;
-                std::memcpy(&socket_data.Temp.Ydata[0], &batterymonitor_B.Ydata_j[0], 100U
+                socket_data->Temp.tRslt = batterymonitor_DW.UnitDelay45_DSTATE;
+                socket_data->Temp.XaxisScale = batterymonitor_DW.UnitDelay4_DSTATE_m;
+                socket_data->Temp.YaxisValidCnt = batterymonitor_DW.UnitDelay1_DSTATE_k;
+                std::memcpy(&socket_data->Temp.Ydata[0], &batterymonitor_B.Ydata_j[0], 100U
                     * sizeof(uint8_t));
-                socket_data.Temp.RCValidCnt = batterymonitor_DW.UnitDelay42_DSTATE;
+                socket_data->Temp.RCValidCnt = batterymonitor_DW.UnitDelay42_DSTATE;
                 for (i = 0; i < 20; i++) {
-                    socket_data.Temp.RCdata[i] = batterymonitor_B.MAXdata_k[i];
+                    socket_data->Temp.RCdata[i] = batterymonitor_B.MAXdata_k[i];
                 }
 
-                socket_data.Temp.MAXdata[0] = batterymonitor_B.MAXdata_i[0];
-                socket_data.Temp.MINdata[0] = batterymonitor_B.MINdata_g[0];
-                socket_data.Temp.MAXdata[1] = batterymonitor_B.MAXdata_i[1];
-                socket_data.Temp.MINdata[1] = batterymonitor_B.MINdata_g[1];
-                socket_data.SOC.tRslt = batterymonitor_DW.UnitDelay44_DSTATE;
-                socket_data.SOC.XaxisScale = batterymonitor_DW.UnitDelay25_DSTATE;
-                socket_data.SOC.YaxisValidCnt = batterymonitor_DW.UnitDelay22_DSTATE;
-                std::memcpy(&socket_data.SOC.Ydata[0], &batterymonitor_B.Ydata_h[0], 100U *
+                socket_data->Temp.MAXdata[0] = batterymonitor_B.MAXdata_i[0];
+                socket_data->Temp.MINdata[0] = batterymonitor_B.MINdata_g[0];
+                socket_data->Temp.MAXdata[1] = batterymonitor_B.MAXdata_i[1];
+                socket_data->Temp.MINdata[1] = batterymonitor_B.MINdata_g[1];
+                socket_data->SOC.tRslt = batterymonitor_DW.UnitDelay44_DSTATE;
+                socket_data->SOC.XaxisScale = batterymonitor_DW.UnitDelay25_DSTATE;
+                socket_data->SOC.YaxisValidCnt = batterymonitor_DW.UnitDelay22_DSTATE;
+                std::memcpy(&socket_data->SOC.Ydata[0], &batterymonitor_B.Ydata_h[0], 100U *
                     sizeof(uint8_t));
-                socket_data.SOC.RCValidCnt = batterymonitor_DW.UnitDelay40_DSTATE;
+                socket_data->SOC.RCValidCnt = batterymonitor_DW.UnitDelay40_DSTATE;
                 for (i = 0; i < 20; i++) {
-                    socket_data.SOC.RCdata[i] = batterymonitor_B.MAXdata_j[i];
+                    socket_data->SOC.RCdata[i] = batterymonitor_B.MAXdata_j[i];
                 }
 
-                socket_data.SOC.MAXdata[0] = batterymonitor_B.MAXdata_p[0];
-                socket_data.SOC.MINdata[0] = batterymonitor_B.MINdata_i[0];
-                socket_data.SOC.MAXdata[1] = batterymonitor_B.MAXdata_p[1];
-                socket_data.SOC.MINdata[1] = batterymonitor_B.MINdata_i[1];
-                socket_data.Voltage.tRslt = batterymonitor_DW.UnitDelay47_DSTATE;
-                socket_data.Voltage.XaxisScale = batterymonitor_DW.UnitDelay18_DSTATE;
-                socket_data.Voltage.YaxisValidCnt = batterymonitor_DW.UnitDelay15_DSTATE;
-                std::memcpy(&socket_data.Voltage.Ydata[0], &batterymonitor_B.Ydata[0],
+                socket_data->SOC.MAXdata[0] = batterymonitor_B.MAXdata_p[0];
+                socket_data->SOC.MINdata[0] = batterymonitor_B.MINdata_i[0];
+                socket_data->SOC.MAXdata[1] = batterymonitor_B.MAXdata_p[1];
+                socket_data->SOC.MINdata[1] = batterymonitor_B.MINdata_i[1];
+                socket_data->Voltage.tRslt = batterymonitor_DW.UnitDelay47_DSTATE;
+                socket_data->Voltage.XaxisScale = batterymonitor_DW.UnitDelay18_DSTATE;
+                socket_data->Voltage.YaxisValidCnt = batterymonitor_DW.UnitDelay15_DSTATE;
+                std::memcpy(&socket_data->Voltage.Ydata[0], &batterymonitor_B.Ydata[0],
                     100U * sizeof(uint8_t));
-                socket_data.Voltage.RCValidCnt = batterymonitor_DW.UnitDelay38_DSTATE;
+                socket_data->Voltage.RCValidCnt = batterymonitor_DW.UnitDelay38_DSTATE;
                 for (i = 0; i < 20; i++) {
-                    socket_data.Voltage.RCdata[i] = batterymonitor_B.MAXdata[i];
+                    socket_data->Voltage.RCdata[i] = batterymonitor_B.MAXdata[i];
                 }
 
-                socket_data.Voltage.MAXdata[0] = batterymonitor_B.MAXdata_m[0];
-                socket_data.Voltage.MINdata[0] = batterymonitor_B.MINdata[0];
-                socket_data.Voltage.MAXdata[1] = batterymonitor_B.MAXdata_m[1];
-                socket_data.Voltage.MINdata[1] = batterymonitor_B.MINdata[1];
-                socket_data.Current.tRslt = batterymonitor_DW.UnitDelay46_DSTATE;
-                socket_data.Current.XaxisScale = batterymonitor_DW.UnitDelay11_DSTATE;
-                socket_data.Current.YaxisValidCnt = batterymonitor_DW.UnitDelay8_DSTATE;
-                std::memcpy(&socket_data.Current.Ydata[0], &batterymonitor_B.Ydata_p[0],
+                socket_data->Voltage.MAXdata[0] = batterymonitor_B.MAXdata_m[0];
+                socket_data->Voltage.MINdata[0] = batterymonitor_B.MINdata[0];
+                socket_data->Voltage.MAXdata[1] = batterymonitor_B.MAXdata_m[1];
+                socket_data->Voltage.MINdata[1] = batterymonitor_B.MINdata[1];
+                socket_data->Current.tRslt = batterymonitor_DW.UnitDelay46_DSTATE;
+                socket_data->Current.XaxisScale = batterymonitor_DW.UnitDelay11_DSTATE;
+                socket_data->Current.YaxisValidCnt = batterymonitor_DW.UnitDelay8_DSTATE;
+                std::memcpy(&socket_data->Current.Ydata[0], &batterymonitor_B.Ydata_p[0],
                     100U * sizeof(uint8_t));
-                socket_data.Current.RCValidCnt = batterymonitor_DW.UnitDelay36_DSTATE;
+                socket_data->Current.RCValidCnt = batterymonitor_DW.UnitDelay36_DSTATE;
                 for (i = 0; i < 20; i++) {
-                    socket_data.Current.RCdata[i] = batterymonitor_B.MAXdata_b[i];
+                    socket_data->Current.RCdata[i] = batterymonitor_B.MAXdata_b[i];
                 }
 
-                socket_data.Current.MAXdata[0] = batterymonitor_B.MAXdata_o[0];
-                socket_data.Current.MINdata[0] = batterymonitor_B.MINdata_iq[0];
-                socket_data.Current.MAXdata[1] = batterymonitor_B.MAXdata_o[1];
-                socket_data.Current.MINdata[1] = batterymonitor_B.MINdata_iq[1];
-                socket_data.ChargedSOC = static_cast<uint16_t>(static_cast<uint16_t>
+                socket_data->Current.MAXdata[0] = batterymonitor_B.MAXdata_o[0];
+                socket_data->Current.MINdata[0] = batterymonitor_B.MINdata_iq[0];
+                socket_data->Current.MAXdata[1] = batterymonitor_B.MAXdata_o[1];
+                socket_data->Current.MINdata[1] = batterymonitor_B.MINdata_iq[1];
+                socket_data->ChargedSOC = static_cast<uint16_t>(static_cast<uint16_t>
                     (batterymonitor_B.RxTriggered.EMS_HVBattSOC) -
                     batterymonitor_DW.UnitDelay2_DSTATE_k);
-                socket_data.ChargedSOE = static_cast<uint16_t>(static_cast<uint16_t>
+                socket_data->ChargedSOE = static_cast<uint16_t>(static_cast<uint16_t>
                     (batterymonitor_B.RxTriggered.EMS_HVBattSOE) -
                     batterymonitor_DW.UnitDelay1_DSTATE_m);
-                socket_data.ChargeResult = static_cast<uint16_t>(rtb_get);
-                socket_data.MissedCount = rtb_y_b;
-                socket_data.GetCount = rtb_y_m;
+                socket_data->ChargeResult = static_cast<uint16_t>(rtb_get);
+                socket_data->MissedCount = rtb_y_b;
+                socket_data->GetCount = rtb_y_m;
 
                 // MultiPortSwitch: '<S2>/Multiport Switch'
                 if (batterymonitor_B.RxTriggered.EMS_ConnectionStatus == 1U) {
                     // BusCreator: '<S4>/Bus Creator'
-                    socket_data.TargetSOC = static_cast<uint8_t>
+                    socket_data->TargetSOC = static_cast<uint8_t>
                         (batterymonitor_B.RxTriggered.EMS_Avn_AcChargingTargetSetSts);
                 }
                 else {
                     // BusCreator: '<S4>/Bus Creator'
-                    socket_data.TargetSOC = static_cast<uint8_t>
+                    socket_data->TargetSOC = static_cast<uint8_t>
                         (batterymonitor_B.RxTriggered.EMS_Avn_DcChargingTargetSetSts);
                 }
 
@@ -4216,27 +4205,27 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
                 //   DataTypeConversion: '<S2>/Data Type Conversion3'
                 //   DataTypeConversion: '<S2>/Data Type Conversion4'
 
-                socket_data.SOE = static_cast<uint16_t>
+                socket_data->SOE = static_cast<uint16_t>
                     (batterymonitor_B.RxTriggered.EMS_HVBattSOE);
-                socket_data.SOH = static_cast<uint16_t>
+                socket_data->SOH = static_cast<uint16_t>
                     (batterymonitor_B.RxTriggered.EMS_HVBattSOH);
-                socket_data.BatteryStatus = 0U;
+                socket_data->BatteryStatus = 0U;
 
                 // MATLAB Function: '<S2>/Calculate_DTE'
                 rtb_y = std::round(rtb_y);
                 if (rtb_y < 65536.0) {
                     if (rtb_y >= 0.0) {
                         // BusCreator: '<S4>/Bus Creator'
-                        socket_data.DTE = static_cast<uint16_t>(rtb_y);
+                        socket_data->DTE = static_cast<uint16_t>(rtb_y);
                     }
                     else {
                         // BusCreator: '<S4>/Bus Creator'
-                        socket_data.DTE = 0U;
+                        socket_data->DTE = 0U;
                     }
                 }
                 else {
                     // BusCreator: '<S4>/Bus Creator'
-                    socket_data.DTE = UINT16_MAX;
+                    socket_data->DTE = UINT16_MAX;
                 }
 
                 // BusCreator: '<S4>/Bus Creator' incorporates:
@@ -4245,83 +4234,16 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
                 //   DataTypeConversion: '<S2>/Data Type Conversion2'
                 //   UnitDelay: '<S2>/Unit Delay4'
 
-                socket_data.BattSOC = static_cast<uint16_t>
+                socket_data->BattSOC = static_cast<uint16_t>
                     (batterymonitor_B.RxTriggered.EMS_HVBattSOC);
-                socket_data.EMS_ConnectionStatus = static_cast<uint8_t>
+                socket_data->EMS_ConnectionStatus = static_cast<uint8_t>
                     (batterymonitor_DW.UnitDelay4_DSTATE);
-                socket_data.ChargeStatus = rtb_ChargeStatus;
-                // socket_data.VehicleUniqueSnr =
+                socket_data->ChargeStatus = rtb_ChargeStatus;
+                // socket_data->VehicleUniqueSnr =
                 //     batterymonitor_B.RxTriggered.VehicleUniqueSnr;
-                socket_data.VehicleUniqueSnr = 1;
-                socket_data.InterfaceIDforDbg = 12U;
+                socket_data->VehicleUniqueSnr = 1;
+                socket_data->InterfaceIDforDbg = 12U;
                 //P_MsgInfo->ems_MsgInfo.Send(expl_temp);
-
-                //socket - start
-                socket_header.SEQ = 0;
-                socket_header.Retry_Cnt = 0;
-                socket_header.Length = sizeof(socket_data);
-                socket_header.Res = 0;
-                
-                memset(&socket_frame, 0x0, sizeof(socket_frame));                                   //initialize
-                socket_frame[0] = 0x02;                                                             //STX
-                memcpy(&socket_frame[1], &socket_header, sizeof(socket_header));                    //Header
-                for(int i=4;i<8;i++) socket_frame[i] = socket_frame[i+1];
-                memcpy(&socket_frame[sizeof(socket_header)], &socket_data, sizeof(socket_data));    //Data
-                socket_frame[sizeof(socket_header)+sizeof(socket_data)] = 0x03;                     //ETX
-
-                int sockfd = socket(PF_INET, SOCK_STREAM, 0);
-                // if (sockfd < 0) {
-                //     // araLog->LogVerbose() << "Failed to create socket. errno: " << errno << "\n";
-                //     exit(EXIT_FAILURE);
-                // }
-
-                sockaddr_in sockaddr;
-                memset(&sockaddr, 0, sizeof(sockaddr));
-                sockaddr.sin_family = AF_INET;
-                sockaddr.sin_port = htons(14198);
-                if (inet_pton(AF_INET, "3.34.160.201", &sockaddr.sin_addr) <= 0) {
-                    // araLog->LogVerbose() << "[BatteryMonitor Socket] Failed to setup socket address" << "\n";
-                    close(sockfd);
-                    exit(EXIT_FAILURE);
-                }
-
-                // const char *iface = "wlp1s0";                        			//message to wireless (important)
-                // setsockopt(sockfd, SOL_SOCKET, SO_BINDTODEVICE, iface, strlen(iface));   //message to wireless (important)
-
-                for(int i=0;i<5;i++) 
-                {
-                    // araLog->LogVerbose() << "[BatteryMonitor Socket] Connect try start." << "\n";
-                    if (connect(sockfd, (struct sockaddr*)&sockaddr, sizeof(sockaddr)) == 0) 
-                    {
-                        // araLog->LogVerbose() << "[BatteryMonitor Socket] Connected successfully!" << "\n";
-                        int opt_val = 1;
-                        setsockopt(sockfd, IPPROTO_TCP, TCP_NODELAY, &opt_val, sizeof(opt_val));
-                        break;
-                    } 
-                    else 
-                    {
-                        // araLog->LogVerbose() << "[BatteryMonitor Socket] Connect failed." << "\n";
-                        std::this_thread::sleep_for(std::chrono::seconds(1));  // 1초 대기 후 재시도
-                    }
-                }
-
-                // araLog->LogVerbose() << "[BatteryMonitor Socket] Send try start."<<"\n";
-                // araLog->LogVerbose() << "[BatteryMonitor Socket] Size of socket data"<<socket_header.Length<<"\n";
-                // araLog->LogVerbose() << "[BatteryMonitor Socket] Size of socket frame"<<sizeof(socket_frame)<<"\n";
-                ssize_t bytesSent = write(sockfd, &socket_frame, sizeof(socket_frame)); 
-                //ssize_t bytesSent = write(sockfd, "Start,Finish", 13); 
-                if(bytesSent<0)
-                {
-                    // araLog->LogVerbose() << "[BatteryMonitor Socket] Fail to send data."<<"\n";
-                }
-                else
-                {
-                    // araLog->LogVerbose() << "[BatteryMonitor Socket] Socket Message Sent "<<bytesSent<<"bytes."<<"\n";
-                }
-
-                std::this_thread::sleep_for(std::chrono::seconds(1));
-                close(sockfd);
-                //socket - end
 
                 // Update for UnitDelay: '<S4>/Unit Delay1'
                 batterymonitor_DW.UnitDelay1_DSTATE_m = rtb_DataTypeConversion3;
@@ -4377,6 +4299,80 @@ void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *
             // End of Outputs for SubSystem: '<Root>/BatteryMonitor_triggered_sys'
         // }
     // }
+}
+
+//Subfunction for Socket - Not made by Simulink
+void SendSocket(Socket_Data socket_data)
+{
+    //socket - start
+    Socket_Header socket_header;
+    uint8_t socket_frame[sizeof(Socket_Header)+sizeof(Socket_Data)+1];
+
+    socket_header.SEQ = 0;
+    socket_header.Retry_Cnt = 0;
+    socket_header.Length = sizeof(socket_data);
+    socket_header.Res = 0;
+    
+    memset(&socket_frame, 0x0, sizeof(socket_frame));                                   //initialize
+    socket_frame[0] = 0x02;                                                             //STX
+    memcpy(&socket_frame[1], &socket_header, sizeof(socket_header));                    //Header
+    for(int i=4;i<8;i++) socket_frame[i] = socket_frame[i+1];
+    memcpy(&socket_frame[sizeof(socket_header)], &socket_data, sizeof(socket_data));    //Data
+    socket_frame[sizeof(socket_header)+sizeof(socket_data)] = 0x03;                     //ETX
+
+    int sockfd = socket(PF_INET, SOCK_STREAM, 0);
+    // if (sockfd < 0) {
+    //     // araLog->LogVerbose() << "Failed to create socket. errno: " << errno << "\n";
+    //     exit(EXIT_FAILURE);
+    // }
+
+    sockaddr_in sockaddr;
+    memset(&sockaddr, 0, sizeof(sockaddr));
+    sockaddr.sin_family = AF_INET;
+    sockaddr.sin_port = htons(14198);
+    if (inet_pton(AF_INET, "3.34.160.201", &sockaddr.sin_addr) <= 0) {
+        // araLog->LogVerbose() << "[BatteryMonitor Socket] Failed to setup socket address" << "\n";
+        close(sockfd);
+        exit(EXIT_FAILURE);
+    }
+
+    // const char *iface = "wlp1s0";                        			//message to wireless (important)
+    // setsockopt(sockfd, SOL_SOCKET, SO_BINDTODEVICE, iface, strlen(iface));   //message to wireless (important)
+
+    for(int i=0;i<5;i++) 
+    {
+        // araLog->LogVerbose() << "[BatteryMonitor Socket] Connect try start." << "\n";
+        if (connect(sockfd, (struct sockaddr*)&sockaddr, sizeof(sockaddr)) == 0) 
+        {
+            // araLog->LogVerbose() << "[BatteryMonitor Socket] Connected successfully!" << "\n";
+            int opt_val = 1;
+            setsockopt(sockfd, IPPROTO_TCP, TCP_NODELAY, &opt_val, sizeof(opt_val));
+            break;
+        } 
+        else 
+        {
+            // araLog->LogVerbose() << "[BatteryMonitor Socket] Connect failed." << "\n";
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    }
+
+    // araLog->LogVerbose() << "[BatteryMonitor Socket] Send try start."<<"\n";
+    // araLog->LogVerbose() << "[BatteryMonitor Socket] Size of socket data"<<socket_header.Length<<"\n";
+    // araLog->LogVerbose() << "[BatteryMonitor Socket] Size of socket frame"<<sizeof(socket_frame)<<"\n";
+    ssize_t bytesSent = write(sockfd, &socket_frame, sizeof(socket_frame)); 
+    //ssize_t bytesSent = write(sockfd, "Start,Finish", 13); 
+    if(bytesSent<0)
+    {
+        // araLog->LogVerbose() << "[BatteryMonitor Socket] Fail to send data."<<"\n";
+    }
+    else
+    {
+        // araLog->LogVerbose() << "[BatteryMonitor Socket] Socket Message Sent "<<bytesSent<<"bytes."<<"\n";
+    }
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    close(sockfd);
+    //socket - end
 }
 
 void batterymonitor_Convert_CurrMAXdata(const double rtu_u[2],
