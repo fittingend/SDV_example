@@ -161,8 +161,8 @@ SubscriptionManagementProxyImpl::cbSubscriptionInfo() {
 
     mProxy->notifySubscriptionInfo.GetNewSamples([&](auto msg) {
         const auto& subscriptionInfo = *msg;
-        // mLogger.LogInfo() << "cbSubscriptionInfo : appName = " << subscriptionInfo.appName
-        //                 << ", isSubscription = " << (subscriptionInfo.isSubscription ? "true" : "false");
+        mLogger.LogInfo() << "[Proxy Event!!!!!!]cbSubscriptionInfo : appName = " << subscriptionInfo.appName
+                        << ", isSubscription = " << (subscriptionInfo.isSubscription ? "true" : "false");
         // 외부에서 등록한 리스너가 있다면 전달 (예: KATECH::notifySubscriptionInfo 호출됨)
         if (listener != nullptr) {
             listener->notifySubscriptionInfo(subscriptionInfo);
