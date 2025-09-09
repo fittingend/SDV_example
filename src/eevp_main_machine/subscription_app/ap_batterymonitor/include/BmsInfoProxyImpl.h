@@ -16,8 +16,8 @@ public:
     BmsInfoProxyImpl();
     ~BmsInfoProxyImpl();
 
-    // void setEventListener(const std::shared_ptr<eevp::bmsinfo::service::IBmsInfoListener> _listener);
-    bool init();  
+    void setEventListener(std::shared_ptr<eevp::bmsinfo::service::IBmsInfoListener> _listener) ;
+    bool init(); 
 
 private:
     void FindServiceCallback(
@@ -34,7 +34,7 @@ private:
     void cbBmsInfo();
 
     ara::log::Logger& mLogger;
-    // std::shared_ptr<eevp::bmsinfo::service::IBmsInfoListener> listener;
+    std::shared_ptr<eevp::bmsinfo::service::IBmsInfoListener> listener;
     std::shared_ptr<eevp::bmsinfosrv::proxy::BmsInfoSrvProxy> mProxy;
 
     std::unique_ptr<eevp::bmsinfosrv::proxy::BmsInfoSrvProxy> mRPort{nullptr};
