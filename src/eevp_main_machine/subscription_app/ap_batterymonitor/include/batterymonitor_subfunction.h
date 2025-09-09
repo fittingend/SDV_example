@@ -67,11 +67,6 @@
 #include "eevp/control/soamlm_proxy.h"
 #include "MoodLampProxyImpl.h"
 
-extern bool subscription_status ;
-
-extern uint8_t brightness;
-extern uint8_t brightness_prev;
-
 //시간계산 변수 시작
 extern time_t now;
 extern time_t finishtime;
@@ -237,8 +232,10 @@ struct Socket_Frame
   //시간계산 서브함수 끝
 
   // model step function
-  void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *brightness);
+  void BatteryMonitor_triggered_sys(B_batterymonitor_T batterymonitor_B, uint8_t *brightness, Socket_Data* socket_data);
 
+  //Subfunction for Socket - Not made by Simulink
+  void SendSocket(Socket_Data socket_data);
 
   // private member function(s) for subsystem '<S17>/Convert_CurrMAXdata'
   static void batterymonitor_Convert_CurrMAXdata(const double rtu_u[2], uint8_t rty_MAXdata[2]);
