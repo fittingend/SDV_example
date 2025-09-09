@@ -157,13 +157,13 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x367 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
-| PreventRollback (국민대학교 앱) | 0x368 | Eevp.Pdw.Service | 40301 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x369 | Eevp.Simulation.BCM_ExteriorSignal | 40302 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36A | Eevp.Subscription.Service | 40303 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36B | Eevp.Control.SoaVehicleInfo | 40304 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36C | Eevp.Simulation.VCS_BrakePedal | 40305 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36D | Eevp.Simulation.VCS_AccrPedal | 40306 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36E | Eevp.Simulation.VCS_Gear | 40307 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9D | Eevp.Pdw.Service | 40301 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9C | Eevp.Simulation.BCM_ExteriorSignal | 40302 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9F | Eevp.Subscription.Service | 40303 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9E | Eevp.Control.SoaVehicleInfo | 40304 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA1 | Eevp.Simulation.VCS_BrakePedal | 40305 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA0 | Eevp.Simulation.VCS_AccrPedal | 40306 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA2 | Eevp.Simulation.VCS_Gear | 40307 | 국민대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x36F | Eevp.Subscription.Service | 40400 | 한국공학대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x370 | Eevp.Control.SoaDms | 40401 | 한국공학대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x371 | Eevp.Control.SoaSmartFilm | 40402 | 한국공학대학교 |
