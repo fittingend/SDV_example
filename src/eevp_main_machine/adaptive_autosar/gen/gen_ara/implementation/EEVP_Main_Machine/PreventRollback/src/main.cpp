@@ -10,7 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// GENERATED FILE NAME               : main.cpp
 /// EXECUTABLE NAME                   : PreventRollback
-/// GENERATED DATE                    : 2025-08-29 17:14:20
+/// GENERATED DATE                    : 2025-09-09 12:00:27
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 /// INCLUSION HEADER FILES
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ int main(int argc, char *argv[], char* envp[])
     
     if (araInitialized)
     {
-        ara::log::Logger& appLogger{ara::log::CreateLogger("DFLT", "PreventRollback's main function")};
+        ara::log::Logger& appLogger{ara::log::CreateLogger("PRRB", "PreventRollback's main function")};
         
         // regist signals
         std::signal(SIGTERM, SignalHandler);
