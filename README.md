@@ -132,11 +132,14 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
   
 | Application Name| Client ID| 사용 interface| TCP UDP port | 담당기관 |
 | --- | --- | --- | --- | --- |
-| KATECH (ROA-RearCurtain 데모앱)| 0x351 | Eevp.Control.SoaRoa| 40000| 한자연 |
-| KATECH (ROA-RearCurtain 데모앱) | 0x352| Eevp.Control.SoaRcurtain| 40001| 한자연|
-| KATECH (ROA-RearCurtain 데모앱) | 0x353| Eevp.Subscription.Service| 40002|한자연 |
-| IntelligentWiper (한자연 구독앱) | 0x354| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
-| IntelligentWiper (한자연 구독앱) | 0x355| Eevp.Control.SoaWiper| 40011|한자연 |
+| KATECH (ROA-RearCurtain 데모앱)| 0xB00 | Eevp.Control.SoaRoa| 40000| 한자연 |
+| KATECH (ROA-RearCurtain 데모앱) | 0xB01| Eevp.Control.SoaRcurtain| 40001| 한자연|
+| KATECH (ROA-RearCurtain 데모앱) | 0xB02| Eevp.Subscription.Service| 40002|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB10| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB11| Eevp.Control.SoaWiper| 40011|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB12| Eevp.Subscription.Service | 40012 |한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB13| Eevp.Pdw.Service | 40013 |한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB14| Eevp.Pdw.Service | 40014 |한자연 |
 | ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation | 40050 ~ 40070 |한자연 |
 | BatteryMonitor (티스마트 앱A) | (Provider) | BmsInfoSrv | 40200 |티스마트 |
 | BatteryMonitor (티스마트 앱A) | 0xB6A | BmsInfoSrv | 40201 |티스마트 |
@@ -153,7 +156,6 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0xB75 | Eevp.Control.SoaRcurtain | 40223 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 40224 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 40225 |티스마트 |
-| IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱C) | 0x367 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
