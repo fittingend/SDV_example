@@ -48,6 +48,40 @@
         </AR-PACKAGE>
         <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
           <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="71fa7564-2af0-499b-999f-006c6b26c78b">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_BmsInfo</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_BmsInfo</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_BmsInfo</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="c56fdbaf-9a3b-47d7-8457-97f56221f339">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_SOA_Mlm</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_SOA_Mlm</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_SoaMlm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="d6c1deb5-d517-4c7d-83c0-84a0f4b4353f">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_SubscriptionManagement</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_SubscriptionManagement</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="1b7c5947-9d5a-47e7-90c2-a4e0dce26067">
+              <SHORT-NAME>BmsInfo_AA_PPort_BmsInfo</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BmsInfo/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/BmsInfo/PPort_BmsInfo</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/Provider_BmsInfo</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
         </AR-PACKAGE>
         <AR-PACKAGE UUID="c7e07124-5e99-4e19-ac9d-8f4747d27691">
           <SHORT-NAME>Package</SHORT-NAME>
@@ -139,7 +173,7 @@
                     </SOFTWARE-PACKAGE>
                     <SOFTWARE-PACKAGE UUID="e5b4f790-dc38-452d-8574-6072f6908d25">
                       <SHORT-NAME>BatteryMonitor_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
-                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
                       <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
                       <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
                       <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
@@ -164,7 +198,7 @@
                     </SOFTWARE-PACKAGE>
                     <SOFTWARE-PACKAGE UUID="a68f11a3-0850-4d49-9d47-6708d7c5e975">
                       <SHORT-NAME>BatteryMonitor_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
-                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
                       <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
                       <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
                       <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
@@ -401,7 +435,7 @@
               <SHORT-NAME>BmsInfo</SHORT-NAME>
               <PORTS>
                 <P-PORT-PROTOTYPE UUID="cb200bba-3802-472e-a0dd-e2214ee67d2a">
-                  <SHORT-NAME>PPort_bmsinfo</SHORT-NAME>
+                  <SHORT-NAME>PPort_BmsInfo</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BmsInfoSrv</PROVIDED-INTERFACE-TREF>
                 </P-PORT-PROTOTYPE>
               </PORTS>
