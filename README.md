@@ -132,11 +132,14 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
   
 | Application Name| Client ID| 사용 interface| TCP UDP port | 담당기관 |
 | --- | --- | --- | --- | --- |
-| KATECH (ROA-RearCurtain 데모앱)| 0x351 | Eevp.Control.SoaRoa| 40000| 한자연 |
-| KATECH (ROA-RearCurtain 데모앱) | 0x352| Eevp.Control.SoaRcurtain| 40001| 한자연|
-| KATECH (ROA-RearCurtain 데모앱) | 0x353| Eevp.Subscription.Service| 40002|한자연 |
-| IntelligentWiper (한자연 구독앱) | 0x354| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
-| IntelligentWiper (한자연 구독앱) | 0x355| Eevp.Control.SoaWiper| 40011|한자연 |
+| KATECH (ROA-RearCurtain 데모앱)| 0xB00 | Eevp.Control.SoaRoa| 40000| 한자연 |
+| KATECH (ROA-RearCurtain 데모앱) | 0xB01| Eevp.Control.SoaRcurtain| 40001| 한자연|
+| KATECH (ROA-RearCurtain 데모앱) | 0xB02| Eevp.Subscription.Service| 40002|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB10| Eevp.Control.SoaVehicleInfo| 40010|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB11| Eevp.Control.SoaWiper| 40011|한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB12| Eevp.Subscription.Service | 40012 |한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB13| Eevp.Pdw.Service | 40013 |한자연 |
+| IntelligentWiper (한자연 구독앱) | 0xB14| Eevp.Pdw.Service | 40014 |한자연 |
 | ServiceCreator (시뮬레이션 통신앱) | (Provider) | Eevp.Simulation | 40050 ~ 40070 |한자연 |
 | BatteryMonitor (티스마트 앱A) | (Provider) | BmsInfoSrv | 40200 |티스마트 |
 | BatteryMonitor (티스마트 앱A) | 0xB6A | BmsInfoSrv | 40201 |티스마트 |
@@ -153,19 +156,18 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0xB75 | Eevp.Control.SoaRcurtain | 40223 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 40224 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 40225 |티스마트 |
-| IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
 | LITSmartFilm (롯데이노베이트 앱) | 0xB38 | Eevp.Control.SoaDms | 40100 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱) | 0xB39 | Eevp.Control.PDW | 40101 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱) | 0xB40 | Eevp.Control.SoaSmartFilm | 40102 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱) | 0xB4A | Eevp.Subscription.Service | 40103 |롯데이노베이트 |
 | LITSmartFilm (롯데이노베이트 앱) | 0xB4B | Eevp.Control.VehicleInfo | 40104 |롯데이노베이트 |
-| PreventRollback (국민대학교 앱) | 0x368 | Eevp.Pdw.Service | 40301 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x369 | Eevp.Simulation.BCM_ExteriorSignal | 40302 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36A | Eevp.Subscription.Service | 40303 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36B | Eevp.Control.SoaVehicleInfo | 40304 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36C | Eevp.Simulation.VCS_BrakePedal | 40305 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36D | Eevp.Simulation.VCS_AccrPedal | 40306 | 국민대학교 |
-| PreventRollback (국민대학교 앱) | 0x36E | Eevp.Simulation.VCS_Gear | 40307 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9D | Eevp.Pdw.Service | 40301 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9C | Eevp.Simulation.BCM_ExteriorSignal | 40302 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9F | Eevp.Subscription.Service | 40303 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xB9E | Eevp.Control.SoaVehicleInfo | 40304 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA1 | Eevp.Simulation.VCS_BrakePedal | 40305 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA0 | Eevp.Simulation.VCS_AccrPedal | 40306 | 국민대학교 |
+| PreventRollback (국민대학교 앱) | 0xBA2 | Eevp.Simulation.VCS_Gear | 40307 | 국민대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x36F | Eevp.Subscription.Service | 40400 | 한국공학대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x370 | Eevp.Control.SoaDms | 40401 | 한국공학대학교 |
 | EmotionEnv (한국공학대학교 앱 A) | 0x371 | Eevp.Control.SoaSmartFilm | 40402 | 한국공학대학교 |

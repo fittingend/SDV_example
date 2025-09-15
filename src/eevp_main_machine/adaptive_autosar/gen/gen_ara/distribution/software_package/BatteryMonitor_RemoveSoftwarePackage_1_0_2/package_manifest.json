@@ -1,0 +1,32 @@
+{
+    "generation-by" : "PARA, PopcornSAR",
+    "autosar-version" : "R20-11",
+    "manifest-type" : "package-manifest",
+    "package-name" : "BatteryMonitor_RemoveSoftwarePackage_1_0_2",
+    "software-cluster" : "BatteryMonitor_SoftwareCluster",
+    "version" : "1.0.2",
+    "packager-id" : "402",
+    "action-type" : "remove",
+    "supported-ucm-min-version" : "1.0.0",
+    "supported-ucm-max-version" : "1.0.0",
+    "pre-activation-reboot" : "false",
+    "post-verification-reboot" : "true",
+    "packager-signature": {
+        "signature-name" : "ParaCertificate",
+        "algorithm-family" : "RSA",
+        "format" : "X-509",
+        "maximum-length" : "undefined"
+    },
+    "pre-activate" : [
+        {
+            "function-group" : "SFG04",
+            "state" : "Off"
+        }
+    ],
+    "verify" : [
+        {
+            "function-group" : "SFG04",
+            "state" : "Verify"
+        }
+    ]
+}

@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="86271adf-1694-438f-aa78-1e67d518c64e">
+              <SHORT-NAME>DltLogChannelToProcessMapping_BatteryMonitor_TO_BatteryMonitor</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/BatteryMonitor</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/BatteryMonitor</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="88bce6fa-a935-4e24-a93b-16b36cd7d5e5">
+              <SHORT-NAME>DltLogChannelToProcessMapping_BmsInfo_TO_BmsInfo</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/BmsInfo</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/BmsInfo</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="546a2448-dfd6-4bd2-8261-275b80a8edcd">
+              <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="04683ce4-c318-4266-90d9-27de3438ced4">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/BatteryMonitor</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+            <EXECUTABLE UUID="6a516f74-8827-4f19-ac6a-c657c2b6f459">
+              <SHORT-NAME>BmsInfo</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="50f42ebd-e1fd-4852-b1bf-b31a9fab2e0b">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/BmsInfo</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="71fa7564-2af0-499b-999f-006c6b26c78b">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_BmsInfo</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_BmsInfo</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_BmsInfo</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="c56fdbaf-9a3b-47d7-8457-97f56221f339">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_SOA_Mlm</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_SOA_Mlm</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_SoaMlm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="d6c1deb5-d517-4c7d-83c0-84a0f4b4353f">
+              <SHORT-NAME>BatteryMonitor_AA_RPort_SubscriptionManagement</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BatteryMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/BatteryMonitor/RPort_SubscriptionManagement</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_BatteryMonitor_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="1b7c5947-9d5a-47e7-90c2-a4e0dce26067">
+              <SHORT-NAME>BmsInfo_AA_PPort_BmsInfo</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/BmsInfo/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/BmsInfo/PPort_BmsInfo</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/Provider_BmsInfo</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7e07124-5e99-4e19-ac9d-8f4747d27691">
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="f95d61bd-aa53-4455-8521-fd74556e6f32">
+              <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="790ac70a-14c0-40ca-8616-f9730ff0dec5">
+                  <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="66d4c223-56ac-4983-b8d7-ab93ffde5906">
+                      <SHORT-NAME>BatteryMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/BatteryMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/BatteryMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>402</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.0</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="d94d835b-2d5e-4010-9468-abee3a6c647f">
+                  <SHORT-NAME>SoftwareCluster_1_0_1</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="926404a8-deab-4bd8-855f-b121c57db769">
+                      <SHORT-NAME>BatteryMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/BatteryMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/BatteryMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>402</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.1</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="7066f1e9-6596-41d3-ba44-b6147140699a">
+                  <SHORT-NAME>SoftwareCluster_1_0_2</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="508f95f9-71c7-440e-8a24-c31c837fa767">
+                      <SHORT-NAME>BatteryMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/BatteryMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/BatteryMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>402</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.2</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="5e024d38-713c-4c38-b3da-fc1b63a0d12c">
+                  <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-PACKAGE UUID="07f6c644-9dd4-474a-a67f-622384c26061">
+                      <SHORT-NAME>BatteryMonitor_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>402</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/BatteryMonitor/SoftwareCluster_1_0_0/BatteryMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="e5b4f790-dc38-452d-8574-6072f6908d25">
+                      <SHORT-NAME>BatteryMonitor_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>402</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/BatteryMonitor/SoftwareCluster_1_0_2/BatteryMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="a68f11a3-0850-4d49-9d47-6708d7c5e975">
+                      <SHORT-NAME>BatteryMonitor_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>402</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/BatteryMonitor/SoftwareCluster_1_0_1/BatteryMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="aeb221cb-b6e0-40c6-a3e0-41c276e61dd8">
+                  <SHORT-NAME>VehiclePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <VEHICLE-PACKAGE UUID="899434c1-cc32-454c-92bf-bd6f86ccdbc6">
+                      <SHORT-NAME>BatteryMonitor_InstallVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="79f9e4cf-c410-4c77-aafb-9f02a2276bc9">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="79b7405f-2b76-4c76-8723-4859cf3b863e">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="beea8179-4bcf-44e0-ad28-76105b044917">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/BatteryMonitor/VehiclePackage/BatteryMonitor_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="d411db39-889d-42eb-82a4-5d48a08c2f9a">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="d07f2bb2-60ec-4ab0-a55f-9e414ec65165">
+                      <SHORT-NAME>BatteryMonitor_RemoveVehiclePackage_1_0_2</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="1a721a2f-9122-4d54-bd3c-0dccc9275902">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="92035ba2-53bd-4b0e-9db7-3405de56186f">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="8f1fe25f-ed4c-4eb2-ba9d-60ae5b994ce6">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/BatteryMonitor/VehiclePackage/BatteryMonitor_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="eff4f664-58c6-471a-905a-4c80b24b96d0">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="69916c5a-800b-4fff-bc89-ede48f4f5caf">
+                      <SHORT-NAME>BatteryMonitor_UpdateVehiclePackage_1_0_1</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="7ff7b4ad-8c66-43c3-8118-e42a5aebef9d">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="3307e85c-3d00-461f-bef7-fe1f45a8fa27">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="31c65435-2aa4-4e0f-9f7b-c22b03e552dc">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/BatteryMonitor/SoftwarePackage/BatteryMonitor_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/BatteryMonitor/VehiclePackage/BatteryMonitor_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="a731024c-8208-4a6c-8e4e-3631eaf90217">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="2da75ae7-8471-4255-84a2-7a2d3d83ae57">
+              <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/BatteryMonitor</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="75c795e3-a5a1-4b15-8f3b-b9a476cd3009">
+                <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+            <PROCESS UUID="2d58fb95-2c35-47df-aa65-ff01f9b5e0cd">
+              <SHORT-NAME>BmsInfo</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/BmsInfo</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="fec559e7-fbf6-4567-9aa7-ceb79eca603a">
+                <SHORT-NAME>BmsInfo</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG04</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG04/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="dec68a33-e3ba-4081-a13b-a677bdb9cbc9">
+              <SHORT-NAME>BatteryMonitor</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="8d0e1b08-4b47-4689-98e6-4e5f3fcff108">
+                  <SHORT-NAME>RPort_BmsInfo</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BmsInfoSrv</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="2f979610-4237-42f8-a9a7-ef6655cd17e8">
+                  <SHORT-NAME>RPort_SOA_Mlm</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaMlm</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="9ba7e8aa-0a5a-4640-992d-5f0276c823d8">
+                  <SHORT-NAME>RPort_SubscriptionManagement</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SubscriptionManagement</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="4c7f8d00-e232-4136-8131-510bc9bf25a4">
+              <SHORT-NAME>BmsInfo</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE UUID="cb200bba-3802-472e-a0dd-e2214ee67d2a">
+                  <SHORT-NAME>PPort_BmsInfo</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/BmsInfoSrv</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

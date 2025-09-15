@@ -8,7 +8,8 @@ namespace intelligentwiper
 
         Logic::Logic(intelligentwiper::aa::port::RPort_Wiper *wiperPort,
                      intelligentwiper::aa::port::RPort_VehicleInfo *vehicleInfoPort)
-            : m_wiperPort(wiperPort),
+            : m_logger(ara::log::CreateLogger("INTW", "LOGC", ara::log::LogLevel::kVerbose)),
+              m_wiperPort(wiperPort),
               m_vehicleInfoPort(vehicleInfoPort),
               m_lastVelocity(0.0),
               m_refWiperSpeed(1.0),
@@ -158,6 +159,7 @@ namespace intelligentwiper
 
         void Logic::Execute()
         {
+
             double velocity = getCurrentVehicleSpeed();
             int gear = getCurrentGearState();
 
