@@ -154,9 +154,11 @@ arxml 설계는 pdf 파일을 참고하시기 바랍니다:
 | RestingEnv (티스마트 앱C) | 0xB76 | Eevp.Control.SoaSmartFilm | 40224 |티스마트 |
 | RestingEnv (티스마트 앱C) | 0xB77 | Eevp.Subscription.Service | 40225 |티스마트 |
 | IntelligentWiper (한자연 구독앱) | 0x364| Eevp.Subscription.Service | 40012 |한자연 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x365 | Eevp.Control.SoaDms | 40100 ~ 40199 |롯데이노베이트 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x366 | Eevp.Control.SoaSmartFilm | 40100 ~ 40199 |롯데이노베이트 |
-| LITSmartFilm (롯데이노베이트 앱C) | 0x367 | Eevp.Subscription.Service | 40100 ~ 40199 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0xB38 | Eevp.Control.SoaDms | 40100 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0xB39 | Eevp.Control.PDW | 40101 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0xB40 | Eevp.Control.SoaSmartFilm | 40102 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0xB4A | Eevp.Subscription.Service | 40103 |롯데이노베이트 |
+| LITSmartFilm (롯데이노베이트 앱) | 0xB4B | Eevp.Control.VehicleInfo | 40104 |롯데이노베이트 |
 | PreventRollback (국민대학교 앱) | 0x368 | Eevp.Pdw.Service | 40301 | 국민대학교 |
 | PreventRollback (국민대학교 앱) | 0x369 | Eevp.Simulation.BCM_ExteriorSignal | 40302 | 국민대학교 |
 | PreventRollback (국민대학교 앱) | 0x36A | Eevp.Subscription.Service | 40303 | 국민대학교 |
