@@ -65,7 +65,7 @@ private:
 };
 
 BATTERYMONITOR::BATTERYMONITOR() :
-        mLogger(ara::log::CreateLogger("KATC", "SWC", ara::log::LogLevel::kInfo)),
+        mLogger(ara::log::CreateLogger("TSMT", "SWC", ara::log::LogLevel::kInfo)),
         mSubscription(false),
         bFlag_BMSInfo_ListenerRx(false),
         brightness(false),
@@ -138,6 +138,7 @@ void BATTERYMONITOR::Run() {
             {
                 mLogger.LogInfo() << "Logic MoodLamp Control & Socket Send Start!!!!!!!";
                 RequestMlmSetBrightness(brightness);
+                RequestMlmSetRgbColor(0x1);
                 SendSocket(socket_data);                                                            //Subfunction for Socket (subfunction.h)
             }
             brightness_prev = brightness;
