@@ -5,19 +5,19 @@
     "service-protocol" : "someip",
     "connector" : "eth0",
     "unicast-address" : "10.100.0.40",
-    "tcp-port" : "40103",
-    "udp-port" : "40103",
+    "tcp-port" : "40104",
+    "udp-port" : "40104",
     "skeletons" : [
     ],
     "proxies" : [
         {
-            "service-id" : "4887",
+            "service-id" : "5440",
             "instance-id" : "ANY",
             "major-version" : "1",
             "minor-version" : "ANY",
-            "client-id" : "2890",
+            "client-id" : "2891",
             "sd-client-timing" : {
-                "initial-delay-min" : "0.1",
+                "initial-delay-min" : "0.01",
                 "initial-delay-max" : "0.1",
                 "repetition-base" : "0.1",
                 "repetition-max" : "3",
@@ -25,8 +25,8 @@
             },
             "eventgroups" : [
                 {
-                    "eventgroup-id" : "21",
-                    "events" : ["11"],
+                    "eventgroup-id" : "1004",
+                    "events" : ["12916"],
                     "subscribe-ttl" : "16777215",
                     "subscribe-retry-delay" : "0.0",
                     "subscribe-retry-max" : "3",

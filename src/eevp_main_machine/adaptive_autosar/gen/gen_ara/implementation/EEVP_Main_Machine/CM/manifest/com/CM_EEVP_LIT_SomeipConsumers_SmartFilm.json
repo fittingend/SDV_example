@@ -5,8 +5,8 @@
     "service-protocol" : "someip",
     "connector" : "eth0",
     "unicast-address" : "10.100.0.40",
-    "tcp-port" : "40101",
-    "udp-port" : "40101",
+    "tcp-port" : "40102",
+    "udp-port" : "40102",
     "skeletons" : [
     ],
     "proxies" : [
@@ -15,7 +15,7 @@
             "instance-id" : "ANY",
             "major-version" : "1",
             "minor-version" : "ANY",
-            "client-id" : "855",
+            "client-id" : "2880",
             "sd-client-timing" : {
                 "initial-delay-min" : "0.01",
                 "initial-delay-max" : "0.1",
