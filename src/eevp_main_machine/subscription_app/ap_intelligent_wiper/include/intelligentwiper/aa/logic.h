@@ -39,6 +39,9 @@ namespace intelligentwiper
             intelligentwiper::aa::port::RPort_Wiper *m_wiperPort;
             intelligentwiper::aa::port::RPort_VehicleInfo *m_vehicleInfoPort;
 
+            /// @brief Logger for software component
+            ara::log::Logger &m_logger;
+
             // 이전 속도 및 기준 와이퍼 값
             double m_lastVelocity;
             double m_refWiperSpeed;
