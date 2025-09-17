@@ -34,8 +34,6 @@ target_sources(${PARA_APP_NAME}
                servicecreator/aa/port/pport_tms_ac.cpp
                servicecreator/aa/port/pport_tms_envmonitor.cpp
                servicecreator/aa/port/pport_tms_fragrance.cpp
-               servicecreator/aa/port/pport_tms_purifier.cpp
-               servicecreator/aa/port/pport_tms_ventilation.cpp
                servicecreator/aa/port/pport_vcs_accrpedal.cpp
                servicecreator/aa/port/pport_vcs_brake.cpp
                servicecreator/aa/port/pport_vcs_brakepedal.cpp
