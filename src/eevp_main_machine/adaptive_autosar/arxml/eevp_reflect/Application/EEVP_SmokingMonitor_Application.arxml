@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="15d34bdb-43c5-49dd-a484-acfd0c51f7da">
+      <SHORT-NAME>Application</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="cd6ec693-deb3-49ec-b7d5-f6a7919f0259">
+          <SHORT-NAME>DltConfig</SHORT-NAME>
+          <ELEMENTS>
+            <DLT-LOG-CHANNEL-TO-PROCESS-MAPPING UUID="2971299a-7de6-49f4-8f7a-0588d89fd2fd">
+              <SHORT-NAME>DltLogChannelToProcessMapping_SmokingMonitor_TO_SmokingMonitor</SHORT-NAME>
+              <DLT-LOG-CHANNEL-REF DEST="DLT-LOG-CHANNEL">/Machine/EEVP_Main_Machine/LOG/SmokingMonitor</DLT-LOG-CHANNEL-REF>
+              <PROCESS-REF DEST="PROCESS">/Application/Process/SmokingMonitor</PROCESS-REF>
+            </DLT-LOG-CHANNEL-TO-PROCESS-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="87f74325-a89a-488c-aaff-dbc25f8cdc60">
+          <SHORT-NAME>Executable</SHORT-NAME>
+          <ELEMENTS>
+            <EXECUTABLE UUID="e857bfe0-9dde-46c9-8937-5a3c283cf124">
+              <SHORT-NAME>SmokingMonitor</SHORT-NAME>
+              <CATEGORY>APPLICATION_LEVEL</CATEGORY>
+              <LOGGING-BEHAVIOR>USES-LOGGING</LOGGING-BEHAVIOR>
+              <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+              <ROOT-SW-COMPONENT-PROTOTYPE UUID="677a1687-1187-423a-a7f9-6e58c3301226">
+                <SHORT-NAME>AA</SHORT-NAME>
+                <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/Application/SwComponent/SmokingMonitor</APPLICATION-TYPE-TREF>
+              </ROOT-SW-COMPONENT-PROTOTYPE>
+              <VERSION>1.0.0</VERSION>
+            </EXECUTABLE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c7804087-03d1-4a6e-91d7-14b3e9d0ebe2">
+          <SHORT-NAME>Manifest</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="0c05dfbf-247d-4951-93a9-6d7055353dda">
+              <SHORT-NAME>SmokingMonitor_AA_RPort_SOA_DMS</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SmokingMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SmokingMonitor/RPort_SOA_DMS</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_SmokingMonitor_Consumer_SoaDms</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="28bb26a3-3cbb-4a1c-9abf-275b3bc0080e">
+              <SHORT-NAME>SmokingMonitor_AA_RPort_SOA_HVAC</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SmokingMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SmokingMonitor/RPort_SOA_HVAC</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_SmokingMonitor_Consumer_SoaHvac</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="637bdf60-201a-48cd-b4ca-0744cf4ee258">
+              <SHORT-NAME>SmokingMonitor_AA_RPort_SOA_Mlm</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SmokingMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SmokingMonitor/RPort_SOA_Mlm</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_SmokingMonitor_Consumer_SoaMlm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="becc0835-0750-4a2b-a2f7-7b3603c22c1a">
+              <SHORT-NAME>SmokingMonitor_AA_RPort_SOA_SmartFilm</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SmokingMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SmokingMonitor/RPort_SOA_SmartFilm</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_SmokingMonitor_Consumer_SoaSmartFilm</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="4b0c770d-77a8-4dff-8422-7f3cdce97dcd">
+              <SHORT-NAME>SmokingMonitor_AA_RPort_SubscriptionManagement</SHORT-NAME>
+              <PORT-PROTOTYPE-IREF>
+                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/SmokingMonitor/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Application/SwComponent/SmokingMonitor/RPort_SubscriptionManagement</TARGET-PORT-PROTOTYPE-REF>
+              </PORT-PROTOTYPE-IREF>
+              <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Consumer/EEVP_SmokingMonitor_Consumer_SubscriptionManagement</SERVICE-INSTANCE-REF>
+            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="8f79b492-e684-424b-a5b7-7e0d0483bd40">
+          <SHORT-NAME>Package</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="9fcbc9c5-1e42-4202-bc8f-5a69481ceda9">
+              <SHORT-NAME>SmokingMonitor</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="1c962591-f805-4921-9003-a2ae26b8f6ec">
+                  <SHORT-NAME>SoftwareCluster_1_0_0</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="402dac94-bc94-4f88-baaf-542f19e6c006">
+                      <SHORT-NAME>SmokingMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SmokingMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_DMS</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_HVAC</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_SmartFilm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SmokingMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>403</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.0</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="73a5348c-6693-4166-9ea3-047941be69f0">
+                  <SHORT-NAME>SoftwareCluster_1_0_1</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="731048fb-7040-43df-adfb-64493ded44dc">
+                      <SHORT-NAME>SmokingMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SmokingMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_DMS</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_HVAC</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_SmartFilm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SmokingMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>403</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.1</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="2f9acb0d-cb57-436e-9e05-4877da8c11ae">
+                  <SHORT-NAME>SoftwareCluster_1_0_2</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-CLUSTER UUID="37837788-4f00-4849-af4f-abd256463f1d">
+                      <SHORT-NAME>SmokingMonitor_SoftwareCluster</SHORT-NAME>
+                      <CATEGORY>APPLICATION_LAYER</CATEGORY>
+                      <CONTAINED-AR-ELEMENT-REFS>
+                        <CONTAINED-AR-ELEMENT-REF DEST="EXECUTABLE">/Application/Executable/SmokingMonitor</CONTAINED-AR-ELEMENT-REF>
+                      </CONTAINED-AR-ELEMENT-REFS>
+                      <CONTAINED-PACKAGE-ELEMENT-REFS>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_DMS</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_HVAC</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_Mlm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SOA_SmartFilm</CONTAINED-PACKAGE-ELEMENT-REF>
+                        <CONTAINED-PACKAGE-ELEMENT-REF DEST="SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING">/Application/Manifest/SmokingMonitor_AA_RPort_SubscriptionManagement</CONTAINED-PACKAGE-ELEMENT-REF>
+                      </CONTAINED-PACKAGE-ELEMENT-REFS>
+                      <CONTAINED-PROCESS-REFS>
+                        <CONTAINED-PROCESS-REF DEST="PROCESS">/Application/Process/SmokingMonitor</CONTAINED-PROCESS-REF>
+                      </CONTAINED-PROCESS-REFS>
+                      <VENDOR-ID>403</VENDOR-ID>
+                      <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</VENDOR-SIGNATURE-REF>
+                      <VERSION>1.0.2</VERSION>
+                    </SOFTWARE-CLUSTER>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="933f81e1-ed90-480c-82f0-02b060d87c5a">
+                  <SHORT-NAME>SoftwarePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <SOFTWARE-PACKAGE UUID="86013ecb-a7ee-47e1-a987-e18812325ff9">
+                      <SHORT-NAME>SmokingMonitor_InstallSoftwarePackage_1_0_0</SHORT-NAME>
+                      <ACTION-TYPE>INSTALL</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>403</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SmokingMonitor/SoftwareCluster_1_0_0/SmokingMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="6646880f-670c-4498-b0da-bcaf86993522">
+                      <SHORT-NAME>SmokingMonitor_RemoveSoftwarePackage_1_0_2</SHORT-NAME>
+                      <ACTION-TYPE>REMOVE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>403</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SmokingMonitor/SoftwareCluster_1_0_2/SmokingMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                    <SOFTWARE-PACKAGE UUID="10f05b32-da6d-402c-b2f0-04cc7733eb41">
+                      <SHORT-NAME>SmokingMonitor_UpdateSoftwarePackage_1_0_1</SHORT-NAME>
+                      <ACTION-TYPE>UPDATE</ACTION-TYPE>
+                      <COMPRESSED-SOFTWARE-PACKAGE-SIZE>0</COMPRESSED-SOFTWARE-PACKAGE-SIZE>
+                      <MAXIMUM-SUPPORTED-UCM-VERSION>1.0.0</MAXIMUM-SUPPORTED-UCM-VERSION>
+                      <MINIMUM-SUPPORTED-UCM-VERSION>1.0.0</MINIMUM-SUPPORTED-UCM-VERSION>
+                      <PACKAGER-ID>403</PACKAGER-ID>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <POST-VERIFICATION-REBOOT>false</POST-VERIFICATION-REBOOT>
+                      <PRE-ACTIVATE-IREFS>
+                        <PRE-ACTIVATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Off</TARGET-MODE-DECLARATION-REF>
+                        </PRE-ACTIVATE-IREF>
+                      </PRE-ACTIVATE-IREFS>
+                      <PRE-ACTIVATION-REBOOT>false</PRE-ACTIVATION-REBOOT>
+                      <SOFTWARE-CLUSTER-REF DEST="SOFTWARE-CLUSTER">/Application/Package/SmokingMonitor/SoftwareCluster_1_0_1/SmokingMonitor_SoftwareCluster</SOFTWARE-CLUSTER-REF>
+                      <UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>0</UNCOMPRESSED-SOFTWARE-CLUSTER-SIZE>
+                      <VERIFY-IREFS>
+                        <VERIFY-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Verify</TARGET-MODE-DECLARATION-REF>
+                        </VERIFY-IREF>
+                      </VERIFY-IREFS>
+                    </SOFTWARE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE UUID="126aff94-0336-444f-ae42-05e336223a56">
+                  <SHORT-NAME>VehiclePackage</SHORT-NAME>
+                  <ELEMENTS>
+                    <VEHICLE-PACKAGE UUID="efa96092-80ce-4c28-9b5b-33306e55aadd">
+                      <SHORT-NAME>SmokingMonitor_InstallVehiclePackage_1_0_0</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="24c8285e-e800-42ee-88a0-b7727bbdd856">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="55105620-479c-4f97-b6a8-9e425e559ff5">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="48d82b67-7b2c-4f85-978d-31813545337b">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_InstallSoftwarePackage_1_0_0</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_InstallSoftwarePackage_1_0_0</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SmokingMonitor/VehiclePackage/SmokingMonitor_InstallVehiclePackage_1_0_0/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="a2d65488-f7b2-4180-9de4-9f117a4f331e">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="690f8429-a995-4b97-a505-8698a8dda602">
+                      <SHORT-NAME>SmokingMonitor_RemoveVehiclePackage_1_0_2</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="66cdba4a-7103-4625-9f61-05d4a6edd98c">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="6b1999bd-425e-4db4-89e8-be593e13cd12">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="32b20676-2990-481e-bc0c-319626bd52d6">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_RemoveSoftwarePackage_1_0_2</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_RemoveSoftwarePackage_1_0_2</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SmokingMonitor/VehiclePackage/SmokingMonitor_RemoveVehiclePackage_1_0_2/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="68ce3679-1bb5-47a6-a943-cc5cf8ea803f">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                    <VEHICLE-PACKAGE UUID="e98fa8a5-d56b-4eaa-a625-94ca025e385c">
+                      <SHORT-NAME>SmokingMonitor_UpdateVehiclePackage_1_0_1</SHORT-NAME>
+                      <DRIVER-NOTIFICATIONS>
+                        <VEHICLE-DRIVER-NOTIFICATION>
+                          <APPROVAL-REQUIRED>true</APPROVAL-REQUIRED>
+                          <NOTIFICATION-STATE>PROCESS</NOTIFICATION-STATE>
+                        </VEHICLE-DRIVER-NOTIFICATION>
+                      </DRIVER-NOTIFICATIONS>
+                      <PACKAGER-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/System/CryptoService/ParaCertificate</PACKAGER-SIGNATURE-REF>
+                      <ROLLOUT-QUALIFICATIONS>
+                        <VEHICLE-ROLLOUT-STEP UUID="cd0fd2e5-ecc3-4307-9293-39723fa3e4d4">
+                          <SHORT-NAME>RolloutQualification</SHORT-NAME>
+                          <UCM-PROCESSINGS>
+                            <UCM-STEP UUID="cc1a0648-851b-4d93-86e3-7ec6c2d5828c">
+                              <SHORT-NAME>UcmProcessing</SHORT-NAME>
+                              <SOFTWARE-PACKAGE-STEPS>
+                                <SOFTWARE-PACKAGE-STEP UUID="6385910b-5bd7-4352-83eb-28c45c96f333">
+                                  <SHORT-NAME>SoftwarePackageStep</SHORT-NAME>
+                                  <PROCESS-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_UpdateSoftwarePackage_1_0_1</PROCESS-REF>
+                                  <TRANSFERS>
+                                    <SOFTWARE-PACKAGE-STORING>
+                                      <STORING>UCM</STORING>
+                                      <TRANSFER-REFS>
+                                        <TRANSFER-REF DEST="SOFTWARE-PACKAGE">/Application/Package/SmokingMonitor/SoftwarePackage/SmokingMonitor_UpdateSoftwarePackage_1_0_1</TRANSFER-REF>
+                                      </TRANSFER-REFS>
+                                    </SOFTWARE-PACKAGE-STORING>
+                                  </TRANSFERS>
+                                </SOFTWARE-PACKAGE-STEP>
+                              </SOFTWARE-PACKAGE-STEPS>
+                              <UCM-REF DEST="UCM-DESCRIPTION">/Application/Package/SmokingMonitor/VehiclePackage/SmokingMonitor_UpdateVehiclePackage_1_0_1/EEVP_UCM</UCM-REF>
+                            </UCM-STEP>
+                          </UCM-PROCESSINGS>
+                        </VEHICLE-ROLLOUT-STEP>
+                      </ROLLOUT-QUALIFICATIONS>
+                      <UCMS>
+                        <UCM-DESCRIPTION UUID="edd13f8d-4219-4862-8537-2937de3e8011">
+                          <SHORT-NAME>EEVP_UCM</SHORT-NAME>
+                          <IDENTIFIER>EEVP_UCM</IDENTIFIER>
+                        </UCM-DESCRIPTION>
+                      </UCMS>
+                    </VEHICLE-PACKAGE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="2c411a42-ecde-4475-9e81-7c3df4ff167f">
+          <SHORT-NAME>Process</SHORT-NAME>
+          <ELEMENTS>
+            <PROCESS UUID="dbee25f2-47a0-4b54-94c2-0c4f46627035">
+              <SHORT-NAME>SmokingMonitor</SHORT-NAME>
+              <EXECUTABLE-REF DEST="EXECUTABLE">/Application/Executable/SmokingMonitor</EXECUTABLE-REF>
+              <PROCESS-STATE-MACHINE UUID="dbe1342a-377a-437f-b2c8-b4428121dc45">
+                <SHORT-NAME>SmokingMonitor</SHORT-NAME>
+                <TYPE-TREF DEST="MODE-DECLARATION-GROUP">/StateMachine/ProcessState</TYPE-TREF>
+              </PROCESS-STATE-MACHINE>
+              <STATE-DEPENDENT-STARTUP-CONFIGS>
+                <STATE-DEPENDENT-STARTUP-CONFIG>
+                  <FUNCTION-GROUP-STATE-IREFS>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/On</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                    <FUNCTION-GROUP-STATE-IREF>
+                      <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Machine/FunctionGroup/EEVP_Main_FunctionGroup/SFG05</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                      <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/StateMachine/SFG05/Verify</TARGET-MODE-DECLARATION-REF>
+                    </FUNCTION-GROUP-STATE-IREF>
+                  </FUNCTION-GROUP-STATE-IREFS>
+                  <RESOURCE-GROUP-REF DEST="RESOURCE-GROUP">/Machine/EEVP_Main_Machine/POSIX/DefaultResourceGroup</RESOURCE-GROUP-REF>
+                  <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/Application/StartupConfig/EEVP_Platform_StartupConfig/DefaultStartupConfig</STARTUP-CONFIG-REF>
+                </STATE-DEPENDENT-STARTUP-CONFIG>
+              </STATE-DEPENDENT-STARTUP-CONFIGS>
+            </PROCESS>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="c2e7bd7b-730c-4501-9603-be73e02c821e">
+          <SHORT-NAME>StartupConfig</SHORT-NAME>
+        </AR-PACKAGE>
+        <AR-PACKAGE UUID="b48a42b0-912a-4cec-ab85-f7b1fdf7c42a">
+          <SHORT-NAME>SwComponent</SHORT-NAME>
+          <ELEMENTS>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="cfb3f4ad-1e22-4b29-b160-f63a2f3ee0ef">
+              <SHORT-NAME>SmokingMonitor</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE UUID="4b797403-fd09-4963-b297-aaeb474419b8">
+                  <SHORT-NAME>RPort_SOA_DMS</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaDms</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4d517f88-012a-4558-ab3d-85109d8873cd">
+                  <SHORT-NAME>RPort_SOA_HVAC</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaHvac</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="429354d0-b55d-4445-b39e-732e27527d4b">
+                  <SHORT-NAME>RPort_SOA_Mlm</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaMlm</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="c70df2e1-b076-42fa-8b62-ee1f20ddbe88">
+                  <SHORT-NAME>RPort_SOA_SmartFilm</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaSmartFilm</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="e608addf-f137-408d-9765-f8befffe2566">
+                  <SHORT-NAME>RPort_SubscriptionManagement</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SubscriptionManagement</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
