@@ -97,10 +97,6 @@
             <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE UUID="8ec5f722-71b5-4113-a77f-ad5a53895ea0">
               <SHORT-NAME>LIT</SHORT-NAME>
               <PORTS>
-                <R-PORT-PROTOTYPE UUID="e581555a-daf4-47ad-8a64-a31c1fbbec41">
-                  <SHORT-NAME>RPortScPDW</SHORT-NAME>
-                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Main_PDW_Service</REQUIRED-INTERFACE-TREF>
-                </R-PORT-PROTOTYPE>
                 <R-PORT-PROTOTYPE UUID="e5edddfc-d184-40d1-bf99-e4b60a306bc9">
                   <SHORT-NAME>RPortSoaDms</SHORT-NAME>
                   <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SoaDms</REQUIRED-INTERFACE-TREF>
@@ -112,10 +108,6 @@
                 <R-PORT-PROTOTYPE UUID="d1458143-3be6-41b2-a41e-490a60853653">
                   <SHORT-NAME>RPortSubscriptionmanagement</SHORT-NAME>
                   <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/SubscriptionManagement</REQUIRED-INTERFACE-TREF>
-                </R-PORT-PROTOTYPE>
-                <R-PORT-PROTOTYPE UUID="145e33b2-0d61-46ee-bdab-4f0b3603ba48">
-                  <SHORT-NAME>RPortVehicleInfo</SHORT-NAME>
-                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Zone_VehicleInfo_Input</REQUIRED-INTERFACE-TREF>
                 </R-PORT-PROTOTYPE>
               </PORTS>
             </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
