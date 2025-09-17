@@ -41,6 +41,7 @@ project(${PARA_APP_NAME}
         LANGUAGES CXX)
 
 INCLUDE_DIRECTORIES("./include")
+INCLUDE_DIRECTORIES("./cloud")
 INCLUDE_DIRECTORIES(${PARA_APP_GEN_INCLUDE_DIR})
 INCLUDE_DIRECTORIES(${PARA_INC_DIR})
 
@@ -52,6 +53,8 @@ SET(SRC
     src/DmsProxyImpl.cpp
     src/SmartFilmProxyImpl.cpp
     src/SubscriptionManagementProxyImpl.cpp
+    src/LITCloudProxy.cpp
+    cloud/rest_api.cpp
 )
 
 ADD_EXECUTABLE(${PROJECT_NAME} ${SRC})
