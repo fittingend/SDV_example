@@ -72,30 +72,29 @@ namespace intelligentwiper
         void IntelligentWiper::Run()
         {
             m_logger.LogInfo() << "IntelligentWiper::Run";
-
             // Run에서는 Port 사이클 실행
-            m_workers.Async([this]
-                            { m_RPort_Wiper->ReceiveFieldsoaWiperDeviceNormalCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_Wiper->ReceiveFieldsoaWiperStatusCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_Wiper->ReceiveFieldsoaWiperSwVersionCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_VehicleInfo->ReceiveFieldsoaVehicleInfoCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_SubscriptionManagement->ReceiveEventnotifySubscriptionInfoCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_PDW_FRONT->ReceiveEventDistanceLevelCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_PDW_FRONT->ReceiveFieldUssStatusCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_PDW_REAR->ReceiveEventDistanceLevelCyclic(); });
-            m_workers.Async([this]
-                            { m_RPort_PDW_REAR->ReceiveFieldUssStatusCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_Wiper->ReceiveFieldsoaWiperDeviceNormalCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_Wiper->ReceiveFieldsoaWiperStatusCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_Wiper->ReceiveFieldsoaWiperSwVersionCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_VehicleInfo->ReceiveFieldsoaVehicleInfoCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_SubscriptionManagement->ReceiveEventnotifySubscriptionInfoCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_PDW_FRONT->ReceiveEventDistanceLevelCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_PDW_FRONT->ReceiveFieldUssStatusCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_PDW_REAR->ReceiveEventDistanceLevelCyclic(); });
+            // m_workers.Async([this]
+            //                 { m_RPort_PDW_REAR->ReceiveFieldUssStatusCyclic(); });
 
             while (1)
             {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(100));
                 m_logger.LogInfo() << "IntelligentWiper::Test";
             }
 

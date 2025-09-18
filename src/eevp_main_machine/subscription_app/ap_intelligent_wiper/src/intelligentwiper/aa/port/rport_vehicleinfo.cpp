@@ -124,7 +124,7 @@ void RPort_VehicleInfo::SubscribesoaVehicleInfo()
     {
         // regist receiver handler
         // if you want to enable it, please uncomment below code
-        // RegistReceiversoaVehicleInfo();
+        RegistReceiversoaVehicleInfo();
         
         // request subscribe
         auto subscribe = m_interface->soaVehicleInfo.Subscribe(1);

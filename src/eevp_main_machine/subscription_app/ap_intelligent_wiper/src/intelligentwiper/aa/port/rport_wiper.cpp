@@ -130,7 +130,7 @@ void RPort_Wiper::SubscribesoaWiperDeviceNormal()
     {
         // regist receiver handler
         // if you want to enable it, please uncomment below code
-        // RegistReceiversoaWiperDeviceNormal();
+        RegistReceiversoaWiperDeviceNormal();
         
         // request subscribe
         auto subscribe = m_interface->soaWiperDeviceNormal.Subscribe(1);
@@ -271,7 +271,7 @@ void RPort_Wiper::SubscribesoaWiperStatus()
     {
         // regist receiver handler
         // if you want to enable it, please uncomment below code
-        // RegistReceiversoaWiperStatus();
+        RegistReceiversoaWiperStatus();
         
         // request subscribe
         auto subscribe = m_interface->soaWiperStatus.Subscribe(1);
@@ -412,7 +412,7 @@ void RPort_Wiper::SubscribesoaWiperSwVersion()
     {
         // regist receiver handler
         // if you want to enable it, please uncomment below code
-        // RegistReceiversoaWiperSwVersion();
+        RegistReceiversoaWiperSwVersion();
         
         // request subscribe
         auto subscribe = m_interface->soaWiperSwVersion.Subscribe(1);

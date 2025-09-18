@@ -8,13 +8,17 @@ namespace intelligentwiper
 
         Logic::Logic(intelligentwiper::aa::port::RPort_Wiper *wiperPort,
                      intelligentwiper::aa::port::RPort_VehicleInfo *vehicleInfoPort)
-            : m_logger(ara::log::CreateLogger("INTW", "LOGC", ara::log::LogLevel::kVerbose)),
+            : m_logger(ara::log::CreateLogger("LOGC", "LOGC", ara::log::LogLevel::kVerbose)),
               m_wiperPort(wiperPort),
               m_vehicleInfoPort(vehicleInfoPort),
               m_lastVelocity(0.0),
               m_refWiperSpeed(1.0),
               m_refWiperInterval(1.0)
         {
+            m_wiperPort->RegistFieldHandlersoaWiperStatus([this](const eevp::control::SoaWiperStatus &status)
+                                                { m_logger.LogInfo() << "Logic::WiperStatus Changed: " << static_cast<int>(status.mode); });
+            m_vehicleInfoPort->RegistFieldHandlersoaVehicleInfo([this](const eevp::control::VehicleInfo &vInfo)
+                                                    { m_logger.LogInfo() << "Logic::VehicleInfo Changed: Speed=" << vInfo.speed << ", GearState=" << static_cast<int>(vInfo.gearState); });
         }
 
         double Logic::getCurrentVehicleSpeed()
@@ -165,6 +169,7 @@ namespace intelligentwiper
 
             if (gear == static_cast<int>(eevp::control::SoaGearState::kGEAR_P))
             {
+                m_logger.LogInfo() << "[Logic] In Parking Case, Request wiper OFF";
                 m_wiperPort->RequestRequestWiperOperation(eevp::control::SoaWiperMode::kOFF);
             }
             else
@@ -174,7 +179,10 @@ namespace intelligentwiper
                                         !getBrakePedalState();
 
                 if (stopStatus && !drivingIntention)
+                {
+                    m_logger.LogInfo() << "[Logic] In Stop Case, Request wiper OFF";
                     m_wiperPort->RequestRequestWiperOperation(eevp::control::SoaWiperMode::kOFF);
+                }
                 else
                     wiperControlRefGen(velocity); // 속도 기반 모드 설정
             }
