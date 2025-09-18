@@ -26,8 +26,6 @@
 // #include "servicecreator/aa/port/pport_tms_ac.h"
 // #include "servicecreator/aa/port/pport_tms_envmonitor.h"
 // #include "servicecreator/aa/port/pport_tms_fragrance.h"
-// #include "servicecreator/aa/port/pport_tms_purifier.h"
-// #include "servicecreator/aa/port/pport_tms_ventilation.h"
 // #include "servicecreator/aa/port/pport_vcs_accrpedal.h"
 #include "servicecreator/aa/port/pport_vcs_brake.h"
 #include "servicecreator/aa/port/pport_vcs_brakepedal.h"
@@ -99,12 +97,6 @@ private:
     
     // /// @brief Instance of Port {ServiceCreator.PPort_TMS_Fragrance}
     // std::unique_ptr<servicecreator::aa::port::PPort_TMS_Fragrance> m_PPort_TMS_Fragrance;
-    
-    // /// @brief Instance of Port {ServiceCreator.PPort_TMS_Purifier}
-    // std::unique_ptr<servicecreator::aa::port::PPort_TMS_Purifier> m_PPort_TMS_Purifier;
-    
-    // /// @brief Instance of Port {ServiceCreator.PPort_TMS_Ventilation}
-    // std::unique_ptr<servicecreator::aa::port::PPort_TMS_Ventilation> m_PPort_TMS_Ventilation;
     
     // /// @brief Instance of Port {ServiceCreator.PPort_VCS_AccrPedal}
     // std::unique_ptr<servicecreator::aa::port::PPort_VCS_AccrPedal> m_PPort_VCS_AccrPedal;

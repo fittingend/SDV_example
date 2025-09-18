@@ -50,7 +50,7 @@ bool ServiceCreator::Initialize()
     // m_PPort_TMS_Purifier = std::make_unique<servicecreator::aa::port::PPort_TMS_Purifier>();
     // m_PPort_TMS_Ventilation = std::make_unique<servicecreator::aa::port::PPort_TMS_Ventilation>();
     // m_PPort_VCS_AccrPedal = std::make_unique<servicecreator::aa::port::PPort_VCS_AccrPedal>();
-    m_PPort_VCS_Brake = std::make_unique<servicecreator::aa::port::PPort_VCS_Brake>();
+    // m_PPort_VCS_Brake = std::make_unique<servicecreator::aa::port::PPort_VCS_Brake>();
     m_PPort_VCS_BrakePedal = std::make_unique<servicecreator::aa::port::PPort_VCS_BrakePedal>();
     // m_PPort_VCS_EPB = std::make_unique<servicecreator::aa::port::PPort_VCS_EPB>();
     m_PPort_VCS_Gear = std::make_unique<servicecreator::aa::port::PPort_VCS_Gear>();
@@ -77,7 +77,7 @@ void ServiceCreator::Start()
     // m_PPort_TMS_Purifier->Start();
     // m_PPort_TMS_Ventilation->Start();
     // m_PPort_VCS_AccrPedal->Start();
-    m_PPort_VCS_Brake->Start();
+    // m_PPort_VCS_Brake->Start();
     m_PPort_VCS_BrakePedal->Start();
     // m_PPort_VCS_EPB->Start();
     m_PPort_VCS_Gear->Start();
@@ -103,7 +103,7 @@ void ServiceCreator::Terminate()
     // m_PPort_TMS_Purifier->Terminate();
     // m_PPort_TMS_Ventilation->Terminate();
     // m_PPort_VCS_AccrPedal->Terminate();
-    m_PPort_VCS_Brake->Terminate();
+    // m_PPort_VCS_Brake->Terminate();
     m_PPort_VCS_BrakePedal->Terminate();
     // m_PPort_VCS_EPB->Terminate();
     m_PPort_VCS_Gear->Terminate();
