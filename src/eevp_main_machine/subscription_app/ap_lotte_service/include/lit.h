@@ -14,6 +14,8 @@
 #include "ISmartFilmListener.h"
 #include "eevp/control/soadms_proxy.h"
 #include "eevp/control/soasmartfilm_proxy.h"
+#include "LITCloudProxy.h"
+#include <memory>
 
 // 전방 선언
 namespace eevp {
@@ -23,12 +25,9 @@ namespace service {
 }
 }
 namespace control {
-namespace dms {
-    class DmsProxyImpl;
-}
-namespace smartfilm {
-    class SmartFilmProxyImpl;
-}
+class DmsProxyImpl;
+class SmartFilmProxyImpl;
+class LITCloudProxy;
 }
 }
 
@@ -84,6 +83,7 @@ private:
     std::shared_ptr<eevp::control::dms::DmsProxyImpl> dmsProxyImpl;
     std::shared_ptr<eevp::control::smartfilm::SmartFilmProxyImpl> smartFilmProxyImpl;
     std::shared_ptr<eevp::subscription::service::SubscriptionManagementProxyImpl> subscriptionManagementProxyImpl;
+    std::shared_ptr<LITCloudProxy> mLitCloudProxy;
 
     // For Business Logic
     std::mutex m_dmsMutex;

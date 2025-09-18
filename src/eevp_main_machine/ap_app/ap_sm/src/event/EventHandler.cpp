@@ -117,7 +117,7 @@ void AAEventHandler::OnTimeoutEvent(evutil_socket_t fd, short event, void* arg)
     } else {
         switch (timeoutEvent->eventKind) {
             case kPeriodicTimer1Secs:
-                logger().LogInfo() << "Test 1 second periodic Event for ap_sm";
+                // logger().LogInfo() << "Test 1 second periodic Event for ap_sm";
                 break;
             default:
                 logger().LogWarn() << "Invalid TimeoutEvent" << static_cast<std::uint64_t>(timeoutEvent->eventKind);

@@ -13,7 +13,7 @@ SubscriptionManagementProxyImpl::SubscriptionManagementProxyImpl() :
         mFindHandle{nullptr},
         mHandle{},
         cvHandle{},
-    mLogger(ara::log::CreateLogger("KATC", "SUBM", ara::log::LogLevel::kInfo)) {
+    mLogger(ara::log::CreateLogger("TSMT", "SUBM", ara::log::LogLevel::kInfo)) {
     mLogger.LogInfo() << __func__;
 }
 

@@ -13,7 +13,7 @@ MoodLampProxyImpl::MoodLampProxyImpl() :
         mFindHandle{nullptr},
         mHandle{},
         cvHandle{},
-    mLogger(ara::log::CreateLogger("KATC", "RCTN", ara::log::LogLevel::kInfo)) {
+    mLogger(ara::log::CreateLogger("TSMT", "RCTN", ara::log::LogLevel::kInfo)) {
     mLogger.LogInfo() << __func__;
 }
 

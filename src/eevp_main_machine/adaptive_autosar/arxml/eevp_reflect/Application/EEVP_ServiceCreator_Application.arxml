@@ -113,22 +113,6 @@
               </PORT-PROTOTYPE-IREF>
               <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Fragrance</SERVICE-INSTANCE-REF>
             </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="1a1cbe56-15b2-4c73-89df-a57aef873e69">
-              <SHORT-NAME>ServiceCreator_AA_PPort_TMS_Purifier</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_TMS_Purifier</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Purifier</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="2ba679b1-9e39-40a3-81aa-4b038c0ca6c3">
-              <SHORT-NAME>ServiceCreator_AA_PPort_TMS_Ventilation</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_TMS_Ventilation</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Ventilation</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
             <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="e7fce6e4-3973-47b4-8219-5cf93c4eddf5">
               <SHORT-NAME>ServiceCreator_AA_PPort_VCS_AccrPedal</SHORT-NAME>
               <PORT-PROTOTYPE-IREF>
@@ -256,14 +240,6 @@
                 <P-PORT-PROTOTYPE UUID="c5f092ec-c592-4d16-947b-8a46064d1d85">
                   <SHORT-NAME>PPort_TMS_Fragrance</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Fragrance</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="4bae5dc7-2ce4-451b-93ed-12cd65c6841e">
-                  <SHORT-NAME>PPort_TMS_Purifier</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Purifier</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="7ad4b29f-f469-42f6-975a-cd378e540f0d">
-                  <SHORT-NAME>PPort_TMS_Ventilation</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Ventilation</PROVIDED-INTERFACE-TREF>
                 </P-PORT-PROTOTYPE>
                 <P-PORT-PROTOTYPE UUID="01416480-c2fa-4f2c-b100-ac03269d94f8">
                   <SHORT-NAME>PPort_VCS_AccrPedal</SHORT-NAME>
