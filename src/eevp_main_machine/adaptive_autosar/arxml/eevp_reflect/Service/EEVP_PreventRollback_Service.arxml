@@ -129,13 +129,8 @@
                       <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Get_hornState</METHOD-REF>
                     </SOMEIP-METHOD-PROPS>
                     <SOMEIP-METHOD-PROPS>
+                      <COLLECTION-PROPS/>
                       <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/lightState/Get_lightState</METHOD-REF>
-                    </SOMEIP-METHOD-PROPS>
-                    <SOMEIP-METHOD-PROPS>
-                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Set_hornState</METHOD-REF>
-                    </SOMEIP-METHOD-PROPS>
-                    <SOMEIP-METHOD-PROPS>
-                      <METHOD-REF DEST="SOMEIP-METHOD-DEPLOYMENT">/ServiceDeployment/Someip/BCM_ExteriorSignal/hornState/Set_hornState</METHOD-REF>
                     </SOMEIP-METHOD-PROPS>
                   </METHOD-REQUEST-PROPSS>
                   <REQUIRED-EVENT-GROUPS>

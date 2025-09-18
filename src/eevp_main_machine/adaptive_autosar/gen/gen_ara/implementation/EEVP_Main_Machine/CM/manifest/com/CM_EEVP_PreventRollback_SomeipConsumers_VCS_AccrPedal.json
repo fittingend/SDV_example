@@ -5,23 +5,23 @@
     "service-protocol" : "someip",
     "connector" : "eth0",
     "unicast-address" : "10.100.0.40",
-    "tcp-port" : "40064",
-    "udp-port" : "40064",
+    "tcp-port" : "40306",
+    "udp-port" : "40306",
     "skeletons" : [
+    ],
+    "proxies" : [
         {
-            "service-id" : "9033",
-            "instance-id" : "9033",
+            "service-id" : "9003",
+            "instance-id" : "ANY",
             "major-version" : "1",
-            "minor-version" : "0",
-            "sd-server-timing" : {
-                "initial-delay-min" : "0.1",
+            "minor-version" : "ANY",
+            "client-id" : "2976",
+            "sd-client-timing" : {
+                "initial-delay-min" : "0.01",
                 "initial-delay-max" : "0.1",
                 "repetition-base" : "0.1",
-                "repetition-max" : "2",
-                "offer-cyclic" : "0.5",
-                "ttl" : "16777215",
-                "req-resp-delay-min" : "0.0",
-                "req-resp-delay-max" : "0.0"
+                "repetition-max" : "3",
+                "ttl" : "16777215"
             },
             "eventgroups" : [
             ],
@@ -30,8 +30,6 @@
             "e2e-method-protection-props" : [
             ]
         }
-    ],
-    "proxies" : [
     ],
     "secure-com-props-for-tcp" : [
     ],

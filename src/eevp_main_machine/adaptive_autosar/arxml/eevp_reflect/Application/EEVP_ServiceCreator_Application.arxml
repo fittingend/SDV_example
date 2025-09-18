@@ -65,22 +65,6 @@
               </PORT-PROTOTYPE-IREF>
               <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Ctrl_RearCurtain</SERVICE-INSTANCE-REF>
             </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="1b5d5c3c-df83-4d5b-8cef-c18e313170f6">
-              <SHORT-NAME>ServiceCreator_AA_PPort_Snsr_FaceDetectModule</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_Snsr_FaceDetectModule</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Snsr_FaceDetectModule</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="a856f7f5-57cf-43a1-bad2-b03f5cafa865">
-              <SHORT-NAME>ServiceCreator_AA_PPort_Snsr_HeartBeat</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_Snsr_HeartBeat</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_Snsr_Heartbeat</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
             <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="6a4ef17e-fc62-49a6-9efc-e1e2fff82faf">
               <SHORT-NAME>ServiceCreator_AA_PPort_Snsr_USS</SHORT-NAME>
               <PORT-PROTOTYPE-IREF>
@@ -96,22 +80,6 @@
                 <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_TMS_AC</TARGET-PORT-PROTOTYPE-REF>
               </PORT-PROTOTYPE-IREF>
               <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_AC</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="71fa43af-30d2-4135-a9cc-037a18e02168">
-              <SHORT-NAME>ServiceCreator_AA_PPort_TMS_EnvMonitor</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_TMS_EnvMonitor</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_EnvMonitor</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="5c3f47f1-91d8-4bfb-9926-60c18492eb0f">
-              <SHORT-NAME>ServiceCreator_AA_PPort_TMS_Fragrance</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_TMS_Fragrance</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_TMS_Fragrance</SERVICE-INSTANCE-REF>
             </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
             <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="e7fce6e4-3973-47b4-8219-5cf93c4eddf5">
               <SHORT-NAME>ServiceCreator_AA_PPort_VCS_AccrPedal</SHORT-NAME>
@@ -136,14 +104,6 @@
                 <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_VCS_BrakePedal</TARGET-PORT-PROTOTYPE-REF>
               </PORT-PROTOTYPE-IREF>
               <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_BrakePedal</SERVICE-INSTANCE-REF>
-            </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
-            <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="0e01b8ed-81d4-48d5-b0bf-65afe1610321">
-              <SHORT-NAME>ServiceCreator_AA_PPort_VCS_EPB</SHORT-NAME>
-              <PORT-PROTOTYPE-IREF>
-                <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/Application/Executable/ServiceCreator/AA</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
-                <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Application/SwComponent/ServiceCreator/PPort_VCS_EPB</TARGET-PORT-PROTOTYPE-REF>
-              </PORT-PROTOTYPE-IREF>
-              <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/ServiceInstance/Someip/Provider/EEVP_ServiceCreator_Provider_VCS_EPB</SERVICE-INSTANCE-REF>
             </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
             <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING UUID="3f89f0f6-4114-48a4-8099-f6cd69c0a221">
               <SHORT-NAME>ServiceCreator_AA_PPort_VCS_Gear</SHORT-NAME>
@@ -217,14 +177,6 @@
                   <SHORT-NAME>PPort_Ctrl_RearCurtain</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Ctrl_RearCurtain</PROVIDED-INTERFACE-TREF>
                 </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="8d458f7d-5fc5-4f3a-98bc-e82a2b82cac3">
-                  <SHORT-NAME>PPort_Snsr_FaceDetectModule</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_FaceDetectModule</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="9de057e9-815c-4879-9cdf-6c008aad18e2">
-                  <SHORT-NAME>PPort_Snsr_HeartBeat</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_Heartbeat</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
                 <P-PORT-PROTOTYPE UUID="b7279697-bdc7-4048-a953-83748aec67df">
                   <SHORT-NAME>PPort_Snsr_USS</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/Snsr_USS</PROVIDED-INTERFACE-TREF>
@@ -232,14 +184,6 @@
                 <P-PORT-PROTOTYPE UUID="f7bc60b0-a3d7-4e88-bfc7-cae6d6e34c20">
                   <SHORT-NAME>PPort_TMS_AC</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_AC</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="f29e2423-2442-4ec3-baa4-1d6a0f3d4e11">
-                  <SHORT-NAME>PPort_TMS_EnvMonitor</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_EnvMonitor</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="c5f092ec-c592-4d16-947b-8a46064d1d85">
-                  <SHORT-NAME>PPort_TMS_Fragrance</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/TMS_Fragrance</PROVIDED-INTERFACE-TREF>
                 </P-PORT-PROTOTYPE>
                 <P-PORT-PROTOTYPE UUID="01416480-c2fa-4f2c-b100-ac03269d94f8">
                   <SHORT-NAME>PPort_VCS_AccrPedal</SHORT-NAME>
@@ -252,10 +196,6 @@
                 <P-PORT-PROTOTYPE UUID="76c9ecaa-666c-491c-bcd7-7fd548646315">
                   <SHORT-NAME>PPort_VCS_BrakePedal</SHORT-NAME>
                   <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_BrakePedal</PROVIDED-INTERFACE-TREF>
-                </P-PORT-PROTOTYPE>
-                <P-PORT-PROTOTYPE UUID="1864bc89-a81c-4f6d-b81c-81ee2de71039">
-                  <SHORT-NAME>PPort_VCS_EPB</SHORT-NAME>
-                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ServiceInterface/VCS_EPB</PROVIDED-INTERFACE-TREF>
                 </P-PORT-PROTOTYPE>
                 <P-PORT-PROTOTYPE UUID="26c872ea-1993-46c3-b2c7-5de0c513ac5b">
                   <SHORT-NAME>PPort_VCS_Gear</SHORT-NAME>
