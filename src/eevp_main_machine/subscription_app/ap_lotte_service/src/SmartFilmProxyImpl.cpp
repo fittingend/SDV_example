@@ -8,7 +8,7 @@ namespace smartfilm {
 SmartFilmProxyImpl::SmartFilmProxyImpl() :
     mProxy{nullptr},
     mFindHandle{nullptr},
-    mLogger(ara::log::CreateLogger("LIT_SF", "SmartFilmProxyImpl")) {
+    mLogger(ara::log::CreateLogger("LIT", "SMFL")) {
 }
 
 SmartFilmProxyImpl::~SmartFilmProxyImpl() {

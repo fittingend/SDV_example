@@ -1,5 +1,6 @@
 #include "DmsProxyImpl.h"
 #include <future> // future_status 사용을 위해 추가
+#include <string>
 
 namespace eevp {
 namespace control {
@@ -10,7 +11,7 @@ namespace dms {
 DmsProxyImpl::DmsProxyImpl() :
     mProxy{nullptr},
     mFindHandle{nullptr},
-    mLogger(ara::log::CreateLogger("LIT_DMS", "DmsProxyImpl")) {
+    mLogger(ara::log::CreateLogger("LIT", "LDMP")) {
     mLogger.LogInfo() << "DmsProxyImpl constructor";
 }
 
@@ -128,6 +129,17 @@ bool DmsProxyImpl::getSoaDmsDriverStatus(eevp::control::soaDmsDriverStatus& stat
     if (future.wait_for(std::chrono::milliseconds(100)) == ara::core::future_status::ready) {
         auto result = future.GetResult();
         if (result.HasValue()) {
+            switch(result.Value().gazingDir){
+                case eevp::control::SoaDmsGazingDir::kFRONT : mLogger.LogInfo() << "result Value : kFRONT"; break;
+                case eevp::control::SoaDmsGazingDir::kFRONT_LEFT : mLogger.LogInfo() << "result Value : kFRONT_LEFT"; break;
+                case eevp::control::SoaDmsGazingDir::kFRONT_RIGHT : mLogger.LogInfo() << "result Value : kFRONT_RIGHT"; break;
+                case eevp::control::SoaDmsGazingDir::kREAR_MIRROR : mLogger.LogInfo() << "result Value : kREAR_MIRROR"; break;
+                case eevp::control::SoaDmsGazingDir::kLEFT_MIRROR: mLogger.LogInfo() << "result Value : kLEFT_MIRROR"; break;
+                case eevp::control::SoaDmsGazingDir::kRIGHT_MIRROR : mLogger.LogInfo() << "result Value : kRIGHT_MIRROR"; break;
+                default : break;
+            }
+            //std::string str_num = std::to_string(result.Value().gazingDir)
+            //mLogger.LogInfo() << "result Value : " << str_num;
             status = result.Value();
             return true;
         }

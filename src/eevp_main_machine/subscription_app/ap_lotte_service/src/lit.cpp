@@ -119,18 +119,21 @@ void LIT::Run()
                         if(smartFilmProxyImpl) {
                             smartFilmProxyImpl->requestSetOpacity(eevp::control::SoaFilmPos::kDS_FRONTREAR, 100);
                             transparencyMap[eevp::control::SoaFilmPos::kDS_FRONTREAR] = {true, 100, 3000}; // 3초 타이머
+                            mLogger.LogInfo() << "Gazing Direction : kLEFT_MIRROR";
                         }
                         break;
                     case eevp::control::SoaDmsGazingDir::kRIGHT_MIRROR:
                         if(smartFilmProxyImpl) {
                             smartFilmProxyImpl->requestSetOpacity(eevp::control::SoaFilmPos::kAS_FRONTREAR, 100);
                             transparencyMap[eevp::control::SoaFilmPos::kAS_FRONTREAR] = {true, 100, 3000}; // 3초 타이머
+                            mLogger.LogInfo() << "Gazing Direction : kRIGHT_MIRROR";
                         }
                         break;
                     case eevp::control::SoaDmsGazingDir::kREAR_MIRROR:
                         if(smartFilmProxyImpl) {
                             smartFilmProxyImpl->requestSetOpacity(eevp::control::SoaFilmPos::kREAR_GLASS, 100);
                             transparencyMap[eevp::control::SoaFilmPos::kREAR_GLASS] = {true, 100, 3000}; // 3초 타이머
+                            mLogger.LogInfo() << "Gazing Direction : kREAR_MIRROR";
                         }
                         break;
                     default:
