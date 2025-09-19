@@ -153,7 +153,7 @@ void SMOKINGMONITOR::Run() {
                     //smartfilm - init
                     SetAllOpacities(100u); SetAuto(0x0);
                     //moodlamp - init
-                    RequestMlmSetRgbColor(0x1); RequestMlmSetBrightness(0x0);
+                    RequestMlmSetRgbColor(0x0); RequestMlmSetBrightness(0x0);
 
                     sts_smkmon = STS_SMKMON_NORMAL;
                     break;
@@ -180,7 +180,7 @@ void SMOKINGMONITOR::Run() {
                             getSoaFilmOpacities(filmopacity_array_before_smoking);
                         
                             //hvac - smoking
-                            SetHvacPower(0x1);      SetBlowingDirection(eevp::control::SoaHvacBlowDir::kCHEST);
+                            SetHvacPower(0x1);      SetBlowingDirection(eevp::control::SoaHvacBlowDir::kFOOT_WITH_WS);
                             SetBlowingForce(100u);  SetAirSource(eevp::control::SoaHvacAirSource::kOUTER);
                             
                             //smartfilm - smoking
@@ -257,7 +257,7 @@ void SMOKINGMONITOR::Run() {
                         }
 
                         //moodlamp
-                        RequestMlmSetRgbColor(0x1); RequestMlmSetBrightness(0x0);
+                        RequestMlmSetRgbColor(0x0); RequestMlmSetBrightness(0x0);
                     }
 
                     sts_smkmon = STS_SMKMON_NORMAL;
